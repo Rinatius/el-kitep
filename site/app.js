@@ -12,8 +12,7 @@
     ru: {
       appTitle: 'Школьные учебники', appSub: 'Учебники Кыргызстана, удобные для телефона. Работают без интернета после скачивания.',
       read: 'Читать', cont: 'Продолжить', download: 'Скачать для чтения без интернета', downloading: 'Скачиваю…',
-      downloaded: 'Скачано, можно читать без интернета', remove: 'Удалить с телефона', file: 'Сохранить одним файлом',
-      fileNote: 'Один HTML-файл: можно отправить в WhatsApp или Telegram и открыть в браузере.',
+      downloaded: 'Скачано, можно читать без интернета', remove: 'Удалить с телефона',
       grade: 'класс', mb: 'МБ', contents: 'Содержание', settings: 'Настройки', fontSize: 'Размер текста',
       spacing: 'Межстрочный интервал', theme: 'Фон', font: 'Шрифт', serif: 'С засечками', sans: 'Без засечек',
       light: 'Светлый', sepia: 'Сепия', dark: 'Тёмный', contrast: 'Контраст', lang: 'Язык интерфейса',
@@ -23,15 +22,17 @@
       noStorage: 'Этот браузер не поддерживает скачивание. Используйте «Сохранить одним файлом».',
       close: 'Закрыть',
       noBooks: 'Таких книг пока нет.',
-      my: 'Мои книги', allBooks: 'Все книги', myRemove: 'Убрать', myAdded: 'Добавлено в «Мои книги»',
+      my: 'Мои книги', allBooks: 'Все книги', myAdded: 'Добавлено в «Мои книги»',
       myRemoved: 'Убрано из «Моих книг»', myEmpty: 'Здесь будут книги, которые вы открыли или добавили.',
-      dlGet: 'Скачать', dlShort: 'Скачано', removeAsk: 'Удалить скачанную книгу с телефона?'
+      removeAsk: 'Удалить скачанную книгу с телефона?',
+      share: 'Поделиться', shareLink: 'Отправить ссылку', shareFile: 'Отправить файлом',
+      shareFileNote: 'Один HTML-файл: откроется в браузере без интернета. На iPhone не открывается.',
+      linkCopied: 'Ссылка скопирована', fileSaved: 'Файл сохранён', fileReady: 'Файл готов, отправить', preparing: 'Готовлю файл…'
     },
     ky: {
       appTitle: 'Мектеп китептери', appSub: 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт.',
       read: 'Окуу', cont: 'Улантуу', download: 'Интернетсиз окуу үчүн жүктөп алуу', downloading: 'Жүктөлүүдө…',
-      downloaded: 'Жүктөлдү, интернетсиз окууга болот', remove: 'Телефондон өчүрүү', file: 'Бир файл катары сактоо',
-      fileNote: 'Бир HTML-файл: WhatsApp же Telegram аркылуу жөнөтүп, браузерден ачса болот.',
+      downloaded: 'Жүктөлдү, интернетсиз окууга болот', remove: 'Телефондон өчүрүү',
       grade: 'класс', mb: 'МБ', contents: 'Мазмуну', settings: 'Жөндөөлөр', fontSize: 'Тамганын өлчөмү',
       spacing: 'Саптардын аралыгы', theme: 'Фон', font: 'Арип', serif: 'Засечкалуу', sans: 'Засечкасыз',
       light: 'Ак', sepia: 'Сепия', dark: 'Караңгы', contrast: 'Контраст', lang: 'Интерфейстин тили',
@@ -41,9 +42,12 @@
       noStorage: 'Бул браузер жүктөөнү колдобойт. «Бир файл катары сактоо» баскычын колдонуңуз.',
       close: 'Жабуу',
       noBooks: 'Азырынча мындай китеп жок.',
-      my: 'Менин китептерим', allBooks: 'Бардык китептер', myRemove: 'Алып салуу', myAdded: '«Менин китептерим» тизмесине кошулду',
+      my: 'Менин китептерим', allBooks: 'Бардык китептер', myAdded: '«Менин китептерим» тизмесине кошулду',
       myRemoved: '«Менин китептерим» тизмесинен алынды', myEmpty: 'Бул жерде сиз ачкан же кошкон китептер болот.',
-      dlGet: 'Жүктөө', dlShort: 'Жүктөлдү', removeAsk: 'Жүктөлгөн китепти телефондон өчүрөсүзбү?'
+      removeAsk: 'Жүктөлгөн китепти телефондон өчүрөсүзбү?',
+      share: 'Бөлүшүү', shareLink: 'Шилтеме жөнөтүү', shareFile: 'Файл катары жөнөтүү',
+      shareFileNote: 'Бир HTML-файл: браузерде интернетсиз ачылат. iPhone\'до ачылбайт.',
+      linkCopied: 'Шилтеме көчүрүлдү', fileSaved: 'Файл сакталды', fileReady: 'Файл даяр, жөнөтүү', preparing: 'Файл даярдалууда…'
     }
   };
 
@@ -143,11 +147,11 @@
     var school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
     app.innerHTML = '<div class="lib"><div class="lib-head"><h1>' + esc(title) + '</h1>' + link + '</div>' +
       (sub ? '<p class="sub">' + esc(t('appSub')) + '</p>' : '') +
-      '<div class="seg">' + SCHOOLS.map(function (o) {
+      '<div class="school">' + SCHOOLS.map(function (o) {
         return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
       }).join('') + '</div>' +
       '<div id="books"><div class="loading">' + esc(t('loading')) + '</div></div></div>';
-    Array.prototype.forEach.call(app.querySelectorAll('.seg button'), function (btn) {
+    Array.prototype.forEach.call(app.querySelectorAll('.school button'), function (btn) {
       btn.onclick = function () {
         S.school = S.ui = btn.getAttribute('data-s'); applySettings();
         if (location.hash === '#/my') showMyBooks(); else location.hash = '#/';
@@ -240,6 +244,16 @@
     var out = []; for (var g = +m[1]; g <= +m[2]; g++) out.push(g); return out;
   }
 
+  var IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var LIB_ICONS = {
+    star: '<svg viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>',
+    dl: '<svg viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>',
+    done: '<svg viewBox="0 0 24 24"><path d="M5 20h14M7.5 11.5l3 3 6-6.5"/></svg>',
+    share: IS_IOS
+      ? '<svg viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M8.5 10H6.5a1.5 1.5 0 0 0-1.5 1.5v8A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-8a1.5 1.5 0 0 0-1.5-1.5h-2"/></svg>'
+      : '<svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"/></svg>'
+  };
+
   function bookRow(b, myView) {
     var el = document.createElement('div'); el.className = 'bk';
     var hasPos = !!lsGet('pos:' + b.id, null);
@@ -248,22 +262,20 @@
     if (gradesOf(b).length > 1) meta.push(b.grade + ' ' + t('grade'));
     if (myView && b.school) meta.push(b.school === 'ky' ? 'Кыргыз мектеби' : 'Русская школа');
     meta.push(mb + ' ' + t('mb'));
-    el.innerHTML = '<div class="bk-t">' + esc(b.title) + '</div>' + (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
+    el.innerHTML = '<div class="bk-h"><div class="bk-t">' + esc(b.title) + '</div>' +
+      '<button class="icon star" aria-label="' + esc(t('my')) + '">' + LIB_ICONS.star + '</button></div>' +
+      (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
       '<div class="bk-m">' + esc(meta.filter(Boolean).join(' · ')) + '</div>' +
       '<div class="row"><a class="btn primary" href="#/read/' + esc(b.id) + '">' + esc(hasPos ? t('cont') : t('read')) + '</a>' +
-      '<button class="btn dl"></button><button class="btn my"></button></div>' +
-      '<div class="progress" hidden><i></i></div>' +
-      (b.standalone ? '<a class="bk-f" href="books/' + esc(b.id) + '/' + esc(b.standalone) + '" download title="' + esc(t('fileNote')) + '">' + esc(t('file')) + '</a>' : '');
-    var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el), my = $('.my', el);
+      '<button class="icon dl"></button><button class="icon share" aria-label="' + esc(t('share')) + '">' + LIB_ICONS.share + '</button></div>' +
+      '<div class="progress" hidden><i></i></div>';
+    var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el), star = $('.star', el);
 
-    function setMyBtn() {
-      var on = inMy(b.id);
-      my.textContent = myView ? '✕ ' + t('myRemove') : on ? '✓ ' + t('my') : '+ ' + t('my');
-      my.classList.toggle('on', on && !myView);
-    }
-    my.onclick = function () {
-      if (myView) {
-        setMy(b.id, false); toast(t('myRemoved'));
+    function setStar() { star.classList.toggle('on', inMy(b.id)); star.setAttribute('aria-pressed', inMy(b.id) ? 'true' : 'false'); }
+    star.onclick = function () {
+      var on = !inMy(b.id);
+      setMy(b.id, on); toast(on ? t('myAdded') : t('myRemoved'));
+      if (!on && myView) {
         var body = el.parentNode, sec = body.parentNode, h = el.previousElementSibling;
         body.removeChild(el);
         // drop a subject heading or grade that is now empty
@@ -272,21 +284,23 @@
         if (!$('.bk', app)) $('#books').innerHTML = '<div class="loading">' + esc(t('myEmpty')) + '</div>';
         return;
       }
-      setMy(b.id, !inMy(b.id)); setMyBtn(); toast(inMy(b.id) ? t('myAdded') : t('myRemoved'));
+      setStar();
     };
-    setMyBtn();
+    setStar();
+
+    $('.share', el).onclick = function () { shareSheet(b); };
 
     function setState(done) {
       btn.disabled = false;
-      btn.textContent = done ? '✓ ' + t('dlShort') : '⬇ ' + t('dlGet');
-      btn.title = done ? t('downloaded') : '';
+      btn.innerHTML = done ? LIB_ICONS.done : LIB_ICONS.dl;
+      btn.setAttribute('aria-label', done ? t('downloaded') : t('download'));
       btn.classList.toggle('on', done);
-      btn.onclick = done ? function () { if (window.confirm(t('removeAsk'))) remove(); } : download;
+      btn.onclick = done ? function () { toast(t('downloaded')); if (window.confirm(t('removeAsk'))) remove(); } : download;
       prog.hidden = true;
     }
     function download() {
       if (!window.caches) { toast(t('noStorage')); return; }
-      btn.disabled = true; btn.textContent = t('downloading'); prog.hidden = false; bar.style.width = '0';
+      btn.disabled = true; prog.hidden = false; bar.style.width = '0'; toast(t('downloading'));
       downloadBook(b, function (f) { bar.style.width = Math.round(f * 100) + '%'; })
         .then(function () { setState(true); toast(t('dlDone')); })
         .catch(function () { setState(false); toast(navigator.onLine === false ? t('offline') : t('err')); });
@@ -302,6 +316,58 @@
         .then(function (r) { setState(!!r && lsGet('dl:' + b.id, null) === b.v); });
     }
     return el;
+  }
+
+  // Share a book: a link (opens the app at the book) or the single-file book, through the
+  // phone's own share sheet. Without Web Share the link is copied and the file is saved.
+  function shareSheet(b) {
+    var name = b.title + (b.grade ? ', ' + b.grade + ' ' + t('grade') : '');
+    var url = location.href.split('#')[0] + '#/read/' + b.id;
+    var old = $('.sheet'); if (old) old.remove(); old = $('.sheet-bg'); if (old) old.remove();
+    var bg = document.createElement('div'); bg.className = 'sheet-bg';
+    var sh = document.createElement('div'); sh.className = 'sheet';
+    sh.innerHTML = '<h3><span>' + esc(t('share')) + ': ' + esc(name) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
+      '<div class="share-opts"><button class="btn primary s-link">' + esc(t('shareLink')) + '</button>' +
+      (b.standalone ? '<button class="btn s-file">' + esc(t('shareFile')) + '</button><div class="note">' + esc(t('shareFileNote')) + '</div>' : '') + '</div>';
+    document.body.appendChild(bg); document.body.appendChild(sh);
+    function close() { bg.remove(); sh.remove(); }
+    bg.onclick = close; $('.x', sh).onclick = close;
+
+    $('.s-link', sh).onclick = function () {
+      if (navigator.share) {
+        navigator.share({ title: name, text: name, url: url }).then(close, function () { /* cancelled */ });
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { toast(t('linkCopied')); close(); }, function () { window.prompt(t('shareLink'), url); });
+      } else {
+        window.prompt(t('shareLink'), url);
+      }
+    };
+    var fbtn = $('.s-file', sh);
+    if (!fbtn) return;
+    var file = null;
+    function save() {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = file.name;
+      document.body.appendChild(a); a.click(); a.remove(); toast(t('fileSaved')); close();
+    }
+    function send() {
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: name }).then(close, function (e) {
+          // the tap "expired" while the file was loading: one more tap sends it
+          if (e && e.name === 'NotAllowedError') { fbtn.disabled = false; fbtn.textContent = t('fileReady'); fbtn.classList.add('primary'); }
+        });
+      } else save();
+    }
+    fbtn.onclick = function () {
+      if (file) return send();
+      fbtn.disabled = true; fbtn.textContent = t('preparing');
+      fetch('books/' + b.id + '/' + b.standalone).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+        .then(function (blob) {
+          file = new File([blob], b.standalone, { type: 'text/html' });
+          fbtn.disabled = false; fbtn.textContent = t('shareFile');
+          send();
+        })
+        .catch(function () { fbtn.disabled = false; fbtn.textContent = t('shareFile'); toast(navigator.onLine === false ? t('offline') : t('err')); });
+    };
   }
 
   function downloadBook(b, onProgress) {
