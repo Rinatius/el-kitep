@@ -1,0 +1,38 @@
+[
+ {
+  "id": "kg-adabiyat-7",
+  "v": "d95c0deb2d",
+  "title": "Кыргыз адабияты",
+  "subtitle": "Орто мектептин 7-классы үчүн хрестоматия окуу китеби",
+  "author": "Бектурсун Алымов, Абдыкерим Муратов",
+  "year": 2015,
+  "grade": 7,
+  "langName": "Кыргызча",
+  "size": 1474581,
+  "standalone": "kg-adabiyat-7.html"
+ },
+ {
+  "id": "ru-chelovek-obshchestvo-7",
+  "v": "80a0a64345",
+  "title": "Человек и общество",
+  "subtitle": "7 класс. Учебник для общеобразовательных организаций",
+  "author": "М. Л. Азимова, А. А. Арунова, И. В. Маслова",
+  "year": 2024,
+  "grade": 7,
+  "langName": "Русский",
+  "size": 4567725,
+  "standalone": "ru-chelovek-obshchestvo-7.html"
+ },
+ {
+  "id": "ru-matematika-7-1-v3",
+  "v": "9c32ad61f0",
+  "title": "Математика",
+  "subtitle": "7 класс. Часть 1 (главы 1–5). Вариант 3: страницы, набранные заново",
+  "author": "",
+  "year": 2025,
+  "grade": 7,
+  "langName": "Русский",
+  "size": 5114086,
+  "standalone": "ru-matematika-7-1-v3.html"
+ }
+]

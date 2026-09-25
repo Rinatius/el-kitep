@@ -1,0 +1,172 @@
+/* Mobile textbook reader. No external fonts or libraries: everything works offline. */
+:root {
+  --bg: #ffffff; --fg: #1b1b1b; --muted: #6b6b6b; --line: #e3e3e3;
+  --panel: #f6f6f6; --accent: #1f6feb; --accent-fg: #ffffff;
+  --fs: 19px; --lh: 1.55;
+  --font: Georgia, "Noto Serif", "DejaVu Serif", "Times New Roman", serif;
+  --bar-h: 48px; --foot-h: 28px;
+}
+[data-theme="sepia"] { --bg: #f5ecd9; --fg: #4a3b2a; --muted: #8a7458; --line: #e0d2b4; --panel: #ece0c6; --accent: #9a5b13; }
+[data-theme="dark"]  { --bg: #111315; --fg: #d8d8d8; --muted: #8c8c8c; --line: #2a2d31; --panel: #1b1e21; --accent: #6ea8ff; --accent-fg: #0b0b0b; }
+[data-theme="contrast"] { --bg: #000000; --fg: #ffffff; --muted: #c8c8c8; --line: #444; --panel: #151515; --accent: #ffd400; --accent-fg: #000; }
+[data-font="sans"] { --font: Roboto, "Noto Sans", "DejaVu Sans", Arial, sans-serif; }
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); }
+body { font: 16px/1.4 Roboto, "Noto Sans", Arial, sans-serif; overscroll-behavior: none; touch-action: manipulation; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: var(--accent); }
+
+/* ---------- Library ---------- */
+.lib { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; }
+.lib h1 { font-size: 22px; margin: 8px 0 4px; }
+.lib .sub { color: var(--muted); margin: 0 0 16px; font-size: 14px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; background: var(--panel); }
+.card h2 { font-size: 18px; margin: 0 0 4px; }
+.card .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--bg); font-size: 15px; text-decoration: none; color: var(--fg); }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-weight: 600; }
+.btn[disabled] { opacity: .5; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 10px; }
+.progress > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.lib-foot { color: var(--muted); font-size: 13px; margin-top: 24px; }
+.lib-foot select { font: inherit; }
+
+/* ---------- Reader ---------- */
+.reader { position: fixed; inset: 0; overflow: hidden; touch-action: pan-y; user-select: text; }
+.viewport { position: absolute; left: 0; right: 0; top: 0; bottom: var(--foot-h); overflow: hidden; }
+.flow {
+  height: 100%; column-fill: auto; padding: 20px 0 12px;
+  font-family: var(--font); font-size: var(--fs); line-height: var(--lh);
+  will-change: transform; transform: translate3d(0,0,0);
+  hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word;
+}
+.flow.anim { transition: transform .25s ease-out; }
+.flow p { margin: 0 0 .15em; text-indent: 1.4em; text-align: left; }
+.flow p.ni { text-indent: 0; }
+.flow h1, .flow h2, .flow h3 { font-family: Roboto, "Noto Sans", Arial, sans-serif; line-height: 1.25; break-after: avoid; page-break-after: avoid; }
+.flow h1 { font-size: 1.35em; margin: .2em 0 .8em; text-align: center; }
+.flow h2 { font-size: 1.15em; margin: 1.1em 0 .5em; }
+.flow h3 { font-size: 1.0em; margin: 1em 0 .4em; }
+.flow .verse { margin: .6em 0 .8em 1em; break-inside: auto; }
+.flow .verse div { text-indent: -1em; padding-left: 1em; text-align: left; }
+.flow .verse .gap { height: .7em; }
+.flow figure { margin: .8em 0; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+.flow figure img { max-width: 100%; height: auto; border-radius: 4px; background: var(--panel); }
+.flow figcaption { font-size: .8em; color: var(--muted); margin-top: .3em; }
+.flow .box { border-left: 3px solid var(--accent); padding: .1em 0 .1em .7em; margin: .7em 0; }
+.flow .pg { font: 11px/1 Roboto, Arial, sans-serif; color: var(--muted); border: 1px solid var(--line);
+  border-radius: 6px; padding: 1px 4px; margin: 0 3px; vertical-align: 2px; text-indent: 0; white-space: nowrap; user-select: none; }
+.flow .end { height: 1px; }
+.flow .endnote { text-align: center; color: var(--muted); font-size: .8em; margin-top: 2em; font-family: Roboto, Arial, sans-serif; }
+[data-theme="dark"] .flow img, [data-theme="contrast"] .flow img { filter: brightness(.9); }
+
+.foot { position: absolute; left: 0; right: 0; bottom: 0; height: var(--foot-h); display: flex; align-items: center;
+  justify-content: space-between; padding: 0 14px; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; }
+.foot .t { overflow: hidden; text-overflow: ellipsis; margin-right: 12px; }
+
+.bar { position: absolute; left: 0; right: 0; background: var(--panel); border-color: var(--line); z-index: 5;
+  transition: transform .2s; display: flex; align-items: center; }
+.bar.top { top: 0; height: var(--bar-h); border-bottom: 1px solid var(--line); transform: translateY(-100%); padding: 0 4px; }
+.bar.bottom { bottom: 0; border-top: 1px solid var(--line); transform: translateY(100%); padding: 10px 16px 14px; flex-direction: column; align-items: stretch; gap: 6px; }
+.reader.ui .bar { transform: none; }
+.bar .title { flex: 1; font-weight: 600; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 4px; }
+.icon { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 22px; }
+.icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bar input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; }
+.bar .info { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+/* ---------- Sheets (TOC, settings) ---------- */
+.sheet-bg { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 10; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: 85%; overflow: auto; background: var(--bg);
+  border-radius: 16px 16px 0 0; z-index: 11; padding: 8px 16px 24px; -webkit-overflow-scrolling: touch; }
+.sheet h3 { margin: 10px 0 12px; font-size: 17px; display: flex; justify-content: space-between; align-items: center; }
+.toc a { display: block; padding: 11px 4px; border-bottom: 1px solid var(--line); color: var(--fg); text-decoration: none; font-size: 15px; }
+.toc a.sub { padding-left: 20px; font-size: 14px; color: var(--muted); }
+.toc a.cur { color: var(--accent); font-weight: 600; }
+.set { margin: 14px 0; }
+.set label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.seg { display: flex; gap: 6px; }
+.seg button { flex: 1; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); font-size: 15px; }
+.seg button.on { border: 2px solid var(--accent); font-weight: 600; }
+.swatch[data-v="light"] { background: #fff; color: #1b1b1b; }
+.swatch[data-v="sepia"] { background: #f5ecd9; color: #4a3b2a; }
+.swatch[data-v="dark"] { background: #111315; color: #d8d8d8; }
+.swatch[data-v="contrast"] { background: #000; color: #fff; }
+.goto { display: flex; gap: 8px; }
+.goto input { flex: 1; min-height: 44px; font-size: 16px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+
+.toast { position: fixed; left: 50%; bottom: 60px; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 16px;
+  border-radius: 20px; font-size: 14px; z-index: 20; max-width: 90%; text-align: center; }
+.loading { padding: 40px 16px; text-align: center; color: var(--muted); }
+
+/* ---------- Textbook elements produced by tools/convert_pdf.py ---------- */
+.flow .tasks, .flow .gloss { font-family: Roboto, "Noto Sans", Arial, sans-serif; font-size: .88em; line-height: 1.45;
+  background: var(--panel); border-radius: 8px; padding: .5em .7em; margin: .8em 0; }
+.flow .tasks p, .flow .gloss p { margin: 0 0 .35em; text-align: left; }
+.flow .gloss { border-left: 3px solid var(--accent); }
+.flow p.note { font-family: Roboto, "Noto Sans", Arial, sans-serif; font-size: .9em; font-style: italic; text-indent: 0; margin: .6em 0; }
+.flow p.attr { text-align: right; text-indent: 0; font-style: italic; color: var(--muted); margin: .1em 0 .8em; }
+.flow p.sep { text-align: center; text-indent: 0; color: var(--muted); margin: .5em 0; letter-spacing: .3em; }
+.flow h2 .pg, .flow h3 .pg { font-weight: normal; }
+.toc .sec { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 16px 4px 2px; }
+.toc a .p { float: right; color: var(--muted); font-size: 13px; margin-left: 8px; }
+
+/* ---------- Elements produced by tools/convert_layout.py (typeset textbooks) ---------- */
+.flow figure img { cursor: zoom-in; }
+.flow h4.mk { font: 700 .78em/1.3 Roboto, "Noto Sans", Arial, sans-serif; letter-spacing: .05em; color: var(--accent);
+  margin: 1em 0 .3em; break-after: avoid; page-break-after: avoid; }
+.flow p.hl { color: var(--accent); text-indent: 0; }
+.flow p.small { font-size: .82em; text-indent: 0; color: var(--muted); }
+.flow sup, .flow sub { font-size: .7em; line-height: 0; }
+.flow .kbox { font-family: Roboto, "Noto Sans", Arial, sans-serif; font-size: .88em; line-height: 1.45; background: var(--panel);
+  border-radius: 8px; padding: .45em .7em; margin: .5em 0; border-left: 3px solid var(--accent); }
+.flow .kbox > b { display: block; }
+.flow .frame { background: var(--panel); border-radius: 8px; padding: .5em .7em; margin: .8em 0;
+  font-family: Roboto, "Noto Sans", Arial, sans-serif; font-size: .9em; line-height: 1.45; }
+.flow .frame p { text-indent: 0; margin: 0 0 .35em; text-align: left; }
+.flow .tbl { margin: .8em 0; font-family: Roboto, "Noto Sans", Arial, sans-serif; font-size: .8em; line-height: 1.35; }
+.flow .tbl .tt { font-weight: 600; text-indent: 0; text-align: center; margin-bottom: .3em; }
+.flow .tbl table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+.flow .tbl th, .flow .tbl td { border: 1px solid var(--line); padding: .3em .35em; vertical-align: top; text-align: left; overflow-wrap: anywhere; hyphens: auto; }
+.flow .tbl th { background: var(--panel); }
+.flow .tbl tr { break-inside: avoid; page-break-inside: avoid; }
+
+.zoom { position: fixed; inset: 0; touch-action: pan-x pan-y; -webkit-user-select: none; user-select: none; background: rgba(0,0,0,.92); z-index: 30; }
+.zoom-in { position: absolute; inset: 0; overflow: auto; display: flex; -webkit-overflow-scrolling: touch; }
+.zoom-in img { margin: auto; flex: none; touch-action: pan-x pan-y; object-fit: contain; background: #fff; cursor: zoom-in; }
+.zoom-x { position: absolute; top: 8px; right: 8px; color: #fff; background: rgba(0,0,0,.5); z-index: 31; }
+.flow h4.sh { font: 700 .95em/1.3 Roboto, "Noto Sans", Arial, sans-serif; text-align: center; margin: .8em 0 .4em; break-after: avoid; page-break-after: avoid; }
+
+/* maths books */
+.flow h4.ex, .flow h4.try { font-family: Roboto, Arial, sans-serif; margin: 1.1em 0 .3em; font-size: 1em; }
+.flow h4.ex { display: inline-block; background: #f7e400; color: #111; padding: .1em .6em; border-radius: 3px; }
+.flow h4.try { color: var(--accent); }
+.flow p.goal { font-size: .85em; text-indent: 0; background: var(--panel); border-radius: 8px; padding: .4em .7em; }
+.flow b.bd { display: inline-block; text-indent: 0; padding: 0 .4em; border-radius: 1em; background: var(--fg); color: var(--bg);
+  font: bold .8em/1.45 Roboto, Arial, sans-serif; margin-right: .2em; }
+.flow b.nb { display: inline-block; text-indent: 0; min-width: 1.4em; border-radius: 4px; background: var(--accent); color: var(--accent-fg);
+  text-align: center; font-size: .8em; margin-right: .3em; }
+.flow .fr { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: .85em; line-height: 1.15; margin: 0 .1em; }
+.flow .fr > span:first-child { border-bottom: 1px solid currentColor; padding: 0 .15em; }
+.flow p.ml { text-indent: 0; padding-left: 1em; }
+.flow p.side { font-size: .85em; }
+.flow details.ans { margin: .3em 0 .8em; font-size: .9em; }
+.flow details.ans summary { color: var(--accent); cursor: pointer; font-family: Roboto, Arial, sans-serif; }
+
+/* wide tables become one card per row on phones */
+@media (max-width: 560px) {
+  .flow .tbl.cards table, .flow .tbl.cards tbody, .flow .tbl.cards tr, .flow .tbl.cards td { display: block; width: auto; }
+  .flow .tbl.cards tr:first-child { display: none; }
+  .flow .tbl.cards tr { border: 1px solid var(--line); border-radius: 8px; margin: .5em 0; padding: .3em .5em; }
+  .flow .tbl.cards td { border: 0; padding: .15em 0; }
+  .flow .tbl.cards td::before { content: attr(data-l); display: block; font: 600 .75em/1.3 Roboto, Arial, sans-serif; color: var(--muted); }
+  .flow .tbl.cards td:first-child { font-weight: 600; }
+}
+.flow figure.vec svg { max-width: 100%; height: auto; display: inline-block; background: #fff; border-radius: 4px; cursor: zoom-in; }
+[data-theme="dark"] .flow figure.vec svg, [data-theme="contrast"] .flow figure.vec svg { filter: brightness(.9); }
+.flow .rt { border-top: 1px solid currentColor; padding-top: 1px; margin-left: 1px; }
+.flow .it { display: inline-block; max-width: 100%; margin-right: .9em; text-indent: 0; }
