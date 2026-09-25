@@ -21,7 +21,8 @@
       notFound: 'Такой страницы нет', offline: 'Нет интернета. Эта книга ещё не скачана.', err: 'Ошибка загрузки',
       removed: 'Удалено', dlDone: 'Книга скачана', end: 'Конец книги', source: 'Источник', loading: 'Загрузка…',
       noStorage: 'Этот браузер не поддерживает скачивание. Используйте «Сохранить одним файлом».',
-      close: 'Закрыть'
+      close: 'Закрыть', allGrades: 'Все классы', allSchools: 'Все школы', schoolRu: 'Русские школы',
+      schoolKy: 'Кыргызские школы', noBooks: 'Таких книг пока нет.'
     },
     ky: {
       appTitle: 'Мектеп китептери', appSub: 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт.',
@@ -35,7 +36,8 @@
       notFound: 'Мындай бет жок', offline: 'Интернет жок. Бул китеп али жүктөлө элек.', err: 'Жүктөөдө ката кетти',
       removed: 'Өчүрүлдү', dlDone: 'Китеп жүктөлдү', end: 'Китептин аягы', source: 'Булак', loading: 'Жүктөлүүдө…',
       noStorage: 'Бул браузер жүктөөнү колдобойт. «Бир файл катары сактоо» баскычын колдонуңуз.',
-      close: 'Жабуу'
+      close: 'Жабуу', allGrades: 'Бардык класстар', allSchools: 'Бардык мектептер', schoolRu: 'Орус мектептери',
+      schoolKy: 'Кыргыз мектептери', noBooks: 'Азырынча мындай китеп жок.'
     }
   };
 
@@ -98,16 +100,51 @@
     sel.onchange = function () { S.ui = sel.value; applySettings(); showLibrary(); };
 
     fetchJSON('books/index.json').then(function (list) {
-      var box = $('#books'); box.innerHTML = '';
-      list.forEach(function (b) { box.appendChild(bookCard(b)); });
+      var F = lsGet('libFilter', null) || { g: '', s: '' };
+      var grades = [];
+      list.forEach(function (b) { gradesOf(b).forEach(function (g) { if (grades.indexOf(g) < 0) grades.push(g); }); });
+      grades.sort(function (a, b) { return a - b; });
+      var hasSchools = list.some(function (b) { return b.school; });
+      var box = $('#books');
+      function chips(key, opts) {
+        return '<div class="chips" data-k="' + key + '">' + opts.map(function (o) {
+          return '<button data-v="' + o[0] + '"' + (String(F[key]) === String(o[0]) ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
+        }).join('') + '</div>';
+      }
+      function draw() {
+        var html = '';
+        if (list.length > 6) {
+          html += chips('g', [['', t('allGrades')]].concat(grades.map(function (g) { return [g, g + ' ' + t('grade')]; })));
+          if (hasSchools) html += chips('s', [['', t('allSchools')], ['ru', t('schoolRu')], ['ky', t('schoolKy')]]);
+        }
+        box.innerHTML = html + '<div class="cards-list"></div>';
+        var cl = $('.cards-list', box);
+        var shown = list.filter(function (b) {
+          return (!F.g || gradesOf(b).indexOf(+F.g) >= 0) && (!F.s || !b.school || b.school === F.s);
+        });
+        if (!shown.length) cl.innerHTML = '<div class="loading">' + esc(t('noBooks')) + '</div>';
+        shown.forEach(function (b) { cl.appendChild(bookCard(b)); });
+        Array.prototype.forEach.call(box.querySelectorAll('.chips button'), function (btn) {
+          btn.onclick = function () { F[btn.parentNode.getAttribute('data-k')] = btn.getAttribute('data-v'); lsSet('libFilter', F); draw(); };
+        });
+      }
+      draw();
     }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(t('err')) + '</div>'; });
+  }
+
+  // "7", 7, "7–9" or "10-11" -> [7], [7, 8, 9], [10, 11]
+  function gradesOf(b) {
+    var m = String(b.grade == null ? '' : b.grade).match(/(\d+)\s*[–-]\s*(\d+)|(\d+)/);
+    if (!m) return [];
+    if (m[3]) return [+m[3]];
+    var out = []; for (var g = +m[1]; g <= +m[2]; g++) out.push(g); return out;
   }
 
   function bookCard(b) {
     var el = document.createElement('div'); el.className = 'card';
     var hasPos = !!lsGet('pos:' + b.id, null);
     var mb = (b.size / 1048576).toFixed(1);
-    el.innerHTML = '<h2>' + esc(b.title) + '</h2>' +
+    el.innerHTML = '<h2>' + esc(b.title) + '</h2>' + (b.subtitle ? '<div class="subt">' + esc(b.subtitle) + '</div>' : '') +
       '<div class="meta">' + esc(b.author) + (b.year ? ', ' + b.year : '') + '<br>' + esc(b.grade + ' ' + t('grade') + ' · ' + b.langName + ' · ' + mb + ' ' + t('mb')) + '</div>' +
       '<div class="row"><a class="btn primary" href="#/read/' + esc(b.id) + '">' + esc(hasPos ? t('cont') : t('read')) + '</a>' +
       '<button class="btn dl"></button></div>' +

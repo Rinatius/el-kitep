@@ -91,11 +91,19 @@ def main(dirs):
                 size += os.path.getsize(p)
                 with open(p, "rb") as f:
                     h.update(f.read())
-        entry = {"id": bid, "v": h.hexdigest()[:10], "title": book["title"], "subtitle": book.get("subtitle"),
+        school = book.get("school") or ""
+        if school not in ("ru", "ky"):
+            school = "ru" if ("русск" in school.lower() or "орус" in school.lower()) else ("ky" if school else None)
+        entry = {"id": bid, "v": h.hexdigest()[:10], "title": book["title"], "subtitle": book.get("subtitle"), "school": school,
                  "author": book.get("author"), "year": book.get("year"), "grade": book.get("grade"),
                  "langName": book.get("langName"), "size": size, "standalone": single}
         index = [e for e in index if e["id"] != bid] + [entry]
         print(f"{bid}: {size / 1048576:.2f} MB online, single file {os.path.getsize(os.path.join(dst, single)) / 1048576:.2f} MB")
+    # library order: grade, then school, then subject
+    def grade_key(e):
+        m = re.match(r"\d+", str(e.get("grade") or ""))
+        return int(m.group(0)) if m else 99
+    index.sort(key=lambda e: (grade_key(e), e.get("school") or "", e.get("title") or ""))
     with open(index_path, "w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=1)
 
