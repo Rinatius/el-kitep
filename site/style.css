@@ -20,14 +20,28 @@ a { color: var(--accent); }
 /* ---------- Library ---------- */
 .lib { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; }
 .lib h1 { font-size: 22px; margin: 8px 0 4px; }
-.lib .sub { color: var(--muted); margin: 0 0 16px; font-size: 14px; }
-.card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; background: var(--panel); }
-.card h2 { font-size: 18px; margin: 0 0 4px; }
-.card .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
-.card .subt { font-size: 14px; margin: 0 0 4px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
-.chips button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: inherit; }
-.chips button.on { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.lib .sub { color: var(--muted); margin: 0 0 12px; font-size: 14px; }
+.lib-head { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
+.lib-head h1 { flex: 1; margin: 0; }
+.school { display: flex; margin: 0 0 16px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.school button { flex: 1; min-height: 44px; padding: 0 10px; font-size: 15px; background: var(--panel); }
+.school button + button { border-left: 1px solid var(--line); }
+.school button.on { background: var(--accent); color: var(--accent-fg); font-weight: 600; }
+.my-link { flex: 0 0 auto; font-weight: 600; min-height: 40px; padding: 0 12px; font-size: 14px; }
+.grade { margin-bottom: 10px; }
+.grade-h { display: flex; width: 100%; align-items: center; justify-content: space-between; min-height: 52px; padding: 0 16px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--panel); font-size: 18px; font-weight: 600; text-align: left; }
+.grade-h::after { content: '›'; font-size: 24px; color: var(--muted); margin-left: 10px; transition: transform .15s; }
+.grade.open .grade-h::after { transform: rotate(90deg); }
+.grade-h .n { margin-left: auto; font-size: 14px; font-weight: 400; color: var(--muted); }
+.grade-b { padding: 0 2px; }
+.grade-t { font-size: 20px; margin: 18px 0 0; }
+.subj { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 16px 0 6px; }
+.bk { border-bottom: 1px solid var(--line); padding: 4px 0 12px; }
+.bk:last-child { border-bottom: 0; }
+.bk-t { font-size: 17px; font-weight: 600; }
+.bk-s { font-size: 14px; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.bk-m { color: var(--muted); font-size: 13px; margin: 3px 0 8px; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px;
   border-radius: 10px; border: 1px solid var(--line); background: var(--bg); font-size: 15px; text-decoration: none; color: var(--fg); }
@@ -36,8 +50,18 @@ a { color: var(--accent); }
 .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 10px; }
 .progress > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
 .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
-.lib-foot { color: var(--muted); font-size: 13px; margin-top: 24px; }
-.lib-foot select { font: inherit; }
+.bk-h { display: flex; align-items: flex-start; gap: 4px; }
+.bk-h .bk-t { flex: 1; padding-top: 10px; }
+.bk .row { gap: 4px; }
+.bk .row .btn { min-height: 40px; padding: 0 18px; font-size: 14px; margin-right: 8px; }
+.bk .icon { color: var(--muted); flex: 0 0 auto; }
+.bk .icon[disabled] { opacity: .5; }
+.bk .icon.on { color: var(--accent); }
+.bk .star.on svg { fill: currentColor; }
+.bk .star.on { color: #e3a008; }
+.share-opts { display: flex; flex-direction: column; gap: 10px; }
+.share-opts .note { margin-top: 0; }
+.sheet h3 .icon { flex: 0 0 auto; }
 
 /* ---------- Reader ---------- */
 .reader { position: fixed; inset: 0; overflow: hidden; touch-action: pan-y; user-select: text; }
