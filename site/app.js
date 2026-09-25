@@ -154,7 +154,7 @@
     Array.prototype.forEach.call(app.querySelectorAll('.school button'), function (btn) {
       btn.onclick = function () {
         S.school = S.ui = btn.getAttribute('data-s'); applySettings();
-        if (location.hash === '#/my') showMyBooks(); else location.hash = '#/';
+        route(); // redraw the page we are on (setting the same hash would not fire hashchange)
       };
     });
     return school;
