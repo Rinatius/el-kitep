@@ -142,14 +142,13 @@
 
   var libHash = '#/'; // where the reader's back button returns to
 
-  function libShell(title, link, sub) {
+  function libShell(title, link, main) { // main: the library page (intro text and school switch)
     document.title = title;
     var school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
     app.innerHTML = '<div class="lib"><div class="lib-head"><h1>' + esc(title) + '</h1>' + link + '</div>' +
-      (sub ? '<p class="sub">' + esc(t('appSub')) + '</p>' : '') +
-      '<div class="school">' + SCHOOLS.map(function (o) {
+      (main ? '<p class="sub">' + esc(t('appSub')) + '</p><div class="school">' + SCHOOLS.map(function (o) {
         return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
-      }).join('') + '</div>' +
+      }).join('') + '</div>' : '') +
       '<div id="books"><div class="loading">' + esc(t('loading')) + '</div></div></div>';
     Array.prototype.forEach.call(app.querySelectorAll('.school button'), function (btn) {
       btn.onclick = function () {
