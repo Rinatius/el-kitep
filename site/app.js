@@ -21,8 +21,11 @@
       notFound: 'Такой страницы нет', offline: 'Нет интернета. Эта книга ещё не скачана.', err: 'Ошибка загрузки',
       removed: 'Удалено', dlDone: 'Книга скачана', end: 'Конец книги', source: 'Источник', loading: 'Загрузка…',
       noStorage: 'Этот браузер не поддерживает скачивание. Используйте «Сохранить одним файлом».',
-      close: 'Закрыть', allGrades: 'Все классы', allSchools: 'Все школы', schoolRu: 'Русские школы',
-      schoolKy: 'Кыргызские школы', noBooks: 'Таких книг пока нет.'
+      close: 'Закрыть',
+      noBooks: 'Таких книг пока нет.',
+      my: 'Мои книги', allBooks: 'Все книги', myRemove: 'Убрать', myAdded: 'Добавлено в «Мои книги»',
+      myRemoved: 'Убрано из «Моих книг»', myEmpty: 'Здесь будут книги, которые вы открыли или добавили.',
+      dlGet: 'Скачать', dlShort: 'Скачано', removeAsk: 'Удалить скачанную книгу с телефона?'
     },
     ky: {
       appTitle: 'Мектеп китептери', appSub: 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт.',
@@ -36,8 +39,11 @@
       notFound: 'Мындай бет жок', offline: 'Интернет жок. Бул китеп али жүктөлө элек.', err: 'Жүктөөдө ката кетти',
       removed: 'Өчүрүлдү', dlDone: 'Китеп жүктөлдү', end: 'Китептин аягы', source: 'Булак', loading: 'Жүктөлүүдө…',
       noStorage: 'Бул браузер жүктөөнү колдобойт. «Бир файл катары сактоо» баскычын колдонуңуз.',
-      close: 'Жабуу', allGrades: 'Бардык класстар', allSchools: 'Бардык мектептер', schoolRu: 'Орус мектептери',
-      schoolKy: 'Кыргыз мектептери', noBooks: 'Азырынча мындай китеп жок.'
+      close: 'Жабуу',
+      noBooks: 'Азырынча мындай китеп жок.',
+      my: 'Менин китептерим', allBooks: 'Бардык китептер', myRemove: 'Алып салуу', myAdded: '«Менин китептерим» тизмесине кошулду',
+      myRemoved: '«Менин китептерим» тизмесинен алынды', myEmpty: 'Бул жерде сиз ачкан же кошкон китептер болот.',
+      dlGet: 'Жүктөө', dlShort: 'Жүктөлдү', removeAsk: 'Жүктөлгөн китепти телефондон өчүрөсүзбү?'
     }
   };
 
@@ -85,51 +91,145 @@
     if (cleanup) { cleanup(); cleanup = null; }
     if (EMB) return openReader(EMB.id);
     var m = location.hash.match(/^#\/read\/([\w.-]+)/);
-    if (m) openReader(m[1]); else showLibrary();
+    if (m) openReader(m[1]); else if (location.hash === '#/my') showMyBooks(); else showLibrary();
   }
 
   // ================================================================ LIBRARY
   function cacheName(b) { return 'book-' + b.id + '-' + b.v; }
 
-  function showLibrary() {
-    document.title = t('appTitle');
-    app.innerHTML = '<div class="lib"><h1>' + esc(t('appTitle')) + '</h1><p class="sub">' + esc(t('appSub')) +
-      '</p><div id="books"><div class="loading">' + esc(t('loading')) + '</div></div>' +
-      '<div class="lib-foot">' + esc(t('lang')) + ': <select id="uilang"><option value="ru">Русский</option><option value="ky">Кыргызча</option></select></div></div>';
-    var sel = $('#uilang'); sel.value = S.ui;
-    sel.onchange = function () { S.ui = sel.value; applySettings(); showLibrary(); };
+  // The library is organised by school (language of instruction), then grade, then subject.
+  // Choosing the school also sets the interface language.
+  var SCHOOLS = [['ky', 'Кыргыз мектеби'], ['ru', 'Русская школа']];
 
-    fetchJSON('books/index.json').then(function (list) {
-      var F = lsGet('libFilter', null) || { g: '', s: '' };
+  // Subjects in the order the ministry lists them. A book's subject comes from its "subject"
+  // field when index.json has one, otherwise from its title; a title that matches nothing
+  // becomes its own subject, so new books always show up.
+  var SUBJECTS = [
+    ['kyrgyz-tili', /кыргыз тили|кыргызский язык/, 'Кыргыз тили', 'Кыргызский язык'],
+    ['kyrgyz-adabiyat', /кыргыз адабият|кыргызская литература/, 'Кыргыз адабияты', 'Кыргызская литература'],
+    ['russkiy-yazyk', /русский язык|орус тили/, 'Орус тили', 'Русский язык'],
+    ['russkaya-literatura', /русская литература|литературное чтение|орус адабият/, 'Орус адабияты', 'Русская литература'],
+    ['adabiyat', /адабият|литератур/, 'Адабият', 'Литература'],
+    ['matematika', /математик|алгебр|геометр/, 'Математика', 'Математика'],
+    ['fizika', /физик/, 'Физика', 'Физика'],
+    ['himiya', /хими/, 'Химия', 'Химия'],
+    ['biologiya', /биолог/, 'Биология', 'Биология'],
+    ['geografiya', /географ/, 'География', 'География'],
+    ['istoriya-kg', /кыргызстан\S* тарых|история кыргызстана/, 'Кыргызстандын тарыхы', 'История Кыргызстана'],
+    ['istoriya-mir', /дүйнө тарых|орто кылым|жаңы тарых|соңку тарых|байыркы|всемирная история|средних век|новая история|новейшая история|древн/, 'Дүйнө тарыхы', 'Всемирная история'],
+    ['religii', /диндер|религи/, 'Диндердин тарыхы', 'История религий'],
+    ['obshchestvo', /адам жана коом|человек и общество/, 'Адам жана коом', 'Человек и общество'],
+    ['grazhdanstvennost', /гражданствен|жарандык/, 'Жарандык', 'Гражданственность'],
+    ['english', /англ|english/, 'Англис тили', 'Английский язык']
+  ];
+  function subjectOf(b) {
+    var s = String(b.subject || b.title || '').toLowerCase();
+    for (var i = 0; i < SUBJECTS.length; i++) {
+      if (b.subject === SUBJECTS[i][0] || SUBJECTS[i][1].test(s)) return { key: SUBJECTS[i][0], order: i, name: SUBJECTS[i][S.ui === 'ky' ? 2 : 3] };
+    }
+    return { key: 'x:' + s, order: SUBJECTS.length, name: b.subject || b.title };
+  }
+
+  // "My books": books the reader opened or added, stored on the phone. 1 = in the list,
+  // 0 = removed by the reader. Books opened before this list existed count as added.
+  function myState() { return lsGet('mybooks', null) || {}; }
+  function inMy(id) { var s = myState()[id]; return s === 1 || (s !== 0 && !!lsGet('pos:' + id, null)); }
+  function setMy(id, on) { var s = myState(); s[id] = on ? 1 : 0; lsSet('mybooks', s); }
+
+  var libHash = '#/'; // where the reader's back button returns to
+
+  function libShell(title, link, sub) {
+    document.title = title;
+    var school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
+    app.innerHTML = '<div class="lib"><div class="lib-head"><h1>' + esc(title) + '</h1>' + link + '</div>' +
+      (sub ? '<p class="sub">' + esc(t('appSub')) + '</p>' : '') +
+      '<div class="seg">' + SCHOOLS.map(function (o) {
+        return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
+      }).join('') + '</div>' +
+      '<div id="books"><div class="loading">' + esc(t('loading')) + '</div></div></div>';
+    Array.prototype.forEach.call(app.querySelectorAll('.seg button'), function (btn) {
+      btn.onclick = function () {
+        S.school = S.ui = btn.getAttribute('data-s'); applySettings();
+        if (location.hash === '#/my') showMyBooks(); else location.hash = '#/';
+      };
+    });
+    return school;
+  }
+
+  function loadList() {
+    return fetchJSON('books/index.json').catch(function (e) {
+      $('#books').innerHTML = '<div class="loading">' + esc(t('err')) + '</div>'; throw e;
+    });
+  }
+
+  function showLibrary() {
+    libHash = '#/';
+    var school = libShell(t('appTitle'), '<a class="btn my-link" href="#/my">' + esc('★ ' + t('my')) + '</a>', true);
+    loadList().then(function (list) {
+      list = list.filter(function (b) { return !b.school || b.school === school; });
       var grades = [];
       list.forEach(function (b) { gradesOf(b).forEach(function (g) { if (grades.indexOf(g) < 0) grades.push(g); }); });
       grades.sort(function (a, b) { return a - b; });
-      var hasSchools = list.some(function (b) { return b.school; });
+      var open = lsGet('libOpen', {});
       var box = $('#books');
-      function chips(key, opts) {
-        return '<div class="chips" data-k="' + key + '">' + opts.map(function (o) {
-          return '<button data-v="' + o[0] + '"' + (String(F[key]) === String(o[0]) ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
-        }).join('') + '</div>';
-      }
-      function draw() {
-        var html = '';
-        if (list.length > 6) {
-          html += chips('g', [['', t('allGrades')]].concat(grades.map(function (g) { return [g, g + ' ' + t('grade')]; })));
-          if (hasSchools) html += chips('s', [['', t('allSchools')], ['ru', t('schoolRu')], ['ky', t('schoolKy')]]);
+      box.innerHTML = grades.length ? '' : '<div class="loading">' + esc(t('noBooks')) + '</div>';
+      grades.forEach(function (g) {
+        var books = list.filter(function (b) { return gradesOf(b).indexOf(g) >= 0; });
+        var sec = document.createElement('section'); sec.className = 'grade';
+        sec.innerHTML = '<button class="grade-h"><span>' + esc(g + ' ' + t('grade')) + '</span><span class="n">' + books.length + '</span></button><div class="grade-b"></div>';
+        var head = $('.grade-h', sec), body = $('.grade-b', sec);
+        function setOpen(on) {
+          sec.classList.toggle('open', on);
+          body.innerHTML = '';
+          if (on) bySubject(books, body, false);
         }
-        box.innerHTML = html + '<div class="cards-list"></div>';
-        var cl = $('.cards-list', box);
-        var shown = list.filter(function (b) {
-          return (!F.g || gradesOf(b).indexOf(+F.g) >= 0) && (!F.s || !b.school || b.school === F.s);
-        });
-        if (!shown.length) cl.innerHTML = '<div class="loading">' + esc(t('noBooks')) + '</div>';
-        shown.forEach(function (b) { cl.appendChild(bookCard(b)); });
-        Array.prototype.forEach.call(box.querySelectorAll('.chips button'), function (btn) {
-          btn.onclick = function () { F[btn.parentNode.getAttribute('data-k')] = btn.getAttribute('data-v'); lsSet('libFilter', F); draw(); };
-        });
-      }
-      draw();
-    }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(t('err')) + '</div>'; });
+        head.onclick = function () {
+          var on = !sec.classList.contains('open');
+          Array.prototype.forEach.call(box.querySelectorAll('.grade.open'), function (s) { if (s !== sec) { s.classList.remove('open'); $('.grade-b', s).innerHTML = ''; } });
+          setOpen(on);
+          open[school] = on ? g : null; lsSet('libOpen', open);
+          if (on && sec.scrollIntoView) sec.scrollIntoView({ block: 'start' });
+        };
+        box.appendChild(sec);
+        if (open[school] === g) setOpen(true);
+      });
+    });
+  }
+
+  function showMyBooks() {
+    libHash = '#/my';
+    libShell(t('my'), '<a class="btn my-link" href="#/">' + esc('‹ ' + t('allBooks')) + '</a>', false);
+    loadList().then(function (list) {
+      var box = $('#books');
+      var mine = list.filter(function (b) { return inMy(b.id); });
+      box.innerHTML = '';
+      if (!mine.length) { box.innerHTML = '<div class="loading">' + esc(t('myEmpty')) + '</div>'; return; }
+      var grades = [];
+      mine.forEach(function (b) { var g = gradesOf(b)[0]; if (grades.indexOf(g) < 0) grades.push(g); });
+      grades.sort(function (a, b) { return (a == null ? 99 : a) - (b == null ? 99 : b); });
+      grades.forEach(function (g) {
+        var sec = document.createElement('section'); sec.className = 'grade open';
+        sec.innerHTML = '<h2 class="grade-t">' + esc(g == null ? '' : g + ' ' + t('grade')) + '</h2><div class="grade-b"></div>';
+        bySubject(mine.filter(function (b) { return gradesOf(b)[0] === g; }), $('.grade-b', sec), true);
+        box.appendChild(sec);
+      });
+    });
+  }
+
+  // Books under subject headings; subjects without books are never shown.
+  function bySubject(books, root, myView) {
+    var groups = {}, keys = [];
+    books.forEach(function (b) {
+      var s = subjectOf(b);
+      if (!groups[s.key]) { groups[s.key] = { s: s, books: [] }; keys.push(s.key); }
+      groups[s.key].books.push(b);
+    });
+    keys.sort(function (a, b) { var x = groups[a].s, y = groups[b].s; return x.order - y.order || (x.name < y.name ? -1 : x.name > y.name ? 1 : 0); });
+    keys.forEach(function (k) {
+      var h = document.createElement('h3'); h.className = 'subj'; h.textContent = groups[k].s.name;
+      root.appendChild(h);
+      groups[k].books.forEach(function (b) { root.appendChild(bookRow(b, myView)); });
+    });
   }
 
   // "7", 7, "7–9" or "10-11" -> [7], [7, 8, 9], [10, 11]
@@ -140,24 +240,49 @@
     var out = []; for (var g = +m[1]; g <= +m[2]; g++) out.push(g); return out;
   }
 
-  function bookCard(b) {
-    var el = document.createElement('div'); el.className = 'card';
+  function bookRow(b, myView) {
+    var el = document.createElement('div'); el.className = 'bk';
     var hasPos = !!lsGet('pos:' + b.id, null);
     var mb = (b.size / 1048576).toFixed(1);
-    el.innerHTML = '<h2>' + esc(b.title) + '</h2>' + (b.subtitle ? '<div class="subt">' + esc(b.subtitle) + '</div>' : '') +
-      '<div class="meta">' + esc(b.author) + (b.year ? ', ' + b.year : '') + '<br>' + esc(b.grade + ' ' + t('grade') + ' · ' + b.langName + ' · ' + mb + ' ' + t('mb')) + '</div>' +
+    var meta = [[b.author, b.year].filter(Boolean).join(', ')];
+    if (gradesOf(b).length > 1) meta.push(b.grade + ' ' + t('grade'));
+    if (myView && b.school) meta.push(b.school === 'ky' ? 'Кыргыз мектеби' : 'Русская школа');
+    meta.push(mb + ' ' + t('mb'));
+    el.innerHTML = '<div class="bk-t">' + esc(b.title) + '</div>' + (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
+      '<div class="bk-m">' + esc(meta.filter(Boolean).join(' · ')) + '</div>' +
       '<div class="row"><a class="btn primary" href="#/read/' + esc(b.id) + '">' + esc(hasPos ? t('cont') : t('read')) + '</a>' +
-      '<button class="btn dl"></button></div>' +
+      '<button class="btn dl"></button><button class="btn my"></button></div>' +
       '<div class="progress" hidden><i></i></div>' +
-      (b.standalone ? '<div class="row" style="margin-top:8px"><a class="btn" href="books/' + esc(b.id) + '/' + esc(b.standalone) + '" download>' + esc(t('file')) + '</a></div><div class="note">' + esc(t('fileNote')) + '</div>' : '');
-    var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el);
+      (b.standalone ? '<a class="bk-f" href="books/' + esc(b.id) + '/' + esc(b.standalone) + '" download title="' + esc(t('fileNote')) + '">' + esc(t('file')) + '</a>' : '');
+    var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el), my = $('.my', el);
+
+    function setMyBtn() {
+      var on = inMy(b.id);
+      my.textContent = myView ? '✕ ' + t('myRemove') : on ? '✓ ' + t('my') : '+ ' + t('my');
+      my.classList.toggle('on', on && !myView);
+    }
+    my.onclick = function () {
+      if (myView) {
+        setMy(b.id, false); toast(t('myRemoved'));
+        var body = el.parentNode, sec = body.parentNode, h = el.previousElementSibling;
+        body.removeChild(el);
+        // drop a subject heading or grade that is now empty
+        if (h && h.className === 'subj' && (!h.nextElementSibling || h.nextElementSibling.className === 'subj')) body.removeChild(h);
+        if (!body.children.length) sec.parentNode.removeChild(sec);
+        if (!$('.bk', app)) $('#books').innerHTML = '<div class="loading">' + esc(t('myEmpty')) + '</div>';
+        return;
+      }
+      setMy(b.id, !inMy(b.id)); setMyBtn(); toast(inMy(b.id) ? t('myAdded') : t('myRemoved'));
+    };
+    setMyBtn();
 
     function setState(done) {
       btn.disabled = false;
-      btn.textContent = done ? '✓ ' + t('remove') : '⬇ ' + t('download');
+      btn.textContent = done ? '✓ ' + t('dlShort') : '⬇ ' + t('dlGet');
       btn.title = done ? t('downloaded') : '';
-      btn.onclick = done ? remove : download;
-      if (done) { prog.hidden = false; bar.style.width = '100%'; } else { prog.hidden = true; }
+      btn.classList.toggle('on', done);
+      btn.onclick = done ? function () { if (window.confirm(t('removeAsk'))) remove(); } : download;
+      prog.hidden = true;
     }
     function download() {
       if (!window.caches) { toast(t('noStorage')); return; }
@@ -222,11 +347,12 @@
 
   function openReader(id) {
     app.innerHTML = '<div class="loading">' + esc(t('loading')) + '</div>';
+    if (!EMB) setMy(id, true);
     var p = EMB ? Promise.resolve(EMB) : fetchJSON('books/' + id + '/book.json');
     p.then(function (book) { startReader(book, EMB ? '' : 'books/' + id + '/'); })
       .catch(function () {
         app.innerHTML = '<div class="lib"><p class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) +
-          '</p><p style="text-align:center"><a class="btn" href="#/">' + esc(t('back')) + '</a></p></div>';
+          '</p><p style="text-align:center"><a class="btn" href="' + libHash + '">' + esc(t('back')) + '</a></p></div>';
       });
   }
 
@@ -239,7 +365,7 @@
       '<div class="reader">' +
       '<div class="viewport"><div class="flow" lang="' + esc(book.lang) + '"></div></div>' +
       '<div class="foot"><span class="t"></span><span class="n"></span></div>' +
-      '<div class="bar top">' + (EMB ? '' : '<a class="icon" href="#/" aria-label="' + esc(t('back')) + '">' + ICONS.back + '</a>') +
+      '<div class="bar top">' + (EMB ? '' : '<a class="icon" href="' + libHash + '" aria-label="' + esc(t('back')) + '">' + ICONS.back + '</a>') +
       '<div class="title">' + esc(book.title) + '</div>' +
       '<button class="icon b-toc" aria-label="' + esc(t('contents')) + '">' + ICONS.toc + '</button>' +
       '<button class="icon b-set" aria-label="' + esc(t('settings')) + '">' + ICONS.set + '</button></div>' +

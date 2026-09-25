@@ -1,6 +1,6 @@
 /* Offline support: app shell is cached on install; book files are served from the
  * per-book cache that the "Download" button fills (see downloadBook in app.js). */
-var SHELL = 'shell-v6';
+var SHELL = 'shell-v7';
 var FILES = ['./', 'index.html', 'app.js', 'style.css', 'manifest.webmanifest', 'icons/icon.svg'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(SHELL).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
