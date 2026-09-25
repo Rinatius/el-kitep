@@ -24,6 +24,10 @@ a { color: var(--accent); }
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; background: var(--panel); }
 .card h2 { font-size: 18px; margin: 0 0 4px; }
 .card .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.card .subt { font-size: 14px; margin: 0 0 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.chips button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: inherit; }
+.chips button.on { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px;
   border-radius: 10px; border: 1px solid var(--line); background: var(--bg); font-size: 15px; text-decoration: none; color: var(--fg); }
@@ -95,7 +99,7 @@ a { color: var(--accent); }
 .swatch[data-v="light"] { background: #fff; color: #1b1b1b; }
 .swatch[data-v="sepia"] { background: #f5ecd9; color: #4a3b2a; }
 .swatch[data-v="dark"] { background: #111315; color: #d8d8d8; }
-.swatch[data-v="contrast"] { background: #000; color: #fff; }
+.swatch[data-v="contrast"] { background: #000; color: var(--accent-fg); }
 .goto { display: flex; gap: 8px; }
 .goto input { flex: 1; min-height: 44px; font-size: 16px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
 
