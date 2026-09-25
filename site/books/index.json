@@ -40,7 +40,7 @@
  },
  {
   "id": "kg-adam-jana-koom-7",
-  "v": "280bc4bd29",
+  "v": "612313728f",
   "title": "Адам жана коом",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -48,12 +48,12 @@
   "year": 2025,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 3074532,
+  "size": 3076549,
   "standalone": "kg-adam-jana-koom-7.html"
  },
  {
   "id": "kg-biologiya-7",
-  "v": "c38747aefb",
+  "v": "3f298a7e71",
   "title": "Биология. Жаныбарлар",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -61,25 +61,12 @@
   "year": 2015,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 3348584,
+  "size": 3347021,
   "standalone": "kg-biologiya-7.html"
  },
  {
-  "id": "kg-kyrgyz-tili-7-9",
-  "v": "13244ce4a2",
-  "title": "Кыргыз тили",
-  "subtitle": "7–9-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "Б. Исаков ж.б.",
-  "year": 2012,
-  "grade": "7–9",
-  "langName": "Кыргызча",
-  "size": 1289044,
-  "standalone": "kg-kyrgyz-tili-7-9.html"
- },
- {
   "id": "kg-kyrgyz-tili-7",
-  "v": "b5167e6501",
+  "v": "39d131e489",
   "title": "Кыргыз тили",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -87,12 +74,25 @@
   "year": 2015,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 588453,
+  "size": 587158,
   "standalone": "kg-kyrgyz-tili-7.html"
  },
  {
+  "id": "kg-kyrgyz-tili-7-9",
+  "v": "fe570091bb",
+  "title": "Кыргыз тили",
+  "subtitle": "7–9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Б. Исаков ж.б.",
+  "year": 2012,
+  "grade": "7–9",
+  "langName": "Кыргызча",
+  "size": 1291441,
+  "standalone": "kg-kyrgyz-tili-7-9.html"
+ },
+ {
   "id": "kg-kyrgyzstan-taryhy-7",
-  "v": "76f64e2c20",
+  "v": "bab3613265",
   "title": "Кыргызстан тарыхы",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -100,12 +100,12 @@
   "year": 2002,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 2815863,
+  "size": 2814950,
   "standalone": "kg-kyrgyzstan-taryhy-7.html"
  },
  {
   "id": "kg-literaturnoe-chtenie-7",
-  "v": "488323e417",
+  "v": "7728bf6bb2",
   "title": "Литературное чтение",
   "subtitle": "7 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -113,12 +113,12 @@
   "year": 2009,
   "grade": "7",
   "langName": "Русский",
-  "size": 2527495,
+  "size": 2529730,
   "standalone": "kg-literaturnoe-chtenie-7.html"
  },
  {
   "id": "kg-orto-kylym-taryhy-7",
-  "v": "e361da040e",
+  "v": "2e138bbaa7",
   "title": "Орто кылымдар тарыхы",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -126,12 +126,12 @@
   "year": 2007,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 7896574,
+  "size": 7902228,
   "standalone": "kg-orto-kylym-taryhy-7.html"
  },
  {
   "id": "kg-russkiy-yazyk-7",
-  "v": "844e39ebe1",
+  "v": "e3c7186569",
   "title": "Русский язык",
   "subtitle": "7 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -139,12 +139,12 @@
   "year": 2010,
   "grade": "7",
   "langName": "Русский",
-  "size": 1047146,
+  "size": 1049532,
   "standalone": "kg-russkiy-yazyk-7.html"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-7",
-  "v": "a7037efe3f",
+  "v": "06dd893aa4",
   "title": "История Кыргызстана",
   "subtitle": "7 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -152,12 +152,12 @@
   "year": 2012,
   "grade": "7",
   "langName": "Русский",
-  "size": 1503459,
+  "size": 1501079,
   "standalone": "ru-istoriya-kyrgyzstana-7.html"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-7",
-  "v": "3c96dd08fb",
+  "v": "c75be6495c",
   "title": "Кыргыз адабияты",
   "subtitle": "7-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -165,12 +165,12 @@
   "year": 2012,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 725392,
+  "size": 725534,
   "standalone": "ru-kyrgyz-adabiyaty-7.html"
  },
  {
   "id": "ru-kyrgyz-tili-7",
-  "v": "ed9d94b6da",
+  "v": "2a0bc43849",
   "title": "Кыргыз тили",
   "subtitle": "7-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -178,12 +178,12 @@
   "year": 2016,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 729652,
+  "size": 731321,
   "standalone": "ru-kyrgyz-tili-7.html"
  },
  {
   "id": "kg-adam-jana-koom-8",
-  "v": "3968e2c904",
+  "v": "545756991b",
   "title": "Адам жана коом",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -191,12 +191,12 @@
   "year": 2024,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 1594817,
+  "size": 1594242,
   "standalone": "kg-adam-jana-koom-8.html"
  },
  {
   "id": "kg-dinder-taryhy-8",
-  "v": "67177fbddc",
+  "v": "1a08eed2b8",
   "title": "Диндердин өнүгүү тарыхы",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -204,12 +204,12 @@
   "year": 2024,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2374007,
+  "size": 2373026,
   "standalone": "kg-dinder-taryhy-8.html"
  },
  {
   "id": "kg-janyy-taryh-8",
-  "v": "e9ec01a508",
+  "v": "51d8d57778",
   "title": "Жаңы тарых",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -217,12 +217,12 @@
   "year": 2007,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2768377,
+  "size": 2766359,
   "standalone": "kg-janyy-taryh-8.html"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-8",
-  "v": "edf6cd61fc",
+  "v": "c89a8e810c",
   "title": "Кыргыз адабияты",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -230,12 +230,12 @@
   "year": 2012,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2309381,
+  "size": 2319492,
   "standalone": "kg-kyrgyz-adabiyaty-8.html"
  },
  {
   "id": "kg-kyrgyz-tili-8",
-  "v": "96c7af32b3",
+  "v": "1b2e05d490",
   "title": "Кыргыз тили",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -243,12 +243,12 @@
   "year": 2015,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 1322610,
+  "size": 1321068,
   "standalone": "kg-kyrgyz-tili-8.html"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-8",
-  "v": "7d83a3ceb0",
+  "v": "2236e486e8",
   "title": "Кыргызстан тарыхы",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -256,12 +256,12 @@
   "year": 2010,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2449431,
+  "size": 2451918,
   "standalone": "kg-kyrgyzstan-taryhy-8.html"
  },
  {
   "id": "kg-literaturnoe-chtenie-8",
-  "v": "05487cc975",
+  "v": "141e34c31e",
   "title": "Литературное чтение",
   "subtitle": "8 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -269,12 +269,12 @@
   "year": 2015,
   "grade": "8",
   "langName": "Русский",
-  "size": 3978061,
+  "size": 3975191,
   "standalone": "kg-literaturnoe-chtenie-8.html"
  },
  {
   "id": "kg-russkiy-yazyk-8-9",
-  "v": "6087493500",
+  "v": "61e452d2a6",
   "title": "Русский язык",
   "subtitle": "8–9 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -282,12 +282,12 @@
   "year": 2012,
   "grade": "8–9",
   "langName": "Русский",
-  "size": 948995,
+  "size": 948201,
   "standalone": "kg-russkiy-yazyk-8-9.html"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
-  "v": "7781c713fe",
+  "v": "edc9fa38ab",
   "title": "История Кыргызстана",
   "subtitle": "8 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -295,12 +295,12 @@
   "year": 2012,
   "grade": "8",
   "langName": "Русский",
-  "size": 2533430,
+  "size": 2532513,
   "standalone": "ru-istoriya-kyrgyzstana-8.html"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-8",
-  "v": "07e000c51d",
+  "v": "6a0962f9f6",
   "title": "Кыргыз адабияты",
   "subtitle": "8-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -308,12 +308,12 @@
   "year": 2013,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 1108039,
+  "size": 1109016,
   "standalone": "ru-kyrgyz-adabiyaty-8.html"
  },
  {
   "id": "ru-kyrgyz-tili-8",
-  "v": "24e742f573",
+  "v": "f00d978178",
   "title": "Кыргыз тили",
   "subtitle": "8-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -321,12 +321,12 @@
   "year": 2007,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2060963,
+  "size": 2060174,
   "standalone": "ru-kyrgyz-tili-8.html"
  },
  {
   "id": "ru-chelovek-obshchestvo-8",
-  "v": "08c3f553fa",
+  "v": "dfcbbca6cd",
   "title": "Человек и общество",
   "subtitle": "8 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -334,12 +334,12 @@
   "year": 2023,
   "grade": "8",
   "langName": "Русский",
-  "size": 1475124,
+  "size": 1474836,
   "standalone": "ru-chelovek-obshchestvo-8.html"
  },
  {
   "id": "kg-adam-jana-koom-9",
-  "v": "d675fcbbb4",
+  "v": "75a6730665",
   "title": "Адам жана коом",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -347,12 +347,12 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 789518,
+  "size": 786638,
   "standalone": "kg-adam-jana-koom-9.html"
  },
  {
   "id": "kg-dinder-taryhy-9",
-  "v": "783678a645",
+  "v": "5df2b32d40",
   "title": "Диндердин өнүгүү тарыхы",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -360,12 +360,12 @@
   "year": 2022,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 1241202,
+  "size": 1240295,
   "standalone": "kg-dinder-taryhy-9.html"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-9",
-  "v": "7f11931b81",
+  "v": "e01e71ad57",
   "title": "Кыргыз адабияты",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -373,12 +373,12 @@
   "year": 2025,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 1732519,
+  "size": 1730508,
   "standalone": "kg-kyrgyz-adabiyaty-9.html"
  },
  {
   "id": "kg-kyrgyz-tili-9",
-  "v": "98173d56a5",
+  "v": "104a86930b",
   "title": "Кыргыз тили",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -386,12 +386,12 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 618499,
+  "size": 618361,
   "standalone": "kg-kyrgyz-tili-9.html"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-9",
-  "v": "440578b228",
+  "v": "839cb1bb74",
   "title": "Кыргызстандын тарыхы (XX–XXI кк.)",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -399,12 +399,12 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 2650782,
+  "size": 2647496,
   "standalone": "kg-kyrgyzstan-taryhy-9.html"
  },
  {
   "id": "kg-mamleket-jana-ukuk-9",
-  "v": "d92b5af3fb",
+  "v": "27c2cc1682",
   "title": "Мамлекет жана укук",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -412,13 +412,13 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 742654,
+  "size": 741628,
   "standalone": "kg-mamleket-jana-ukuk-9.html",
   "subject": "obshchestvo"
  },
  {
   "id": "kg-russkaya-literatura-9",
-  "v": "1c06c501fb",
+  "v": "e7c290c2aa",
   "title": "Русская литература",
   "subtitle": "9 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -426,12 +426,12 @@
   "year": 2012,
   "grade": "9",
   "langName": "Русский",
-  "size": 1630767,
+  "size": 1629774,
   "standalone": "kg-russkaya-literatura-9.html"
  },
  {
   "id": "kg-sonku-taryh-9",
-  "v": "584653bb39",
+  "v": "14b5dadf13",
   "title": "Соңку тарых",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -439,12 +439,12 @@
   "year": 2017,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 4210198,
+  "size": 4205294,
   "standalone": "kg-sonku-taryh-9.html"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
-  "v": "d5dbf6cf89",
+  "v": "fe9050561e",
   "title": "История Кыргызстана",
   "subtitle": "9 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -452,12 +452,12 @@
   "year": 2014,
   "grade": "9",
   "langName": "Русский",
-  "size": 2558005,
+  "size": 2556167,
   "standalone": "ru-istoriya-kyrgyzstana-9.html"
  },
  {
   "id": "ru-istoriya-religiy-9",
-  "v": "1273d3147e",
+  "v": "1226a76507",
   "title": "История развития религий",
   "subtitle": "9 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -465,12 +465,12 @@
   "year": 2022,
   "grade": "9",
   "langName": "Русский",
-  "size": 1295197,
+  "size": 1294460,
   "standalone": "ru-istoriya-religiy-9.html"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-9",
-  "v": "d39d66236f",
+  "v": "d9de677aff",
   "title": "Кыргыз адабияты",
   "subtitle": "9-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -478,12 +478,12 @@
   "year": 2013,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 692247,
+  "size": 683434,
   "standalone": "ru-kyrgyz-adabiyaty-9.html"
  },
  {
   "id": "ru-kyrgyz-tili-9",
-  "v": "cde2f03ce2",
+  "v": "7eebefe188",
   "title": "Кыргыз тили",
   "subtitle": "9-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -491,12 +491,12 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 957314,
+  "size": 955332,
   "standalone": "ru-kyrgyz-tili-9.html"
  },
  {
   "id": "kg-duyno-taryhy-10",
-  "v": "27575a59ad",
+  "v": "35a4d734ca",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -504,12 +504,12 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2277305,
+  "size": 2277141,
   "standalone": "kg-duyno-taryhy-10.html"
  },
  {
   "id": "kg-geografiya-10",
-  "v": "90c5423dd4",
+  "v": "74aaaac1cc",
   "title": "Дүйнөнүн экономикалык жана социалдык географиясы",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -517,12 +517,12 @@
   "year": 2011,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2213168,
+  "size": 2209454,
   "standalone": "kg-geografiya-10.html"
  },
  {
   "id": "kg-jarandyk-10",
-  "v": "553f67cf2b",
+  "v": "1c1d7510b3",
   "title": "Жарандуулук жана башкарууга катышуу",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -530,13 +530,13 @@
   "year": 2004,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2450463,
+  "size": 2448587,
   "standalone": "kg-jarandyk-10.html",
   "subject": "grazhdanstvennost"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-10",
-  "v": "27652271e3",
+  "v": "cd70834466",
   "title": "Кыргыз адабияты",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -544,25 +544,12 @@
   "year": 2013,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 1696359,
+  "size": 1694497,
   "standalone": "kg-kyrgyz-adabiyaty-10.html"
  },
  {
-  "id": "kg-kyrgyz-tili-10-11",
-  "v": "2cfc65effc",
-  "title": "Кыргыз тили",
-  "subtitle": "10–11-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "Б. Исаков",
-  "year": 2013,
-  "grade": "10–11",
-  "langName": "Кыргызча",
-  "size": 1969529,
-  "standalone": "kg-kyrgyz-tili-10-11.html"
- },
- {
   "id": "kg-kyrgyz-tili-10",
-  "v": "4d3db8c7e2",
+  "v": "4ebb94cfaa",
   "title": "Кыргыз тили",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -570,12 +557,25 @@
   "year": 2013,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 812853,
+  "size": 816570,
   "standalone": "kg-kyrgyz-tili-10.html"
  },
  {
+  "id": "kg-kyrgyz-tili-10-11",
+  "v": "2e5085f89a",
+  "title": "Кыргыз тили",
+  "subtitle": "10–11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Б. Исаков",
+  "year": 2013,
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 1972628,
+  "standalone": "kg-kyrgyz-tili-10-11.html"
+ },
+ {
   "id": "kg-kyrgyzstan-taryhy-10",
-  "v": "d9c1d34ccd",
+  "v": "da2d866d8a",
   "title": "Кыргызстан тарыхы",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -583,12 +583,12 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2685325,
+  "size": 2684152,
   "standalone": "kg-kyrgyzstan-taryhy-10.html"
  },
  {
   "id": "kg-russkaya-literatura-10",
-  "v": "ab1918230f",
+  "v": "26f5831480",
   "title": "Русская литература",
   "subtitle": "10 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -596,12 +596,12 @@
   "year": 2012,
   "grade": "10",
   "langName": "Русский",
-  "size": 4320364,
+  "size": 4317970,
   "standalone": "kg-russkaya-literatura-10.html"
  },
  {
   "id": "kg-russkiy-yazyk-10",
-  "v": "c49c0db941",
+  "v": "852777a9e8",
   "title": "Русский язык",
   "subtitle": "10 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -609,12 +609,12 @@
   "year": 2009,
   "grade": "10",
   "langName": "Русский",
-  "size": 797701,
+  "size": 794298,
   "standalone": "kg-russkiy-yazyk-10.html"
  },
  {
   "id": "ru-grazhdanstvennost-10",
-  "v": "f1e1927a78",
+  "v": "168bd2c789",
   "title": "Гражданственность и участие в управлении",
   "subtitle": "10 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -622,12 +622,12 @@
   "year": 2004,
   "grade": "10",
   "langName": "Русский",
-  "size": 3651528,
+  "size": 3652202,
   "standalone": "ru-grazhdanstvennost-10.html"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-10",
-  "v": "0a0153eff3",
+  "v": "68acbaa97b",
   "title": "История Кыргызстана",
   "subtitle": "10 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -635,12 +635,12 @@
   "year": 2012,
   "grade": "10",
   "langName": "Русский",
-  "size": 5415842,
+  "size": 5415007,
   "standalone": "ru-istoriya-kyrgyzstana-10.html"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-10",
-  "v": "00e43708d7",
+  "v": "5d9421de17",
   "title": "Кыргыз адабияты",
   "subtitle": "10-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -648,12 +648,12 @@
   "year": 2013,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 1171310,
+  "size": 1170754,
   "standalone": "ru-kyrgyz-adabiyaty-10.html"
  },
  {
   "id": "ru-kyrgyz-tili-10-11",
-  "v": "942ec4137a",
+  "v": "31d9b798ec",
   "title": "Кыргыз тили",
   "subtitle": "10–11-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -661,12 +661,12 @@
   "year": 2019,
   "grade": "10–11",
   "langName": "Кыргызча",
-  "size": 2820415,
+  "size": 2826736,
   "standalone": "ru-kyrgyz-tili-10-11.html"
  },
  {
   "id": "ru-kyrgyz-tili-10",
-  "v": "525742c037",
+  "v": "eb992ae745",
   "title": "Кыргыз тили",
   "subtitle": "10-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -674,12 +674,12 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 1315809,
+  "size": 1314915,
   "standalone": "ru-kyrgyz-tili-10.html"
  },
  {
   "id": "kg-geografiya-11",
-  "v": "2a52285626",
+  "v": "cea1922c75",
   "title": "Геоэкологиянын негиздери",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -687,13 +687,13 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1789887,
+  "size": 1788185,
   "standalone": "kg-geografiya-11.html",
   "subject": "geografiya"
  },
  {
   "id": "kg-duyno-taryhy-11",
-  "v": "e573ccea2b",
+  "v": "a9c50dd677",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -701,12 +701,12 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1701385,
+  "size": 1700524,
   "standalone": "kg-duyno-taryhy-11.html"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-11",
-  "v": "20dcbe8a86",
+  "v": "bec6f189d8",
   "title": "Кыргыз адабияты",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -714,12 +714,12 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1859128,
+  "size": 1858012,
   "standalone": "kg-kyrgyz-adabiyaty-11.html"
  },
  {
   "id": "kg-kyrgyz-tili-11",
-  "v": "7d84dfd424",
+  "v": "bc2fe0de8a",
   "title": "Кыргыз тили",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -727,12 +727,12 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 690509,
+  "size": 689742,
   "standalone": "kg-kyrgyz-tili-11.html"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-11",
-  "v": "942dd92fee",
+  "v": "5290111142",
   "title": "Кыргызстан тарыхы: урунттуу учурлар",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -740,12 +740,12 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 2432567,
+  "size": 2430602,
   "standalone": "kg-kyrgyzstan-taryhy-11.html"
  },
  {
   "id": "kg-russkaya-literatura-11",
-  "v": "65c332ce56",
+  "v": "62a179f74c",
   "title": "Русская литература",
   "subtitle": "11 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -753,12 +753,12 @@
   "year": 2013,
   "grade": "11",
   "langName": "Русский",
-  "size": 2950408,
+  "size": 2946074,
   "standalone": "kg-russkaya-literatura-11.html"
  },
  {
   "id": "kg-russkiy-yazyk-11",
-  "v": "37c5f2f3e6",
+  "v": "55fbb7fda4",
   "title": "Русский язык",
   "subtitle": "11 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -766,12 +766,12 @@
   "year": 2012,
   "grade": "11",
   "langName": "Русский",
-  "size": 1001037,
+  "size": 997120,
   "standalone": "kg-russkiy-yazyk-11.html"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-11",
-  "v": "46352ae86f",
+  "v": "d36cbd86ac",
   "title": "История Кыргызстана",
   "subtitle": "11 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -779,12 +779,12 @@
   "year": 2012,
   "grade": "11",
   "langName": "Русский",
-  "size": 4793896,
+  "size": 4791782,
   "standalone": "ru-istoriya-kyrgyzstana-11.html"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-11",
-  "v": "caf8422234",
+  "v": "540b5a6bb7",
   "title": "Кыргыз адабияты",
   "subtitle": "11-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -792,12 +792,12 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 936486,
+  "size": 936394,
   "standalone": "ru-kyrgyz-adabiyaty-11.html"
  },
  {
   "id": "ru-kyrgyz-tili-11",
-  "v": "a8a5708454",
+  "v": "d1173e72e9",
   "title": "Кыргыз тили",
   "subtitle": "11-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -805,7 +805,7 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 2261652,
+  "size": 2260103,
   "standalone": "ru-kyrgyz-tili-11.html"
  }
 ]
