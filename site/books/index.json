@@ -53,7 +53,7 @@
  },
  {
   "id": "kg-biologiya-7",
-  "v": "c966b2a127",
+  "v": "b85129f350",
   "title": "Биология. Жаныбарлар",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -61,7 +61,7 @@
   "year": 2015,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 3333646,
+  "size": 3333340,
   "standalone": "kg-biologiya-7.html"
  },
  {
@@ -157,7 +157,7 @@
  },
  {
   "id": "ru-kyrgyz-adabiyaty-7",
-  "v": "c75be6495c",
+  "v": "ab092cbd8d",
   "title": "Кыргыз адабияты",
   "subtitle": "7-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -165,7 +165,7 @@
   "year": 2012,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 725534,
+  "size": 730938,
   "standalone": "ru-kyrgyz-adabiyaty-7.html"
  },
  {
