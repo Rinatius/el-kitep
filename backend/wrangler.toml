@@ -1,0 +1,12 @@
+name = "el-kitep-api"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "el-kitep"
+database_id = "REPLACE-WITH-ID-FROM-wrangler-d1-create"
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "el-kitep-uploads"

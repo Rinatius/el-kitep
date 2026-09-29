@@ -949,7 +949,7 @@
       if (!lastSel || $('.sheet')) return;
       var r = lastSel;
       var sh = openSheet('<h3><span>' + esc(t('reportTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
-        '<blockquote class="rq">' + esc(r.quote) + '</blockquote>' + (r.page != null ? '<div class="note">' + esc(t('page') + ' ' + r.page) + '</div>' : '') +
+        '<blockquote class="rq">' + esc(r.quote) + '</blockquote>' + (r.page > 0 ? '<div class="note">' + esc(t('page') + ' ' + r.page) + '</div>' : '') +
         '<div class="set"><label>' + esc(t('reportFix')) + '</label><textarea class="rfix" rows="3" maxlength="1000"></textarea></div>' +
         '<button class="btn primary rsend">' + esc(t('reportSend')) + '</button>');
       $('.x', sh).onclick = closeSheet;
