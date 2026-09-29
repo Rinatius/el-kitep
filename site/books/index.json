@@ -43,7 +43,7 @@
  },
  {
   "id": "kg-adam-jana-koom-7",
-  "v": "612313728f",
+  "v": "baa7702625",
   "title": "Адам жана коом",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -51,9 +51,10 @@
   "year": 2025,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 3076549,
+  "size": 3059296,
   "standalone": "kg-adam-jana-koom-7.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "84, 102"
  },
  {
   "id": "kg-biologiya-7",
