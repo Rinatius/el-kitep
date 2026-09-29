@@ -572,7 +572,7 @@
  },
  {
   "id": "kg-jarandyk-10",
-  "v": "1c1d7510b3",
+  "v": "40f679eca3",
   "title": "Жарандуулук жана башкарууга катышуу",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -580,10 +580,11 @@
   "year": 2004,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2448587,
+  "size": 2437858,
   "standalone": "kg-jarandyk-10.html",
   "subject": "grazhdanstvennost",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "5, 57, 121, 149, 173, 174, 175"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-10",
