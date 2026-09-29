@@ -430,7 +430,7 @@
  },
  {
   "id": "kg-kyrgyzstan-taryhy-9",
-  "v": "839cb1bb74",
+  "v": "d4c00f4ece",
   "title": "Кыргызстандын тарыхы (XX–XXI кк.)",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -438,9 +438,9 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 2647496,
+  "size": 2643440,
   "standalone": "kg-kyrgyzstan-taryhy-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-mamleket-jana-ukuk-9",
