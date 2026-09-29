@@ -229,17 +229,17 @@
  },
  {
   "id": "kg-janyy-taryh-8",
-  "v": "51d8d57778",
+  "v": "5105cae702",
   "title": "Жаңы тарых",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
-  "author": "А. Дөталиев, М. Иманкулов, Ө. Саалаев",
-  "year": 2007,
+  "author": "А. К. Дөталиев, М. К. Иманкулов, Ө. Б. Саалаев",
+  "year": 2015,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2766359,
+  "size": 3436208,
   "standalone": "kg-janyy-taryh-8.html",
-  "quality": "ocr"
+  "quality": "exact"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-8",
@@ -286,7 +286,7 @@
  },
  {
   "id": "kg-literaturnoe-chtenie-8",
-  "v": "141e34c31e",
+  "v": "a8dbf90ebd",
   "title": "Литературное чтение",
   "subtitle": "8 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -294,9 +294,9 @@
   "year": 2015,
   "grade": "8",
   "langName": "Русский",
-  "size": 3975191,
+  "size": 4235924,
   "standalone": "kg-literaturnoe-chtenie-8.html",
-  "quality": "ocr"
+  "quality": "exact"
  },
  {
   "id": "kg-russkiy-yazyk-8-9",
@@ -314,17 +314,17 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
-  "v": "edc9fa38ab",
+  "v": "a6006cf293",
   "title": "История Кыргызстана",
   "subtitle": "8 класс. Для школ с русским языком обучения",
   "school": "ru",
   "author": "Т. Н. Омурбеков, Т. К. Чоротегин",
-  "year": 2012,
+  "year": 2014,
   "grade": "8",
   "langName": "Русский",
-  "size": 2532513,
+  "size": 2592993,
   "standalone": "ru-istoriya-kyrgyzstana-8.html",
-  "quality": "ocr"
+  "quality": "exact"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-8",
@@ -371,7 +371,7 @@
  },
  {
   "id": "kg-adam-jana-koom-9",
-  "v": "75a6730665",
+  "v": "c57d23f28b",
   "title": "Адам жана коом",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -379,7 +379,7 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 786638,
+  "size": 842331,
   "standalone": "kg-adam-jana-koom-9.html",
   "quality": "ocr"
  },
@@ -757,7 +757,7 @@
  },
  {
   "id": "kg-duyno-taryhy-11",
-  "v": "a9c50dd677",
+  "v": "334bcccca1",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -765,7 +765,7 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1700524,
+  "size": 1494268,
   "standalone": "kg-duyno-taryhy-11.html",
   "quality": "ocr"
  },
@@ -1399,5 +1399,20 @@
   "size": 6215759,
   "standalone": "kg-biologiya-9.html",
   "quality": "exact"
+ },
+ {
+  "id": "kg-jarandyk-11",
+  "subject": "grazhdanstvennost",
+  "quality": "ocr",
+  "v": "e6c18026b8",
+  "title": "Жарандуулук жана башкарууга катышуу",
+  "subtitle": "11-класс, 2-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ж. Пилон ж.б.",
+  "year": 2005,
+  "grade": "11",
+  "langName": "Кыргызча",
+  "size": 1083898,
+  "standalone": "kg-jarandyk-11.html"
  }
 ]
