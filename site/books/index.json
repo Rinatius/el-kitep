@@ -771,7 +771,7 @@
  },
  {
   "id": "kg-kyrgyz-adabiyaty-11",
-  "v": "bec6f189d8",
+  "v": "3860061139",
   "title": "Кыргыз адабияты",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -779,9 +779,10 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1858012,
+  "size": 1867455,
   "standalone": "kg-kyrgyz-adabiyaty-11.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "95, 100, 129, 190"
  },
  {
   "id": "kg-kyrgyz-tili-11",
