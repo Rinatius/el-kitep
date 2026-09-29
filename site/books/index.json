@@ -634,7 +634,7 @@
  },
  {
   "id": "kg-kyrgyzstan-taryhy-10",
-  "v": "da2d866d8a",
+  "v": "9bf3b4ce97",
   "title": "Кыргызстан тарыхы",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -642,9 +642,10 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2684152,
+  "size": 2702053,
   "standalone": "kg-kyrgyzstan-taryhy-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "57"
  },
  {
   "id": "kg-russkaya-literatura-10",
