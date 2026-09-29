@@ -26,6 +26,9 @@ HTTPS (or localhost) is needed for the offline download (service worker).
   Original page numbers appear as small grey badges in the text.
 - Reading position is remembered per book.
 - Tap a picture (middle of the screen) to see it full screen; tap it again to enlarge 2.5x and scroll around.
+- A text quality badge on each book (library row, first page, top bar); tap it for what it means.
+- App files, the book list and book text are fetched network-first by the service worker (site/sw.js), so a
+  normal reload shows updates; downloaded books keep working offline and refresh themselves when corrected.
 
 ## Adding a book
 There are two converters (both need `pip install pymupdf pillow`):
@@ -36,6 +39,9 @@ There are two converters (both need `pip install pymupdf pillow`):
   (with the labels drawn on them) as WebP, turns framed boxes into text boxes and ruled tables into HTML tables.
   The config's "layout" block gives the text column, font sizes and colours; "chapters" gives page ranges.
 Then `python3 tools/build_books.py <output folder> [more folders]` copies books into site/books/ and updates site/books/index.json.
+Set the book's `"quality"` in index.json by hand: `"exact"` (text of a digital PDF), `"proofread"` (OCR read through
+and corrected by AI; `"gaps"` lists printed pages whose text was lost in the scan, e.g. `"17, 76"`) or `"ocr"`
+(OCR with automatic fixes only). build_books.py keeps these fields when it rebuilds a book.
 
 Books in the library: Кыргыз адабияты 7 (Алымов, Муратов 2015), Человек и общество 7 (Азимова и др. 2024), Математика 7 часть 1 (kitep.edu.kg/book/444, version 3: pages re-typeset).
 

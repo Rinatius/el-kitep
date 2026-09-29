@@ -198,3 +198,19 @@ a { color: var(--accent); }
 [data-theme="dark"] .flow figure.vec svg, [data-theme="contrast"] .flow figure.vec svg { filter: brightness(.9); }
 .flow .rt { border-top: 1px solid currentColor; padding-top: 1px; margin-left: 1px; }
 .flow .it { display: inline-block; max-width: 100%; margin-right: .9em; text-indent: 0; }
+
+/* ---------- Text quality badge (library rows, first page of a book, reader top bar) ---------- */
+.q { display: inline-flex; align-items: center; gap: 6px; min-height: 26px; padding: 2px 10px 2px 8px; margin: 0 8px 2px 0;
+  border: 1px solid var(--line); border-radius: 13px; background: var(--panel); color: var(--fg);
+  font: 12px/1.2 Roboto, "Noto Sans", Arial, sans-serif; vertical-align: middle; text-indent: 0; white-space: nowrap; }
+.q i, .qdot i { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+.q-exact i { background: #2da44e; }
+.q-proofread i { background: #3b82f6; }
+.q-ocr i { background: #e8900c; }
+.qdot { display: inline-flex; width: 24px; height: 24px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; }
+.qdot i { width: 12px; height: 12px; }
+.bk .row .q { margin: 0 0 0 auto; }
+.flow .qline { margin: 0 0 1em; text-indent: 0; }
+.flow .qline .q { font-size: 13px; cursor: pointer; }
+.qsheet .q { font-size: 14px; min-height: 30px; margin: 0 0 4px; }
+.qsheet p { font-size: 15px; line-height: 1.5; margin: 10px 0; }
