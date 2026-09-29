@@ -27,7 +27,12 @@
       removeAsk: 'Удалить скачанную книгу с телефона?',
       share: 'Поделиться', shareLink: 'Отправить ссылку', shareFile: 'Отправить файлом',
       shareFileNote: 'Один HTML-файл: откроется в браузере без интернета. На iPhone не открывается.',
-      linkCopied: 'Ссылка скопирована', fileSaved: 'Файл сохранён', fileReady: 'Файл готов, отправить', preparing: 'Готовлю файл…'
+      linkCopied: 'Ссылка скопирована', fileSaved: 'Файл сохранён', fileReady: 'Файл готов, отправить', preparing: 'Готовлю файл…',
+      quality: 'Качество текста', qExact: 'Точный текст', qProofread: 'Скан, вычитан ИИ', qOcr: 'Скан, без вычитки',
+      qExactInfo: 'Текст взят из цифровой версии учебника (PDF) как есть. Ошибок распознавания в нём нет.',
+      qProofreadInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR) и исправлен автоматически. Затем искусственный интеллект прочитал всю книгу и исправил ошибки, а в трудных местах сверил текст со сканом. Человек книгу не вычитывал, поэтому отдельные ошибки возможны.',
+      qOcrInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR), ошибки исправлены только автоматически. Книгу никто не вычитывал, поэтому в словах встречаются ошибки.',
+      qGaps: 'Часть текста не удалось восстановить из скана на страницах: '
     },
     ky: {
       appTitle: 'Мектеп китептери', appSub: 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт.',
@@ -47,7 +52,12 @@
       removeAsk: 'Жүктөлгөн китепти телефондон өчүрөсүзбү?',
       share: 'Бөлүшүү', shareLink: 'Шилтеме жөнөтүү', shareFile: 'Файл катары жөнөтүү',
       shareFileNote: 'Бир HTML-файл: браузерде интернетсиз ачылат. iPhone\'до ачылбайт.',
-      linkCopied: 'Шилтеме көчүрүлдү', fileSaved: 'Файл сакталды', fileReady: 'Файл даяр, жөнөтүү', preparing: 'Файл даярдалууда…'
+      linkCopied: 'Шилтеме көчүрүлдү', fileSaved: 'Файл сакталды', fileReady: 'Файл даяр, жөнөтүү', preparing: 'Файл даярдалууда…',
+      quality: 'Тексттин сапаты', qExact: 'Так текст', qProofread: 'Скан, ЖИ текшерген', qOcr: 'Скан, текшерилген эмес',
+      qExactInfo: 'Текст окуу китебинин санариптик нускасынан (PDF) өзгөртүүсүз алынды. Анда таануу каталары жок.',
+      qProofreadInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR) жана автоматтык түрдө оңдолду. Андан кийин жасалма интеллект китепти толугу менен окуп, каталарды оңдоду, татаал жерлерин скан менен салыштырды. Китепти адам текшерген эмес, ошондуктан айрым каталар калышы мүмкүн.',
+      qOcrInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR), каталар автоматтык түрдө гана оңдолду. Китепти эч ким окуп текшерген эмес, ошондуктан сөздөрдө каталар кездешет.',
+      qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: '
     }
   };
 
@@ -85,7 +95,8 @@
   }
 
   function fetchJSON(url) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+    // revalidate with the server, so a corrected book or a new book list shows up on the next visit
+    return fetch(url, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   }
 
   var app = document.getElementById('app');
@@ -159,8 +170,9 @@
     return school;
   }
 
+  var LIST = null; // the last book list loaded, for the reader's quality badge
   function loadList() {
-    return fetchJSON('books/index.json').catch(function (e) {
+    return fetchJSON('books/index.json').then(function (list) { LIST = list; return list; }).catch(function (e) {
       $('#books').innerHTML = '<div class="loading">' + esc(t('err')) + '</div>'; throw e;
     });
   }
@@ -266,7 +278,7 @@
       (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
       '<div class="bk-m">' + esc(meta.filter(Boolean).join(' · ')) + '</div>' +
       '<div class="row"><a class="btn primary" href="#/read/' + esc(b.id) + '">' + esc(hasPos ? t('cont') : t('read')) + '</a>' +
-      '<button class="icon dl"></button><button class="icon share" aria-label="' + esc(t('share')) + '">' + LIB_ICONS.share + '</button></div>' +
+      '<button class="icon dl"></button><button class="icon share" aria-label="' + esc(t('share')) + '">' + LIB_ICONS.share + '</button>' + qBadge(b) + '</div>' +
       '<div class="progress" hidden><i></i></div>';
     var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el), star = $('.star', el);
 
@@ -288,6 +300,7 @@
     setStar();
 
     $('.share', el).onclick = function () { shareSheet(b); };
+    var qb = $('.q', el); if (qb) qb.onclick = function () { qualitySheet(b); };
 
     function setState(done) {
       btn.disabled = false;
@@ -297,12 +310,12 @@
       btn.onclick = done ? function () { toast(t('downloaded')); if (window.confirm(t('removeAsk'))) remove(); } : download;
       prog.hidden = true;
     }
-    function download() {
+    function download(quiet) {
       if (!window.caches) { toast(t('noStorage')); return; }
-      btn.disabled = true; prog.hidden = false; bar.style.width = '0'; toast(t('downloading'));
+      btn.disabled = true; prog.hidden = false; bar.style.width = '0'; if (quiet !== true) toast(t('downloading'));
       downloadBook(b, function (f) { bar.style.width = Math.round(f * 100) + '%'; })
-        .then(function () { setState(true); toast(t('dlDone')); })
-        .catch(function () { setState(false); toast(navigator.onLine === false ? t('offline') : t('err')); });
+        .then(function () { setState(true); if (quiet !== true) toast(t('dlDone')); })
+        .catch(function () { setState(false); if (quiet !== true) toast(navigator.onLine === false ? t('offline') : t('err')); });
     }
     function remove() {
       caches.keys().then(function (keys) {
@@ -311,8 +324,14 @@
     }
     setState(false);
     if (window.caches) {
-      caches.open(cacheName(b)).then(function (c) { return c.match('books/' + b.id + '/book.json'); })
-        .then(function (r) { setState(!!r && lsGet('dl:' + b.id, null) === b.v); });
+      caches.has(cacheName(b)).then(function (has) { // caches.open would create an empty cache for every book
+        return has && caches.open(cacheName(b)).then(function (c) { return c.match('books/' + b.id + '/book.json'); });
+      }).then(function (r) {
+        var had = lsGet('dl:' + b.id, null), cur = !!r && had === b.v;
+        setState(cur);
+        // downloaded before the book was corrected: fetch the new version (only changed files) in the background
+        if (!cur && had && navigator.onLine !== false) download(true);
+      });
     }
     return el;
   }
@@ -369,6 +388,28 @@
     };
   }
 
+  // Text quality of a book, from the "quality" field in books/index.json:
+  // exact = text of a digital PDF; proofread = OCR of a scan, then read through and corrected by AI;
+  // ocr = OCR of a scan with automatic corrections only. "gaps" lists printed pages with text lost in the scan.
+  var QUALITY = { exact: 'qExact', proofread: 'qProofread', ocr: 'qOcr' };
+  function qBadge(b) {
+    var k = b && QUALITY[b.quality];
+    return k ? '<button class="q q-' + b.quality + '" aria-label="' + esc(t('quality') + ': ' + t(k)) + '"><i></i>' + esc(t(k)) + '</button>' : '';
+  }
+  function qualitySheet(b) {
+    var k = QUALITY[b.quality]; if (!k) return;
+    var old = $('.sheet'); if (old) old.remove(); old = $('.sheet-bg'); if (old) old.remove();
+    var bg = document.createElement('div'); bg.className = 'sheet-bg';
+    var sh = document.createElement('div'); sh.className = 'sheet qsheet';
+    sh.innerHTML = '<h3><span>' + esc(t('quality')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
+      '<div class="q q-' + b.quality + '"><i></i>' + esc(t(k)) + '</div>' +
+      '<p>' + esc(t(k + 'Info')) + '</p>' +
+      (b.quality === 'proofread' && b.gaps ? '<p>' + esc(t('qGaps') + b.gaps + '.') + '</p>' : '');
+    document.body.appendChild(bg); document.body.appendChild(sh);
+    function close() { bg.remove(); sh.remove(); }
+    bg.onclick = close; $('.x', sh).onclick = close;
+  }
+
   function downloadBook(b, onProgress) {
     var base = 'books/' + b.id + '/';
     var cache;
@@ -379,19 +420,21 @@
       if (!r.ok) throw new Error(r.status);
       return cache.put(base + 'book.json', r.clone()).then(function () { return r.json(); });
     }).then(function (book) {
-      // app shell too, in case the service worker has not finished installing yet
-      var urls = ['./', 'index.html', 'app.js', 'style.css', 'books/index.json'].concat(book.images.map(function (i) { return base + i; }));
+      // app files are kept up to date by the service worker (sw.js), not stored with each book
+      var urls = book.images.map(function (i) { return base + i; });
       var done = 0;
       // a few requests in parallel: fast on 3G, gentle on slow phones
       var queue = urls.slice();
       function worker() {
         var u = queue.shift();
         if (!u) return Promise.resolve();
-        return cache.match(u).then(function (hit) {
-          if (hit) return;
+        // a picture already saved with an older version of this book is reused, not downloaded again
+        return caches.match(u).then(function (hit) {
+          if (hit) return cache.put(u, hit);
           return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return cache.put(u, r); });
         }).then(function () { done++; onProgress(done / urls.length); return worker(); });
       }
+      if (!urls.length) onProgress(1);
       return Promise.all([worker(), worker(), worker(), worker()]);
     }).then(function () {
       lsSet('dl:' + b.id, b.v);
@@ -414,14 +457,18 @@
     app.innerHTML = '<div class="loading">' + esc(t('loading')) + '</div>';
     if (!EMB) setMy(id, true);
     var p = EMB ? Promise.resolve(EMB) : fetchJSON('books/' + id + '/book.json');
-    p.then(function (book) { startReader(book, EMB ? '' : 'books/' + id + '/'); })
+    // the book's entry in the list carries its quality; a book opened from a link loads the list here
+    var entry = EMB ? Promise.resolve(EMB) : (LIST ? Promise.resolve(LIST) : loadList().catch(function () { return []; })).then(function (list) {
+      return list.filter(function (b) { return b.id === id; })[0] || null;
+    });
+    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : 'books/' + id + '/', r[1]); })
       .catch(function () {
         app.innerHTML = '<div class="lib"><p class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) +
           '</p><p style="text-align:center"><a class="btn" href="' + libHash + '">' + esc(t('back')) + '</a></p></div>';
       });
   }
 
-  function startReader(book, base) {
+  function startReader(book, base, entry) {
     document.title = book.title;
     var chapters = book.chapters;
     var posKey = 'pos:' + book.id;
@@ -432,6 +479,7 @@
       '<div class="foot"><span class="t"></span><span class="n"></span></div>' +
       '<div class="bar top">' + (EMB ? '' : '<a class="icon" href="' + libHash + '" aria-label="' + esc(t('back')) + '">' + ICONS.back + '</a>') +
       '<div class="title">' + esc(book.title) + '</div>' +
+      (qBadge(entry) ? '<button class="icon b-q" aria-label="' + esc(t('quality')) + '"><span class="qdot q-' + entry.quality + '"><i></i></span></button>' : '') +
       '<button class="icon b-toc" aria-label="' + esc(t('contents')) + '">' + ICONS.toc + '</button>' +
       '<button class="icon b-set" aria-label="' + esc(t('settings')) + '">' + ICONS.set + '</button></div>' +
       '<div class="bar bottom"><div class="info"><span class="i1"></span><span class="i2"></span></div>' +
@@ -476,6 +524,7 @@
       ch = ci;
       var c = chapters[ci];
       var html = c.blocks.map(blockHTML).join('');
+      if (ci === 0 && qBadge(entry)) html = '<div class="qline">' + qBadge(entry) + '</div>' + html; // on the book's first page
       if (ci === chapters.length - 1) html += '<div class="endnote">— ' + esc(t('end')) + ' —<br>' + esc(t('source')) + ': ' + esc(book.source && book.source.site || '') + '</div>';
       flow.innerHTML = html + '<div class="end"></div>';
       layout();
@@ -590,6 +639,7 @@
       var sel = window.getSelection && String(window.getSelection());
       if (sel) return;
       if (reader.classList.contains('ui')) { reader.classList.remove('ui'); return; }
+      if (e.target.closest && e.target.closest('.q')) { qualitySheet(entry); return; }
       var x = e.clientX / vp.clientWidth;
       if (x < 0.3) prev(); else if (x > 0.7) next();
       else if (e.target.tagName === 'IMG' && e.target.closest('figure')) openZoom(e.target);
@@ -688,6 +738,8 @@
       inp.onkeydown = function (e) { if (e.key === 'Enter') go(); };
     };
 
+    var bq = $('.b-q'); if (bq) bq.onclick = function () { qualitySheet(entry); };
+
     $('.b-set').onclick = function () {
       function seg(key, opts) {
         return '<div class="seg" data-k="' + key + '">' + opts.map(function (o) {
@@ -733,6 +785,6 @@
   window.addEventListener('hashchange', route);
   route();
   if (!EMB && 'serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
-    navigator.serviceWorker.register('sw.js').catch(function () { /* offline support unavailable */ });
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function () { /* offline support unavailable */ });
   }
 })();

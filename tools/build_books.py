@@ -21,8 +21,11 @@ def data_uri(path):
         return f"data:{mime};base64," + base64.b64encode(f.read()).decode()
 
 
-def standalone(book, src_dir):
+def standalone(book, src_dir, entry=None):
     emb = dict(book)
+    for k in ("quality", "gaps"):  # text quality badge, from index.json
+        if entry and entry.get(k):
+            emb[k] = entry[k]
     emb["chapters"] = []
     for ch in book["chapters"]:
         ch = dict(ch)
@@ -79,8 +82,9 @@ def main(dirs):
         shutil.copy(os.path.join(src, "book.json"), dst)
         shutil.copytree(os.path.join(src, "img"), os.path.join(dst, "img"))
         single = f"{bid}.html"
+        old = next((e for e in index if e["id"] == bid), {})
         with open(os.path.join(dst, single), "w", encoding="utf-8") as f:
-            f.write(standalone(book, src))
+            f.write(standalone(book, src, old))
         h = hashlib.sha1()
         size = 0
         for root, _, files in os.walk(dst):
@@ -97,6 +101,8 @@ def main(dirs):
         entry = {"id": bid, "v": h.hexdigest()[:10], "title": book["title"], "subtitle": book.get("subtitle"), "school": school,
                  "author": book.get("author"), "year": book.get("year"), "grade": book.get("grade"),
                  "langName": book.get("langName"), "size": size, "standalone": single}
+        # keep fields set by hand in index.json: subject, quality ("exact", "proofread" or "ocr"), gaps
+        entry = {**old, **entry}
         index = [e for e in index if e["id"] != bid] + [entry]
         print(f"{bid}: {size / 1048576:.2f} MB online, single file {os.path.getsize(os.path.join(dst, single)) / 1048576:.2f} MB")
     # library order: grade, then school, then subject

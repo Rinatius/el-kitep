@@ -10,7 +10,8 @@
   "langName": "Кыргызча",
   "size": 1474581,
   "standalone": "kg-adabiyat-7.html",
-  "school": "ky"
+  "school": "ky",
+  "quality": "ocr"
  },
  {
   "id": "ru-matematika-7-1-v3",
@@ -23,7 +24,8 @@
   "langName": "Русский",
   "size": 5114086,
   "standalone": "ru-matematika-7-1-v3.html",
-  "school": "ru"
+  "school": "ru",
+  "quality": "exact"
  },
  {
   "id": "ru-chelovek-obshchestvo-7",
@@ -36,7 +38,8 @@
   "langName": "Русский",
   "size": 4567725,
   "standalone": "ru-chelovek-obshchestvo-7.html",
-  "school": "ru"
+  "school": "ru",
+  "quality": "exact"
  },
  {
   "id": "kg-adam-jana-koom-7",
@@ -49,7 +52,8 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 3076549,
-  "standalone": "kg-adam-jana-koom-7.html"
+  "standalone": "kg-adam-jana-koom-7.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-biologiya-7",
@@ -62,7 +66,9 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 3333340,
-  "standalone": "kg-biologiya-7.html"
+  "standalone": "kg-biologiya-7.html",
+  "quality": "proofread",
+  "gaps": "203"
  },
  {
   "id": "kg-kyrgyz-tili-7",
@@ -75,7 +81,8 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 587158,
-  "standalone": "kg-kyrgyz-tili-7.html"
+  "standalone": "kg-kyrgyz-tili-7.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyz-tili-7-9",
@@ -88,7 +95,9 @@
   "grade": "7–9",
   "langName": "Кыргызча",
   "size": 1295010,
-  "standalone": "kg-kyrgyz-tili-7-9.html"
+  "standalone": "kg-kyrgyz-tili-7-9.html",
+  "quality": "proofread",
+  "gaps": "350–351"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-7",
@@ -101,7 +110,9 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 2811114,
-  "standalone": "kg-kyrgyzstan-taryhy-7.html"
+  "standalone": "kg-kyrgyzstan-taryhy-7.html",
+  "quality": "proofread",
+  "gaps": "137–163"
  },
  {
   "id": "kg-literaturnoe-chtenie-7",
@@ -114,7 +125,8 @@
   "grade": "7",
   "langName": "Русский",
   "size": 2529730,
-  "standalone": "kg-literaturnoe-chtenie-7.html"
+  "standalone": "kg-literaturnoe-chtenie-7.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-orto-kylym-taryhy-7",
@@ -127,7 +139,8 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 7902228,
-  "standalone": "kg-orto-kylym-taryhy-7.html"
+  "standalone": "kg-orto-kylym-taryhy-7.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkiy-yazyk-7",
@@ -140,7 +153,8 @@
   "grade": "7",
   "langName": "Русский",
   "size": 1049532,
-  "standalone": "kg-russkiy-yazyk-7.html"
+  "standalone": "kg-russkiy-yazyk-7.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-7",
@@ -153,7 +167,8 @@
   "grade": "7",
   "langName": "Русский",
   "size": 1501079,
-  "standalone": "ru-istoriya-kyrgyzstana-7.html"
+  "standalone": "ru-istoriya-kyrgyzstana-7.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-7",
@@ -166,7 +181,9 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 730938,
-  "standalone": "ru-kyrgyz-adabiyaty-7.html"
+  "standalone": "ru-kyrgyz-adabiyaty-7.html",
+  "quality": "proofread",
+  "gaps": "17, 76, 107"
  },
  {
   "id": "ru-kyrgyz-tili-7",
@@ -179,7 +196,8 @@
   "grade": "7",
   "langName": "Кыргызча",
   "size": 731321,
-  "standalone": "ru-kyrgyz-tili-7.html"
+  "standalone": "ru-kyrgyz-tili-7.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-adam-jana-koom-8",
@@ -192,7 +210,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 1594242,
-  "standalone": "kg-adam-jana-koom-8.html"
+  "standalone": "kg-adam-jana-koom-8.html",
+  "quality": "exact"
  },
  {
   "id": "kg-dinder-taryhy-8",
@@ -205,7 +224,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 2373026,
-  "standalone": "kg-dinder-taryhy-8.html"
+  "standalone": "kg-dinder-taryhy-8.html",
+  "quality": "exact"
  },
  {
   "id": "kg-janyy-taryh-8",
@@ -218,7 +238,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 2766359,
-  "standalone": "kg-janyy-taryh-8.html"
+  "standalone": "kg-janyy-taryh-8.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-8",
@@ -231,7 +252,9 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 2365581,
-  "standalone": "kg-kyrgyz-adabiyaty-8.html"
+  "standalone": "kg-kyrgyz-adabiyaty-8.html",
+  "quality": "proofread",
+  "gaps": "62, 168, 178, 186, 196, 224, 302, 330, 346, 349, 356, 370"
  },
  {
   "id": "kg-kyrgyz-tili-8",
@@ -244,7 +267,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 1321068,
-  "standalone": "kg-kyrgyz-tili-8.html"
+  "standalone": "kg-kyrgyz-tili-8.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-8",
@@ -257,7 +281,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 2451918,
-  "standalone": "kg-kyrgyzstan-taryhy-8.html"
+  "standalone": "kg-kyrgyzstan-taryhy-8.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-literaturnoe-chtenie-8",
@@ -270,7 +295,8 @@
   "grade": "8",
   "langName": "Русский",
   "size": 3975191,
-  "standalone": "kg-literaturnoe-chtenie-8.html"
+  "standalone": "kg-literaturnoe-chtenie-8.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkiy-yazyk-8-9",
@@ -283,7 +309,8 @@
   "grade": "8–9",
   "langName": "Русский",
   "size": 948201,
-  "standalone": "kg-russkiy-yazyk-8-9.html"
+  "standalone": "kg-russkiy-yazyk-8-9.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
@@ -296,7 +323,8 @@
   "grade": "8",
   "langName": "Русский",
   "size": 2532513,
-  "standalone": "ru-istoriya-kyrgyzstana-8.html"
+  "standalone": "ru-istoriya-kyrgyzstana-8.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-8",
@@ -309,7 +337,9 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 1111920,
-  "standalone": "ru-kyrgyz-adabiyaty-8.html"
+  "standalone": "ru-kyrgyz-adabiyaty-8.html",
+  "quality": "proofread",
+  "gaps": "30, 41, 68, 76"
  },
  {
   "id": "ru-kyrgyz-tili-8",
@@ -322,7 +352,8 @@
   "grade": "8",
   "langName": "Кыргызча",
   "size": 2060174,
-  "standalone": "ru-kyrgyz-tili-8.html"
+  "standalone": "ru-kyrgyz-tili-8.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-chelovek-obshchestvo-8",
@@ -335,7 +366,8 @@
   "grade": "8",
   "langName": "Русский",
   "size": 1474836,
-  "standalone": "ru-chelovek-obshchestvo-8.html"
+  "standalone": "ru-chelovek-obshchestvo-8.html",
+  "quality": "exact"
  },
  {
   "id": "kg-adam-jana-koom-9",
@@ -348,7 +380,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 786638,
-  "standalone": "kg-adam-jana-koom-9.html"
+  "standalone": "kg-adam-jana-koom-9.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-dinder-taryhy-9",
@@ -361,7 +394,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 1240295,
-  "standalone": "kg-dinder-taryhy-9.html"
+  "standalone": "kg-dinder-taryhy-9.html",
+  "quality": "exact"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-9",
@@ -374,7 +408,9 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 1733535,
-  "standalone": "kg-kyrgyz-adabiyaty-9.html"
+  "standalone": "kg-kyrgyz-adabiyaty-9.html",
+  "quality": "proofread",
+  "gaps": "28"
  },
  {
   "id": "kg-kyrgyz-tili-9",
@@ -387,7 +423,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 618361,
-  "standalone": "kg-kyrgyz-tili-9.html"
+  "standalone": "kg-kyrgyz-tili-9.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-9",
@@ -400,7 +437,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 2647496,
-  "standalone": "kg-kyrgyzstan-taryhy-9.html"
+  "standalone": "kg-kyrgyzstan-taryhy-9.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-mamleket-jana-ukuk-9",
@@ -414,7 +452,8 @@
   "langName": "Кыргызча",
   "size": 741628,
   "standalone": "kg-mamleket-jana-ukuk-9.html",
-  "subject": "obshchestvo"
+  "subject": "obshchestvo",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkaya-literatura-9",
@@ -427,7 +466,8 @@
   "grade": "9",
   "langName": "Русский",
   "size": 1629774,
-  "standalone": "kg-russkaya-literatura-9.html"
+  "standalone": "kg-russkaya-literatura-9.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-sonku-taryh-9",
@@ -440,7 +480,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 4205294,
-  "standalone": "kg-sonku-taryh-9.html"
+  "standalone": "kg-sonku-taryh-9.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
@@ -453,7 +494,8 @@
   "grade": "9",
   "langName": "Русский",
   "size": 2556167,
-  "standalone": "ru-istoriya-kyrgyzstana-9.html"
+  "standalone": "ru-istoriya-kyrgyzstana-9.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-religiy-9",
@@ -466,7 +508,8 @@
   "grade": "9",
   "langName": "Русский",
   "size": 1294460,
-  "standalone": "ru-istoriya-religiy-9.html"
+  "standalone": "ru-istoriya-religiy-9.html",
+  "quality": "exact"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-9",
@@ -479,7 +522,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 683434,
-  "standalone": "ru-kyrgyz-adabiyaty-9.html"
+  "standalone": "ru-kyrgyz-adabiyaty-9.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-tili-9",
@@ -492,7 +536,8 @@
   "grade": "9",
   "langName": "Кыргызча",
   "size": 955332,
-  "standalone": "ru-kyrgyz-tili-9.html"
+  "standalone": "ru-kyrgyz-tili-9.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-duyno-taryhy-10",
@@ -505,7 +550,8 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 2277141,
-  "standalone": "kg-duyno-taryhy-10.html"
+  "standalone": "kg-duyno-taryhy-10.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-geografiya-10",
@@ -518,7 +564,8 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 2209454,
-  "standalone": "kg-geografiya-10.html"
+  "standalone": "kg-geografiya-10.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-jarandyk-10",
@@ -532,7 +579,8 @@
   "langName": "Кыргызча",
   "size": 2448587,
   "standalone": "kg-jarandyk-10.html",
-  "subject": "grazhdanstvennost"
+  "subject": "grazhdanstvennost",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-10",
@@ -545,7 +593,9 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 1691239,
-  "standalone": "kg-kyrgyz-adabiyaty-10.html"
+  "standalone": "kg-kyrgyz-adabiyaty-10.html",
+  "quality": "proofread",
+  "gaps": "198, 229, 263, 267, 343, 358"
  },
  {
   "id": "kg-kyrgyz-tili-10",
@@ -558,7 +608,9 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 811508,
-  "standalone": "kg-kyrgyz-tili-10.html"
+  "standalone": "kg-kyrgyz-tili-10.html",
+  "quality": "proofread",
+  "gaps": "227"
  },
  {
   "id": "kg-kyrgyz-tili-10-11",
@@ -571,7 +623,9 @@
   "grade": "10–11",
   "langName": "Кыргызча",
   "size": 1974176,
-  "standalone": "kg-kyrgyz-tili-10-11.html"
+  "standalone": "kg-kyrgyz-tili-10-11.html",
+  "quality": "proofread",
+  "gaps": "420, 440–441, 446–447"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-10",
@@ -584,7 +638,8 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 2684152,
-  "standalone": "kg-kyrgyzstan-taryhy-10.html"
+  "standalone": "kg-kyrgyzstan-taryhy-10.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkaya-literatura-10",
@@ -597,7 +652,8 @@
   "grade": "10",
   "langName": "Русский",
   "size": 4317970,
-  "standalone": "kg-russkaya-literatura-10.html"
+  "standalone": "kg-russkaya-literatura-10.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkiy-yazyk-10",
@@ -610,7 +666,8 @@
   "grade": "10",
   "langName": "Русский",
   "size": 794298,
-  "standalone": "kg-russkiy-yazyk-10.html"
+  "standalone": "kg-russkiy-yazyk-10.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-grazhdanstvennost-10",
@@ -623,7 +680,8 @@
   "grade": "10",
   "langName": "Русский",
   "size": 3652202,
-  "standalone": "ru-grazhdanstvennost-10.html"
+  "standalone": "ru-grazhdanstvennost-10.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-10",
@@ -636,7 +694,8 @@
   "grade": "10",
   "langName": "Русский",
   "size": 5415007,
-  "standalone": "ru-istoriya-kyrgyzstana-10.html"
+  "standalone": "ru-istoriya-kyrgyzstana-10.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-10",
@@ -649,7 +708,8 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 1170754,
-  "standalone": "ru-kyrgyz-adabiyaty-10.html"
+  "standalone": "ru-kyrgyz-adabiyaty-10.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-tili-10-11",
@@ -662,7 +722,8 @@
   "grade": "10–11",
   "langName": "Кыргызча",
   "size": 2826736,
-  "standalone": "ru-kyrgyz-tili-10-11.html"
+  "standalone": "ru-kyrgyz-tili-10-11.html",
+  "quality": "exact"
  },
  {
   "id": "ru-kyrgyz-tili-10",
@@ -675,7 +736,8 @@
   "grade": "10",
   "langName": "Кыргызча",
   "size": 1314915,
-  "standalone": "ru-kyrgyz-tili-10.html"
+  "standalone": "ru-kyrgyz-tili-10.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-geografiya-11",
@@ -689,7 +751,9 @@
   "langName": "Кыргызча",
   "size": 1782300,
   "standalone": "kg-geografiya-11.html",
-  "subject": "geografiya"
+  "subject": "geografiya",
+  "quality": "proofread",
+  "gaps": "179, 237"
  },
  {
   "id": "kg-duyno-taryhy-11",
@@ -702,7 +766,8 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 1700524,
-  "standalone": "kg-duyno-taryhy-11.html"
+  "standalone": "kg-duyno-taryhy-11.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-11",
@@ -715,7 +780,8 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 1858012,
-  "standalone": "kg-kyrgyz-adabiyaty-11.html"
+  "standalone": "kg-kyrgyz-adabiyaty-11.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-kyrgyz-tili-11",
@@ -728,7 +794,9 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 688359,
-  "standalone": "kg-kyrgyz-tili-11.html"
+  "standalone": "kg-kyrgyz-tili-11.html",
+  "quality": "proofread",
+  "gaps": "189–191"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-11",
@@ -741,7 +809,8 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 2430602,
-  "standalone": "kg-kyrgyzstan-taryhy-11.html"
+  "standalone": "kg-kyrgyzstan-taryhy-11.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkaya-literatura-11",
@@ -754,7 +823,8 @@
   "grade": "11",
   "langName": "Русский",
   "size": 2946074,
-  "standalone": "kg-russkaya-literatura-11.html"
+  "standalone": "kg-russkaya-literatura-11.html",
+  "quality": "ocr"
  },
  {
   "id": "kg-russkiy-yazyk-11",
@@ -767,7 +837,8 @@
   "grade": "11",
   "langName": "Русский",
   "size": 997120,
-  "standalone": "kg-russkiy-yazyk-11.html"
+  "standalone": "kg-russkiy-yazyk-11.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-11",
@@ -780,7 +851,8 @@
   "grade": "11",
   "langName": "Русский",
   "size": 4791782,
-  "standalone": "ru-istoriya-kyrgyzstana-11.html"
+  "standalone": "ru-istoriya-kyrgyzstana-11.html",
+  "quality": "ocr"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-11",
@@ -793,7 +865,8 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 956555,
-  "standalone": "ru-kyrgyz-adabiyaty-11.html"
+  "standalone": "ru-kyrgyz-adabiyaty-11.html",
+  "quality": "proofread"
  },
  {
   "id": "ru-kyrgyz-tili-11",
@@ -806,6 +879,7 @@
   "grade": "11",
   "langName": "Кыргызча",
   "size": 2260103,
-  "standalone": "ru-kyrgyz-tili-11.html"
+  "standalone": "ru-kyrgyz-tili-11.html",
+  "quality": "ocr"
  }
 ]
