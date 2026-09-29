@@ -273,7 +273,7 @@
  },
  {
   "id": "kg-kyrgyzstan-taryhy-8",
-  "v": "2236e486e8",
+  "v": "a60edcc4b4",
   "title": "Кыргызстан тарыхы",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -281,9 +281,9 @@
   "year": 2010,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2451918,
+  "size": 2445695,
   "standalone": "kg-kyrgyzstan-taryhy-8.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-literaturnoe-chtenie-8",
