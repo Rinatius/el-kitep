@@ -258,7 +258,7 @@
  },
  {
   "id": "kg-kyrgyz-tili-8",
-  "v": "1b2e05d490",
+  "v": "58fb85f3a8",
   "title": "Кыргыз тили",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -266,9 +266,10 @@
   "year": 2015,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 1321068,
+  "size": 1320179,
   "standalone": "kg-kyrgyz-tili-8.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "246, 258"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-8",
