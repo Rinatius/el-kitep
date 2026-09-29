@@ -531,7 +531,7 @@
  },
  {
   "id": "ru-kyrgyz-tili-9",
-  "v": "7eebefe188",
+  "v": "97044b5e54",
   "title": "Кыргыз тили",
   "subtitle": "9-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -539,9 +539,9 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 955332,
+  "size": 955151,
   "standalone": "ru-kyrgyz-tili-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-duyno-taryhy-10",
