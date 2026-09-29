@@ -719,7 +719,7 @@
  },
  {
   "id": "kg-kyrgyz-tili-11",
-  "v": "bc2fe0de8a",
+  "v": "a044c72bac",
   "title": "Кыргыз тили",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -727,7 +727,7 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 689742,
+  "size": 688359,
   "standalone": "kg-kyrgyz-tili-11.html"
  },
  {
