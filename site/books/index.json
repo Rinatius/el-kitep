@@ -545,7 +545,7 @@
  },
  {
   "id": "kg-duyno-taryhy-10",
-  "v": "35a4d734ca",
+  "v": "8a385a0b5c",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -553,9 +553,10 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2277141,
+  "size": 2276185,
   "standalone": "kg-duyno-taryhy-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "97, 98"
  },
  {
   "id": "kg-geografiya-10",
