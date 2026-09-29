@@ -515,7 +515,7 @@
  },
  {
   "id": "ru-kyrgyz-adabiyaty-9",
-  "v": "d9de677aff",
+  "v": "7e5a3cfa4f",
   "title": "Кыргыз адабияты",
   "subtitle": "9-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -523,9 +523,10 @@
   "year": 2013,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 683434,
+  "size": 680803,
   "standalone": "ru-kyrgyz-adabiyaty-9.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "82"
  },
  {
   "id": "ru-kyrgyz-tili-9",
