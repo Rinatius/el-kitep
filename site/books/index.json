@@ -345,7 +345,7 @@
  },
  {
   "id": "ru-kyrgyz-tili-8",
-  "v": "f00d978178",
+  "v": "fcf5cae3a1",
   "title": "Кыргыз тили",
   "subtitle": "8-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -353,9 +353,10 @@
   "year": 2007,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2060174,
+  "size": 2064239,
   "standalone": "ru-kyrgyz-tili-8.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "29"
  },
  {
   "id": "ru-chelovek-obshchestvo-8",
