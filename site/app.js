@@ -6,6 +6,9 @@
   'use strict';
 
   var EMB = window.EMBEDDED_BOOK || null;
+  // Address of the small server that receives error reports and uploaded books (backend/ in the repo).
+  // Empty: the "report an error" button and the upload form stay hidden.
+  var API = '';
 
   // ---------------------------------------------------------------- strings
   var I18N = {
@@ -32,7 +35,21 @@
       qExactInfo: 'Текст взят из цифровой версии учебника (PDF) как есть. Ошибок распознавания в нём нет.',
       qProofreadInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR) и исправлен автоматически. Затем искусственный интеллект прочитал всю книгу и исправил ошибки, а в трудных местах сверил текст со сканом. Человек книгу не вычитывал, поэтому отдельные ошибки возможны.',
       qOcrInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR), ошибки исправлены только автоматически. Книгу никто не вычитывал, поэтому в словах встречаются ошибки.',
-      qGaps: 'Часть текста не удалось восстановить из скана на страницах: '
+      qGaps: 'Часть текста не удалось восстановить из скана на страницах: ',
+      menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
+      newsSub: 'Новые книги и изменения на сайте.', booksInEntry: 'Книги', open: 'Открыть',
+      missingSub: 'Эти учебники для 7–11 классов есть в списке Министерства образования на 2026–2027 учебный год, но целиком в интернете мы их не нашли.',
+      mNotfound: 'Не найден в интернете', mSample: 'Есть только отрывок', mClosed: 'Нет в открытом доступе',
+      mKyonly: 'Есть только на кыргызском', mEdition: 'Есть только другое издание', mKyLink: 'Кыргызская версия',
+      haveIt: 'У вас есть один из этих учебников?', haveItJump: 'Есть один из них? Пришлите нам',
+      haveItText: 'Пришлите PDF-файл или фотографии страниц, и мы добавим учебник на сайт, чтобы его могли читать все школьники.',
+      uploadSoon: 'Отправить файл прямо отсюда можно будет совсем скоро.',
+      upBook: 'Какой учебник', upOther: 'Другой учебник', upFiles: 'Файлы (PDF или фото страниц)', upContact: 'Как с вами связаться (необязательно)',
+      upComment: 'Комментарий (необязательно)', upSend: 'Отправить', upSending: 'Отправляю…', upDone: 'Спасибо! Файлы получены, мы их посмотрим.',
+      upNoFiles: 'Выберите файлы', upTooBig: 'Файл слишком большой (больше 500 МБ): ',
+      report: 'Сообщить об ошибке', reportTitle: 'Ошибка в тексте', reportFix: 'Как правильно (если знаете)',
+      reportSend: 'Отправить', reportThanks: 'Спасибо! Мы проверим и исправим.',
+      reportQueued: 'Нет интернета. Отправим, когда появится связь.', reportHint: 'Выделите слово или фразу в книге, чтобы сообщить об ошибке.'
     },
     ky: {
       appTitle: 'Мектеп китептери', appSub: 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт.',
@@ -57,7 +74,21 @@
       qExactInfo: 'Текст окуу китебинин санариптик нускасынан (PDF) өзгөртүүсүз алынды. Анда таануу каталары жок.',
       qProofreadInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR) жана автоматтык түрдө оңдолду. Андан кийин жасалма интеллект китепти толугу менен окуп, каталарды оңдоду, татаал жерлерин скан менен салыштырды. Китепти адам текшерген эмес, ошондуктан айрым каталар калышы мүмкүн.',
       qOcrInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR), каталар автоматтык түрдө гана оңдолду. Китепти эч ким окуп текшерген эмес, ошондуктан сөздөрдө каталар кездешет.',
-      qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: '
+      qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
+      menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
+      newsSub: 'Жаңы китептер жана сайттагы өзгөрүүлөр.', booksInEntry: 'Китептер', open: 'Ачуу',
+      missingSub: '7–11-класстар үчүн бул окуу китептери Билим берүү министрлигинин 2026–2027-окуу жылына тизмесинде бар, бирок биз аларды интернеттен толугу менен таба алган жокпуз.',
+      mNotfound: 'Интернеттен табылган жок', mSample: 'Үзүндүсү гана бар', mClosed: 'Ачык жеткиликтүү эмес',
+      mKyonly: 'Кыргызча гана бар', mEdition: 'Башка басылышы гана бар', mKyLink: 'Кыргызча нускасы',
+      haveIt: 'Сизде ушул китептердин бири барбы?', haveItJump: 'Алардын бири барбы? Бизге жөнөтүңүз',
+      haveItText: 'PDF-файлын же беттеринин сүрөттөрүн жөнөтүңүз, биз китепти сайтка кошобуз, бардык окуучулар окуй алышы үчүн.',
+      uploadSoon: 'Файлды ушул жерден жөнөтүү мүмкүнчүлүгү жакында пайда болот.',
+      upBook: 'Кайсы китеп', upOther: 'Башка китеп', upFiles: 'Файлдар (PDF же беттердин сүрөттөрү)', upContact: 'Сиз менен кантип байланышабыз (милдеттүү эмес)',
+      upComment: 'Комментарий (милдеттүү эмес)', upSend: 'Жөнөтүү', upSending: 'Жөнөтүлүүдө…', upDone: 'Рахмат! Файлдар алынды, биз аларды карап чыгабыз.',
+      upNoFiles: 'Файлдарды тандаңыз', upTooBig: 'Файл өтө чоң (500 МБдан ашык): ',
+      report: 'Ката жөнүндө билдирүү', reportTitle: 'Тексттеги ката', reportFix: 'Туурасы кандай (билсеңиз)',
+      reportSend: 'Жөнөтүү', reportThanks: 'Рахмат! Биз текшерип, оңдойбуз.',
+      reportQueued: 'Интернет жок. Байланыш пайда болгондо жөнөтөбүз.', reportHint: 'Ката жөнүндө билдирүү үчүн китептеги сөздү же сүйлөмдү белгилеңиз.'
     }
   };
 
@@ -106,7 +137,11 @@
     if (cleanup) { cleanup(); cleanup = null; }
     if (EMB) return openReader(EMB.id);
     var m = location.hash.match(/^#\/read\/([\w.-]+)/);
-    if (m) openReader(m[1]); else if (location.hash === '#/my') showMyBooks(); else showLibrary();
+    if (m) openReader(m[1]);
+    else if (location.hash === '#/my') showMyBooks();
+    else if (location.hash === '#/news') showNews();
+    else if (location.hash === '#/missing') showMissing();
+    else showLibrary();
   }
 
   // ================================================================ LIBRARY
@@ -156,11 +191,12 @@
   function libShell(title, link, main) { // main: the library page (intro text and school switch)
     document.title = title;
     var school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
-    app.innerHTML = '<div class="lib"><div class="lib-head"><h1>' + esc(title) + '</h1>' + link + '</div>' +
+    app.innerHTML = '<div class="lib"><div class="lib-head"><button class="icon burger" aria-label="' + esc(t('menu')) + '">' + ICONS.menu + '</button><h1>' + esc(title) + '</h1>' + link + '</div>' +
       (main ? '<p class="sub">' + esc(t('appSub')) + '</p><div class="school">' + SCHOOLS.map(function (o) {
         return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
       }).join('') + '</div>' : '') +
       '<div id="books"><div class="loading">' + esc(t('loading')) + '</div></div></div>';
+    $('.burger', app).onclick = openMenu;
     Array.prototype.forEach.call(app.querySelectorAll('.school button'), function (btn) {
       btn.onclick = function () {
         S.school = S.ui = btn.getAttribute('data-s'); applySettings();
@@ -229,6 +265,155 @@
         box.appendChild(sec);
       });
     });
+  }
+
+  // The menu (☰ in the library header): the site's pages, as a panel sliding in from the left.
+  function openMenu() {
+    var bg = document.createElement('div'); bg.className = 'sheet-bg';
+    var nav = document.createElement('nav'); nav.className = 'drawer';
+    var cur = location.hash || '#/';
+    var items = [['#/', t('allBooks')], ['#/my', '★ ' + t('my')], ['#/missing', t('missing')], ['#/news', t('news')]];
+    nav.innerHTML = '<div class="drawer-h"><span>' + esc(t('appTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></div>' +
+      items.map(function (it) { return '<a href="' + it[0] + '"' + (it[0] === cur ? ' class="cur"' : '') + '>' + esc(it[1]) + '</a>'; }).join('') +
+      (API ? '<p class="note">' + esc(t('reportHint')) + '</p>' : '');
+    document.body.appendChild(bg); document.body.appendChild(nav);
+    function close() { bg.remove(); nav.remove(); }
+    bg.onclick = close; $('.x', nav).onclick = close;
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+  }
+
+  var MONTHS = {
+    ru: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+    ky: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+  };
+  function fmtDate(d) { // "2026-09-29" -> "29 сентября 2026" / "29-сентябрь, 2026"
+    var m = String(d).match(/^(\d{4})-(\d\d)-(\d\d)/); if (!m) return d;
+    return S.ui === 'ky' ? +m[3] + '-' + MONTHS.ky[+m[2] - 1] + ', ' + m[1] : +m[3] + ' ' + MONTHS.ru[+m[2] - 1] + ' ' + m[1];
+  }
+  function bookLink(b) {
+    return '<a href="#/read/' + esc(b.id) + '">' + esc(b.title + (b.grade ? ', ' + b.grade + ' ' + t('grade') : '')) + '</a>';
+  }
+
+  // "What's new": site/changelog.json, newest first. Each entry: {"date": "YYYY-MM-DD", "ru": "...", "ky": "...",
+  // "books": [book ids, optional]}. Book-publishing threads add an entry at the top with every publish.
+  function showNews() {
+    libHash = '#/news';
+    libShell(t('news'), '', false);
+    Promise.all([fetchJSON('changelog.json'), LIST ? LIST : loadList().catch(function () { return []; })]).then(function (r) {
+      var byId = {}; r[1].forEach(function (b) { byId[b.id] = b; });
+      var log = r[0].slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+      var html = '<p class="sub">' + esc(t('newsSub')) + '</p>', last = null;
+      log.forEach(function (e) {
+        if (e.date !== last) { html += '<h2 class="news-d">' + esc(fmtDate(e.date)) + '</h2>'; last = e.date; }
+        var books = (e.books || []).map(function (id) { return byId[id]; }).filter(Boolean);
+        html += '<div class="news"><p>' + esc(e[S.ui] || e.ru) + '</p>' + (books.length ?
+          (books.length > 4 ? '<details><summary>' + esc(t('booksInEntry') + ' (' + books.length + ')') + '</summary>' : '<div>') +
+          '<ul class="news-b">' + books.map(function (b) { return '<li>' + bookLink(b) + '</li>'; }).join('') + '</ul>' +
+          (books.length > 4 ? '</details>' : '</div>') : '') + '</div>';
+      });
+      $('#books').innerHTML = html;
+    }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
+  }
+
+  // Approved textbooks we could not find online: site/missing.json. Each entry: {"school": "ru"|"ky", "grade", "title",
+  // "authors", "status": notfound|sample|closed|kyonly|edition, "note_ru", "note_ky", "live": id of a version in the library}.
+  // A book that goes live is removed from that file.
+  var MSTATUS = { notfound: 'mNotfound', sample: 'mSample', closed: 'mClosed', kyonly: 'mKyonly', edition: 'mEdition' };
+  function showMissing() {
+    libHash = '#/missing';
+    libShell(t('missing'), '', false);
+    Promise.all([fetchJSON('missing.json'), LIST ? LIST : loadList().catch(function () { return []; })]).then(function (r) {
+      var byId = {}; r[1].forEach(function (b) { byId[b.id] = b; });
+      var list = r[0], school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
+      var html = '<p class="sub">' + esc(t('missingSub')) + '</p><p><button class="btn jump">' + esc(t('haveItJump') + ' ↓') + '</button></p>';
+      SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; })).forEach(function (sc) {
+        var rows = list.filter(function (m) { return m.school === sc[0]; });
+        if (!rows.length) return;
+        html += '<h2 class="grade-t">' + esc(sc[1]) + '</h2>';
+        var lastG = null;
+        rows.forEach(function (m) {
+          if (m.grade !== lastG) { html += '<h3 class="subj">' + esc(m.grade + ' ' + t('grade')) + '</h3>'; lastG = m.grade; }
+          var live = m.live && byId[m.live];
+          html += '<div class="bk miss"><div class="bk-t">' + esc(m.title) + '</div><div class="bk-m">' + esc(m.authors || '') + '</div>' +
+            '<div><span class="ms ms-' + esc(m.status) + '">' + esc(t(MSTATUS[m.status] || 'mNotfound')) + '</span></div>' +
+            ((m['note_' + S.ui] || m.note_ru) ? '<div class="note">' + esc(m['note_' + S.ui] || m.note_ru) + '</div>' : '') +
+            (live ? '<div class="note">' + esc(t('mKyLink')) + ': ' + bookLink(live) + '</div>' : '') + '</div>';
+        });
+      });
+      html += '<div class="offer" id="offer"><h2>' + esc(t('haveIt')) + '</h2><p>' + esc(t('haveItText')) + '</p>' +
+        (API ? '' : '<p class="note">' + esc(t('uploadSoon')) + '</p>') + '</div>';
+      $('#books').innerHTML = html;
+      $('.jump', app).onclick = function () { $('#offer').scrollIntoView({ block: 'start', behavior: 'smooth' }); };
+      if (API) uploadForm($('#offer'), list);
+    }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
+  }
+
+  // ---- sending to the server (API): error reports and uploaded books
+  function api(path, opts) {
+    return fetch(API + path, opts).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+  function postJSON(path, data) {
+    // text/plain keeps this a "simple" request (no CORS preflight), which is faster on slow phones
+    return api(path, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(data) });
+  }
+  // Reports made offline wait on the phone and go out with the next one, or when the app opens online.
+  function sendReports() {
+    var q = lsGet('reports', []);
+    if (!API || !q.length || navigator.onLine === false) return Promise.resolve(false);
+    var r = q[0];
+    return postJSON('/reports', r).then(function () {
+      lsSet('reports', lsGet('reports', []).filter(function (x) { return x.at !== r.at; }));
+      return sendReports().then(function () { return true; });
+    }, function () { return false; });
+  }
+  function report(r) {
+    r.at = Date.now();
+    lsSet('reports', lsGet('reports', []).concat([r]));
+    return sendReports();
+  }
+
+  var CHUNK = 8 * 1048576, MAX_FILE = 500 * 1048576;
+  function uploadForm(box, list) {
+    var f = document.createElement('form'); f.className = 'up';
+    f.innerHTML = '<label>' + esc(t('upBook')) + '</label><select name="book">' + list.map(function (m, i) {
+      return '<option value="' + i + '">' + esc(m.title + ', ' + m.grade + ' ' + t('grade') + ' (' + m.authors + ')') + '</option>';
+    }).join('') + '<option value="-1">' + esc(t('upOther')) + '</option></select>' +
+      '<label>' + esc(t('upFiles')) + '</label><input type="file" name="files" multiple accept="application/pdf,image/*">' +
+      '<label>' + esc(t('upContact')) + '</label><input type="text" name="contact" maxlength="200" autocomplete="off">' +
+      '<label>' + esc(t('upComment')) + '</label><textarea name="comment" rows="2" maxlength="2000"></textarea>' +
+      '<button class="btn primary" type="submit">' + esc(t('upSend')) + '</button><div class="progress" hidden><i></i></div>';
+    box.appendChild(f);
+    var btn = $('button', f), prog = $('.progress', f), bar = $('.progress i', f);
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      var files = Array.prototype.slice.call(f.files.files);
+      if (!files.length) { toast(t('upNoFiles')); return; }
+      for (var i = 0; i < files.length; i++) if (files[i].size > MAX_FILE) { toast(t('upTooBig') + files[i].name); return; }
+      var m = list[+f.book.value], total = files.reduce(function (a, x) { return a + x.size; }, 0) || 1, sent = 0;
+      btn.disabled = true; btn.textContent = t('upSending'); prog.hidden = false; bar.style.width = '0';
+      postJSON('/uploads', { book: m ? m.title + ', ' + m.grade + ' (' + m.school + '): ' + m.authors : 'other', contact: f.contact.value, comment: f.comment.value, lang: S.ui })
+        .then(function (up) {
+          // each file goes in pieces, so a big scan survives a slow mobile connection
+          return files.reduce(function (p, file) {
+            return p.then(function () {
+              return postJSON('/uploads/' + up.id + '/files', { name: file.name, size: file.size, type: file.type }).then(function (fr) {
+                var parts = [], n = 0;
+                function next() {
+                  var start = n * CHUNK; if (start >= file.size && n > 0) return Promise.resolve();
+                  var piece = file.slice(start, start + CHUNK), num = ++n;
+                  return api('/uploads/' + up.id + '/files/' + fr.file + '/' + num, { method: 'PUT', body: piece }).then(function (pr) {
+                    parts.push({ n: num, etag: pr.etag }); sent += piece.size; bar.style.width = Math.round(sent / total * 100) + '%';
+                    return next();
+                  });
+                }
+                return next().then(function () { return postJSON('/uploads/' + up.id + '/files/' + fr.file + '/done', { parts: parts }); });
+              });
+            });
+          }, Promise.resolve());
+        })
+        .then(function () { f.innerHTML = '<p class="done">' + esc(t('upDone')) + '</p>'; })
+        .catch(function () { btn.disabled = false; btn.textContent = t('upSend'); prog.hidden = true; toast(navigator.onLine === false ? t('offline') : t('err')); });
+    };
   }
 
   // Books under subject headings; subjects without books are never shown.
@@ -450,7 +635,9 @@
     back: '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>',
     toc: '<svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>',
     set: '<svg viewBox="0 0 24 24"><path d="M4 20l5-14h2l5 14M6.5 14h7"/><path d="M17 11l2.5-6L22 11M17.8 9h3.4"/></svg>',
-    close: '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+    close: '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    menu: '<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+    flag: '<svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>'
   };
 
   function openReader(id) {
@@ -608,8 +795,10 @@
 
     // ---- touch: swipe to turn pages
     var sx = 0, sy = 0, st = 0, dx = 0, horiz = null, touching = false;
+    function selInBook() { var sl = window.getSelection && window.getSelection(); return !!(sl && !sl.isCollapsed && flow.contains(sl.anchorNode)); }
     vp.addEventListener('touchstart', function (e) {
-      if (e.touches.length > 1) { touching = false; return; }
+      // two fingers, or moving the handles of selected text: not a page turn
+      if (e.touches.length > 1 || selInBook()) { touching = false; return; }
       touching = true; horiz = null; dx = 0;
       sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
       flow.classList.remove('anim');
@@ -740,6 +929,48 @@
 
     var bq = $('.b-q'); if (bq) bq.onclick = function () { qualitySheet(entry); };
 
+    // ---- report a text error: select a word or phrase, then tap the button that appears at the bottom
+    var repBtn = null, lastSel = null, hideT;
+    function onSel() {
+      var sl = window.getSelection(), txt = sl ? String(sl).replace(/\s+/g, ' ').trim() : '';
+      if (txt && selInBook()) {
+        clearTimeout(hideT);
+        var el = sl.anchorNode.nodeType === 1 ? sl.anchorNode : sl.anchorNode.parentNode, blk = el.closest('[data-i]');
+        var full = blk ? blk.textContent.replace(/\s+/g, ' ').trim() : '', at = Math.max(0, full.indexOf(txt.slice(0, 40)));
+        lastSel = { ch: ch, b: blk ? +blk.getAttribute('data-i') : null, page: bookPage(), quote: txt.slice(0, 1000),
+          context: full.slice(Math.max(0, at - 200), at + txt.length + 200) };
+        repBtn.hidden = false;
+      } else {
+        hideT = setTimeout(function () { repBtn.hidden = true; }, 400); // a tap on the button may clear the selection first
+      }
+    }
+    function reportSheet(e) {
+      e.preventDefault(); e.stopPropagation();
+      if (!lastSel || $('.sheet')) return;
+      var r = lastSel;
+      var sh = openSheet('<h3><span>' + esc(t('reportTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
+        '<blockquote class="rq">' + esc(r.quote) + '</blockquote>' + (r.page != null ? '<div class="note">' + esc(t('page') + ' ' + r.page) + '</div>' : '') +
+        '<div class="set"><label>' + esc(t('reportFix')) + '</label><textarea class="rfix" rows="3" maxlength="1000"></textarea></div>' +
+        '<button class="btn primary rsend">' + esc(t('reportSend')) + '</button>');
+      $('.x', sh).onclick = closeSheet;
+      $('.rsend', sh).onclick = function () {
+        report({ book: book.id, v: entry && entry.v, ch: r.ch, b: r.b, page: r.page, quote: r.quote, context: r.context,
+          fix: $('.rfix', sh).value.trim(), lang: S.ui }).then(function (sent) { toast(sent ? t('reportThanks') : t('reportQueued')); });
+        closeSheet(); repBtn.hidden = true; lastSel = null;
+        if (window.getSelection) window.getSelection().removeAllRanges();
+      };
+    }
+    if (API && !EMB) {
+      repBtn = document.createElement('button'); repBtn.className = 'rep'; repBtn.hidden = true;
+      repBtn.innerHTML = ICONS.flag + '<span>' + esc(t('report')) + '</span>';
+      reader.appendChild(repBtn);
+      document.addEventListener('selectionchange', onSel);
+      // react on touch down: on phones a tap elsewhere would clear the selection before "click"
+      repBtn.addEventListener('touchstart', reportSheet, { passive: false });
+      repBtn.addEventListener('mousedown', reportSheet);
+      repBtn.addEventListener('click', function (e) { e.preventDefault(); });
+    }
+
     $('.b-set').onclick = function () {
       function seg(key, opts) {
         return '<div class="seg" data-k="' + key + '">' + opts.map(function (o) {
@@ -771,6 +1002,7 @@
     cleanup = function () {
       document.removeEventListener('keydown', onKey);
       window.removeEventListener('resize', onResize);
+      document.removeEventListener('selectionchange', onSel);
       closeSheet();
     };
 
@@ -784,6 +1016,7 @@
   applySettings();
   window.addEventListener('hashchange', route);
   route();
+  if (!EMB) { sendReports(); window.addEventListener('online', sendReports); }
   if (!EMB && 'serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
     navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function () { /* offline support unavailable */ });
   }
