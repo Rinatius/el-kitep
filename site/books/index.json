@@ -79,7 +79,7 @@
  },
  {
   "id": "kg-kyrgyz-tili-7-9",
-  "v": "fe570091bb",
+  "v": "5ffc9a68aa",
   "title": "Кыргыз тили",
   "subtitle": "7–9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -87,7 +87,7 @@
   "year": 2012,
   "grade": "7–9",
   "langName": "Кыргызча",
-  "size": 1291441,
+  "size": 1295010,
   "standalone": "kg-kyrgyz-tili-7-9.html"
  },
  {
@@ -784,7 +784,7 @@
  },
  {
   "id": "ru-kyrgyz-adabiyaty-11",
-  "v": "540b5a6bb7",
+  "v": "412b6ddafb",
   "title": "Кыргыз адабияты",
   "subtitle": "11-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -792,7 +792,7 @@
   "year": 2013,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 936394,
+  "size": 956555,
   "standalone": "ru-kyrgyz-adabiyaty-11.html"
  },
  {
