@@ -145,7 +145,7 @@
  },
  {
   "id": "kg-russkiy-yazyk-7",
-  "v": "e3c7186569",
+  "v": "7d892e4c0a",
   "title": "Русский язык",
   "subtitle": "7 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -153,9 +153,10 @@
   "year": 2010,
   "grade": "7",
   "langName": "Русский",
-  "size": 1049532,
+  "size": 1051647,
   "standalone": "kg-russkiy-yazyk-7.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "86, 87"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-7",
