@@ -131,7 +131,7 @@
  },
  {
   "id": "kg-orto-kylym-taryhy-7",
-  "v": "2e138bbaa7",
+  "v": "f51d769a18",
   "title": "Орто кылымдар тарыхы",
   "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -139,9 +139,10 @@
   "year": 2007,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 7902228,
+  "size": 7905655,
   "standalone": "kg-orto-kylym-taryhy-7.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "47"
  },
  {
   "id": "kg-russkiy-yazyk-7",
