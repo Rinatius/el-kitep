@@ -376,7 +376,7 @@
  },
  {
   "id": "kg-adam-jana-koom-9",
-  "v": "c57d23f28b",
+  "v": "e6141a908d",
   "title": "Адам жана коом",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -384,9 +384,9 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 842331,
+  "size": 819933,
   "standalone": "kg-adam-jana-koom-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-dinder-taryhy-9",
