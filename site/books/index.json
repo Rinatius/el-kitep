@@ -462,7 +462,7 @@
  },
  {
   "id": "kg-russkaya-literatura-9",
-  "v": "e7c290c2aa",
+  "v": "1bd86e40b0",
   "title": "Русская литература",
   "subtitle": "9 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -470,9 +470,9 @@
   "year": 2012,
   "grade": "9",
   "langName": "Русский",
-  "size": 1629774,
+  "size": 1641552,
   "standalone": "kg-russkaya-literatura-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-sonku-taryh-9",
