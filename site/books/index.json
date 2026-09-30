@@ -492,7 +492,7 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
-  "v": "fe9050561e",
+  "v": "44400c453c",
   "title": "История Кыргызстана",
   "subtitle": "9 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -500,9 +500,10 @@
   "year": 2014,
   "grade": "9",
   "langName": "Русский",
-  "size": 2556167,
+  "size": 2559356,
   "standalone": "ru-istoriya-kyrgyzstana-9.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "4"
  },
  {
   "id": "ru-istoriya-religiy-9",
