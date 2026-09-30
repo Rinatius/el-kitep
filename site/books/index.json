@@ -447,7 +447,7 @@
  },
  {
   "id": "kg-mamleket-jana-ukuk-9",
-  "v": "27c2cc1682",
+  "v": "a29afc50de",
   "title": "Мамлекет жана укук",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -455,10 +455,11 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 741628,
+  "size": 738405,
   "standalone": "kg-mamleket-jana-ukuk-9.html",
   "subject": "obshchestvo",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "24, 25"
  },
  {
   "id": "kg-russkaya-literatura-9",
