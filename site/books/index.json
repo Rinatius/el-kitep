@@ -117,7 +117,7 @@
  },
  {
   "id": "kg-literaturnoe-chtenie-7",
-  "v": "7728bf6bb2",
+  "v": "1a4ba8cf5c",
   "title": "Литературное чтение",
   "subtitle": "7 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -125,9 +125,10 @@
   "year": 2009,
   "grade": "7",
   "langName": "Русский",
-  "size": 2529730,
+  "size": 2535504,
   "standalone": "kg-literaturnoe-chtenie-7.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "127"
  },
  {
   "id": "kg-orto-kylym-taryhy-7",
