@@ -684,7 +684,7 @@
  },
  {
   "id": "ru-grazhdanstvennost-10",
-  "v": "168bd2c789",
+  "v": "2cfe59e92d",
   "title": "Гражданственность и участие в управлении",
   "subtitle": "10 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -692,9 +692,9 @@
   "year": 2004,
   "grade": "10",
   "langName": "Русский",
-  "size": 3652202,
+  "size": 3671197,
   "standalone": "ru-grazhdanstvennost-10.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-10",
