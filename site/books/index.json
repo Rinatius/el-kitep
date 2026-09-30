@@ -880,7 +880,7 @@
  },
  {
   "id": "ru-kyrgyz-tili-11",
-  "v": "d1173e72e9",
+  "v": "e5ab32f335",
   "title": "Кыргыз тили",
   "subtitle": "11-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -888,9 +888,10 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 2260103,
+  "size": 2266718,
   "standalone": "ru-kyrgyz-tili-11.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "184, 187"
  },
  {
   "id": "kg-adabiy-okuu-3",
