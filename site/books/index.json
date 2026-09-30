@@ -564,7 +564,7 @@
  },
  {
   "id": "kg-geografiya-10",
-  "v": "74aaaac1cc",
+  "v": "89167349ba",
   "title": "Дүйнөнүн экономикалык жана социалдык географиясы",
   "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -572,9 +572,10 @@
   "year": 2011,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 2209454,
+  "size": 2185329,
   "standalone": "kg-geografiya-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "59, 171, 253, 273"
  },
  {
   "id": "kg-jarandyk-10",
