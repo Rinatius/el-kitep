@@ -190,7 +190,7 @@
  },
  {
   "id": "ru-kyrgyz-tili-7",
-  "v": "2a0bc43849",
+  "v": "ed3089b068",
   "title": "Кыргыз тили",
   "subtitle": "7-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -198,9 +198,9 @@
   "year": 2016,
   "grade": "7",
   "langName": "Кыргызча",
-  "size": 731321,
+  "size": 730182,
   "standalone": "ru-kyrgyz-tili-7.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-adam-jana-koom-8",
