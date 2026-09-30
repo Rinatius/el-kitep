@@ -54,9 +54,21 @@ async function limit(env, table, ip) {
   if (r.n >= LIMITS[table]) throw new Fail(429, 'too many requests, try again later');
 }
 
+// The tables are created by the Worker itself on its first request, so deploying needs no database rights
+// (the deploy token can be limited to this one Worker). Same statements as schema.sql.
+let ready = null;
+function schema(env) {
+  if (!ready) {
+    ready = env.DB.batch(SCHEMA.split(';').map(q => q.trim()).filter(Boolean).map(q => env.DB.prepare(q)));
+    ready.catch(() => { ready = null; });
+  }
+  return ready;
+}
+
 async function route(req, env, url, path) {
   const m = req.method;
   let p;
+  await schema(env);
   if (m === 'GET' && path === '/') return json({ ok: true });
 
   // ---- a reader reports a text error: {book, v, ch, b, page, quote, context, fix, lang}
@@ -152,6 +164,41 @@ async function getFile(env, uid, fid) {
   if (!f) throw new Fail(404, 'no such file');
   return f;
 }
+
+const SCHEMA = `CREATE TABLE IF NOT EXISTS reports (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  created TEXT NOT NULL,
+  book TEXT NOT NULL,
+  v TEXT,
+  ch INTEGER, b INTEGER,
+  page INTEGER,
+  quote TEXT NOT NULL,
+  context TEXT,
+  fix TEXT,
+  lang TEXT,
+  status TEXT NOT NULL DEFAULT 'new',
+  note TEXT,
+  ip TEXT
+);
+CREATE INDEX IF NOT EXISTS reports_status ON reports (status, id);
+CREATE INDEX IF NOT EXISTS reports_ip ON reports (ip, created);
+
+CREATE TABLE IF NOT EXISTS uploads (
+  id TEXT PRIMARY KEY,
+  created TEXT NOT NULL,
+  book TEXT, contact TEXT, comment TEXT, lang TEXT,
+  ip TEXT
+);
+CREATE INDEX IF NOT EXISTS uploads_ip ON uploads (ip, created);
+
+CREATE TABLE IF NOT EXISTS files (
+  id TEXT PRIMARY KEY,
+  upload_id TEXT NOT NULL REFERENCES uploads (id),
+  created TEXT NOT NULL,
+  name TEXT, size INTEGER, type TEXT,
+  r2key TEXT NOT NULL, r2upload TEXT,
+  done INTEGER NOT NULL DEFAULT 0
+);`;
 
 const ADMIN_HTML = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Отчёты об ошибках</title><style>

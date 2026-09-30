@@ -15,18 +15,25 @@ Readers need no account. Each reader may send 60 reports and 10 uploads an hour 
 IP address; addresses themselves are not stored).
 
 ## Deploy (once)
-Needs a free Cloudflare account with R2 turned on (Cloudflare asks for a card to turn on R2, even on the free plan),
-and `CLOUDFLARE_API_TOKEN` with Workers Scripts, D1 and R2 edit rights.
+The deploy token is limited to this one Worker (Cloudflare's per-Worker API tokens), so it cannot touch other
+projects in the account. Everything that needs account-wide rights is done once by hand in the dashboard:
+
+1. D1: create a database `el-kitep`; put its id into `wrangler.toml` (`database_id`).
+2. R2: create a bucket `el-kitep-uploads`.
+3. Workers & Pages: create a Worker named `el-kitep-api` (any starter; the deploy replaces its code).
+   Optional: Settings → Domains & Routes → add the custom domain `api.elkitep.com`.
+4. Manage Account → Account API Tokens → Create: scope "Specified Workers" → `el-kitep-api`, role Editor.
+
+Then, with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set:
 
     cd backend && npm install
-    npx wrangler d1 create el-kitep              # put the database_id it prints into wrangler.toml
-    npx wrangler r2 bucket create el-kitep-uploads
-    npx wrangler d1 execute el-kitep --remote --file schema.sql
     npx wrangler secret put ADMIN_KEY            # the password for /admin
-    npx wrangler deploy                          # prints https://el-kitep-api.<account>.workers.dev
+    npx wrangler deploy
 
-Then set `API` at the top of `site/app.js` to that address. The "report an error" button in the reader and the
-upload form on the missing textbooks page appear once `API` is set.
+The Worker creates its tables on the first request (the same statements as `schema.sql`), so the token needs
+no database rights. Then set `API` at the top of `site/app.js` to the Worker's address and add that site's
+address to `SITES` in `src/worker.js`. The "report an error" button in the reader and the upload form on the
+missing textbooks page appear once `API` is set.
 
 ## Try it locally
 

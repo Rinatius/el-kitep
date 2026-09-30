@@ -1,5 +1,5 @@
 -- Database for backend/src/worker.js (Cloudflare D1, SQLite).
--- Apply with: npx wrangler d1 execute el-kitep --remote --file schema.sql
+-- The Worker runs these itself on its first request (SCHEMA in src/worker.js); keep the two in step.
 CREATE TABLE IF NOT EXISTS reports (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   created TEXT NOT NULL,          -- ISO time, UTC
