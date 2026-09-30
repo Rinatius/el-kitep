@@ -670,7 +670,7 @@
  },
  {
   "id": "kg-russkiy-yazyk-10",
-  "v": "852777a9e8",
+  "v": "dab456ec6d",
   "title": "Русский язык",
   "subtitle": "10 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -678,9 +678,9 @@
   "year": 2009,
   "grade": "10",
   "langName": "Русский",
-  "size": 794298,
+  "size": 793434,
   "standalone": "kg-russkiy-yazyk-10.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-grazhdanstvennost-10",
