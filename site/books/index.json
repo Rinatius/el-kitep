@@ -739,7 +739,7 @@
  },
  {
   "id": "ru-kyrgyz-tili-10",
-  "v": "eb992ae745",
+  "v": "6ee1f34560",
   "title": "Кыргыз тили",
   "subtitle": "10-класс. Орус тилинде окутулган мектептер үчүн",
   "school": "ru",
@@ -747,9 +747,10 @@
   "year": 2012,
   "grade": "10",
   "langName": "Кыргызча",
-  "size": 1314915,
+  "size": 1322294,
   "standalone": "ru-kyrgyz-tili-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "38, 60, 107, 177, 244, 254, 255, 256"
  },
  {
   "id": "kg-geografiya-11",
