@@ -1,17 +1,17 @@
 [
  {
   "id": "kg-adabiyat-7",
-  "v": "d95c0deb2d",
+  "v": "04e43f617c",
   "title": "Кыргыз адабияты",
   "subtitle": "Орто мектептин 7-классы үчүн хрестоматия окуу китеби",
   "author": "Бектурсун Алымов, Абдыкерим Муратов",
   "year": 2015,
   "grade": 7,
   "langName": "Кыргызча",
-  "size": 1474581,
+  "size": 1469436,
   "standalone": "kg-adabiyat-7.html",
   "school": "ky",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-matematika-7-1-v3",
