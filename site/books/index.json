@@ -844,7 +844,7 @@
  },
  {
   "id": "kg-russkiy-yazyk-11",
-  "v": "55fbb7fda4",
+  "v": "88c1b88162",
   "title": "Русский язык",
   "subtitle": "11 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -852,9 +852,9 @@
   "year": 2012,
   "grade": "11",
   "langName": "Русский",
-  "size": 997120,
+  "size": 1004498,
   "standalone": "kg-russkiy-yazyk-11.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-11",
