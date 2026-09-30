@@ -1,14 +1,23 @@
-/* Server for the textbook reader (site/): text-error reports and books that readers upload.
- * A Cloudflare Worker with a D1 database (SQLite) for reports and upload records, and an R2 bucket for files.
- * Readers need no account. The admin page (/admin) and the admin API need the ADMIN_KEY secret. See README.md. */
+/* The whole site at elkitep.com, as one Cloudflare Worker:
+ * - the reader app and book texts (site/ without the pictures) are static assets, served by Cloudflare
+ *   before this code runs (see wrangler.toml and tools/build_cloudflare.sh);
+ * - book pictures (site/books/<id>/img/) live in the R2 bucket BOOKS, because the free plan allows
+ *   20,000 asset files and the pictures alone are more;
+ * - /api/...: text-error reports and books that readers upload, in a D1 database (SQLite) and the R2 bucket FILES.
+ * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md. */
 
-const SITES = ['https://rinatius.github.io', 'http://localhost:8080'];
+const SITES = ['https://elkitep.com', 'https://www.elkitep.com', 'https://rinatius.github.io', 'http://localhost:8080', 'http://localhost:8787'];
 const MAX_FILE = 500 * 1048576, MAX_FILES = 40;
 const LIMITS = { reports: 60, uploads: 10 }; // per reader (hashed IP) per hour
+const TYPES = { webp: 'image/webp', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
 
 export default {
   async fetch(req, env) {
-    const url = new URL(req.url), path = url.pathname.replace(/\/+$/, '') || '/';
+    const url = new URL(req.url);
+    const img = url.pathname.match(/^\/books\/([\w.-]+)\/img\/([\w.-]+)$/);
+    if (img) return picture(req, env, img[1] + '/img/' + img[2]);
+    if (!/^\/api(\/|$)/.test(url.pathname)) return env.ASSETS.fetch(req); // not an asset either: its 404
+    const path = url.pathname.slice(4).replace(/\/+$/, '') || '/';
     const origin = req.headers.get('Origin');
     const cors = {
       'Access-Control-Allow-Origin': SITES.includes(origin) ? origin : SITES[0],
@@ -29,6 +38,17 @@ export default {
     }
   }
 };
+
+// A book picture from R2 (key "<book id>/img/<file>"), with revalidation so phones re-download only changed ones.
+async function picture(req, env, key) {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return new Response(null, { status: 405 });
+  const obj = await env.BOOKS.get(key, { onlyIf: req.headers });
+  if (!obj) return new Response('Not found', { status: 404 });
+  const h = new Headers({ 'ETag': obj.httpEtag, 'Cache-Control': 'public, max-age=3600',
+    'Content-Type': TYPES[key.split('.').pop().toLowerCase()] || 'application/octet-stream' });
+  if (!('body' in obj) || !obj.body) return new Response(null, { status: 304, headers: h });
+  return new Response(req.method === 'HEAD' ? null : obj.body, { headers: h });
+}
 
 class Fail extends Error { constructor(status, msg) { super(msg); this.status = status; } }
 function json(data, status = 200, headers = {}) {
@@ -212,18 +232,18 @@ nav button.on{background:#1f6feb;color:#fff;border-color:#1f6feb}.it{border-bott
 <nav hidden><button data-v="new" class="on">Новые ошибки</button><button data-v="fixed">Исправленные</button><button data-v="rejected">Отклонённые</button><button data-v="uploads">Присланные книги</button></nav>
 <div id="out"></div>
 <script>
-var SITE='https://rinatius.github.io/el-kitep/', key=localStorage.getItem('key')||'', view='new';
+var SITE='/', key=localStorage.getItem('key')||'', view='new';
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function get(p,o){o=o||{};o.headers={Authorization:'Bearer '+key};return fetch(p,o).then(function(r){if(r.status===401){document.getElementById('login').hidden=false;throw new Error('key')}return r.json()})}
 function mb(n){return (n/1048576).toFixed(1)+' МБ'}
 function show(){var out=document.getElementById('out');out.textContent='…';
- if(view==='uploads')return get('/admin/uploads').then(function(l){out.innerHTML=l.length?l.map(function(u){return '<div class="it"><b>'+esc(u.book)+'</b><div class="m">'+esc(u.created.slice(0,16).replace('T',' '))+(u.contact?' · '+esc(u.contact):'')+'</div>'+(u.comment?'<div>'+esc(u.comment)+'</div>':'')+u.files.map(function(f){return '<div>'+(f.done?'<a href="/admin/files/'+f.id+'?key='+encodeURIComponent(key)+'">'+esc(f.name)+'</a>':esc(f.name)+' (не докачан)')+' · '+mb(f.size)+'</div>'}).join('')+'</div>'}).join(''):'Пока ничего нет.'});
- get('/admin/reports?status='+view).then(function(l){out.innerHTML=l.length?l.map(function(r){return '<div class="it" data-id="'+r.id+'"><div class="m">'+esc(r.created.slice(0,16).replace('T',' '))+' · <a href="'+SITE+'#/read/'+esc(r.book)+'" target="_blank">'+esc(r.book)+'</a>'+(r.page!=null?' · стр. '+r.page:'')+' · глава '+r.ch+', блок '+r.b+'</div><q>'+esc(r.quote)+'</q>'+(r.fix?'<div class="fix">Как правильно: '+esc(r.fix)+'</div>':'')+'<div class="ctx">'+esc(r.context)+'</div><div class="st">'+(view!=='fixed'?'<button data-s="fixed">Исправлено</button>':'')+(view!=='rejected'?'<button data-s="rejected">Не ошибка</button>':'')+(view!=='new'?'<button data-s="new">Вернуть в новые</button>':'')+'</div></div>'}).join(''):'Пока ничего нет.'})}
+ if(view==='uploads')return get('/api/admin/uploads').then(function(l){out.innerHTML=l.length?l.map(function(u){return '<div class="it"><b>'+esc(u.book)+'</b><div class="m">'+esc(u.created.slice(0,16).replace('T',' '))+(u.contact?' · '+esc(u.contact):'')+'</div>'+(u.comment?'<div>'+esc(u.comment)+'</div>':'')+u.files.map(function(f){return '<div>'+(f.done?'<a href="/api/admin/files/'+f.id+'?key='+encodeURIComponent(key)+'">'+esc(f.name)+'</a>':esc(f.name)+' (не докачан)')+' · '+mb(f.size)+'</div>'}).join('')+'</div>'}).join(''):'Пока ничего нет.'});
+ get('/api/admin/reports?status='+view).then(function(l){out.innerHTML=l.length?l.map(function(r){return '<div class="it" data-id="'+r.id+'"><div class="m">'+esc(r.created.slice(0,16).replace('T',' '))+' · <a href="'+SITE+'#/read/'+esc(r.book)+'" target="_blank">'+esc(r.book)+'</a>'+(r.page!=null?' · стр. '+r.page:'')+' · глава '+r.ch+', блок '+r.b+'</div><q>'+esc(r.quote)+'</q>'+(r.fix?'<div class="fix">Как правильно: '+esc(r.fix)+'</div>':'')+'<div class="ctx">'+esc(r.context)+'</div><div class="st">'+(view!=='fixed'?'<button data-s="fixed">Исправлено</button>':'')+(view!=='rejected'?'<button data-s="rejected">Не ошибка</button>':'')+(view!=='new'?'<button data-s="new">Вернуть в новые</button>':'')+'</div></div>'}).join(''):'Пока ничего нет.'})}
 document.getElementById('out').onclick=function(e){var b=e.target.closest('button[data-s]');if(!b)return;var it=b.closest('.it');
- get('/admin/reports/'+it.getAttribute('data-id'),{method:'POST',body:JSON.stringify({status:b.getAttribute('data-s')})}).then(function(){it.remove()})};
+ get('/api/admin/reports/'+it.getAttribute('data-id'),{method:'POST',body:JSON.stringify({status:b.getAttribute('data-s')})}).then(function(){it.remove()})};
 document.querySelector('nav').onclick=function(e){var b=e.target.closest('button');if(!b)return;view=b.getAttribute('data-v');
  [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)});show()};
 document.getElementById('login').onsubmit=function(e){e.preventDefault();key=document.getElementById('key').value;localStorage.setItem('key',key);start()};
-function start(){get('/admin/reports?status=new').then(function(){document.getElementById('login').hidden=true;document.querySelector('nav').hidden=false;show()},function(){})}
+function start(){get('/api/admin/reports?status=new').then(function(){document.getElementById('login').hidden=true;document.querySelector('nav').hidden=false;show()},function(){})}
 if(key)start();
 </script></body></html>`;

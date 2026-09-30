@@ -7,8 +7,9 @@
 
   var EMB = window.EMBEDDED_BOOK || null;
   // Address of the small server that receives error reports and uploaded books (backend/ in the repo).
-  // Empty: the "report an error" button and the upload form stay hidden.
-  var API = '';
+  // It runs on the same Cloudflare site as the app, so it exists only there; elsewhere (the old GitHub Pages
+  // address, a local copy) API is empty and the "report an error" button and the upload form stay hidden.
+  var API = /(^|\.)elkitep\.com$|\.workers\.dev$|^localhost:8787$/.test(location.host) ? '/api' : '';
 
   // ---------------------------------------------------------------- strings
   var I18N = {
