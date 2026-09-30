@@ -831,7 +831,7 @@
  },
  {
   "id": "kg-russkaya-literatura-11",
-  "v": "62a179f74c",
+  "v": "53b6c9ffd3",
   "title": "Русская литература",
   "subtitle": "11 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -839,9 +839,10 @@
   "year": 2013,
   "grade": "11",
   "langName": "Русский",
-  "size": 2946074,
+  "size": 2953166,
   "standalone": "kg-russkaya-literatura-11.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "15, 16, 85, 86"
  },
  {
   "id": "kg-russkiy-yazyk-11",
