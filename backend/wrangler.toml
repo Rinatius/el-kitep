@@ -1,0 +1,22 @@
+# The site at elkitep.com: reader app + book texts as static assets, book pictures and the /api server in the Worker.
+# Deployed by .github/workflows/cloudflare.yml; the custom domain elkitep.com is attached in the dashboard.
+name = "el-kitep"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "../dist"   # built by tools/build_cloudflare.sh: site/ without book pictures
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "el-kitep"
+database_id = "REPLACE-WITH-D1-DATABASE-ID"
+
+[[r2_buckets]]
+binding = "FILES"       # books readers upload
+bucket_name = "el-kitep-uploads"
+
+[[r2_buckets]]
+binding = "BOOKS"       # book pictures, synced from site/books/<id>/img/ as "<id>/img/<file>"
+bucket_name = "el-kitep-books"

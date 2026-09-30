@@ -1,0 +1,62 @@
+name: Deploy to Cloudflare (elkitep.com)
+
+# The same site as GitHub Pages, served by one Cloudflare Worker (backend/wrangler.toml):
+# app and book texts as static assets, book pictures from the R2 bucket el-kitep-books, and the /api server.
+# Skipped until the repository secrets below are set (Settings > Secrets and variables > Actions):
+#   CLOUDFLARE_API_TOKEN   account API token scoped to the Worker "el-kitep" (role Editor)
+#   CLOUDFLARE_ACCOUNT_ID  the Cloudflare account id
+#   D1_DATABASE_ID         id of the D1 database "el-kitep"
+#   R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY   R2 API token, Object Read & Write, scoped to the bucket el-kitep-books
+#   EL_KITEP_ADMIN_KEY     password for /api/admin
+
+on:
+  push:
+    branches: [claude/deploy-reader-app-d05yd9]
+    paths: ["site/**", "backend/**", "tools/build_cloudflare.sh", ".github/workflows/cloudflare.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      EL_KITEP_ADMIN_KEY: ${{ secrets.EL_KITEP_ADMIN_KEY }}
+    steps:
+      - id: ready
+        run: |
+          for v in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID D1_DATABASE_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY; do
+            if [ -z "$(printenv $v)" ]; then echo "::notice::$v is not set yet, skipping the Cloudflare deploy"; exit 0; fi
+          done
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+      - if: steps.ready.outputs.ok == 'true'
+        uses: actions/checkout@v4
+      - if: steps.ready.outputs.ok == 'true'
+        name: Book pictures to R2 (only new or changed files; removed ones are deleted)
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        run: |
+          sudo apt-get install -y -qq rclone
+          rclone sync site/books r2:el-kitep-books --include '/*/img/**' --checksum --fast-list --transfers 16 --s3-no-check-bucket --stats-one-line -v
+      - if: steps.ready.outputs.ok == 'true'
+        name: Build and deploy the Worker
+        run: |
+          tools/build_cloudflare.sh "${GITHUB_SHA::10}"
+          sed -i "s/REPLACE-WITH-D1-DATABASE-ID/$D1_DATABASE_ID/" backend/wrangler.toml
+          cd backend && npm ci --no-audit --no-fund
+          npx wrangler deploy
+          if [ -n "$EL_KITEP_ADMIN_KEY" ]; then printf '%s' "$EL_KITEP_ADMIN_KEY" | npx wrangler secret put ADMIN_KEY; fi
