@@ -656,7 +656,7 @@
  },
  {
   "id": "kg-russkaya-literatura-10",
-  "v": "26f5831480",
+  "v": "9c4ecd30e7",
   "title": "Русская литература",
   "subtitle": "10 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -664,9 +664,10 @@
   "year": 2012,
   "grade": "10",
   "langName": "Русский",
-  "size": 4317970,
+  "size": 4274079,
   "standalone": "kg-russkaya-literatura-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "25, 447"
  },
  {
   "id": "kg-russkiy-yazyk-10",
