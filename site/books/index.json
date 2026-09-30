@@ -476,7 +476,7 @@
  },
  {
   "id": "kg-sonku-taryh-9",
-  "v": "14b5dadf13",
+  "v": "b3302332ad",
   "title": "Соңку тарых",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -484,9 +484,9 @@
   "year": 2017,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 4205294,
+  "size": 4204606,
   "standalone": "kg-sonku-taryh-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
