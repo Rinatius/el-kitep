@@ -766,7 +766,7 @@
  },
  {
   "id": "kg-duyno-taryhy-11",
-  "v": "334bcccca1",
+  "v": "6843775f74",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
   "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -774,9 +774,9 @@
   "year": 2012,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1494268,
+  "size": 1684948,
   "standalone": "kg-duyno-taryhy-11.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-11",
