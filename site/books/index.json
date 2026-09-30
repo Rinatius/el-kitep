@@ -697,7 +697,7 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-10",
-  "v": "68acbaa97b",
+  "v": "6281aa31a0",
   "title": "История Кыргызстана",
   "subtitle": "10 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -705,9 +705,10 @@
   "year": 2012,
   "grade": "10",
   "langName": "Русский",
-  "size": 5415007,
+  "size": 5410466,
   "standalone": "ru-istoriya-kyrgyzstana-10.html",
-  "quality": "ocr"
+  "quality": "proofread",
+  "gaps": "124, 135, 136, 237"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-10",
