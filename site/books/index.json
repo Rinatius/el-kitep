@@ -305,7 +305,7 @@
  },
  {
   "id": "kg-russkiy-yazyk-8-9",
-  "v": "61e452d2a6",
+  "v": "d5820c3b51",
   "title": "Русский язык",
   "subtitle": "8–9 класс. Для школ с кыргызским языком обучения",
   "school": "ky",
@@ -313,9 +313,9 @@
   "year": 2012,
   "grade": "8–9",
   "langName": "Русский",
-  "size": 948201,
+  "size": 947836,
   "standalone": "kg-russkiy-yazyk-8-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
