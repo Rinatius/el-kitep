@@ -1414,8 +1414,8 @@
  {
   "id": "kg-jarandyk-11",
   "subject": "grazhdanstvennost",
-  "quality": "ocr",
-  "v": "e6c18026b8",
+  "quality": "proofread",
+  "v": "6927f02617",
   "title": "Жарандуулук жана башкарууга катышуу",
   "subtitle": "11-класс, 2-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -1423,7 +1423,8 @@
   "year": 2005,
   "grade": "11",
   "langName": "Кыргызча",
-  "size": 1083898,
-  "standalone": "kg-jarandyk-11.html"
+  "size": 1104095,
+  "standalone": "kg-jarandyk-11.html",
+  "gaps": "25, 159"
  }
 ]
