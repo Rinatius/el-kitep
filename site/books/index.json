@@ -419,7 +419,7 @@
  },
  {
   "id": "kg-kyrgyz-tili-9",
-  "v": "104a86930b",
+  "v": "deb2b65fec",
   "title": "Кыргыз тили",
   "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -427,9 +427,9 @@
   "year": 2012,
   "grade": "9",
   "langName": "Кыргызча",
-  "size": 618361,
+  "size": 618346,
   "standalone": "kg-kyrgyz-tili-9.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-9",
