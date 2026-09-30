@@ -276,8 +276,9 @@ a { color: var(--accent); }
 
   var EMB = window.EMBEDDED_BOOK || null;
   // Address of the small server that receives error reports and uploaded books (backend/ in the repo).
-  // Empty: the "report an error" button and the upload form stay hidden.
-  var API = '';
+  // It runs on the same Cloudflare site as the app, so it exists only there; elsewhere (the old GitHub Pages
+  // address, a local copy) API is empty and the "report an error" button and the upload form stay hidden.
+  var API = /(^|\.)elkitep\.com$|\.workers\.dev$|^localhost:8787$/.test(location.host) ? '/api' : '';
 
   // ---------------------------------------------------------------- strings
   var I18N = {
@@ -1218,7 +1219,7 @@ a { color: var(--accent); }
       if (!lastSel || $('.sheet')) return;
       var r = lastSel;
       var sh = openSheet('<h3><span>' + esc(t('reportTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
-        '<blockquote class="rq">' + esc(r.quote) + '</blockquote>' + (r.page != null ? '<div class="note">' + esc(t('page') + ' ' + r.page) + '</div>' : '') +
+        '<blockquote class="rq">' + esc(r.quote) + '</blockquote>' + (r.page > 0 ? '<div class="note">' + esc(t('page') + ' ' + r.page) + '</div>' : '') +
         '<div class="set"><label>' + esc(t('reportFix')) + '</label><textarea class="rfix" rows="3" maxlength="1000"></textarea></div>' +
         '<button class="btn primary rsend">' + esc(t('reportSend')) + '</button>');
       $('.x', sh).onclick = closeSheet;
