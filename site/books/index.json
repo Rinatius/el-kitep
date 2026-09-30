@@ -162,7 +162,7 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-7",
-  "v": "06dd893aa4",
+  "v": "7bc44782ed",
   "title": "История Кыргызстана",
   "subtitle": "7 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -170,9 +170,9 @@
   "year": 2012,
   "grade": "7",
   "langName": "Русский",
-  "size": 1501079,
+  "size": 1502095,
   "standalone": "ru-istoriya-kyrgyzstana-7.html",
-  "quality": "ocr"
+  "quality": "proofread"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-7",
