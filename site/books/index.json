@@ -492,18 +492,17 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
-  "v": "44400c453c",
+  "v": "c9a834895c",
   "title": "История Кыргызстана",
   "subtitle": "9 класс. Для школ с русским языком обучения",
   "school": "ru",
-  "author": "М. Иманкулов",
+  "author": "М. К. Иманкулов",
   "year": 2014,
   "grade": "9",
   "langName": "Русский",
-  "size": 2559356,
+  "size": 4015389,
   "standalone": "ru-istoriya-kyrgyzstana-9.html",
-  "quality": "proofread",
-  "gaps": "4"
+  "quality": "exact"
  },
  {
   "id": "ru-istoriya-religiy-9",
@@ -1509,7 +1508,7 @@
  },
  {
   "id": "ru-istoriya-kyrgyzstana-5",
-  "v": "12e764bddc",
+  "v": "8dc7b0348c",
   "title": "История Кыргызстана и мировая история",
   "subtitle": "5 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -1517,13 +1516,13 @@
   "year": 2018,
   "grade": "5",
   "langName": "Русский",
-  "size": 7466477,
+  "size": 7465416,
   "standalone": "ru-istoriya-kyrgyzstana-5.html",
   "quality": "exact"
  },
  {
   "id": "kg-adam-jana-koom-6",
-  "v": "6b14e10d42",
+  "v": "201bfe6fae",
   "title": "Адам жана коом",
   "subtitle": "6-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
@@ -1531,7 +1530,7 @@
   "year": 2018,
   "grade": "6",
   "langName": "Кыргызча",
-  "size": 4048969,
+  "size": 4048687,
   "standalone": "kg-adam-jana-koom-6.html",
   "quality": "exact"
  },
