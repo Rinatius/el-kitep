@@ -1,6 +1,6 @@
 List line,Grade,School,Subject,Authors,Title,Publisher,Year,List page,Best form,Edition of best copy,Approved edition online in full,Copies found,Links (form),Note
 195,1,Kyrgyz-medium,Кыргыз тили жана окуу,"Рысбаев С., Бекбоева А.",Наристе. Алиппе,Б.: Учкун,2025,1,PDF without text (scan),approved edition,yes,6,"https://kitep.edu.kg/book/248/read (PDF without text (scan); approved edition)
-https://bizdin.kg/uchebnik/alippege-daiardyk-1-klass-2025/ (View online only; approved edition)
+https://bizdin.kg/uchebnik/alippege-daiardyk-1-klass-2025/ (Part or sample only; approved edition)
 https://kitep.edu.kg/book/247/read (PDF without text (scan); approved edition)
 https://mektep.o.kg/books/11/?grade=1 (PDF without text (scan); year unknown)
 https://bizdin.kg/uchebnik/alippe-1-klass-2008-zh-bukvar-1-klass-2008-g-na-kyrgyzkom/ (View online only; other year (2008))
@@ -14,9 +14,9 @@ https://bilim.akipress.org/lib/book:183/ (PDF without text (scan); other year (2
 https://mektep.o.kg/books/11/?grade=1 (PDF without text (scan); year unknown)",
 198,1,Kyrgyz-medium,Русский язык и чтение,"Хамраева Е.А., Булатова В.А.",Русский язык и чтение,Б: Просвещение,2025,1,PDF with text,,yes,1,https://stem.edu.gov.kg/api/books/676 (PDF with text),
 199,1,Kyrgyz-medium,Русский язык и чтение,"Задорожная Н., Мусаева Ч., Таирова Г.","Русский язык (1, 2 часть)",Б.: Аркус/Учкун,2024,1,Part or sample only,,no,1,https://arcus.kg/modules/mod_flipbook_66/tmpl/ (Part or sample only),New Аркус/Учкун edition; only publisher samples or shop listings online.
-200,1,Kyrgyz-medium,Математика,Christina Soh,Математика,Б.: Учкун,2025,1,PDF without text (scan),other year (2026),no,5,"https://bizdin.kg/uchebnik/matematika-okuu-kitebi-12-14-bolumdor-1-klass-2025/ (View online only; approved edition)
-https://bizdin.kg/uchebnik/matematika-okuu-kitebi-49-61-baraktary-1-klass-2025/ (View online only; approved edition)
-https://bizdin.kg/uchebnik/matematika-okuu-kitebi-8-11-bolumdor-1-klass-2025/ (View online only; approved edition)
+200,1,Kyrgyz-medium,Математика,Christina Soh,Математика,Б.: Учкун,2025,1,PDF without text (scan),other year (2026),no,5,"https://bizdin.kg/uchebnik/matematika-okuu-kitebi-12-14-bolumdor-1-klass-2025/ (Part or sample only; approved edition)
+https://bizdin.kg/uchebnik/matematika-okuu-kitebi-49-61-baraktary-1-klass-2025/ (Part or sample only; approved edition)
+https://bizdin.kg/uchebnik/matematika-okuu-kitebi-8-11-bolumdor-1-klass-2025/ (Part or sample only; approved edition)
 https://kitep.edu.kg/book/435/read (PDF without text (scan); other year (2026))
 https://stem.edu.gov.kg/api/books/152 (Part or sample only; approved edition)",
 201,1,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С.","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2022,1,Not online,,no,0,,Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
@@ -29,8 +29,8 @@ https://bizdin.kg/uchebnik/uchebnik-po-matematike-3-klass-na-kyrgyzskom-matemati
 203,1,Kyrgyz-medium,Мен жана дүйнө,Dana Paz,Табият таануу,Б.: Учкун,2025,1,PDF with text,approved edition,yes,3,"https://kitep.edu.kg/book/36/read (PDF without text (scan); approved edition)
 https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-1-klass-2025-1/ (View online only; approved edition)
 https://stem.edu.gov.kg/api/books/632 (PDF with text; approved edition)",
-204,1,Kyrgyz-medium,Мен жана дүйнө,"Солошенко О.В., Токтобаева Г.Д.","Мен жана дүйнө (1, 2-бөлүк)",,2025,1,View online only,other year (2024),no,2,"https://kitep.edu.kg/book/250/read (Part or sample only; other year (2024))
-https://bizdin.kg/uchebnik/men-zhana-duino-1-klass-2024/ (View online only; other year (2024))",
+204,1,Kyrgyz-medium,Мен жана дүйнө,"Солошенко О.В., Токтобаева Г.Д.","Мен жана дүйнө (1, 2-бөлүк)",,2025,1,Part or sample only,,no,2,"https://kitep.edu.kg/book/250/read (Part or sample only; other year (2024))
+https://bizdin.kg/uchebnik/men-zhana-duino-1-klass-2024/ (Part or sample only; other year (2024))",
 205,1,Kyrgyz-medium,Мен жана дүйнө,"Мамбетова З., Архипова Т.",Мекен таануу,Б.: Кутаалам,2016,1,PDF without text (scan),approved edition,yes,3,"https://new.bizdin.kg/kniga/uchebnik-rodinovedenie-1-klass-ksh (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/236/read (PDF without text (scan); other year (2025))
 https://mektep.o.kg/books/11/?grade=1 (PDF without text (scan); year unknown)",
@@ -47,8 +47,8 @@ https://kitep.edu.kg/book/186/read (PDF without text (scan); approved edition)",
 https://new.bizdin.kg/kniga/uchebnik-kyrgyzskaya-yazyk-1-klass-rsh (PDF (form not checked); approved edition)
 https://bilim.akipress.org/lib/book:73/ (PDF without text (scan); year unknown)
 https://okuma.kg/books.php?id=260 (PDF without text (scan); other year (2011))",
-6,1,Russian-medium,Математика,Christina Soh,Математика,И.: Учкун,2025,1,PDF without text (scan),other year (2026),no,4,"https://bizdin.kg/uchebnik/matematika-okuu-kitebi-49-61-baraktary-1-klass-2025-oruscha/ (View online only; approved edition)
-https://bizdin.kg/uchebnik/matematika-okuu-kitebi-8-11-bolumdor-1-klass-2025-oruscha/ (View online only; approved edition)
+6,1,Russian-medium,Математика,Christina Soh,Математика,И.: Учкун,2025,1,PDF without text (scan),other year (2026),no,4,"https://bizdin.kg/uchebnik/matematika-okuu-kitebi-49-61-baraktary-1-klass-2025-oruscha/ (Part or sample only; approved edition)
+https://bizdin.kg/uchebnik/matematika-okuu-kitebi-8-11-bolumdor-1-klass-2025-oruscha/ (Part or sample only; approved edition)
 https://kitep.edu.kg/book/434/read (PDF without text (scan); other year (2026))
 https://stem.edu.gov.kg/api/books/187 (Part or sample only; approved edition)",
 7,1,Russian-medium,Математика,"Моро М., Волкова С., Степанова С.",Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ST.art Ltd,2020-2022,1,"Login, paywall or library only",,no,1,"https://www.biblioteka.kg/book/1484 (Login, paywall or library only; other year (2019))",Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
@@ -60,11 +60,11 @@ https://bilim.akipress.org/lib/book:74/ (PDF without text (scan); other year (20
 https://bilim.akipress.org/lib/book:65/ (PDF without text (scan); year unknown)",
 9,1,Russian-medium,Я и мир,Dana Paz,Естествознание,И.: Учкун,2025,1,PDF without text (scan),approved edition,yes,5,"https://kitep.edu.kg/book/37/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/251/read (Part or sample only; approved edition)
-https://bizdin.kg/uchebnik/ia-i-mir-1-klass-2025-oruscha/ (View online only; approved edition)
+https://bizdin.kg/uchebnik/ia-i-mir-1-klass-2025-oruscha/ (Part or sample only; approved edition)
 https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-1-klass-2025-oruscha-1/ (View online only; approved edition)
 https://stem.edu.gov.kg/api/books/185 (Part or sample only; approved edition)",
-10,1,Russian-medium,Я и мир,"Солошенко О.В., Токтобаева Г.Д.",Я и мир (в 2-х частях),,2025,1,View online only,approved edition,no,2,"https://kitep.edu.kg/book/251/read (Part or sample only; approved edition)
-https://bizdin.kg/uchebnik/ia-i-mir-1-klass-2025-oruscha/ (View online only; approved edition)",
+10,1,Russian-medium,Я и мир,"Солошенко О.В., Токтобаева Г.Д.",Я и мир (в 2-х частях),,2025,1,Part or sample only,,no,2,"https://kitep.edu.kg/book/251/read (Part or sample only; approved edition)
+https://bizdin.kg/uchebnik/ia-i-mir-1-klass-2025-oruscha/ (Part or sample only; approved edition)",
 11,1,Russian-medium,Я и мир,"Мамбетова З., Архипова Т.",Родиноведение,И.: Кутаалам,2016,1,PDF with text,year unknown,yes,2,"https://kitep.edu.kg/book/187/read (Wrong file; approved edition)
 https://bilim.akipress.org/lib/book:104/ (PDF with text; year unknown)",
 12,1,Russian-medium,Я и мир,Токтобаева Г.,Основы безопасности жизнедеятельности,И.: St.art Ltd,2019,1,Not online,,no,0,,Not found on any site.
@@ -82,7 +82,7 @@ https://kitep.edu.kg/book/80/read (Wrong file)
 https://mektep.o.kg/books/12/?grade=2 (PDF without text (scan))
 https://stem.edu.gov.kg/api/books/82 (Part or sample only)",
 215,2,Kyrgyz-medium,Математика,"Axel Tan, Koh Siew Geok and Dr Viya Kumari Ayadurai",Математика,Б.: Учкун,2025,2,PDF with text,approved edition,yes,3,"https://kitep.edu.kg/book/357/read (PDF without text (scan); approved edition)
-https://bizdin.kg/uchebnik/matematika-okuu-kitebi-4-13-bolumdor-2-klass-2025/ (View online only; approved edition)
+https://bizdin.kg/uchebnik/matematika-okuu-kitebi-4-13-bolumdor-2-klass-2025/ (Part or sample only; approved edition)
 https://stem.edu.gov.kg/api/books/464 (PDF with text; approved edition)",
 216,2,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С. (1-кл.)","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2022,2,Not online,,no,0,,Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
 217,2,Kyrgyz-medium,Математика,"Бекбоев И., Ибраева Н.",Математика,Б.: Билим-компьютер,2011,2,PDF without text (scan),year unknown,yes,5,"https://bilim.akipress.org/lib/book:185/ (PDF without text (scan); year unknown)
@@ -101,8 +101,10 @@ https://mektep.o.kg/books/12/?grade=2 (PDF without text (scan); year unknown)
 https://new.bizdin.kg/kniga/uchebnik-izobrazitelno-khudozhestvennoe-tvorchestvo-2-klass-ksh (PDF (form not checked); other year (2012))",
 222,2,Kyrgyz-medium,Музыка,Касей М. ж.б.,Музыка,Б.: Билим-компьютер,2013,2,PDF without text (scan),other year (2012),no,2,"https://bilim.akipress.org/lib/book:4/ (PDF without text (scan); other year (2012))
 https://bilim.akipress.org/lib/book:179/ (PDF without text (scan); other year (2012))",
-15,2,Russian-medium,Русский язык и чтение,"Климанова Л.Ф., Виноградская Л.А., Горецкий В.Г. Учебник адаптирован: Фадеева Г.Н., Дримблева Е.Ю.",Русский язык и чтение. Чтение (в 2-х частях),И: Просвещение,2025,2,"Login, paywall or library only",,no,1,"https://search.rsl.ru/ru/record/01015739043 (Login, paywall or library only; other year (2026))","Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
-16,2,Russian-medium,Русский язык и чтение,"Климанова Л.Ф., Бабушкина Т.В. Учебник адаптирован: Фадеева Г.Н., Дримблева Е.Ю.",Русский язык и чтение. Русский язык (в 2-х частях),И: Просвещение,2025,2,"Login, paywall or library only",,no,1,"https://search.rsl.ru/ru/record/01013962247 (Login, paywall or library only; approved edition)","Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
+15,2,Russian-medium,Русский язык и чтение,"Климанова Л.Ф., Виноградская Л.А., Горецкий В.Г. Учебник адаптирован: Фадеева Г.Н., Дримблева Е.Ю.",Русский язык и чтение. Чтение (в 2-х частях),И: Просвещение,2025,2,PDF with text,other edition,no,2,"https://search.rsl.ru/ru/record/01015739043 (Login, paywall or library only; other year (2026))
+https://lib.uchebnik.academy/book/literaturnoe-chtenie-2-klass-v-2-chastiakh-klimanova-l-f-vinogradskaia-l-a-goretskii-v-g-klimanova-l-f-2-klass-2016/ (PDF with text; other edition)",
+16,2,Russian-medium,Русский язык и чтение,"Климанова Л.Ф., Бабушкина Т.В. Учебник адаптирован: Фадеева Г.Н., Дримблева Е.Ю.",Русский язык и чтение. Русский язык (в 2-х частях),И: Просвещение,2025,2,PDF without text (scan),other edition,no,2,"https://search.rsl.ru/ru/record/01013962247 (Login, paywall or library only; approved edition)
+https://lib.uchebnik.academy/book/russkii-iazyk-2-klass-uchebnik-v-2-chastiakh-klimanova-l-f-babushkina-t-v-klimanova-l-f-2-klass-2012/ (PDF without text (scan); other edition)",
 17,2,Russian-medium,Русский язык и чтение,Бойкина М.,Русский язык и чтение. Азбука,И.: Аркус/Учкун,2024,2,Part or sample only,,no,1,https://arcus.kg/modules/mod_flipbook_48/tmpl/ (Part or sample only),New Аркус/Учкун edition; only publisher samples or shop listings online.
 18,2,Russian-medium,Русский язык и чтение,"Даувальдер О., Качигулова В.",Русский язык,И.: Принт-Экспрес,2016,2,PDF without text (scan),year unknown,yes,3,"https://bilim.akipress.org/lib/book:83/ (PDF without text (scan); year unknown)
 https://bilim.akipress.org/lib/book:203/ (PDF without text (scan); year unknown)
@@ -125,7 +127,7 @@ https://stem.edu.gov.kg/api/books/203 (Part or sample only; approved edition)",
 22,2,Russian-medium,Математика,"Моро М., Волкова С., Степанова С. (для 1-х кл.)",Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ST.art Ltd,2020-2022,2,"Login, paywall or library only",,no,1,"https://www.biblioteka.kg/book/1490 (Login, paywall or library only; other year (2019))",Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
 23,2,Russian-medium,Математика,Бекбоев И. и др.,Математика,И.: Учкун,2011,2,PDF without text (scan),approved edition,yes,2,"https://kitep.edu.kg/book/237/read (PDF without text (scan); approved edition)
 https://bilim.akipress.org/lib/book:185/ (PDF without text (scan); year unknown)",
-24,2,Russian-medium,Я и мир,Shireen Khanalim,Естествознание,И.: Учкун,2025,2,PDF without text (scan),other year (2026),no,3,"https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-2-klass-2025-oruscha/ (View online only; approved edition)
+24,2,Russian-medium,Я и мир,Shireen Khanalim,Естествознание,И.: Учкун,2025,2,PDF without text (scan),other year (2026),yes,3,"https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-2-klass-2025-oruscha/ (View online only; approved edition)
 https://kitep.edu.kg/book/562/read (PDF without text (scan); other year (2026))
 https://stem.edu.gov.kg/api/books/301 (Part or sample only; approved edition)",
 25,2,Russian-medium,Я и мир,Мамбетова З.,Родиноведение,И.: Глобал-принт,2021,2,PDF without text (scan),year unknown,yes,1,https://mektep.o.kg/books/1/?grade=2 (PDF without text (scan); year unknown),
@@ -141,7 +143,7 @@ https://kitep.edu.kg/book/60/read (PDF with text; approved edition)
 https://bizdin.kg/uchebnik/adabii-okuu-3-klass-2014/ (View online only; approved edition)
 https://mektep.o.kg/books/13/?grade=3 (PDF with text; year unknown)
 https://bizdin.kg/uchebnik/kyrgyz-tili-3-klass-2009-zh/ (View online only; other year (2009))",
-225,3,Kyrgyz-medium,Кыргыз тили жана окуу,"Токтомаметов А., Субанова Б.",Адабий окуу,Б.: Мамлекеттик тил жана энциклопедия борбору/ Полиграфбумресурсы,2009,2,View online only,year unknown,no,1,https://bizdin.kg/uchebnik/adabii-okuu-3-klass/ (View online only; year unknown),
+225,3,Kyrgyz-medium,Кыргыз тили жана окуу,"Токтомаметов А., Субанова Б.",Адабий окуу,Б.: Мамлекеттик тил жана энциклопедия борбору/ Полиграфбумресурсы,2009,2,View online only,year unknown,yes,1,https://bizdin.kg/uchebnik/adabii-okuu-3-klass/ (View online only; year unknown),
 226,3,Kyrgyz-medium,Русский язык и чтение,"Булатова В., Мусаева Ч., Шеримбекова А.","Русский язык и чтение (1, 2 часть)",Б.: St.art Ltd,2013,2,Our reader: exact text,other year (2014),yes,10,"https://rinatius.github.io/el-kitep/#/read/kg-russkiy-yazyk-i-chtenie-3-1 (Our reader: exact text; other year (2014))
 https://rinatius.github.io/el-kitep/#/read/kg-russkiy-yazyk-i-chtenie-3-2 (Our reader: exact text; other year (2014))
 https://kitep.edu.kg/book/71/read (Part or sample only; approved edition)
@@ -166,7 +168,8 @@ https://bilim.akipress.org/lib/book:138/ (PDF with text (OCR or old font); appro
 https://okuma.kg/books.php?id=731 (PDF without text (scan); approved edition)
 https://new.bizdin.kg/kniga/uchebnik-matematika-3-klass-kyrgyz-klass (PDF (form not checked); approved edition)
 https://mektep.o.kg/books/13/?grade=3 (PDF with text (OCR or old font); year unknown)",
-231,3,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С.","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2023,2,Part or sample only,,no,1,https://stem.edu.gov.kg/api/books/107 (Part or sample only),Not online.
+231,3,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С.","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2023,2,Part or sample only,,no,2,"https://stem.edu.gov.kg/api/books/107 (Part or sample only)
+https://lib.uchebnik.academy/book/matematika-3-klass-v-2-chastiakh-moro-m-i-i-dr-moro-m-i-3-klass-2023/ (Other language only)",Not online.
 232,3,Kyrgyz-medium,Мен жана дүйнө,"Bushra Malik, Natasha Mehta, Shireen Khanalim, Teo Tang Wee",Табигый илимдер,Б.: Учкун,2026,3,PDF without text (scan),approved edition,yes,3,"https://kitep.edu.kg/book/482/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/483/read (PDF without text (scan); approved edition)
 https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-3-klass-2026/ (View online only; approved edition)",
@@ -204,7 +207,7 @@ https://kitep.edu.kg/book/471/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/513/read (PDF without text (scan); approved edition)
 https://bizdin.kg/uchebnik/matematika-okuu-kitebi-3-klass-2026-oruscha/ (View online only; approved edition)",
 35,3,Russian-medium,Математика,Бекбоев И. и др.,Математика,И.: Учкун,2011,2,Other language only,,no,1,https://kitep.edu.kg/book/238/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/238/read)."
-36,3,Russian-medium,Математика,Моро М. и др.,Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ St.art Ltd,2020-2021,2,Not online,,no,0,,
+36,3,Russian-medium,Математика,Моро М. и др.,Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ St.art Ltd,2020-2021,2,PDF without text (scan),other edition,no,1,https://lib.uchebnik.academy/book/matematika-3-klass-v-2-chastiakh-moro-m-i-i-dr-moro-m-i-3-klass-2023/ (PDF without text (scan); other edition),
 37,3,Russian-medium,Я и мир,"Bushra Malik, Natasha Mehta, Shireen Khanalim, Teo Tang Wee",Естественные науки,И.: Учкун,2026,3,PDF without text (scan),approved edition,yes,3,"https://kitep.edu.kg/book/479/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/480/read (PDF without text (scan); approved edition)
 https://bizdin.kg/uchebnik/tabigyi-ilimder-men-zhana-duino-okuu-kitebi-3-klass-2026-oruscha/ (View online only; approved edition)",
@@ -218,7 +221,7 @@ https://kitep.edu.kg/book/241/read (PDF without text (scan); other year (2013))"
 42,3,Russian-medium,Музыка,Касей М. и др.,Музыка,И.: Билим-компьютер,2015,3,Our reader: exact text,approved edition,yes,3,"https://rinatius.github.io/el-kitep/#/read/ru-muzyka-3 (Our reader: exact text; approved edition)
 https://bilim.akipress.org/lib/book:136/ (PDF with text; year unknown)
 https://kitep.edu.kg/book/240/read (PDF with text; other year (2013))",
-238,4,Kyrgyz-medium,Кыргыз тили жана окуу,Шаелдаева С. ж.б.,Кыргыз тили,Б.: Учкун,2023,3,Not online,,no,0,,
+238,4,Kyrgyz-medium,Кыргыз тили жана окуу,Шаелдаева С. ж.б.,Кыргыз тили,Б.: Учкун,2023,3,View online only,other year (2014),no,1,https://bizdin.kg/uchebnik/kyrgyz-tili-4-klass-2014-zh-kyrgyzskii-iazyk-4-klass-2014-g-na-kyrgyzskom/okuu/ (View online only; other year (2014)),
 239,4,Kyrgyz-medium,Кыргыз тили жана окуу,"Рысбаев С., Ибраимова К., Абдухамидова Б.",Адабий окуу,Б.: Аркус,2015,3,Our reader: exact text,approved edition,yes,6,"https://rinatius.github.io/el-kitep/#/read/kg-adabiy-okuu-4 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/66/read (PDF with text; approved edition)
 https://bilim.akipress.org/lib/book:149/ (PDF with text; approved edition)
@@ -242,7 +245,7 @@ https://new.bizdin.kg/kniga/uchebnik-matematika-4-klass-ksh (PDF (form not check
 https://bizdin.kg/uchebnik/matematika-4-klass-2009/ (View online only; approved edition)
 https://mektep.o.kg/books/14/?grade=4 (PDF without text (scan); year unknown)
 https://okuma.kg/books.php?id=733 (PDF without text (scan); other year (2002))",
-246,4,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С.","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2022,3,Not online,,no,0,,Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
+246,4,Kyrgyz-medium,Математика,"Моро М., Волкова С., Степанова С.","Математика (1, 2-бөлүк) Адаптацияланган басылышы",Б.: Аркус/ST.art Ltd,2020-2022,3,Other language only,,no,1,https://lib.uchebnik.academy/book/matematika-4-klass-uchebnik-v-2-chastiakh-moro-m-i-bantova-m-a-i-dr-moro-m-i-4-klass-2023/ (Other language only),Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
 247,4,Kyrgyz-medium,Мен жана дүйнө,"Бухова Е., Солошенко О., Шаповалова Е.",Мекен таануу,Б.: Аркус,2015,3,Our reader: exact text,approved edition,yes,6,"https://rinatius.github.io/el-kitep/#/read/kg-meken-taanuu-4 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/88/read (PDF with text; approved edition)
 https://bilim.akipress.org/lib/book:113/ (PDF with text; year unknown)
@@ -281,12 +284,12 @@ https://kitep.edu.kg/book/392/read (PDF with text; approved edition)",
 https://new.bizdin.kg/kniga/uchebnik-angliyskiy-yazyk-4-klass-rsh- (PDF (form not checked); approved edition)",
 48,4,Russian-medium,Математика,"Axel Tan, Niel Patrick Condino, Dr Amanda O'Shea and Joyce Ng",Математика,,2026,3,Not online,,no,0,,Not found on any site we checked.
 49,4,Russian-medium,Математика,"Бекбоев И., Ибраева Н.",Математика,И.: Aditi,2011,3,Other language only,,no,1,https://kitep.edu.kg/book/63/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/63/read)."
-50,4,Russian-medium,Математика,Моро М. и др,Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ St.art Ltd,2020-2021,3,Not online,,no,0,,Adapted Моро edition (Аркус): not online. kitep.edu.kg/book/513 has a 2026 Моро edition for grade 3 only.
+50,4,Russian-medium,Математика,Моро М. и др,Математика (в 2-х частях) Адаптированное издание,И.: Аркус/ St.art Ltd,2020-2021,3,PDF without text (scan),other edition,no,1,https://lib.uchebnik.academy/book/matematika-4-klass-uchebnik-v-2-chastiakh-moro-m-i-bantova-m-a-i-dr-moro-m-i-4-klass-2023/ (PDF without text (scan); other edition),
 51,4,Russian-medium,Я и мир,Бухова Е. и др.,Родиноведение,И.: Аркус,2015,3,PDF with text,year unknown,yes,4,"https://kitep.edu.kg/book/68/read (PDF without text (scan); approved edition)
 https://new.bizdin.kg/kniga/uchebnik-rodinovedenie-4-klass-rsh- (PDF (form not checked); approved edition)
 https://bilim.akipress.org/lib/book:113/ (PDF with text; year unknown)
 https://mektep.o.kg/books/3/?grade=4 (PDF without text (scan); year unknown)",
-52,4,Russian-medium,Я и мир,Мамбетова З.,Родиноведение,И.: Глобал-принт,2021,3,Not online,,no,0,,
+52,4,Russian-medium,Я и мир,Мамбетова З.,Родиноведение,И.: Глобал-принт,2021,3,View online only,other year (2005),no,1,https://bizdin.kg/uchebnik/meken-taanuu-aalam-zhana-biz-4-klass-oruscha/okuu/ (View online only; other year (2005)),
 53,4,Russian-medium,Я и мир,Токтобаева Г.,Основы безопасности жизнедеятельности,И.: St.art Ltd,2019,3,Not online,,no,0,,Not found on any site.
 54,4,Russian-medium,Изобразительно-художественное творчество,Акматов Д. и др.,Изобразительно-художественное творчество,И.: Билим-компьютер,2015,3,PDF without text (scan),approved edition,yes,2,"https://kitep.edu.kg/book/62/read (PDF without text (scan); approved edition)
 https://new.bizdin.kg/kniga/uchebnik-khuzhozhestvenno-izobrazitelnoe-tvorchestvo-4-klass-rsh (PDF (form not checked); approved edition)",
@@ -330,7 +333,7 @@ https://bizdin.kg/uchebnik/kyrgyzstandyn-tarykhy-boiuncha-kyskacha-angemeler-5-k
 262,5,Kyrgyz-medium,Мен жана дүйнө,"Осмонов Ө., Керимова Ш. ж.б.",Адам жана коом,Б.: Билим-компьютер,2018,4,Our reader: exact text,approved edition,yes,1,https://rinatius.github.io/el-kitep/#/read/kg-adam-jana-koom-5 (Our reader: exact text; approved edition),
 263,5,Kyrgyz-medium,Математика,Toh Tin Lam,Математика,Б.: Учкун,2025,4,PDF with text,approved edition,yes,4,"https://kitep.edu.kg/book/50/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/328/read (PDF with text; approved edition)
-https://bizdin.kg/uchebnik/matematika_5_rt_kyrg_8-10-5-klass-2025/ (View online only; approved edition)
+https://bizdin.kg/uchebnik/matematika_5_rt_kyrg_8-10-5-klass-2025/ (Part or sample only; approved edition)
 https://stem.edu.gov.kg/api/books/315 (Part or sample only; approved edition)",
 264,5,Kyrgyz-medium,Математика,Кыдыралиев С. ж.б.,Математика,Б.: Аркус,2018,4,PDF without text (scan),approved edition,yes,2,"https://kitep.edu.kg/book/135/read (PDF without text (scan); approved edition)
 https://new.bizdin.kg/kniga/uchebnik-matematika-5-klass-ksh (PDF (form not checked); approved edition)",
@@ -355,13 +358,15 @@ https://mektep.o.kg/books/15/?grade=5 (PDF with text; year unknown)",
 https://kitep.edu.kg/book/509/read (PDF with text; approved edition)
 https://new.bizdin.kg/kniga/uchebnik-muzyka-5-klass-ksh (PDF (form not checked); approved edition)
 https://mektep.o.kg/books/15/?grade=5 (PDF with text; year unknown)",
-56,5,Russian-medium,Русский язык,"Ладыженская Т.А., Баранов М.Т., Тростенцова Л.А. и др. Учебник адаптирован: Коминарец Н.Д., Матохина Т.А.",Русский язык (в 2-х частях),И.: Просвещение,2025,3,"Login, paywall or library only",,no,1,"https://search.rsl.ru/ru/record/01013810967 (Login, paywall or library only; approved edition)","Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
+56,5,Russian-medium,Русский язык,"Ладыженская Т.А., Баранов М.Т., Тростенцова Л.А. и др. Учебник адаптирован: Коминарец Н.Д., Матохина Т.А.",Русский язык (в 2-х частях),И.: Просвещение,2025,3,PDF without text (scan),other edition,no,2,"https://search.rsl.ru/ru/record/01013810967 (Login, paywall or library only; approved edition)
+https://lib.uchebnik.academy/book/russkii-iazyk-5-klass-1-2-chast-ladyzhenskaia-t-a-baranov-m-t-i-dr-ladyzhenskaia-t-a-5-klass-2023/ (PDF without text (scan); other edition)",
 57,5,Russian-medium,Русский язык,"Бреусенко Л., Матохина Т. и др.",Русский язык,И.: Аркус,2018,3,Our reader: exact text,approved edition,yes,5,"https://rinatius.github.io/el-kitep/#/read/ru-russkiy-yazyk-5 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/74/read (PDF with text; approved edition)
 https://new.bizdin.kg/kniga/uchebnik-russkiy-yazyk-5-klass-rsh (PDF (form not checked); approved edition)
 https://bizdin.kg/uchebnik/russkii-iazyk-5-klass-2018-oruscha/ (View online only; approved edition)
 https://mektep.o.kg/books/4/?grade=5 (PDF with text; year unknown)",
-58,5,Russian-medium,Русская литература,"Коровина В.Я., Журавлев В.П., Коровин В.И., Низовская И.А., Ешенова Н.А.",Русская литература (в 2-х частях),И.: Просвещение,2025,3,"Login, paywall or library only",,no,1,"https://search.rsl.ru/ru/record/01013816583 (Login, paywall or library only; approved edition)","Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
+58,5,Russian-medium,Русская литература,"Коровина В.Я., Журавлев В.П., Коровин В.И., Низовская И.А., Ешенова Н.А.",Русская литература (в 2-х частях),И.: Просвещение,2025,3,PDF without text (scan),other edition,no,2,"https://search.rsl.ru/ru/record/01013816583 (Login, paywall or library only; approved edition)
+https://lib.uchebnik.academy/book/literatura-5-klass-uchebnik-v-1-2-kniga-i-broshiura-fonokhrestomatiia-korovina-v-ia-i-dr-korovina-v-ia-5-klass-2024/ (PDF without text (scan); other edition)",
 59,5,Russian-medium,Русская литература,Озмитель Е. и др.,Русская литература,И.: Аркус,2018,4,Our reader: exact text,approved edition,yes,6,"https://rinatius.github.io/el-kitep/#/read/ru-russkaya-literatura-5 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/87/read (PDF with text; approved edition)
 https://kitep.edu.kg/book/518/read (PDF with text; approved edition)
@@ -421,7 +426,8 @@ https://mektep.o.kg/books/16/?grade=6 (PDF with text; year unknown)",
 275,6,Kyrgyz-medium,Русский язык,"Задорожная Н., Таирова Г.",Русский язык,Б.: Аркус,2018,4,Our reader: exact text,approved edition,yes,3,"https://rinatius.github.io/el-kitep/#/read/kg-russkiy-yazyk-6 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/100/read (PDF without text (scan); approved edition)
 https://mektep.o.kg/books/16/?grade=6 (PDF without text (scan); year unknown)",
-276,6,Kyrgyz-medium,Русская литература,Симонова О.,Книга для чтения,Б.: Билим куту,2016,4,Not online,,no,0,,
+276,6,Kyrgyz-medium,Русская литература,Симонова О.,Книга для чтения,Б.: Билим куту,2016,4,PDF without text (scan),other year (2010),no,2,"https://www.okuma.kg/read/web/books/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D1%8F%206%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81(okuma.kg)_%D0%9E%D1%80%D1%83%D1%81%20%D1%82%D0%B8%D0%BB%D0%B8%20%D0%B6%D0%B0%D0%BD%D0%B0%20%D0%B0%D0%B4%D0%B0%D0%B1%D0%B8%D1%8F%D1%82%D1%8B86.pdf (PDF without text (scan); other year (2010))
+https://www.okuma.kg/read/web/books/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F%206(okuma.kg)_%D0%9E%D1%80%D1%83%D1%81%20%D1%82%D0%B8%D0%BB%D0%B8%20%D0%B6%D0%B0%D0%BD%D0%B0%20%D0%B0%D0%B4%D0%B0%D0%B1%D0%B8%D1%8F%D1%82%D1%8B42.pdf (PDF without text (scan); other year (2002))",
 277,6,Kyrgyz-medium,Чет тил,"Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",Take Off with English,Б.: Учкун,2025,5,PDF with text,approved edition,yes,3,"https://kitep.edu.kg/book/21/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/283/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/408/read (PDF with text; approved edition)",
@@ -475,7 +481,7 @@ https://bizdin.kg/uchebnik/orus-tili-6-klass-2018-oruscha/ (View online only; ap
 https://mektep.o.kg/books/5/?grade=6 (PDF with text; year unknown)",
 76,6,Russian-medium,Русская литература,Озмитель Е. и др.,Русская литература,И.: Аркус,2018,4,PDF with text,approved edition,yes,2,"https://new.bizdin.kg/kniga/uchebnik-russkaya-literatura-6-klass-rsh (PDF with text; approved edition)
 https://mektep.o.kg/books/5/?grade=6 (PDF with text; year unknown)",
-77,6,Russian-medium,Кыргызский язык,Джусупбекова Н. и др.,Кыргыз тили,И.: Аркус,2018,4,Not online,,no,0,,
+77,6,Russian-medium,Кыргызский язык,Джусупбекова Н. и др.,Кыргыз тили,И.: Аркус,2018,4,View online only,approved edition,yes,1,https://bizdin.kg/uchebnik/schoolbook-kyrgyz-language-6-class-omorova-rus/okuu/ (View online only; approved edition),
 78,6,Russian-medium,Кыргызская литература,Үсөналиев Т.,Кыргыз адабияты,И.: Билим куту,2006,4,PDF without text (scan),year unknown,yes,1,https://mektep.o.kg/books/5/?grade=6 (PDF without text (scan); year unknown),
 79,6,Russian-medium,Иностранный язык,"Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",Take Off with English,И.: Учкун,2025,4,PDF with text,approved edition,yes,3,"https://kitep.edu.kg/book/22/read (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/282/read (PDF without text (scan); approved edition)
@@ -506,9 +512,9 @@ https://kitep.edu.kg/book/89/read (PDF with text; approved edition)
 https://okuma.kg/books.php?id=191 (PDF without text (scan); approved edition)
 https://kitep.edu.kg/book/499/read (PDF without text (scan); approved edition)
 https://new.bizdin.kg/kniga/uchebnik-kyrgyzskiy-yazyk-7-klass-ksh (PDF (form not checked); approved edition)
-https://bizdin.kg/uchebnik/kyrgyz-tili-7-klass/ (View online only; year unknown)",
+https://bizdin.kg/uchebnik/kyrgyz-tili-7-klass/ (View online only; other year (2015))",
 292,7,Kyrgyz-medium,Кыргыз тили,Исаков Б.,Кыргыз тили,Б.: Мектеп,2009,5,Our reader: AI-proofread text,other year (2012),no,1,https://rinatius.github.io/el-kitep/#/read/kg-kyrgyz-tili-7-9 (Our reader: AI-proofread text; other year (2012)),
-293,7,Kyrgyz-medium,Кыргыз тили,"С. Үсөналиев, В.И. Мусаева, Г.С. Үсөналиева",Кыргыз тили,Б.: Аркус/ST.art Ltd,2025,5,PDF with text,other year (2015),no,5,"https://bizdin.kg/uchebnik/kyrgyz-tili-7-klass/ (View online only; year unknown)
+293,7,Kyrgyz-medium,Кыргыз тили,"С. Үсөналиев, В.И. Мусаева, Г.С. Үсөналиева",Кыргыз тили,Б.: Аркус/ST.art Ltd,2025,5,PDF with text,other year (2015),no,5,"https://bizdin.kg/uchebnik/kyrgyz-tili-7-klass/ (View online only; other year (2015))
 https://kitep.edu.kg/book/89/read (PDF with text; other year (2015))
 https://okuma.kg/books.php?id=191 (PDF without text (scan); other year (2015))
 https://uzedu.online/kirgizskij-jazyk/933/ (PDF with text; other edition)
@@ -586,10 +592,10 @@ https://new.bizdin.kg/kniga/uchebnik-biologiya-7-8-klass-ksh (PDF (form not chec
 https://bizdin.kg/uchebnik/biologiia-okuu-kitebi-zhanybarlar-7-8-klasstar-uchebnik-po-biologii-zhivotnye-7-8-klassy-na-kyrgyzskom/ (View online only; year unknown)",
 319,7,Kyrgyz-medium,"Технология (Эмгек, чийме жана дизайн)",,,,,7,No textbook on the list,,no,0,,The official list has an empty row for this subject.
 320,7,Kyrgyz-medium,Музыка,,,,,7,No textbook on the list,,no,0,,The official list has an empty row for this subject.
-92,7,Russian-medium,Русский язык,"Баранов М.Т., Ладыженская Т.А., Тростенцова Л.А. и др. Учебник адаптирован: Баган Е.В., Бреусенко Л.М.",Русский язык (в 2-х частях),И.: Просвещение,2025,5,Not online,,no,0,,"Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
+92,7,Russian-medium,Русский язык,"Баранов М.Т., Ладыженская Т.А., Тростенцова Л.А. и др. Учебник адаптирован: Баган Е.В., Бреусенко Л.М.",Русский язык (в 2-х частях),И.: Просвещение,2025,5,PDF without text (scan),other edition,no,1,https://lib.uchebnik.academy/book/russkii-iazyk-7-klass-v-2-kh-chastiakh-ladyzhenskaia-t-a-baranov-m-t-i-dr-ladyzhenskaia-t-a-7-klass-2023/ (PDF without text (scan); other edition),
 93,7,Russian-medium,Русский язык,"Бреусенко Л., Матохина Т.",Русский язык,И.: Аркус/ St.art Ltd,2024,5,Part or sample only,,no,2,"https://arcus.kg/ru/metodicheskaya-podderzhka-uchitelej (Part or sample only)
 https://arcus.kg/ru/uchebnaya-literatura/srednyaya-shkola-5-9-klassy/russkij/213-russkij-yazyk-7-klass (Not online)",Only a publisher sample (41 of 256 pages) is online.
-94,7,Russian-medium,Русская литература,"Коровина В.Я., Журавлев В.П., Коровин В.И., Низовская И.А., Ешенова Н.А.",Русская литература (в 2-х частях),И.: Просвещение,2025,5,Not online,,no,0,,"Adapted Просвещение edition printed for the 2025 Russian donation; print only, no public e-version."
+94,7,Russian-medium,Русская литература,"Коровина В.Я., Журавлев В.П., Коровин В.И., Низовская И.А., Ешенова Н.А.",Русская литература (в 2-х частях),И.: Просвещение,2025,5,PDF without text (scan),other edition,no,1,https://lib.uchebnik.academy/book/literatura-7-klass-uchebnik-v-2-chastiakh-korovina-v-ia-korovina-v-ia-7-klass-2024/ (PDF without text (scan); other edition),
 95,7,Russian-medium,Кыргызский язык,"Оморова А., Осмонова П., Абылкасымова Т., Узекеева А.",Кыргыз тили,И.: Аркус/ St.art Ltd,2024,5,Part or sample only,,no,2,"https://arcus.kg/ru/metodicheskaya-podderzhka-uchitelej (Part or sample only)
 https://arcus.kg/ru/uchebnaya-literatura/srednyaya-shkola-5-9-klassy/russkij/276-kyrgyz-tili-7-klass (Not online)","Only on Scribd (bot check), not downloadable."
 96,7,Russian-medium,Кыргызский язык,"Сыдыкова Б., Мамытов Ж. и др.",Кыргыз тили,И.: Энциклопедия,2016,5,Our reader: AI-proofread text,approved edition,yes,2,"https://rinatius.github.io/el-kitep/#/read/ru-kyrgyz-tili-7 (Our reader: AI-proofread text; approved edition)
@@ -618,10 +624,14 @@ https://bizdin.kg/uchebnik/chelovek-i-obshchestvo-7-klass-2024-oruscha/ (View on
 https://kitep.edu.kg/book/151/read (PDF without text (scan); approved edition)
 https://bizdin.kg/uchebnik/matematika-okuu-kitebi-7-klass-2025-oruscha/ (View online only; approved edition)
 https://stem.edu.gov.kg/api/books/353 (Part or sample only)",
-107,7,Russian-medium,Алгебра,"Макарычев Ю.А., Миндюк Н.Г., Нешков К.И. и др.",Алгебра,И.: Просвещение,Последнее издание,6,"Login, paywall or library only",,no,1,"https://prosv.ru/product/matematika-algebra-7-klass-bazovii-uroven-elektronnaya-forma-uchebnika184098802/ (Login, paywall or library only)","Russian Federation textbook (Просвещение), not published free in Kyrgyzstan; not downloaded (copyright)."
+107,7,Russian-medium,Алгебра,"Макарычев Ю.А., Миндюк Н.Г., Нешков К.И. и др.",Алгебра,И.: Просвещение,Последнее издание,6,PDF with text,any (list says latest edition),yes,3,"https://prosv.ru/product/matematika-algebra-7-klass-bazovii-uroven-elektronnaya-forma-uchebnika184098802/ (Login, paywall or library only)
+https://lib.uchebnik.academy/book/algebra-7-klass-uchebnik-makarychev-iu-n-mindiuk-n-g-i-dr-makarychev-iu-n-7-klass-2024/ (PDF with text; any (list says latest edition))
+https://stem.edu.gov.kg/api/books/63 (PDF without text (scan); other year (2013))",
 108,7,Russian-medium,Геометрия,"Бекбоев И., Борубаев А., Айылчиев А.",Геометрия 7 – 9-кл.,,Последнее издание,6,Other language only,,no,1,https://kitep.edu.kg/book/102/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/102/read)."
-109,7,Russian-medium,Геометрия,Погорелов А.В.,Геометрия 7 – 9 кл.,И.: Просвещение,Последнее издание,6,"Login, paywall or library only",,no,1,"https://prosv.ru/product/geometriya-7-9-klass-elektronnaya-forma-uchebnika02/ (Login, paywall or library only)","Russian Federation textbook (Просвещение), not published free in Kyrgyzstan; not downloaded (copyright)."
-110,7,Russian-medium,Геометрия,"Атанасян Л.С., Бутузов В.Ф., Кадомцев С.Б. и др.",Геометрия 7 – 9 кл.,И.: Просвещение,Последнее издание,6,"Login, paywall or library only",,no,1,"https://prosv.ru/product/geometriya-7-9-klass-elektronnaya-forma-uchebnika102/ (Login, paywall or library only)","Russian Federation textbook (Просвещение), not published free in Kyrgyzstan; not downloaded (copyright)."
+109,7,Russian-medium,Геометрия,Погорелов А.В.,Геометрия 7 – 9 кл.,И.: Просвещение,Последнее издание,6,PDF with text,any (list says latest edition),yes,2,"https://prosv.ru/product/geometriya-7-9-klass-elektronnaya-forma-uchebnika02/ (Login, paywall or library only)
+https://lib.uchebnik.academy/book/geometriia-7-9-klass-uchebnik-pogorelov-a-v-pogorelov-a-v-9-klass-2022/ (PDF with text; any (list says latest edition))",
+110,7,Russian-medium,Геометрия,"Атанасян Л.С., Бутузов В.Ф., Кадомцев С.Б. и др.",Геометрия 7 – 9 кл.,И.: Просвещение,Последнее издание,6,PDF without text (scan),any (list says latest edition),yes,2,"https://prosv.ru/product/geometriya-7-9-klass-elektronnaya-forma-uchebnika102/ (Login, paywall or library only)
+https://lib.uchebnik.academy/uchebnik/image/catalog/books/Geometriya.%207-9%20klass.%20Uchebnik%20-%20Atanasyan%20L.S.,%20Butuzov%20V.F.,%20Kadomtsev%20S.B.%20i%20dr/pdf/geometrija_-uchebnik_-7-9-kl_-atanasjan_compressed.pdf (PDF without text (scan); any (list says latest edition))",
 111,7,Russian-medium,Информатика,"Цыбуля И., Самыкбаева Л., Беляев А. и др.",Информатика 7 – 9 кл.,И.: Фонд «Сорос Кыргызстан»,2020,6,Our reader: exact text,other year (2019),yes,3,"https://rinatius.github.io/el-kitep/#/read/ru-informatika-7-9 (Our reader: exact text; other year (2019))
 https://kitep.edu.kg/book/191/read (PDF with text; approved edition)
 https://bizdin.kg/uchebnik/informatika-7-klass-2020-oruscha/ (View online only; approved edition)",
@@ -734,7 +744,7 @@ https://bizdin.kg/uchebnik/fizika-8-klass-2022-oruscha/okuu/ (Login, paywall or 
 138,8,Russian-medium,Химия,"Рыспаева Б., Молдогазиева С., Байдинов Т.",Химия,И.: Аркус/Учкун,2023,7,PDF with text,approved edition,yes,1,https://stem.edu.gov.kg/api/books/20 (PDF with text; approved edition),
 139,8,Russian-medium,Биология (Человек и его здоровье),,,,,7,No textbook on the list,,no,0,,The official list has an empty row for this subject.
 140,8,Russian-medium,"Технология (Труд, черчение и дизайн)",Ботвинников А. ж.б.,Черчение 8 – 9 кл.,И.: Энциклопедия,2012,7,PDF without text (scan),other edition,no,1,https://obuchalka.org/tag/botvinnikov/ (PDF without text (scan); other edition),
-348,9,Kyrgyz-medium,Кыргыз тили,"Иманов А., Кайбылдаев А., Сапарбаев А., Усубалиев Б.",Кыргыз тили,Б.: Билим-компьютер,2016,8,Not online,,no,0,,
+348,9,Kyrgyz-medium,Кыргыз тили,"Иманов А., Кайбылдаев А., Сапарбаев А., Усубалиев Б.",Кыргыз тили,Б.: Билим-компьютер,2016,8,View online only,other year (2002),no,1,https://bizdin.kg/uchebnik/kyrgyz-tili-8-9-klasstar-kyrgyzskii-iazyk-8-9-klassy-na-kyrgyzskom/okuu/ (View online only; other year (2002)),
 349,9,Kyrgyz-medium,Кыргыз тили,Өмүралиев Б. ж.б.,Кыргыз тили,Б.: Билим-компьютер,2007,8,Our reader: AI-proofread text,other year (2012),yes,3,"https://rinatius.github.io/el-kitep/#/read/kg-kyrgyz-tili-9 (Our reader: AI-proofread text; other year (2012))
 https://bilim.akipress.org/lib/book:202/ (PDF without text (scan); year unknown)
 https://bizdin.kg/uchebnik/kyrgyz-tili-9-klass-1/ (View online only; year unknown)",
@@ -827,10 +837,10 @@ https://bizdin.kg/uchebnik/kyrgyzstandyn-tarykhy-9-klass-2014-oruscha/ (View onl
 https://mektep.o.kg/books/8/?grade=9 (PDF without text (scan); year unknown)",
 149,9,Russian-medium,История,Иманкулов М. и др.,Суверенный Кыргызстан,И.: Издательский центр КАО,2017,7,PDF without text (scan),year unknown,yes,2,"https://mektep.o.kg/books/8/?grade=9 (PDF without text (scan); year unknown)
 https://kitep.edu.kg/book/200/read (PDF without text (scan); other year (2014))",
-150,9,Russian-medium,История,Омурзакова Т.,Новейшая история,И.: Илим пресс,2021,7,Not online,,no,0,,No Russian version online; the Kyrgyz version (Соңку тарых) is already live.
+150,9,Russian-medium,История,Омурзакова Т.,Новейшая история,И.: Илим пресс,2021,7,Other language only,,no,1,https://bizdin.kg/uchebnik/sonku-tarykh-9-klass-2017/okuu/ (Other language only),No Russian version online; the Kyrgyz version (Соңку тарых) is already live.
 151,9,Russian-medium,История развития религий,Доталиев А. и др.,История развития религий,И.: Полиграфбумресурсы,2022,7,Our reader: exact text,approved edition,yes,2,"https://rinatius.github.io/el-kitep/#/read/ru-istoriya-religiy-9 (Our reader: exact text; approved edition)
 https://kitep.edu.kg/book/196/read (PDF with text; approved edition)",
-152,9,Russian-medium,Человек и общество,Эсенканов К.,Человек и общество,,Последнее издание,7,Not online,,no,0,,No Russian version online; the Kyrgyz version (Адам жана коом 9) is already live.
+152,9,Russian-medium,Человек и общество,Эсенканов К.,Человек и общество,,Последнее издание,7,Other language only,,no,1,https://bizdin.kg/uchebnik/adam-zhana-koom-9-klass/okuu/ (Other language only),No Russian version online; the Kyrgyz version (Адам жана коом 9) is already live.
 153,9,Russian-medium,География (Экономическая и социальная география Кыргызстана),,,,,7,No textbook on the list,,no,0,,The official list has an empty row for this subject.
 154,9,Russian-medium,Алгебра,"Иманалиев М., Асанов А., Жусупова К., Искандаров С.",Алгебра,,Последнее издание,8,Other language only,,no,1,https://kitep.edu.kg/book/202/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/202/read)."
 155,9,Russian-medium,Геометрия,"Бекбоев И., Борубаев А., Айылчиев А.",Геометрия 7 – 9-кл.,,Последнее издание,8,Other language only,,no,1,https://kitep.edu.kg/book/209/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/209/read)."
@@ -925,7 +935,7 @@ https://mektep.o.kg/books/9/?grade=10 (PDF with text; year unknown)",
 https://kitep.edu.kg/book/158/read (PDF without text (scan); approved edition)
 https://bilim.akipress.org/lib/book:204/ (PDF without text (scan); year unknown)",
 171,10,Russian-medium,Человек и общество,Пилон Дж.,Гражданственность и участие в управлении (1-я часть),И.: Кыргызстан,2004,8,Our reader: AI-proofread text,approved edition,yes,1,https://rinatius.github.io/el-kitep/#/read/ru-grazhdanstvennost-10 (Our reader: AI-proofread text; approved edition),
-172,10,Russian-medium,География (Экономическая и социальная география Кыргызстана),"Осмонов А., Чодураев Т. ж.б.",Экономическая и социальная география мира,,Последнее издание,8,Not online,,no,0,,No Russian version online; the Kyrgyz version is already live (kg-geografiya-10).
+172,10,Russian-medium,География (Экономическая и социальная география Кыргызстана),"Осмонов А., Чодураев Т. ж.б.",Экономическая и социальная география мира,,Последнее издание,8,Other language only,,no,1,https://bizdin.kg/uchebnik/geografiia-10-klass-2011/okuu/ (Other language only),No Russian version online; the Kyrgyz version is already live (kg-geografiya-10).
 173,10,Russian-medium,Алгебра,"Колмогоров А., Иманалиев М., Асанов А.",Алгебра и начала анализа 10 – 11 кл.,,Последнее издание,8,PDF without text (scan),other edition,no,1,https://jasulib.org.kg/?p=9251 (PDF without text (scan); other edition),
 174,10,Russian-medium,Геометрия,"Бекбоев И., Борубаев А., Айылчиев А.",Геометрия 10 – 11-кл.,,Последнее издание,8,Other language only,,no,1,https://kitep.edu.kg/book/220/read (Other language only),"Only the Kyrgyz-language edition is online (kitep.edu.kg, https://kitep.edu.kg/book/220/read)."
 175,10,Russian-medium,Физика,,,,,8,No textbook on the list,,no,0,,The official list has an empty row for this subject.
