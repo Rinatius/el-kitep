@@ -1741,5 +1741,48 @@
   "standalone": "ru-kyrgyz-adabiyaty-6.html",
   "quality": "proofread",
   "gaps": "3, 51, 119"
+ },
+ {
+  "id": "ru-kniga-dlya-chteniya-3",
+  "v": "03d7011e64",
+  "title": "Книга для чтения",
+  "subtitle": "3 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Е. Озмитель, И. Власова",
+  "year": 2014,
+  "grade": "3",
+  "langName": "Русский",
+  "size": 2076905,
+  "standalone": "ru-kniga-dlya-chteniya-3.html",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-kyrgyz-tili-4",
+  "v": "9d676a66af",
+  "title": "Кыргызский язык и чтение",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Р. Буйлякеева, З. Момункулова",
+  "year": 2015,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 3382124,
+  "standalone": "ru-kyrgyz-tili-4.html",
+  "quality": "proofread",
+  "gaps": "42, 44, 45, 46, 47, 108"
+ },
+ {
+  "id": "ru-kyrgyz-tili-8-2017",
+  "v": "c6fe945bef",
+  "title": "Кыргыз тили",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "С. Ибрагимов",
+  "year": 2017,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1971417,
+  "standalone": "ru-kyrgyz-tili-8-2017.html",
+  "quality": "proofread"
  }
 ]
