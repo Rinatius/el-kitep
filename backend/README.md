@@ -2,7 +2,7 @@
 
 One Cloudflare Worker (`src/worker.js`, config `wrangler.toml`). The reader app and book texts are static assets
 (`dist/`, built by `tools/build_cloudflare.sh` from `site/` without the pictures); book pictures come from the R2
-bucket `el-kitep-books`, because the free plan allows 20,000 asset files; `/api` stores reports and upload records
+bucket `el-kitep-books` at img.elkitep.com, because the free plan allows 20,000 asset files; `/api` stores reports and upload records
 in a D1 database (SQLite, `schema.sql`) and uploaded files in the R2 bucket `el-kitep-uploads`.
 Free tier: 100,000 requests a day, 5 GB database, 10 GB of files. Nothing to patch or keep running.
 
@@ -29,6 +29,12 @@ Everything that needs account-wide rights is done once by hand in the dashboard:
    Settings > Domains & Routes add the custom domain `elkitep.com`.
 4. Manage Account > Account API Tokens > Create: scope "Specified Workers" > `el-kitep`, role Editor.
 5. R2 > Manage API tokens > Create: Object Read & Write, applied to the bucket `el-kitep-books` only.
+6. R2 > `el-kitep-books` > Settings > Custom Domains: connect `img.elkitep.com`. On elkitep.com the app loads book
+   pictures from there, so picture requests don't count against the Worker's 100,000 requests a day.
+7. Same bucket > Settings > CORS policy, so the app may save pictures for offline reading:
+
+       [{"AllowedOrigins": ["https://elkitep.com", "https://www.elkitep.com"],
+         "AllowedMethods": ["GET", "HEAD"], "AllowedHeaders": ["*"], "MaxAgeSeconds": 86400}]
 
 The Worker creates its tables on the first request (the same statements as `schema.sql`), so the deploy needs
 no database rights. The "report an error" button and the upload form turn on by themselves on elkitep.com
