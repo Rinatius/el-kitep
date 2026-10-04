@@ -56,6 +56,11 @@ function networkFirst(key, save) {
 self.addEventListener('fetch', function (e) {
   if (e.request.method !== 'GET') return;
   var url = new URL(e.request.url);
+  if (url.origin === 'https://img.elkitep.com') { // book pictures on elkitep.com: the downloaded copy if there is one
+    // (ignoreVary: the bucket answers with "Vary: Origin" and the saved copy was stored without one)
+    e.respondWith(caches.match(e.request, { ignoreSearch: true, ignoreVary: true }).then(function (hit) { return hit || fetch(e.request); }));
+    return;
+  }
   if (url.origin !== location.origin) return;
   var path = url.origin + url.pathname, scope = abs('./');
   if (e.request.mode === 'navigate' && (path === scope || path === abs('index.html'))) {

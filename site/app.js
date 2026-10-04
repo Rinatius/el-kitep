@@ -10,6 +10,11 @@
   // It runs on the same Cloudflare site as the app, so it exists only there; elsewhere (the old GitHub Pages
   // address, a local copy) API is empty and the "report an error" button and the upload form stay hidden.
   var API = /(^|\.)elkitep\.com$|\.workers\.dev$|^localhost:8787$/.test(location.host) ? '/api' : '';
+  // On elkitep.com book pictures come straight from the R2 bucket's own address (its CORS policy lets the app save
+  // them for offline reading),
+  // so they don't count against the Worker's daily request limit. Elsewhere they sit next to book.json.
+  var IMG = /(^|\.)elkitep\.com$/.test(location.host) ? 'https://img.elkitep.com/' : '';
+  function picBase(id) { return IMG ? IMG + id + '/' : 'books/' + id + '/'; }
 
   // ---------------------------------------------------------------- strings
   var I18N = {
@@ -607,7 +612,7 @@
       return cache.put(base + 'book.json', r.clone()).then(function () { return r.json(); });
     }).then(function (book) {
       // app files are kept up to date by the service worker (sw.js), not stored with each book
-      var urls = book.images.map(function (i) { return base + i; });
+      var urls = book.images.map(function (i) { return picBase(b.id) + i; });
       var done = 0;
       // a few requests in parallel: fast on 3G, gentle on slow phones
       var queue = urls.slice();
@@ -615,9 +620,9 @@
         var u = queue.shift();
         if (!u) return Promise.resolve();
         // a picture already saved with an older version of this book is reused, not downloaded again
-        return caches.match(u).then(function (hit) {
+        return caches.match(u, { ignoreVary: true }).then(function (hit) {
           if (hit) return cache.put(u, hit);
-          return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return cache.put(u, r); });
+          return fetch(u, { mode: 'cors' }).then(function (r) { if (!r.ok) throw new Error(u); return cache.put(u, r); });
         }).then(function () { done++; onProgress(done / urls.length); return worker(); });
       }
       if (!urls.length) onProgress(1);
@@ -649,14 +654,14 @@
     var entry = EMB ? Promise.resolve(EMB) : (LIST ? Promise.resolve(LIST) : loadList().catch(function () { return []; })).then(function (list) {
       return list.filter(function (b) { return b.id === id; })[0] || null;
     });
-    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : 'books/' + id + '/', r[1]); })
+    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : picBase(id), r[1]); })
       .catch(function () {
         app.innerHTML = '<div class="lib"><p class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) +
           '</p><p style="text-align:center"><a class="btn" href="' + libHash + '">' + esc(t('back')) + '</a></p></div>';
       });
   }
 
-  function startReader(book, base, entry) {
+  function startReader(book, base, entry) { // base: where the book's pictures are
     document.title = book.title;
     var chapters = book.chapters;
     var posKey = 'pos:' + book.id;

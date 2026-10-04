@@ -2,7 +2,9 @@
  * - the reader app and book texts (site/ without the pictures) are static assets, served by Cloudflare
  *   before this code runs (see wrangler.toml and tools/build_cloudflare.sh);
  * - book pictures (site/books/<id>/img/) live in the R2 bucket BOOKS, because the free plan allows
- *   20,000 asset files and the pictures alone are more;
+ *   20,000 asset files and the pictures alone are more. On elkitep.com the app loads them straight from the bucket's
+ *   own address img.elkitep.com (no Worker request, so they don't count against the daily limit); the route below
+ *   serves them for the workers.dev address and local testing;
  * - /api/...: text-error reports and books that readers upload, in a D1 database (SQLite) and the R2 bucket FILES.
  * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md. */
 

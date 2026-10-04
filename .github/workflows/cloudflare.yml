@@ -51,7 +51,7 @@ jobs:
           RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
         run: |
           sudo apt-get install -y -qq rclone
-          rclone sync site/books r2:el-kitep-books --include '/*/img/**' --checksum --fast-list --transfers 16 --s3-no-check-bucket --stats-one-line -v
+          rclone sync site/books r2:el-kitep-books --include '/*/img/**' --header-upload 'Cache-Control: public, max-age=86400' --checksum --fast-list --transfers 16 --s3-no-check-bucket --stats-one-line -v
       - if: steps.ready.outputs.ok == 'true'
         name: Build and deploy the Worker
         run: |
