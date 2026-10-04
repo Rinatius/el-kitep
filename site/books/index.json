@@ -1673,5 +1673,50 @@
   "size": 2992296,
   "standalone": "ru-izo-6.html",
   "quality": "exact"
+ },
+ {
+  "id": "kg-kyrgyz-tili-4",
+  "v": "a289547ce6",
+  "title": "Кыргыз тили",
+  "subtitle": "4-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. Шаелдаева",
+  "year": 2014,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 1018013,
+  "standalone": "kg-kyrgyz-tili-4.html",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-rodinovedenie-4-mambetova",
+  "v": "176530a36b",
+  "title": "Родиноведение. Вселенная и мы",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "З. Ж. Мамбетова",
+  "year": 2005,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 1206606,
+  "standalone": "ru-rodinovedenie-4-mambetova.html",
+  "quality": "proofread",
+  "gaps": "28–29, 116–117, 124–125, 128–129, 140–141, 150–151, 156–157",
+  "subject": "Родиноведение"
+ },
+ {
+  "id": "kg-kyrgyz-tili-8-9",
+  "v": "a6aa2cbb50",
+  "title": "Кыргыз тили. Синтаксис",
+  "subtitle": "8–9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Иманов, А. Кайбылдаев, А. Сапарбаев, Б. Усубалиев",
+  "year": 2002,
+  "grade": "8–9",
+  "langName": "Кыргызча",
+  "size": 1917242,
+  "standalone": "kg-kyrgyz-tili-8-9.html",
+  "quality": "proofread",
+  "gaps": "33, 34, 107, 143, 148, 279–281, 485–492"
  }
 ]
