@@ -18,6 +18,7 @@ The server, under `/api`:
   at most 10 per book and event in one request. The counts are approximate: phones report them themselves. The admin page shows them under "Чтение".
 - `GET /admin` (so elkitep.com/api/admin): a page to read reports (mark them fixed or not an error) and download uploaded files.
 - `GET /admin/reports?status=new` with `Authorization: Bearer <ADMIN_KEY>`: the reports as JSON, for fixing books.
+- `STATS_KEY` (GitHub secret `EL_KITEP_STATS_KEY`, optional) is a read-only key for Claude sessions: it opens only `GET /admin/hits` and `GET /admin/reports`. Sessions read it from the environment variable `EL_KITEP_STATS_KEY` in the project's cloud environment.
 
 Readers need no account. Each reader may send 60 reports and 10 uploads an hour (counted by a salted hash of the
 IP address; addresses themselves are not stored), and all readers together 2,000 reports, 100 uploads and 500 files

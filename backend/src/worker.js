@@ -6,7 +6,8 @@
  *   own address img.elkitep.com (no Worker request, so they don't count against the daily limit); the route below
  *   serves them for the workers.dev address and local testing;
  * - /api/...: text-error reports and books that readers upload, in a D1 database (SQLite) and the R2 bucket FILES.
- * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md.
+ * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret; the read-only
+ * STATS_KEY opens GET /api/admin/hits and /api/admin/reports only. See README.md.
  * Security notes: /mnt/project-files/security/CHECKLIST.md in the project (abuse limits, headers, what the dashboard must have). */
 
 const SITES = ['https://elkitep.com', 'https://www.elkitep.com', 'https://rinatius.github.io', 'http://localhost:8080', 'http://localhost:8787'];
@@ -101,6 +102,7 @@ async function limit(env, table, ip) {
     throw new Fail(507, 'no room for uploads now');
   }
 }
+const STATS_PATHS = ['/admin/hits', '/admin/reports'];
 // The admin key, compared in constant time (both sides hashed, so the lengths match).
 async function keyOk(given, want) {
   if (!given || !want) return false;
@@ -227,7 +229,10 @@ async function route(req, env, url, path) {
   if (path.startsWith('/admin/')) {
     // the key travels only in this header, never in the address (addresses end up in logs and browser history)
     const key = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '');
-    if (!(await keyOk(key, env.ADMIN_KEY))) throw new Fail(401, 'wrong key');
+    // STATS_KEY is a second, read-only key for Claude sessions and routines: it reads the daily counters and the
+    // error reports, nothing else (no uploads, which can hold contacts, and no changes)
+    const ok = (await keyOk(key, env.ADMIN_KEY)) || (m === 'GET' && STATS_PATHS.includes(path) && (await keyOk(key, env.STATS_KEY)));
+    if (!ok) throw new Fail(401, 'wrong key');
     if (m === 'GET' && path === '/admin/reports') { // ?status=new|fixed|rejected|all
       const st = url.searchParams.get('status') || 'new';
       const q = st === 'all' ? env.DB.prepare('SELECT * FROM reports ORDER BY id DESC LIMIT 2000')
