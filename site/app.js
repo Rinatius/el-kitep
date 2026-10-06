@@ -45,6 +45,8 @@
       qCards: 'Карточки', qCardsInfo: 'Учебник в виде карточек для телефона: текст учебника сохранён дословно, задания и номера страниц те же, а рисунки, схемы и таблицы перерисованы ИИ. Книгу на соответствие учебнику проверял ИИ, человек её не вычитывал, поэтому отдельные ошибки возможны.',
       menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
       stats: 'Статистика', statsSub: 'Сколько учебников из списка Министерства просвещения на 2026–2027 учебный год уже есть на сайте.',
+      stubTag: 'Пока нет на сайте', stubFull: 'Найден в интернете, готовим для сайта', stubPart: 'В интернете есть только часть книги',
+      stubNone: 'Пока не найден в интернете', stubOrig: 'Оригинал', stubHave: 'Есть эта книга? Пришлите',
       stTotal: 'учебников в списке', stAll: 'Всего', stOn: 'На сайте', stWork: 'Найдены, в работе', stPart: 'Найдены не полностью',
       stPartNote: 'только часть или образец, за плату или после входа, или только на другом языке', stNone: 'Не найдены',
       stLib: 'Из списка Министерства на сайте {n} из {m} учебников', stGrades: 'По классам',
@@ -97,6 +99,8 @@
       qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
       menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
       stats: 'Статистика', statsSub: 'Агартуу министрлигинин 2026–2027-окуу жылына бекитилген тизмесиндеги окуу китептеринин канчасы сайтта бар.',
+      stubTag: 'Азырынча сайтта жок', stubFull: 'Интернеттен табылды, сайтка даярдалууда', stubPart: 'Интернетте китептин бир бөлүгү гана бар',
+      stubNone: 'Азырынча интернеттен табыла элек', stubOrig: 'Түп нускасы', stubHave: 'Бул китеп сизде барбы? Жөнөтүңүз',
       stTotal: 'китеп тизмеде', stAll: 'Бардыгы', stOn: 'Сайтта', stWork: 'Табылды, иштелүүдө', stPart: 'Толук эмес табылды',
       stPartNote: 'бир бөлүгү же үлгүсү гана, акы төлөп же каттоодон кийин гана, же башка тилде гана', stNone: 'Табылган жок',
       stLib: 'Министрликтин тизмесиндеги {m} окуу китебинин {n} сайтта бар', stGrades: 'Класстар боюнча',
@@ -274,6 +278,7 @@
       }
       var grades = [];
       list.forEach(function (b) { gradesOf(b).forEach(function (g) { if (grades.indexOf(g) < 0) grades.push(g); }); });
+      listed.forEach(function (m) { if (grades.indexOf(m.g) < 0) grades.push(m.g); });
       grades.sort(function (a, b) { return a - b; });
       var open = lsGet('libOpen', {});
       var box = $('#books');
@@ -286,7 +291,8 @@
         function setOpen(on) {
           sec.classList.toggle('open', on);
           body.innerHTML = '';
-          if (on) bySubject(books, body, false);
+          // placeholders: books of the Ministry's list for this grade that are not on the site yet (not counted anywhere)
+          if (on) bySubject(books, body, false, listed.filter(function (m) { return m.g === g && !onSite(m); }));
         }
         head.onclick = function () {
           var on = !sec.classList.contains('open');
@@ -554,19 +560,33 @@
   }
 
   // Books under subject headings; subjects without books are never shown.
-  function bySubject(books, root, myView) {
+  function bySubject(books, root, myView, stubs) {
     var groups = {}, keys = [];
-    books.forEach(function (b) {
-      var s = subjectOf(b);
-      if (!groups[s.key]) { groups[s.key] = { s: s, books: [] }; keys.push(s.key); }
-      groups[s.key].books.push(b);
-    });
+    function group(s) { if (!groups[s.key]) { groups[s.key] = { s: s, books: [], stubs: [] }; keys.push(s.key); } return groups[s.key]; }
+    books.forEach(function (b) { group(subjectOf(b)).books.push(b); });
+    (stubs || []).forEach(function (m) { group(subjectOf({ title: m.subj })).stubs.push(m); });
     keys.sort(function (a, b) { var x = groups[a].s, y = groups[b].s; return x.order - y.order || (x.name < y.name ? -1 : x.name > y.name ? 1 : 0); });
     keys.forEach(function (k) {
       var h = document.createElement('h3'); h.className = 'subj'; h.textContent = groups[k].s.name;
       root.appendChild(h);
       groups[k].books.forEach(function (b) { root.appendChild(bookRow(b, myView)); });
+      groups[k].stubs.forEach(function (m) { root.appendChild(stubRow(m)); });
     });
+  }
+
+  // A book of the Ministry's list that is not on the site yet (site/ministry.json): title, authors, what we know about it
+  // ("f": found in full / only in part / not found) and, when it can be read somewhere, a link there ("u") through the
+  // leaving-the-site warning. Shown after the real books of its subject, dashed and greyed, and not counted anywhere.
+  var STUB = { full: 'stubFull', part: 'stubPart', none: 'stubNone' };
+  function stubRow(m) {
+    var el = document.createElement('div'); el.className = 'bk stub';
+    el.innerHTML = '<div class="bk-h"><div class="bk-t">' + esc(m.t) + '</div><span class="stub-tag">' + esc(t('stubTag')) + '</span></div>' +
+      '<div class="bk-m">' + esc([m.a, m.y].filter(Boolean).join(', ')) + '</div>' +
+      '<div class="stub-st sf-' + esc(m.f) + '"><i></i>' + esc(t(STUB[m.f] || 'stubNone')) + '</div>' +
+      (m.u || (API && m.f !== 'full') ? '<div class="row">' + (m.u ? '<button class="btn orig">' + LIB_ICONS.ext + esc(t('stubOrig')) + '</button>' : '') +
+        (API && m.f !== 'full' ? '<a class="btn" href="#/missing">' + esc(t('stubHave')) + '</a>' : '') + '</div>' : '');
+    var o = $('.orig', el); if (o) o.onclick = function () { leaveSheet(m.u); };
+    return el;
   }
 
   // "7", 7, "7–9" or "10-11" -> [7], [7, 8, 9], [10, 11]
