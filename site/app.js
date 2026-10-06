@@ -478,6 +478,27 @@
       return sendReports().then(function () { return true; });
     }, function () { return false; });
   }
+  // Reading counts (only where the server is): the site was opened, a book was opened, a book was downloaded.
+  // Nothing identifies the reader. "f" marks this phone's first time (the app: today; a book: ever), so the server
+  // can count phones without an id. Events wait on the phone while offline and go out in batches.
+  var hitTimer = null;
+  function hit(book, e) {
+    if (!API) return;
+    var d = new Date().toISOString().slice(0, 10), f = 0;
+    if (e === 'app') { f = lsGet('hitDay', '') === d ? 0 : 1; lsSet('hitDay', d); }
+    if (e === 'open') { var seen = lsGet('hitSeen', {}); f = seen[book] ? 0 : 1; seen[book] = 1; lsSet('hitSeen', seen); }
+    lsSet('hits', lsGet('hits', []).concat([{ b: book, e: e, f: f, d: d }]).slice(-200));
+    clearTimeout(hitTimer); hitTimer = setTimeout(sendHits, 3000);
+  }
+  function sendHits() {
+    var q = lsGet('hits', []);
+    if (!API || !q.length || navigator.onLine === false) return;
+    var batch = q.slice(0, 50);
+    postJSON('/hits', batch).then(function () {
+      lsSet('hits', lsGet('hits', []).slice(batch.length));
+      if (q.length > batch.length) sendHits();
+    }, function () { /* try again next time */ });
+  }
   function report(r) {
     r.at = Date.now();
     lsSet('reports', lsGet('reports', []).concat([r]));
@@ -616,7 +637,7 @@
       if (!window.caches) { toast(t('noStorage')); return; }
       btn.disabled = true; prog.hidden = false; bar.style.width = '0'; if (quiet !== true) toast(t('downloading'));
       downloadBook(b, function (f) { bar.style.width = Math.round(f * 100) + '%'; })
-        .then(function () { setState(true); if (quiet !== true) toast(t('dlDone')); })
+        .then(function () { setState(true); hit(b.id, 'dl'); if (quiet !== true) toast(t('dlDone')); })
         .catch(function () { setState(false); if (quiet !== true) toast(navigator.onLine === false ? t('offline') : t('err')); });
     }
     function remove() {
@@ -765,7 +786,7 @@
     var entry = EMB ? Promise.resolve(EMB) : (LIST ? Promise.resolve(LIST) : loadList().catch(function () { return []; })).then(function (list) {
       return list.filter(function (b) { return b.id === id; })[0] || null;
     });
-    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : picBase(id), r[1]); })
+    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : picBase(id), r[1]); hit(id, 'open'); })
       .catch(function () {
         app.innerHTML = '<div class="lib"><p class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) +
           '</p><p style="text-align:center"><a class="btn" href="' + libHash + '">' + esc(t('back')) + '</a></p></div>';
@@ -1133,7 +1154,10 @@
   applySettings();
   window.addEventListener('hashchange', route);
   route();
-  if (!EMB) { sendReports(); window.addEventListener('online', sendReports); }
+  if (!EMB) {
+    sendReports(); window.addEventListener('online', sendReports);
+    hit('', 'app'); window.addEventListener('online', sendHits);
+  }
   if (!EMB && 'serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
     navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function () { /* offline support unavailable */ });
   }

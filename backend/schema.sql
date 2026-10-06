@@ -37,3 +37,17 @@ CREATE TABLE IF NOT EXISTS files (
   done INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS files_created ON files (created);
+
+-- Reading counts: daily totals per book and event, nothing per reader (POST /hits).
+CREATE TABLE IF NOT EXISTS hits (
+  day TEXT NOT NULL,              -- YYYY-MM-DD, UTC
+  book TEXT NOT NULL,             -- book id; '' for "the app was opened"
+  ev TEXT NOT NULL,               -- app, open, dl (download for offline reading)
+  n INTEGER NOT NULL DEFAULT 0,   -- how many times
+  firsts INTEGER NOT NULL DEFAULT 0, -- of those, a phone's first (book: ever; app: that day) = phones
+  PRIMARY KEY (day, book, ev)
+);
+CREATE TABLE IF NOT EXISTS hitdays ( -- events counted per day, for the daily cap
+  day TEXT PRIMARY KEY,
+  n INTEGER NOT NULL DEFAULT 0
+);
