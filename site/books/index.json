@@ -11,7 +11,8 @@
   "size": 1469436,
   "standalone": "kg-adabiyat-7.html",
   "school": "ky",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://mektep.o.kg/books/7/?grade=7&lang=кыргыз"
  },
  {
   "id": "ru-matematika-7-1-v3",
@@ -25,7 +26,8 @@
   "size": 5114086,
   "standalone": "ru-matematika-7-1-v3.html",
   "school": "ru",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/444/read"
  },
  {
   "id": "ru-chelovek-obshchestvo-7",
@@ -39,7 +41,8 @@
   "size": 4567725,
   "standalone": "ru-chelovek-obshchestvo-7.html",
   "school": "ru",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/192/read"
  },
  {
   "id": "kg-adam-jana-koom-7",
@@ -54,7 +57,8 @@
   "size": 3059296,
   "standalone": "kg-adam-jana-koom-7.html",
   "quality": "proofread",
-  "gaps": "84, 102"
+  "gaps": "84, 102",
+  "src": "https://kitep.edu.kg/book/347/read"
  },
  {
   "id": "kg-biologiya-7",
@@ -69,7 +73,8 @@
   "size": 3333340,
   "standalone": "kg-biologiya-7.html",
   "quality": "proofread",
-  "gaps": "203"
+  "gaps": "203",
+  "src": "https://okuma.kg/read/web/books/БИОЛОГИЯ жаныбарлар 7 класс (okuma.kg)_Химия, Биология62.pdf"
  },
  {
   "id": "kg-kyrgyz-tili-7",
@@ -83,7 +88,8 @@
   "langName": "Кыргызча",
   "size": 583784,
   "standalone": "kg-kyrgyz-tili-7.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/89/read"
  },
  {
   "id": "kg-kyrgyz-tili-7-9",
@@ -98,7 +104,8 @@
   "size": 1295010,
   "standalone": "kg-kyrgyz-tili-7-9.html",
   "quality": "proofread",
-  "gaps": "350–351"
+  "gaps": "350–351",
+  "src": "https://kitep.edu.kg/book/208/read"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-7",
@@ -113,7 +120,8 @@
   "size": 2811114,
   "standalone": "kg-kyrgyzstan-taryhy-7.html",
   "quality": "proofread",
-  "gaps": "137–163"
+  "gaps": "137–163",
+  "src": "https://kitep.edu.kg/book/500/read"
  },
  {
   "id": "kg-literaturnoe-chtenie-7",
@@ -128,7 +136,8 @@
   "size": 2535504,
   "standalone": "kg-literaturnoe-chtenie-7.html",
   "quality": "proofread",
-  "gaps": "127"
+  "gaps": "127",
+  "src": "https://kitep.edu.kg/book/79/read"
  },
  {
   "id": "kg-orto-kylym-taryhy-7",
@@ -143,7 +152,8 @@
   "size": 7905655,
   "standalone": "kg-orto-kylym-taryhy-7.html",
   "quality": "proofread",
-  "gaps": "47"
+  "gaps": "47",
+  "src": "https://kitep.edu.kg/book/497/read"
  },
  {
   "id": "kg-russkiy-yazyk-7",
@@ -158,7 +168,8 @@
   "size": 1051647,
   "standalone": "kg-russkiy-yazyk-7.html",
   "quality": "proofread",
-  "gaps": "86, 87"
+  "gaps": "86, 87",
+  "src": "https://kitep.edu.kg/book/84/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-7",
@@ -172,7 +183,8 @@
   "langName": "Русский",
   "size": 1502095,
   "standalone": "ru-istoriya-kyrgyzstana-7.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/194/read"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-7",
@@ -187,7 +199,8 @@
   "size": 730938,
   "standalone": "ru-kyrgyz-adabiyaty-7.html",
   "quality": "proofread",
-  "gaps": "17, 76, 107"
+  "gaps": "17, 76, 107",
+  "src": "https://kitep.edu.kg/book/195/read"
  },
  {
   "id": "ru-kyrgyz-tili-7",
@@ -201,7 +214,8 @@
   "langName": "Кыргызча",
   "size": 730182,
   "standalone": "ru-kyrgyz-tili-7.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/193/read"
  },
  {
   "id": "kg-adam-jana-koom-8",
@@ -215,7 +229,8 @@
   "langName": "Кыргызча",
   "size": 1594242,
   "standalone": "kg-adam-jana-koom-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/348/read"
  },
  {
   "id": "kg-dinder-taryhy-8",
@@ -229,7 +244,8 @@
   "langName": "Кыргызча",
   "size": 2373026,
   "standalone": "kg-dinder-taryhy-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/101/read"
  },
  {
   "id": "kg-janyy-taryh-8",
@@ -243,7 +259,8 @@
   "langName": "Кыргызча",
   "size": 3436208,
   "standalone": "kg-janyy-taryh-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:145/"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-8",
@@ -258,7 +275,8 @@
   "size": 2365581,
   "standalone": "kg-kyrgyz-adabiyaty-8.html",
   "quality": "proofread",
-  "gaps": "62, 168, 178, 186, 196, 224, 302, 330, 346, 349, 356, 370"
+  "gaps": "62, 168, 178, 186, 196, 224, 302, 330, 346, 349, 356, 370",
+  "src": "https://kitep.edu.kg/book/108/read"
  },
  {
   "id": "kg-kyrgyz-tili-8",
@@ -273,7 +291,8 @@
   "size": 1320179,
   "standalone": "kg-kyrgyz-tili-8.html",
   "quality": "proofread",
-  "gaps": "246, 258"
+  "gaps": "246, 258",
+  "src": "https://kitep.edu.kg/book/105/read"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-8",
@@ -287,7 +306,8 @@
   "langName": "Кыргызча",
   "size": 2445695,
   "standalone": "kg-kyrgyzstan-taryhy-8.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/104/read"
  },
  {
   "id": "kg-literaturnoe-chtenie-8",
@@ -301,7 +321,8 @@
   "langName": "Русский",
   "size": 4235924,
   "standalone": "kg-literaturnoe-chtenie-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:158/"
  },
  {
   "id": "kg-russkiy-yazyk-8-9",
@@ -315,7 +336,8 @@
   "langName": "Русский",
   "size": 947836,
   "standalone": "kg-russkiy-yazyk-8-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://de-fra-1.linodeobjects.com/bizdinkgmedia/BMN/media/books/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-%D1%8F%D0%B7%D1%8B%D0%BA-8-9-%D0%BA%D0%BB%D0%B0%D1%81%D1%81-%D0%BA%D1%8B%D1%80%D0%B3%D1%8B%D0%B7-%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
@@ -329,7 +351,8 @@
   "langName": "Русский",
   "size": 2592993,
   "standalone": "ru-istoriya-kyrgyzstana-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:157/"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-8",
@@ -344,7 +367,8 @@
   "size": 1111920,
   "standalone": "ru-kyrgyz-adabiyaty-8.html",
   "quality": "proofread",
-  "gaps": "30, 41, 68, 76"
+  "gaps": "30, 41, 68, 76",
+  "src": "https://mektep.o.kg/api/uploads/books/%D0%9A%D1%8B%D1%80%D0%B3%D1%8B%D0%B7_%D0%B0%D0%B4%D0%B0%D0%B1%D0%B8%D1%8F%D1%82%D1%8B_8_%D0%BA%D0%BB.pdf"
  },
  {
   "id": "ru-kyrgyz-tili-8",
@@ -359,7 +383,8 @@
   "size": 2064239,
   "standalone": "ru-kyrgyz-tili-8.html",
   "quality": "proofread",
-  "gaps": "29"
+  "gaps": "29",
+  "src": "https://kitep.edu.kg/book/142/read"
  },
  {
   "id": "ru-chelovek-obshchestvo-8",
@@ -373,7 +398,8 @@
   "langName": "Русский",
   "size": 1474836,
   "standalone": "ru-chelovek-obshchestvo-8.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/140/read"
  },
  {
   "id": "kg-adam-jana-koom-9",
@@ -387,7 +413,8 @@
   "langName": "Кыргызча",
   "size": 819933,
   "standalone": "kg-adam-jana-koom-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bilim.akipress.org/lib/book:154/"
  },
  {
   "id": "kg-dinder-taryhy-9",
@@ -401,7 +428,8 @@
   "langName": "Кыргызча",
   "size": 1240295,
   "standalone": "kg-dinder-taryhy-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/204/read"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-9",
@@ -416,7 +444,8 @@
   "size": 1733535,
   "standalone": "kg-kyrgyz-adabiyaty-9.html",
   "quality": "proofread",
-  "gaps": "28"
+  "gaps": "28",
+  "src": "https://kitep.edu.kg/book/205/read"
  },
  {
   "id": "kg-kyrgyz-tili-9",
@@ -430,7 +459,8 @@
   "langName": "Кыргызча",
   "size": 618346,
   "standalone": "kg-kyrgyz-tili-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://okuma.kg/read/web/books/Кыргыз тили 9-класс(okuma.kg)_Кыргыз тили жана адабияты94.pdf"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-9",
@@ -444,7 +474,8 @@
   "langName": "Кыргызча",
   "size": 2643440,
   "standalone": "kg-kyrgyzstan-taryhy-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://okuma.kg/read/web/books/КЫРГЫЗСТАНДЫН ТАРЫХЫ 9 класс XX - XXI кк.(okuma.kg)_Тарых жана коомдук илимдер99.pdf"
  },
  {
   "id": "kg-mamleket-jana-ukuk-9",
@@ -460,7 +491,8 @@
   "standalone": "kg-mamleket-jana-ukuk-9.html",
   "subject": "obshchestvo",
   "quality": "proofread",
-  "gaps": "24, 25"
+  "gaps": "24, 25",
+  "src": "https://kitep.edu.kg/book/214/read"
  },
  {
   "id": "kg-russkaya-literatura-9",
@@ -474,7 +506,8 @@
   "langName": "Русский",
   "size": 1641552,
   "standalone": "kg-russkaya-literatura-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/207/read"
  },
  {
   "id": "kg-sonku-taryh-9",
@@ -488,7 +521,8 @@
   "langName": "Кыргызча",
   "size": 4204606,
   "standalone": "kg-sonku-taryh-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/213/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
@@ -502,7 +536,8 @@
   "langName": "Русский",
   "size": 4015389,
   "standalone": "ru-istoriya-kyrgyzstana-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://web.archive.org/web/20250521105940id_/https://63.edubish.kg/wp-content/uploads/sites/218/2023/01/9-klass-istoriya-kr-imankulov.pdf"
  },
  {
   "id": "ru-istoriya-religiy-9",
@@ -516,7 +551,8 @@
   "langName": "Русский",
   "size": 1294460,
   "standalone": "ru-istoriya-religiy-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/196/read"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-9",
@@ -531,7 +567,8 @@
   "size": 680803,
   "standalone": "ru-kyrgyz-adabiyaty-9.html",
   "quality": "proofread",
-  "gaps": "82"
+  "gaps": "82",
+  "src": "https://kitep.edu.kg/book/199/read"
  },
  {
   "id": "ru-kyrgyz-tili-9",
@@ -545,7 +582,8 @@
   "langName": "Кыргызча",
   "size": 955151,
   "standalone": "ru-kyrgyz-tili-9.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/198/read"
  },
  {
   "id": "kg-duyno-taryhy-10",
@@ -560,7 +598,8 @@
   "size": 2276185,
   "standalone": "kg-duyno-taryhy-10.html",
   "quality": "proofread",
-  "gaps": "97, 98"
+  "gaps": "97, 98",
+  "src": "https://kitep.edu.kg/book/162/read"
  },
  {
   "id": "kg-geografiya-10",
@@ -575,7 +614,8 @@
   "size": 2185329,
   "standalone": "kg-geografiya-10.html",
   "quality": "proofread",
-  "gaps": "59, 171, 253, 273"
+  "gaps": "59, 171, 253, 273",
+  "src": "https://kitep.edu.kg/book/163/read"
  },
  {
   "id": "kg-jarandyk-10",
@@ -591,7 +631,8 @@
   "standalone": "kg-jarandyk-10.html",
   "subject": "grazhdanstvennost",
   "quality": "proofread",
-  "gaps": "5, 57, 121, 149, 173, 174, 175"
+  "gaps": "5, 57, 121, 149, 173, 174, 175",
+  "src": "https://kitep.edu.kg/book/161/read"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-10",
@@ -606,7 +647,8 @@
   "size": 1691239,
   "standalone": "kg-kyrgyz-adabiyaty-10.html",
   "quality": "proofread",
-  "gaps": "198, 229, 263, 267, 343, 358"
+  "gaps": "198, 229, 263, 267, 343, 358",
+  "src": "https://kitep.edu.kg/book/495/read"
  },
  {
   "id": "kg-kyrgyz-tili-10",
@@ -621,7 +663,8 @@
   "size": 811508,
   "standalone": "kg-kyrgyz-tili-10.html",
   "quality": "proofread",
-  "gaps": "227"
+  "gaps": "227",
+  "src": "https://okuma.kg/read/web/books/Кыргыз тили 10 класс (okuma.kg)_Кыргыз тили жана адабияты59.pdf"
  },
  {
   "id": "kg-kyrgyz-tili-10-11",
@@ -636,7 +679,8 @@
   "size": 1974176,
   "standalone": "kg-kyrgyz-tili-10-11.html",
   "quality": "proofread",
-  "gaps": "420, 440–441, 446–447"
+  "gaps": "420, 440–441, 446–447",
+  "src": "https://kitep.edu.kg/book/218/read"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-10",
@@ -651,7 +695,8 @@
   "size": 2702053,
   "standalone": "kg-kyrgyzstan-taryhy-10.html",
   "quality": "proofread",
-  "gaps": "57"
+  "gaps": "57",
+  "src": "https://kitep.edu.kg/book/164/read"
  },
  {
   "id": "kg-russkaya-literatura-10",
@@ -666,7 +711,8 @@
   "size": 4274079,
   "standalone": "kg-russkaya-literatura-10.html",
   "quality": "proofread",
-  "gaps": "25, 447"
+  "gaps": "25, 447",
+  "src": "https://kitep.edu.kg/book/172/read"
  },
  {
   "id": "kg-russkiy-yazyk-10",
@@ -680,7 +726,8 @@
   "langName": "Русский",
   "size": 793434,
   "standalone": "kg-russkiy-yazyk-10.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/217/read"
  },
  {
   "id": "ru-grazhdanstvennost-10",
@@ -694,7 +741,8 @@
   "langName": "Русский",
   "size": 3671197,
   "standalone": "ru-grazhdanstvennost-10.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/156/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-10",
@@ -709,7 +757,8 @@
   "size": 5410466,
   "standalone": "ru-istoriya-kyrgyzstana-10.html",
   "quality": "proofread",
-  "gaps": "124, 135, 136, 237"
+  "gaps": "124, 135, 136, 237",
+  "src": "https://kitep.edu.kg/book/158/read"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-10",
@@ -723,7 +772,8 @@
   "langName": "Кыргызча",
   "size": 1172184,
   "standalone": "ru-kyrgyz-adabiyaty-10.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/159/read"
  },
  {
   "id": "ru-kyrgyz-tili-10-11",
@@ -737,7 +787,8 @@
   "langName": "Кыргызча",
   "size": 2826736,
   "standalone": "ru-kyrgyz-tili-10-11.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/155/read"
  },
  {
   "id": "ru-kyrgyz-tili-10",
@@ -752,7 +803,8 @@
   "size": 1322294,
   "standalone": "ru-kyrgyz-tili-10.html",
   "quality": "proofread",
-  "gaps": "38, 60, 107, 177, 244, 254, 255, 256"
+  "gaps": "38, 60, 107, 177, 244, 254, 255, 256",
+  "src": "https://kitep.edu.kg/book/215/read"
  },
  {
   "id": "kg-geografiya-11",
@@ -768,7 +820,8 @@
   "standalone": "kg-geografiya-11.html",
   "subject": "geografiya",
   "quality": "proofread",
-  "gaps": "179, 237"
+  "gaps": "179, 237",
+  "src": "https://okuma.kg/read/web/books/Геоэкологиянын негиздери 11 класс (okuma.kg)_География71.pdf"
  },
  {
   "id": "kg-duyno-taryhy-11",
@@ -782,7 +835,8 @@
   "langName": "Кыргызча",
   "size": 1684948,
   "standalone": "kg-duyno-taryhy-11.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bilim.akipress.org/lib/book:156/"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-11",
@@ -797,7 +851,8 @@
   "size": 1867455,
   "standalone": "kg-kyrgyz-adabiyaty-11.html",
   "quality": "proofread",
-  "gaps": "95, 100, 129, 190"
+  "gaps": "95, 100, 129, 190",
+  "src": "https://kitep.edu.kg/book/230/read"
  },
  {
   "id": "kg-kyrgyz-tili-11",
@@ -812,7 +867,8 @@
   "size": 688359,
   "standalone": "kg-kyrgyz-tili-11.html",
   "quality": "proofread",
-  "gaps": "189–191"
+  "gaps": "189–191",
+  "src": "https://kitep.edu.kg/book/225/read"
  },
  {
   "id": "kg-kyrgyzstan-taryhy-11",
@@ -827,7 +883,8 @@
   "size": 2435298,
   "standalone": "kg-kyrgyzstan-taryhy-11.html",
   "quality": "proofread",
-  "gaps": "265, 287"
+  "gaps": "265, 287",
+  "src": "https://kitep.edu.kg/book/227/read"
  },
  {
   "id": "kg-russkaya-literatura-11",
@@ -842,7 +899,8 @@
   "size": 2953166,
   "standalone": "kg-russkaya-literatura-11.html",
   "quality": "proofread",
-  "gaps": "15, 16, 85, 86"
+  "gaps": "15, 16, 85, 86",
+  "src": "https://mektep.o.kg/api/uploads/books/%D0%9D%D0%90_%D0%95%D1%88%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0_%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0_11-%D0%BA%D0%BB_compressed.pdf"
  },
  {
   "id": "kg-russkiy-yazyk-11",
@@ -856,7 +914,8 @@
   "langName": "Русский",
   "size": 1004498,
   "standalone": "kg-russkiy-yazyk-11.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/228/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-11",
@@ -871,7 +930,8 @@
   "size": 4808993,
   "standalone": "ru-istoriya-kyrgyzstana-11.html",
   "quality": "proofread",
-  "gaps": "174, 197"
+  "gaps": "174, 197",
+  "src": "https://kitep.edu.kg/book/171/read"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-11",
@@ -885,7 +945,8 @@
   "langName": "Кыргызча",
   "size": 956555,
   "standalone": "ru-kyrgyz-adabiyaty-11.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/170/read"
  },
  {
   "id": "ru-kyrgyz-tili-11",
@@ -900,7 +961,8 @@
   "size": 2266718,
   "standalone": "ru-kyrgyz-tili-11.html",
   "quality": "proofread",
-  "gaps": "184, 187"
+  "gaps": "184, 187",
+  "src": "https://kitep.edu.kg/book/169/read"
  },
  {
   "id": "kg-adabiy-okuu-3",
@@ -914,7 +976,8 @@
   "langName": "Кыргызча",
   "size": 2425671,
   "standalone": "kg-adabiy-okuu-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/60/read"
  },
  {
   "id": "kg-korkom-onor-3",
@@ -928,7 +991,8 @@
   "langName": "Кыргызча",
   "size": 2565350,
   "standalone": "kg-korkom-onor-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/494/read"
  },
  {
   "id": "kg-muzyka-3",
@@ -942,7 +1006,8 @@
   "langName": "Кыргызча",
   "size": 2619672,
   "standalone": "kg-muzyka-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/239/read"
  },
  {
   "id": "ru-muzyka-3",
@@ -956,7 +1021,8 @@
   "langName": "Русский",
   "size": 2083537,
   "standalone": "ru-muzyka-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/240/read"
  },
  {
   "id": "ru-rodinovedenie-3",
@@ -970,7 +1036,8 @@
   "langName": "Русский",
   "size": 8651958,
   "standalone": "ru-rodinovedenie-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/242/read"
  },
  {
   "id": "ru-rodinovedenie-3-mambetova",
@@ -984,7 +1051,8 @@
   "langName": "Русский",
   "size": 8470611,
   "standalone": "ru-rodinovedenie-3-mambetova.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/242/read"
  },
  {
   "id": "kg-adabiy-okuu-4",
@@ -998,7 +1066,8 @@
   "langName": "Кыргызча",
   "size": 1632280,
   "standalone": "kg-adabiy-okuu-4.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/66/read"
  },
  {
   "id": "kg-meken-taanuu-4",
@@ -1012,7 +1081,8 @@
   "langName": "Кыргызча",
   "size": 8473665,
   "standalone": "kg-meken-taanuu-4.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/88/read"
  },
  {
   "id": "kg-muzyka-4",
@@ -1026,7 +1096,8 @@
   "langName": "Кыргызча",
   "size": 3068083,
   "standalone": "kg-muzyka-4.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/57/read"
  },
  {
   "id": "kg-russkiy-yazyk-4",
@@ -1040,7 +1111,8 @@
   "langName": "Русский",
   "size": 4651709,
   "standalone": "kg-russkiy-yazyk-4.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/65/read"
  },
  {
   "id": "kg-adam-jana-koom-5",
@@ -1054,7 +1126,8 @@
   "langName": "Кыргызча",
   "size": 4459857,
   "standalone": "kg-adam-jana-koom-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/134/read"
  },
  {
   "id": "kg-informatika-5",
@@ -1068,7 +1141,8 @@
   "langName": "Кыргызча",
   "size": 1678095,
   "standalone": "kg-informatika-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/137/read"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-5",
@@ -1082,7 +1156,8 @@
   "langName": "Кыргызча",
   "size": 2258521,
   "standalone": "kg-kyrgyz-adabiyaty-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/519/read"
  },
  {
   "id": "kg-kyrgyz-tili-5",
@@ -1096,7 +1171,8 @@
   "langName": "Кыргызча",
   "size": 1598164,
   "standalone": "kg-kyrgyz-tili-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/131/read"
  },
  {
   "id": "kg-muzyka-5",
@@ -1110,7 +1186,8 @@
   "langName": "Кыргызча",
   "size": 2919714,
   "standalone": "kg-muzyka-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/509/read"
  },
  {
   "id": "kg-russkiy-yazyk-5",
@@ -1124,7 +1201,8 @@
   "langName": "Русский",
   "size": 1255811,
   "standalone": "kg-russkiy-yazyk-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/133/read"
  },
  {
   "id": "kg-tehnologiya-5",
@@ -1138,7 +1216,8 @@
   "langName": "Кыргызча",
   "size": 2909536,
   "standalone": "kg-tehnologiya-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/516/read"
  },
  {
   "id": "kg-korkom-onor-5",
@@ -1152,7 +1231,8 @@
   "langName": "Кыргызча",
   "size": 2862559,
   "standalone": "kg-korkom-onor-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://mektep.o.kg"
  },
  {
   "id": "ru-izo-5",
@@ -1166,7 +1246,8 @@
   "langName": "Русский",
   "size": 2830251,
   "standalone": "ru-izo-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/115/read"
  },
  {
   "id": "ru-informatika-5",
@@ -1180,7 +1261,8 @@
   "langName": "Русский",
   "size": 1904635,
   "standalone": "ru-informatika-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/93/read"
  },
  {
   "id": "ru-kyrgyz-tili-5",
@@ -1194,7 +1276,8 @@
   "langName": "Кыргызча",
   "size": 3813167,
   "standalone": "ru-kyrgyz-tili-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/90/read"
  },
  {
   "id": "ru-muzyka-5",
@@ -1208,7 +1291,8 @@
   "langName": "Русский",
   "size": 2734421,
   "standalone": "ru-muzyka-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/116/read"
  },
  {
   "id": "ru-russkaya-literatura-5",
@@ -1222,7 +1306,8 @@
   "langName": "Русский",
   "size": 4484288,
   "standalone": "ru-russkaya-literatura-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/518/read"
  },
  {
   "id": "ru-russkiy-yazyk-5",
@@ -1236,7 +1321,8 @@
   "langName": "Русский",
   "size": 2280210,
   "standalone": "ru-russkiy-yazyk-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/74/read"
  },
  {
   "id": "ru-tekhnologiya-5",
@@ -1250,7 +1336,8 @@
   "langName": "Русский",
   "size": 3047275,
   "standalone": "ru-tekhnologiya-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/103/read"
  },
  {
   "id": "ru-chelovek-obshchestvo-5",
@@ -1264,7 +1351,8 @@
   "langName": "Русский",
   "size": 4192904,
   "standalone": "ru-chelovek-obshchestvo-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/120/read"
  },
  {
   "id": "kg-biologiya-6",
@@ -1278,7 +1366,8 @@
   "langName": "Кыргызча",
   "size": 4809612,
   "standalone": "kg-biologiya-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/130/read"
  },
  {
   "id": "kg-informatika-6",
@@ -1292,7 +1381,8 @@
   "langName": "Кыргызча",
   "size": 1888757,
   "standalone": "kg-informatika-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/132/read"
  },
  {
   "id": "kg-kyrgyz-adabiyaty-6",
@@ -1306,7 +1396,8 @@
   "langName": "Кыргызча",
   "size": 1633508,
   "standalone": "kg-kyrgyz-adabiyaty-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/98/read"
  },
  {
   "id": "kg-kyrgyz-tili-6",
@@ -1320,7 +1411,8 @@
   "langName": "Кыргызча",
   "size": 2005863,
   "standalone": "kg-kyrgyz-tili-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/109/read"
  },
  {
   "id": "kg-korkom-onor-6",
@@ -1334,7 +1426,8 @@
   "langName": "Кыргызча",
   "size": 2950433,
   "standalone": "kg-korkom-onor-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/125/read"
  },
  {
   "id": "kg-muzyka-6",
@@ -1348,7 +1441,8 @@
   "langName": "Кыргызча",
   "size": 3607156,
   "standalone": "kg-muzyka-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/122/read"
  },
  {
   "id": "kg-russkiy-yazyk-6",
@@ -1362,7 +1456,8 @@
   "langName": "Русский",
   "size": 1045945,
   "standalone": "kg-russkiy-yazyk-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/100/read"
  },
  {
   "id": "kg-tehnologiya-6",
@@ -1376,7 +1471,8 @@
   "langName": "Кыргызча",
   "size": 3097716,
   "standalone": "kg-tehnologiya-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/127/read"
  },
  {
   "id": "ru-russkiy-yazyk-6",
@@ -1390,7 +1486,8 @@
   "langName": "Русский",
   "size": 1957110,
   "standalone": "ru-russkiy-yazyk-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/349/read"
  },
  {
   "id": "ru-biologiya-6",
@@ -1404,7 +1501,8 @@
   "langName": "Русский",
   "size": 4809927,
   "standalone": "ru-biologiya-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-biologiya-6-klass-rsh"
  },
  {
   "id": "ru-informatika-6",
@@ -1418,7 +1516,8 @@
   "langName": "Русский",
   "size": 1844473,
   "standalone": "ru-informatika-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://mektep.o.kg"
  },
  {
   "id": "ru-kyrgyz-tili-6",
@@ -1432,7 +1531,8 @@
   "langName": "Кыргызча",
   "size": 1546255,
   "standalone": "ru-kyrgyz-tili-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-kyrgyzskiy-yazyk-6-klass-rsh-1"
  },
  {
   "id": "ru-muzyka-6",
@@ -1446,7 +1546,8 @@
   "langName": "Русский",
   "size": 3068343,
   "standalone": "ru-muzyka-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://mektep.o.kg"
  },
  {
   "id": "ru-russkaya-literatura-6",
@@ -1460,7 +1561,8 @@
   "langName": "Русский",
   "size": 3000271,
   "standalone": "ru-russkaya-literatura-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-russkaya-literatura-6-klass-rsh"
  },
  {
   "id": "ru-tekhnologiya-6",
@@ -1474,7 +1576,8 @@
   "langName": "Русский",
   "size": 2732268,
   "standalone": "ru-tekhnologiya-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-tekhnologiya-6-klass-rsh"
  },
  {
   "id": "ru-chelovek-obshchestvo-6",
@@ -1488,7 +1591,8 @@
   "langName": "Русский",
   "size": 4242087,
   "standalone": "ru-chelovek-obshchestvo-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://mektep.o.kg"
  },
  {
   "id": "kg-informatika-7-9",
@@ -1502,7 +1606,8 @@
   "langName": "Кыргызча",
   "size": 2513735,
   "standalone": "kg-informatika-7-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/119/read"
  },
  {
   "id": "kg-informatika-bazalyk-7-9",
@@ -1516,7 +1621,8 @@
   "langName": "Кыргызча",
   "size": 3566016,
   "standalone": "kg-informatika-bazalyk-7-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/210/read"
  },
  {
   "id": "ru-informatika-7-9",
@@ -1530,7 +1636,8 @@
   "langName": "Русский",
   "size": 3112573,
   "standalone": "ru-informatika-7-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/117/read"
  },
  {
   "id": "kg-biologiya-9",
@@ -1544,7 +1651,8 @@
   "langName": "Кыргызча",
   "size": 6215759,
   "standalone": "kg-biologiya-9.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://kitep.edu.kg/book/212/read"
  },
  {
   "id": "kg-jarandyk-11",
@@ -1560,7 +1668,8 @@
   "langName": "Кыргызча",
   "size": 1104095,
   "standalone": "kg-jarandyk-11.html",
-  "gaps": "25, 159"
+  "gaps": "25, 159",
+  "src": "https://bilim.akipress.org/lib/book:206/"
  },
  {
   "id": "kg-meken-taanuu-3",
@@ -1574,7 +1683,8 @@
   "langName": "Кыргызча",
   "size": 7865736,
   "standalone": "kg-meken-taanuu-3.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:160/"
  },
  {
   "id": "kg-russkiy-yazyk-i-chtenie-3-1",
@@ -1588,7 +1698,8 @@
   "langName": "Русский",
   "size": 2137995,
   "standalone": "kg-russkiy-yazyk-i-chtenie-3-1.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:22/"
  },
  {
   "id": "kg-russkiy-yazyk-i-chtenie-3-2",
@@ -1602,7 +1713,8 @@
   "langName": "Русский",
   "size": 2713504,
   "standalone": "kg-russkiy-yazyk-i-chtenie-3-2.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://bilim.akipress.org/lib/book:23/"
  },
  {
   "id": "kg-russkiy-yazyk-i-chtenie-5-1",
@@ -1616,7 +1728,8 @@
   "langName": "Русский",
   "size": 2756757,
   "standalone": "kg-russkiy-yazyk-i-chtenie-5-1.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://stem.edu.gov.kg/api/books/553"
  },
  {
   "id": "kg-russkiy-yazyk-i-chtenie-5-2",
@@ -1630,7 +1743,8 @@
   "langName": "Русский",
   "size": 3781178,
   "standalone": "kg-russkiy-yazyk-i-chtenie-5-2.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://stem.edu.gov.kg/api/books/554"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-5",
@@ -1644,7 +1758,8 @@
   "langName": "Русский",
   "size": 7465416,
   "standalone": "ru-istoriya-kyrgyzstana-5.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-istoriya-kyrgyzstana-i-mirovaya-istoriya-5-klass-rsh"
  },
  {
   "id": "kg-adam-jana-koom-6",
@@ -1658,7 +1773,8 @@
   "langName": "Кыргызча",
   "size": 4048687,
   "standalone": "kg-adam-jana-koom-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://mektep.o.kg"
  },
  {
   "id": "ru-izo-6",
@@ -1672,7 +1788,8 @@
   "langName": "Русский",
   "size": 2992296,
   "standalone": "ru-izo-6.html",
-  "quality": "exact"
+  "quality": "exact",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-izobrazitelno-khudozhestvennoe-tvorchestvo-6-klass-rsh"
  },
  {
   "id": "kg-kyrgyz-tili-4",
@@ -1686,7 +1803,8 @@
   "langName": "Кыргызча",
   "size": 1018013,
   "standalone": "kg-kyrgyz-tili-4.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bizdin.kg/uchebnik/kyrgyz-tili-4-klass-2014-zh-kyrgyzskii-iazyk-4-klass-2014-g-na-kyrgyzskom/"
  },
  {
   "id": "ru-rodinovedenie-4-mambetova",
@@ -1702,7 +1820,8 @@
   "standalone": "ru-rodinovedenie-4-mambetova.html",
   "quality": "proofread",
   "gaps": "28–29, 116–117, 124–125, 128–129, 140–141, 150–151, 156–157",
-  "subject": "Родиноведение"
+  "subject": "Родиноведение",
+  "src": "https://bizdin.kg/uchebnik/meken-taanuu-aalam-zhana-biz-4-klass-oruscha/"
  },
  {
   "id": "kg-kyrgyz-tili-8-9",
@@ -1717,7 +1836,8 @@
   "size": 1917242,
   "standalone": "kg-kyrgyz-tili-8-9.html",
   "quality": "proofread",
-  "gaps": "33, 34, 107, 143, 148, 279–281, 485–492"
+  "gaps": "33, 34, 107, 143, 148, 279–281, 485–492",
+  "src": "https://bizdin.kg/uchebnik/kyrgyz-tili-8-9-klasstar-kyrgyzskii-iazyk-8-9-klassy-na-kyrgyzskom/"
  },
  {
   "id": "ru-russkiy-yazyk-3",
@@ -1731,7 +1851,8 @@
   "langName": "Русский",
   "size": 1881839,
   "standalone": "ru-russkiy-yazyk-3.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bilim.akipress.org/lib/book:29/"
  },
  {
   "id": "ru-kniga-dlya-chteniya-4",
@@ -1745,7 +1866,8 @@
   "langName": "Русский",
   "size": 2666681,
   "standalone": "ru-kniga-dlya-chteniya-4.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-chtenie-4-klass-rsh"
  },
  {
   "id": "ru-russkiy-yazyk-4",
@@ -1759,7 +1881,8 @@
   "langName": "Русский",
   "size": 2426057,
   "standalone": "ru-russkiy-yazyk-4.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/244/read"
  },
  {
   "id": "kg-taryh-5",
@@ -1774,7 +1897,8 @@
   "size": 7035957,
   "standalone": "kg-taryh-5.html",
   "quality": "proofread",
-  "subject": "istoriya-kg"
+  "subject": "istoriya-kg",
+  "src": "https://mektep.o.kg/books/15/?grade=5"
  },
  {
   "id": "kg-kyskacha-angemeler-5",
@@ -1789,7 +1913,8 @@
   "size": 1734467,
   "standalone": "kg-kyskacha-angemeler-5.html",
   "quality": "proofread",
-  "subject": "istoriya-kg"
+  "subject": "istoriya-kg",
+  "src": "https://kitep.edu.kg/book/124/read"
  },
  {
   "id": "kg-russkoe-slovo-5-1",
@@ -1805,7 +1930,8 @@
   "standalone": "kg-russkoe-slovo-5-1.html",
   "quality": "proofread",
   "subject": "russkaya-literatura",
-  "gaps": "241"
+  "gaps": "241",
+  "src": "https://kitep.edu.kg/book/126/read"
  },
  {
   "id": "kg-russkoe-slovo-5-2",
@@ -1821,7 +1947,8 @@
   "standalone": "kg-russkoe-slovo-5-2.html",
   "quality": "proofread",
   "subject": "russkaya-literatura",
-  "gaps": "255"
+  "gaps": "255",
+  "src": "https://kitep.edu.kg/book/128/read"
  },
  {
   "id": "ru-kratkie-rasskazy-5",
@@ -1837,7 +1964,8 @@
   "standalone": "ru-kratkie-rasskazy-5.html",
   "quality": "proofread",
   "subject": "istoriya-kg",
-  "gaps": "4"
+  "gaps": "4",
+  "src": "https://kitep.edu.kg/book/112/read"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-5",
@@ -1851,7 +1979,8 @@
   "langName": "Кыргызча",
   "size": 956655,
   "standalone": "ru-kyrgyz-adabiyaty-5.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://mektep.o.kg/books/4/?grade=5"
  },
  {
   "id": "kg-kniga-dlya-chteniya-6",
@@ -1866,7 +1995,8 @@
   "size": 2194386,
   "standalone": "kg-kniga-dlya-chteniya-6.html",
   "quality": "proofread",
-  "subject": "russkaya-literatura"
+  "subject": "russkaya-literatura",
+  "src": "https://okuma.kg/books.php?id=202"
  },
  {
   "id": "kg-taryh-6",
@@ -1881,7 +2011,8 @@
   "size": 5140253,
   "standalone": "kg-taryh-6.html",
   "quality": "proofread",
-  "subject": "istoriya-kg"
+  "subject": "istoriya-kg",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-vsemirnaya-istoriya-6-klass-ksh-"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-6",
@@ -1896,7 +2027,8 @@
   "size": 5118944,
   "standalone": "ru-istoriya-kyrgyzstana-6.html",
   "quality": "proofread",
-  "subject": "istoriya-kg"
+  "subject": "istoriya-kg",
+  "src": "https://mektep.o.kg/books/5/?grade=6"
  },
  {
   "id": "ru-kyrgyz-adabiyaty-6",
@@ -1911,7 +2043,8 @@
   "size": 793297,
   "standalone": "ru-kyrgyz-adabiyaty-6.html",
   "quality": "proofread",
-  "gaps": "3, 51, 119"
+  "gaps": "3, 51, 119",
+  "src": "https://mektep.o.kg/books/5/?grade=6"
  },
  {
   "id": "ru-kniga-dlya-chteniya-3",
@@ -1925,7 +2058,8 @@
   "langName": "Русский",
   "size": 2076905,
   "standalone": "ru-kniga-dlya-chteniya-3.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bilim.akipress.org/lib/book:21/"
  },
  {
   "id": "ru-kyrgyz-tili-4",
@@ -1940,7 +2074,8 @@
   "size": 3382124,
   "standalone": "ru-kyrgyz-tili-4.html",
   "quality": "proofread",
-  "gaps": "42, 44, 45, 46, 47, 108"
+  "gaps": "42, 44, 45, 46, 47, 108",
+  "src": "https://kitep.edu.kg/book/510/read"
  },
  {
   "id": "ru-kyrgyz-tili-8-2017",
@@ -1954,7 +2089,8 @@
   "langName": "Кыргызча",
   "size": 1971417,
   "standalone": "ru-kyrgyz-tili-8-2017.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://mektep.o.kg/books/7/?grade=8"
  },
  {
   "id": "kg-adabiy-okuu-3-toktomametov",
@@ -1969,7 +2105,8 @@
   "size": 1461421,
   "standalone": "kg-adabiy-okuu-3-toktomametov.html",
   "quality": "proofread",
-  "gaps": "16, 17, 26, 27, 73"
+  "gaps": "16, 17, 26, 27, 73",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-literaturnoe-chtenie-3-klass-ksh"
  },
  {
   "id": "kg-kyrgyz-tili-3",
@@ -1983,7 +2120,8 @@
   "langName": "Кыргызча",
   "size": 828580,
   "standalone": "kg-kyrgyz-tili-3.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-kyrgyzskiy-yazyk-3-klass-ksh-2009"
  },
  {
   "id": "kg-meken-taanuu-3-mambetova",
@@ -1997,7 +2135,8 @@
   "langName": "Кыргызча",
   "size": 594603,
   "standalone": "kg-meken-taanuu-3-mambetova.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://mektep.o.kg/books/13/?grade=3"
  },
  {
   "id": "ru-kyrgyz-tili-3-1",
@@ -2012,7 +2151,8 @@
   "size": 1399083,
   "standalone": "ru-kyrgyz-tili-3-1.html",
   "quality": "proofread",
-  "gaps": "5, 9"
+  "gaps": "5, 9",
+  "src": "https://bilim.akipress.org/lib/book:148/"
  },
  {
   "id": "ru-kyrgyz-tili-3-2",
@@ -2026,7 +2166,8 @@
   "langName": "Кыргызча",
   "size": 1361414,
   "standalone": "ru-kyrgyz-tili-3-2.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://bilim.akipress.org/lib/book:150/"
  },
  {
   "id": "kg-adabiy-okuu-4-toktomametov",
@@ -2040,7 +2181,8 @@
   "langName": "Кыргызча",
   "size": 1031663,
   "standalone": "kg-adabiy-okuu-4-toktomametov.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-literaturnoe-chtenie-4-klass-ksh"
  },
  {
   "id": "kg-meken-taanuu-4-mambetova",
@@ -2055,7 +2197,8 @@
   "size": 1783532,
   "standalone": "kg-meken-taanuu-4-mambetova.html",
   "quality": "proofread",
-  "gaps": "187, 195"
+  "gaps": "187, 195",
+  "src": "https://mektep.o.kg/books/14/?grade=4"
  },
  {
   "id": "ru-rodinovedenie-4",
@@ -2069,6 +2212,7 @@
   "langName": "Русский",
   "size": 6454676,
   "standalone": "ru-rodinovedenie-4.html",
-  "quality": "proofread"
+  "quality": "proofread",
+  "src": "https://kitep.edu.kg/book/68/read"
  }
 ]

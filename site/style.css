@@ -257,3 +257,30 @@ a { color: var(--accent); }
 .sheet textarea { width: 100%; font-size: 16px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line);
   background: var(--bg); color: var(--fg); font-family: inherit; }
 .sheet .rsend { width: 100%; }
+
+/* library: how much of the Ministry's list is on the site (links to the statistics page) */
+.lib-count { display: block; margin: -6px 0 14px; font-size: 14px; color: var(--muted); text-decoration: none; }
+
+/* statistics page */
+.st-total { font-size: 17px; margin: 4px 0 8px; }
+.st-total b { font-size: 28px; }
+.st-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--line); flex: 1; }
+.st-bar i, .st-legend i { display: block; }
+.st-on { background: var(--accent); }
+.st-work { background: #8fb8f2; }
+.st-part { background: #e8b04a; }
+.st-none { background: #d9615a; }
+.st-legend { list-style: none; padding: 0; margin: 14px 0 6px; }
+.st-legend li { position: relative; padding: 5px 0 5px 24px; font-size: 15px; }
+.st-legend li i { position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border-radius: 4px; }
+.st-legend .note { margin: 2px 0 0; }
+.st-pc { color: var(--muted); font-size: 13px; }
+.st-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 14px; }
+.st-row > span:first-child { flex: 0 0 74px; }
+.st-row .st-n { flex: 0 0 58px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.st-sum { font-weight: 600; }
+.st-sum .st-n { color: inherit; }
+
+/* leaving the site (a book's source) */
+.leave-b { display: flex; gap: 10px; margin: 6px 0 4px; }
+.leave-b .btn { flex: 1; text-decoration: none; }
