@@ -562,21 +562,30 @@
   // Books under subject headings; subjects without books are never shown.
   function bySubject(books, root, myView, stubs) {
     var groups = {}, keys = [];
-    function group(s) { if (!groups[s.key]) { groups[s.key] = { s: s, books: [], stubs: [] }; keys.push(s.key); } return groups[s.key]; }
-    books.forEach(function (b) { group(subjectOf(b)).books.push(b); });
-    (stubs || []).forEach(function (m) { group(subjectOf({ title: m.subj })).stubs.push(m); });
+    books.forEach(function (b) {
+      var s = subjectOf(b);
+      if (!groups[s.key]) { groups[s.key] = { s: s, books: [] }; keys.push(s.key); }
+      groups[s.key].books.push(b);
+    });
     keys.sort(function (a, b) { var x = groups[a].s, y = groups[b].s; return x.order - y.order || (x.name < y.name ? -1 : x.name > y.name ? 1 : 0); });
     keys.forEach(function (k) {
       var h = document.createElement('h3'); h.className = 'subj'; h.textContent = groups[k].s.name;
       root.appendChild(h);
       groups[k].books.forEach(function (b) { root.appendChild(bookRow(b, myView)); });
-      groups[k].stubs.forEach(function (m) { root.appendChild(stubRow(m)); });
     });
+    // placeholders come after all the real books of the grade, in subject order
+    if (stubs && stubs.length) {
+      var h = document.createElement('h3'); h.className = 'subj stub-h'; h.textContent = t('stubTag') + ' · ' + stubs.length;
+      root.appendChild(h);
+      stubs.map(function (m) { return { m: m, o: subjectOf({ title: m.subj }).order }; })
+        .sort(function (a, b) { return a.o - b.o; })
+        .forEach(function (x) { root.appendChild(stubRow(x.m)); });
+    }
   }
 
   // A book of the Ministry's list that is not on the site yet (site/ministry.json): title, authors, what we know about it
   // ("f": found in full / only in part / not found) and, when it can be read somewhere, a link there ("u") through the
-  // leaving-the-site warning. Shown after the real books of its subject, dashed and greyed, and not counted anywhere.
+  // leaving-the-site warning. Shown after all the real books of its grade, dashed and greyed, and not counted anywhere.
   var STUB = { full: 'stubFull', part: 'stubPart', none: 'stubNone' };
   function stubRow(m) {
     var el = document.createElement('div'); el.className = 'bk stub';
