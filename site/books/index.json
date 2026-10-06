@@ -824,6 +824,21 @@
   "src": "https://kitep.edu.kg/book/120/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-6",
+  "v": "cae3fd3f41",
+  "title": "Take Off with English",
+  "subtitle": "6-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 1340187,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/21/read"
+ },
+ {
   "id": "kg-adam-jana-koom-6",
   "v": "201bfe6fae",
   "title": "Адам жана коом",
@@ -837,6 +852,21 @@
   "standalone": "kg-adam-jana-koom-6.html",
   "quality": "exact",
   "src": "https://mektep.o.kg"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-english-6",
+  "v": "d0a95ef21e",
+  "title": "Англис тили",
+  "subtitle": "6-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "О. Р. Балута, Ч. А. Абдышева, Г. Д. Назарбекова, А. А. Жолчиева",
+  "year": 2018,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 1570197,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/121/read"
  },
  {
   "id": "kg-biologiya-6",
@@ -974,6 +1004,36 @@
   "standalone": "kg-russkiy-yazyk-6.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/100/read"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-tabigyy-ilimder-6-1",
+  "v": "e895b9c40b",
+  "title": "Табигый илимдер",
+  "subtitle": "6-класс, 1-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Джасвиндер К. Рандхава, Наташа Мехта, Тео Танг Ви",
+  "year": 2026,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 479630,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/431/read"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-tabigyy-ilimder-6-2",
+  "v": "dc05593db2",
+  "title": "Табигый илимдер",
+  "subtitle": "6-класс, 2-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Джасвиндер К. Рандхава, Наташа Мехта, Тео Танг Ви",
+  "year": 2026,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 336837,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/468/read"
  },
  {
   "id": "kg-tehnologiya-6",
