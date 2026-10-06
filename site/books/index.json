@@ -991,6 +991,21 @@
   "src": "https://kitep.edu.kg/book/125/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-6",
+  "v": "ed7fee4301",
+  "title": "Математика",
+  "subtitle": "6-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. К. Кыдыралиев, А. Б. Урдалетова, Г. М. Дайырбекова",
+  "year": 2018,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 1438030,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/135/read"
+ },
+ {
   "id": "kg-muzyka-6",
   "v": "5f6c984330",
   "title": "Музыка",
