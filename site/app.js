@@ -180,9 +180,9 @@
 
   // The library is organised by school (language of instruction), then grade, then subject.
   // Choosing the school also sets the interface language. Each school is named the way the ministry does: by its
-  // language of instruction (switch button: the language, with "language of instruction" in small type under it;
-  // full name for headings), each in its own language.
-  var SCHOOLS = [['ky', 'Кыргыз тили', 'окутуу тили', 'Кыргыз тилинде окутуу'], ['ru', 'Русский язык', 'язык обучения', 'Обучение на русском языке']];
+  // language of instruction (switch button: the language in large type, the rest of the phrase small under it, so it
+  // reads "Кыргыз тилинде окутуу" / "Русский язык обучения"; full name for headings), each in its own language.
+  var SCHOOLS = [['ky', 'Кыргыз тилинде', 'окутуу', 'Кыргыз тилинде окутуу'], ['ru', 'Русский язык', 'обучения', 'Обучение на русском языке']];
   function schoolName(code) { return SCHOOLS.filter(function (s) { return s[0] === code; })[0][3]; }
 
   // Subjects in the order the ministry lists them. A book's subject comes from its "subject"
