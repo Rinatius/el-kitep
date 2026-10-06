@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.."
 rm -rf dist && mkdir dist
 tar -C site --exclude='./books/*/img' -cf - . | tar -C dist -xf -
 cp backend/_headers dist/_headers   # security headers for the static assets (Cloudflare reads it, never serves it)
+python3 tools/build_seo.py dist        # plain pages for search engines: /ky/, /ru/, /book/<id>/, sitemap.xml
 if [ -n "$1" ]; then
   sed -i -E "s/(app\.js|style\.css)\"/\1?v=$1\"/" dist/index.html
 fi
