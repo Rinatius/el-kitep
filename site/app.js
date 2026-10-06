@@ -42,6 +42,7 @@
       qProofreadInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR) и исправлен автоматически. Затем искусственный интеллект прочитал всю книгу и исправил ошибки, а в трудных местах сверил текст со сканом. Человек книгу не вычитывал, поэтому отдельные ошибки возможны.',
       qOcrInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR), ошибки исправлены только автоматически. Книгу никто не вычитывал, поэтому в словах встречаются ошибки.',
       qGaps: 'Часть текста не удалось восстановить из скана на страницах: ',
+      qCards: 'Карточки', qCardsInfo: 'Учебник в виде карточек для телефона: текст учебника сохранён дословно, задания и номера страниц те же, а рисунки, схемы и таблицы перерисованы ИИ. Книгу на соответствие учебнику проверял ИИ, человек её не вычитывал, поэтому отдельные ошибки возможны.',
       menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
       stats: 'Статистика', statsSub: 'Сколько учебников из списка Министерства просвещения на 2026–2027 учебный год уже есть на сайте.',
       stTotal: 'учебников в списке', stAll: 'Всего', stOn: 'На сайте', stWork: 'Найдены, в работе', stPart: 'Найдены не полностью',
@@ -92,6 +93,7 @@
       qExactInfo: 'Текст окуу китебинин санариптик нускасынан (PDF) өзгөртүүсүз алынды. Анда таануу каталары жок.',
       qProofreadInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR) жана автоматтык түрдө оңдолду. Андан кийин жасалма интеллект китепти толугу менен окуп, каталарды оңдоду, татаал жерлерин скан менен салыштырды. Китепти адам текшерген эмес, ошондуктан айрым каталар калышы мүмкүн.',
       qOcrInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR), каталар автоматтык түрдө гана оңдолду. Китепти эч ким окуп текшерген эмес, ошондуктан сөздөрдө каталар кездешет.',
+      qCards: 'Карточкалар', qCardsInfo: 'Телефон үчүн карточка түрүндөгү окуу китеби: окуу китебинин тексти сөзмө-сөз сакталган, тапшырмалар жана беттердин номерлери ошол эле, ал эми сүрөттөр, схемалар жана таблицалар ЖИ менен кайра тартылган. Китептин окуу китебине дал келишин ЖИ текшерген, адам окуп чыккан эмес, ошондуктан айрым каталар болушу мүмкүн.',
       qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
       menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
       stats: 'Статистика', statsSub: 'Агартуу министрлигинин 2026–2027-окуу жылына бекитилген тизмесиндеги окуу китептеринин канчасы сайтта бар.',
@@ -648,7 +650,7 @@
     setState(false);
     if (window.caches) {
       caches.has(cacheName(b)).then(function (has) { // caches.open would create an empty cache for every book
-        return has && caches.open(cacheName(b)).then(function (c) { return c.match('books/' + b.id + '/book.json'); });
+        return has && caches.open(cacheName(b)).then(function (c) { return c.match('books/' + b.id + '/' + bookFile(b)); });
       }).then(function (r) {
         var had = lsGet('dl:' + b.id, null), cur = !!r && had === b.v;
         setState(cur);
@@ -714,7 +716,7 @@
   // Text quality of a book, from the "quality" field in books/index.json:
   // exact = text of a digital PDF; proofread = OCR of a scan, then read through and corrected by AI;
   // ocr = OCR of a scan with automatic corrections only. "gaps" lists printed pages with text lost in the scan.
-  var QUALITY = { exact: 'qExact', proofread: 'qProofread', ocr: 'qOcr' };
+  var QUALITY = { exact: 'qExact', proofread: 'qProofread', ocr: 'qOcr', cards: 'qCards' };
   function qBadge(b) {
     var k = b && QUALITY[b.quality];
     return k ? '<button class="q q-' + b.quality + '" aria-label="' + esc(t('quality') + ': ' + t(k)) + '"><i></i>' + esc(t(k)) + '</button>' : '';
@@ -733,18 +735,19 @@
     bg.onclick = close; $('.x', sh).onclick = close;
   }
 
+  function bookFile(b) { return b && b.format === 'cards' ? 'cards.json' : 'book.json'; }
   function downloadBook(b, onProgress) {
     var base = 'books/' + b.id + '/';
     var cache;
     return caches.open(cacheName(b)).then(function (c) {
       cache = c;
-      return fetch(base + 'book.json');
+      return fetch(base + bookFile(b));
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
-      return cache.put(base + 'book.json', r.clone()).then(function () { return r.json(); });
+      return cache.put(base + bookFile(b), r.clone()).then(function () { return r.json(); });
     }).then(function (book) {
       // app files are kept up to date by the service worker (sw.js), not stored with each book
-      var urls = book.images.map(function (i) { return picBase(b.id) + i; });
+      var urls = (book.images || []).map(function (i) { return picBase(b.id) + i; });
       var done = 0;
       // a few requests in parallel: fast on 3G, gentle on slow phones
       var queue = urls.slice();
@@ -778,15 +781,95 @@
     flag: '<svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>'
   };
 
+  // ================================================================ SHARED BY BOTH READERS
+  // ---- sheets (contents, settings)
+  function closeSheet() { var a = $('.sheet'), b = $('.sheet-bg'); if (a) a.remove(); if (b) b.remove(); }
+  function openSheet(html) {
+    closeSheet();
+    var bg = document.createElement('div'); bg.className = 'sheet-bg'; bg.onclick = closeSheet;
+    var sh = document.createElement('div'); sh.className = 'sheet'; sh.innerHTML = html;
+    document.body.appendChild(bg); document.body.appendChild(sh);
+    return sh;
+  }
+
+  // ---- picture viewer: tap a picture to see it full screen; tap again to enlarge, scroll to move
+  function openZoom(img) {
+    var z = document.createElement('div'); z.className = 'zoom';
+    var big = false;
+    z.innerHTML = '<div class="zoom-in"><img alt=""></div><button class="icon zoom-x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button>';
+    var zi = $('img', z); zi.src = img.src;
+    var fit = function () {
+      var W = window.innerWidth, H = window.innerHeight, w = +img.getAttribute('data-w'), h = +img.getAttribute('data-h');
+      var s = Math.min(W / w, H / h) * (big ? 2.5 : 1);
+      zi.style.width = Math.round(w * s) + 'px'; zi.style.height = 'auto'; zi.style.maxWidth = 'none'; zi.style.maxHeight = 'none';
+    };
+    zi.onclick = function (e) {
+      var inr = $('.zoom-in', z), r = zi.getBoundingClientRect();
+      var fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+      big = !big; fit();
+      if (big) { inr.scrollLeft = fx * zi.offsetWidth - window.innerWidth / 2; inr.scrollTop = fy * zi.offsetHeight - window.innerHeight / 2; }
+    };
+    $('.zoom-x', z).onclick = function () { z.remove(); document.removeEventListener('keydown', zkey); };
+    var zkey = function (e) { if (e.key === 'Escape') { z.remove(); document.removeEventListener('keydown', zkey); } };
+    document.addEventListener('keydown', zkey);
+    document.body.appendChild(z); fit();
+  }
+
+  // a drawing (inline SVG) in the picture viewer, as an image four times its own size
+  function zoomSvg(sv) {
+    var vb = (sv.getAttribute('viewBox') || '0 0 300 150').split(/\s+/);
+    var im = document.createElement('img');
+    im.setAttribute('data-w', Math.round(vb[2] * 4)); im.setAttribute('data-h', Math.round(vb[3] * 4));
+    var xml = sv.outerHTML.indexOf('xmlns=') < 0 ? sv.outerHTML.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"') : sv.outerHTML;
+    // without the size the page gave the drawing (only on the <svg> tag itself: font-style="..." inside must stay)
+    im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml.replace(/^(<svg\b[^>]*?)\sstyle="[^"]*"/, '$1'));
+    openZoom(im);
+  }
+
+  // ---- reading settings; onChange: the reader lays itself out again
+  function settingsSheet(onChange) {
+    function seg(key, opts) {
+      return '<div class="seg" data-k="' + key + '">' + opts.map(function (o) {
+        return '<button data-v="' + o[0] + '"' + (o[2] ? ' class="' + o[2] + (String(S[key]) === String(o[0]) ? ' on' : '') + '"' : (String(S[key]) === String(o[0]) ? ' class="on"' : '')) + '>' + o[1] + '</button>';
+      }).join('') + '</div>';
+    }
+    var sh = openSheet(
+      '<h3>' + esc(t('settings')) + '</h3>' +
+      '<div class="set"><label>' + esc(t('fontSize')) + '</label><div class="seg"><button data-fs="-2" style="font-size:14px">A−</button><button class="fsv" disabled>' + S.fs + '</button><button data-fs="2" style="font-size:20px">A+</button></div></div>' +
+      '<div class="set"><label>' + esc(t('theme')) + '</label>' + seg('theme', [['light', t('light'), 'swatch'], ['sepia', t('sepia'), 'swatch'], ['dark', t('dark'), 'swatch'], ['contrast', t('contrast'), 'swatch']]) + '</div>' +
+      '<div class="set"><label>' + esc(t('font')) + '</label>' + seg('font', [['serif', '<span style="font-family:Georgia,serif">' + esc(t('serif')) + '</span>'], ['sans', '<span style="font-family:Roboto,Arial,sans-serif">' + esc(t('sans')) + '</span>']]) + '</div>' +
+      '<div class="set"><label>' + esc(t('spacing')) + '</label>' + seg('lh', [[1.35, '1.35'], [1.55, '1.55'], [1.8, '1.8']]) + '</div>' +
+      '<div class="set"><label>' + esc(t('lang')) + '</label>' + seg('ui', [['ru', 'Русский'], ['ky', 'Кыргызча']]) + '</div>');
+    sh.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      if (b.hasAttribute('data-fs')) {
+        S.fs = Math.max(13, Math.min(34, S.fs + +b.getAttribute('data-fs')));
+        $('.fsv', sh).textContent = S.fs;
+      } else {
+        var k = b.parentNode.getAttribute('data-k'); if (!k) return;
+        var v = b.getAttribute('data-v'); S[k] = k === 'lh' ? +v : v;
+        Array.prototype.forEach.call(b.parentNode.children, function (x) { x.classList.toggle('on', x === b); });
+        if (k === 'ui') { applySettings(); closeSheet(); route(); return; }
+      }
+      applySettings(); onChange();
+    });
+  }
+
   function openReader(id) {
     app.innerHTML = '<div class="loading">' + esc(t('loading')) + '</div>';
     if (!EMB) setMy(id, true);
-    var p = EMB ? Promise.resolve(EMB) : fetchJSON('books/' + id + '/book.json');
-    // the book's entry in the list carries its quality; a book opened from a link loads the list here
+    // the book's entry in the list carries its quality and format; a book opened from a link loads the list here
     var entry = EMB ? Promise.resolve(EMB) : (LIST ? Promise.resolve(LIST) : loadList().catch(function () { return []; })).then(function (list) {
       return list.filter(function (b) { return b.id === id; })[0] || null;
     });
-    Promise.all([p, entry]).then(function (r) { startReader(r[0], EMB ? '' : picBase(id), r[1]); hit(id, 'open'); })
+    entry.then(function (e) {
+      if (EMB) return startReader(EMB, '', EMB);
+      // a card book (format "cards") is cards.json; without the list (offline, not saved): try both
+      var get = function (f) { return fetchJSON('books/' + id + '/' + f); };
+      var p = e ? get(bookFile(e)).then(function (bk) { return [bk, e.format === 'cards']; })
+        : get('book.json').then(function (bk) { return [bk, false]; }, function () { return get('cards.json').then(function (bk) { return [bk, true]; }); });
+      return p.then(function (r) { if (r[1]) startCards(r[0], e); else startReader(r[0], picBase(id), e); hit(id, 'open'); });
+    })
       .catch(function () {
         app.innerHTML = '<div class="lib"><p class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) +
           '</p><p style="text-align:center"><a class="btn" href="' + libHash + '">' + esc(t('back')) + '</a></p></div>';
@@ -970,39 +1053,9 @@
       var x = e.clientX / vp.clientWidth;
       if (x < 0.3) prev(); else if (x > 0.7) next();
       else if (e.target.tagName === 'IMG' && e.target.closest('figure')) openZoom(e.target);
-      else if (e.target.closest && e.target.closest('figure svg')) {
-        var sv = e.target.closest('figure svg'), vb = (sv.getAttribute('viewBox') || '0 0 300 150').split(/\s+/);
-        var im = document.createElement('img');
-        im.setAttribute('data-w', Math.round(vb[2] * 4)); im.setAttribute('data-h', Math.round(vb[3] * 4));
-        var xml = sv.outerHTML.indexOf('xmlns=') < 0 ? sv.outerHTML.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"') : sv.outerHTML;
-        im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml.replace(/style="[^"]*"/, ''));
-        openZoom(im);
-      }
+      else if (e.target.closest && e.target.closest('figure svg')) zoomSvg(e.target.closest('figure svg'));
       else reader.classList.add('ui');
     });
-    // ---- picture viewer: tap a picture to see it full screen; tap again to enlarge, scroll to move
-    function openZoom(img) {
-      var z = document.createElement('div'); z.className = 'zoom';
-      var big = false;
-      z.innerHTML = '<div class="zoom-in"><img alt=""></div><button class="icon zoom-x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button>';
-      var zi = $('img', z); zi.src = img.src;
-      var fit = function () {
-        var W = window.innerWidth, H = window.innerHeight, w = +img.getAttribute('data-w'), h = +img.getAttribute('data-h');
-        var s = Math.min(W / w, H / h) * (big ? 2.5 : 1);
-        zi.style.width = Math.round(w * s) + 'px'; zi.style.height = 'auto'; zi.style.maxWidth = 'none'; zi.style.maxHeight = 'none';
-      };
-      zi.onclick = function (e) {
-        var inr = $('.zoom-in', z), r = zi.getBoundingClientRect();
-        var fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
-        big = !big; fit();
-        if (big) { inr.scrollLeft = fx * zi.offsetWidth - window.innerWidth / 2; inr.scrollTop = fy * zi.offsetHeight - window.innerHeight / 2; }
-      };
-      $('.zoom-x', z).onclick = function () { z.remove(); document.removeEventListener('keydown', zkey); };
-      var zkey = function (e) { if (e.key === 'Escape') { z.remove(); document.removeEventListener('keydown', zkey); } };
-      document.addEventListener('keydown', zkey);
-      document.body.appendChild(z); fit();
-    }
-
     function onKey(e) {
       if ($('.zoom')) return;
       if ($('.sheet')) { if (e.key === 'Escape') closeSheet(); return; }
@@ -1023,15 +1076,6 @@
     slider.addEventListener('input', function () { i2.textContent = t('page') + ' ' + pgList[+slider.value] + ' / ' + pgList[pgList.length - 1]; });
     slider.addEventListener('change', function () { goBookPage(pgList[+slider.value]); });
 
-    // ---- sheets
-    function closeSheet() { var a = $('.sheet'), b = $('.sheet-bg'); if (a) a.remove(); if (b) b.remove(); }
-    function openSheet(html) {
-      closeSheet();
-      var bg = document.createElement('div'); bg.className = 'sheet-bg'; bg.onclick = closeSheet;
-      var sh = document.createElement('div'); sh.className = 'sheet'; sh.innerHTML = html;
-      document.body.appendChild(bg); document.body.appendChild(sh);
-      return sh;
-    }
 
     $('.b-toc').onclick = function () {
       var html = '<h3>' + esc(t('contents')) + '</h3>' +
@@ -1109,33 +1153,7 @@
       repBtn.addEventListener('click', function (e) { e.preventDefault(); });
     }
 
-    $('.b-set').onclick = function () {
-      function seg(key, opts) {
-        return '<div class="seg" data-k="' + key + '">' + opts.map(function (o) {
-          return '<button data-v="' + o[0] + '"' + (o[2] ? ' class="' + o[2] + (String(S[key]) === String(o[0]) ? ' on' : '') + '"' : (String(S[key]) === String(o[0]) ? ' class="on"' : '')) + '>' + o[1] + '</button>';
-        }).join('') + '</div>';
-      }
-      var sh = openSheet(
-        '<h3>' + esc(t('settings')) + '</h3>' +
-        '<div class="set"><label>' + esc(t('fontSize')) + '</label><div class="seg"><button data-fs="-2" style="font-size:14px">A−</button><button class="fsv" disabled>' + S.fs + '</button><button data-fs="2" style="font-size:20px">A+</button></div></div>' +
-        '<div class="set"><label>' + esc(t('theme')) + '</label>' + seg('theme', [['light', t('light'), 'swatch'], ['sepia', t('sepia'), 'swatch'], ['dark', t('dark'), 'swatch'], ['contrast', t('contrast'), 'swatch']]) + '</div>' +
-        '<div class="set"><label>' + esc(t('font')) + '</label>' + seg('font', [['serif', '<span style="font-family:Georgia,serif">' + esc(t('serif')) + '</span>'], ['sans', '<span style="font-family:Roboto,Arial,sans-serif">' + esc(t('sans')) + '</span>']]) + '</div>' +
-        '<div class="set"><label>' + esc(t('spacing')) + '</label>' + seg('lh', [[1.35, '1.35'], [1.55, '1.55'], [1.8, '1.8']]) + '</div>' +
-        '<div class="set"><label>' + esc(t('lang')) + '</label>' + seg('ui', [['ru', 'Русский'], ['ky', 'Кыргызча']]) + '</div>');
-      sh.addEventListener('click', function (e) {
-        var b = e.target.closest('button'); if (!b) return;
-        if (b.hasAttribute('data-fs')) {
-          S.fs = Math.max(13, Math.min(34, S.fs + +b.getAttribute('data-fs')));
-          $('.fsv', sh).textContent = S.fs;
-        } else {
-          var k = b.parentNode.getAttribute('data-k'); if (!k) return;
-          var v = b.getAttribute('data-v'); S[k] = k === 'lh' ? +v : v;
-          Array.prototype.forEach.call(b.parentNode.children, function (x) { x.classList.toggle('on', x === b); });
-          if (k === 'ui') { applySettings(); closeSheet(); route(); return; }
-        }
-        applySettings(); relayout();
-      });
-    };
+    $('.b-set').onclick = function () { settingsSheet(relayout); };
 
     cleanup = function () {
       document.removeEventListener('keydown', onKey);
@@ -1148,6 +1166,158 @@
     if (pos && chapters[pos.ch]) goBlock(pos.ch, pos.b || 0); else { renderChapter(0); show(0, false); }
     // fonts can change metrics after first paint
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+  }
+
+  // ================================================================ CARD BOOKS
+  // Maths and science books retold as cards for the phone (books/<id>/cards.json, "format": "cards" in index.json):
+  // the book's own wording and exercise numbers, drawings redrawn as inline SVG. One card per screen, swipe sideways;
+  // a card scrolls down when it is long. cards.json: {id, title, lang, sections: [{id, title, cards: [card]}]},
+  // card: {t: kind, h: title, pg: printed page ("23" or "23-24"), b: body HTML, st: [steps shown one tap at a time],
+  // a: answer behind a button}. Labels are in the book's language, not the interface language.
+  var CARD_L = {
+    ru: { cover: 'Глава', goal: 'Цель обучения', recall: 'Вспомним', idea: 'Главное', example: 'Пример', try: 'Попробуйте',
+      think: 'Подумайте', practice: 'Задания', recap: 'Итоги', pg: 'стр. {n}', step1: 'Решение: шаг 1 из {n}',
+      stepN: 'Следующий шаг: {k} из {n}', ans: 'Показать ответ', ansHide: 'Скрыть ответ' },
+    ky: { cover: 'Бөлүм', goal: 'Окуу максаты', recall: 'Эстеп көрөлү', idea: 'Негизгиси', example: 'Мисал', try: 'Аракет кылып көр',
+      think: 'Ойлонуп көр', practice: 'Тапшырмалар', recap: 'Жыйынтык', pg: '{n}-бет', step1: 'Чыгаруу: {n} кадамдын 1-кадамы',
+      stepN: 'Кийинки кадам: {n} кадамдын {k}-кадамы', ans: 'Жоопту көрсөтүү', ansHide: 'Жоопту жашыруу' }
+  };
+
+  function startCards(book, entry) {
+    var L = CARD_L[book.lang] || CARD_L[entry && entry.school] || CARD_L.ru;
+    function lt(k, n, kk) { return L[k].replace('{n}', n).replace('{k}', kk); }
+    document.title = book.title;
+    var flat = [];
+    book.sections.forEach(function (s, si) { s.cards.forEach(function (c, ci) { flat.push({ s: s, si: si, c: c, ci: ci }); }); });
+    var posKey = 'pos:' + book.id;
+    app.innerHTML =
+      '<div class="cr">' +
+      '<div class="cr-top"><a class="icon" href="' + libHash + '" aria-label="' + esc(t('back')) + '">' + ICONS.back + '</a>' +
+      '<div class="cr-where"><small></small><b></b></div>' +
+      (qBadge(entry) ? '<button class="icon b-q" aria-label="' + esc(t('quality')) + '"><span class="qdot q-' + entry.quality + '"><i></i></span></button>' : '') +
+      '<button class="icon b-toc" aria-label="' + esc(t('contents')) + '">' + ICONS.toc + '</button>' +
+      '<button class="icon b-set" aria-label="' + esc(t('settings')) + '">' + ICONS.set + '</button></div>' +
+      '<div class="cr-dots"></div>' +
+      '<div class="cr-strip" lang="' + esc(book.lang || '') + '">' + flat.map(function (f, i) { return '<div class="cr-slot" data-i="' + i + '"></div>'; }).join('') + '</div>' +
+      '<div class="cr-foot"><button class="icon cr-prev" aria-label="' + esc(t('back')) + '">' + ICONS.back + '</button>' +
+      '<span class="cr-n"></span><button class="icon cr-next" aria-label="→">' + ICONS.back + '</button></div>' +
+      '</div>';
+    var strip = $('.cr-strip'), slots = strip.children, dots = $('.cr-dots');
+
+    function cardHTML(c) {
+      var steps = c.st && c.st.length ? c.st.map(function (h, k) { return '<div class="cr-step" data-k="' + k + '">' + h + '</div>'; }).join('') +
+        '<button class="cr-btn solid" data-act="step">' + esc(lt('step1', c.st.length)) + '</button>' : '';
+      var ans = c.a ? '<button class="cr-btn" data-act="ans">' + esc(L.ans) + '</button><div class="cr-ans">' + c.a + '</div>' : '';
+      var pg = c.pg ? '<span>' + esc(lt('pg', String(c.pg).replace('-', '–'))) + '</span>' : '';
+      var title = c.h || L[c.t] || '';
+      return '<article class="card" data-t="' + esc(c.t) + '"><div class="card-h"><div class="kind">' + esc(L[c.t] || '') + pg + '</div>' +
+        (title ? '<h2>' + title + '</h2>' : '') + '</div><div class="card-b">' + (c.b || '') + steps + ans + '</div></article>';
+    }
+    // only the cards near the one on screen are drawn: a maths book has a thousand cards full of drawings
+    function fill(i) {
+      for (var k = 0; k < slots.length; k++) {
+        var near = Math.abs(k - i) <= 2, el = slots[k];
+        if (near && !el.firstChild) el.innerHTML = cardHTML(flat[k].c);
+        else if (!near && el.firstChild && Math.abs(k - i) > 6) el.innerHTML = '';
+      }
+    }
+
+    var cur = -1;
+    function show(i) {
+      if (i === cur) return;
+      cur = i;
+      var f = flat[i], n = f.s.cards.length;
+      fill(i);
+      $('.cr-where small').textContent = book.title;
+      $('.cr-where b').textContent = f.s.title;
+      $('.cr-n').textContent = (f.ci + 1) + ' / ' + n;
+      var m = Math.min(n, 40);
+      if (dots.getAttribute('data-s') !== String(f.si)) { dots.setAttribute('data-s', f.si); dots.innerHTML = new Array(m + 1).join('<i></i>'); }
+      var on = Math.floor(f.ci * m / n);
+      Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('on', k <= on); });
+      lsSet(posKey, { c: i, at: Date.now() });
+    }
+    function go(i, smooth) {
+      i = Math.max(0, Math.min(flat.length - 1, i));
+      fill(i);
+      strip.scrollTo({ left: i * strip.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+      show(i);
+    }
+    var raf = 0;
+    strip.addEventListener('scroll', function () {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () { show(Math.round(strip.scrollLeft / strip.clientWidth)); });
+    });
+    $('.cr-prev').onclick = function () { go(cur - 1, true); };
+    $('.cr-next').onclick = function () { go(cur + 1, true); };
+
+    strip.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-act]');
+      if (b) {
+        var card = b.closest('.card');
+        if (b.getAttribute('data-act') === 'step') {
+          var steps = card.querySelectorAll('.cr-step'), k = 0;
+          while (k < steps.length && steps[k].classList.contains('on')) k++;
+          if (k < steps.length) { steps[k].classList.add('on'); steps[k].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+          if (k + 1 < steps.length) b.textContent = lt('stepN', steps.length, k + 2); else b.remove();
+        } else {
+          var a = $('.cr-ans', card); a.classList.toggle('on');
+          b.textContent = a.classList.contains('on') ? L.ansHide : L.ans;
+        }
+        return;
+      }
+      var sv = e.target.closest('figure svg') || (e.target.closest('figure') && $('svg', e.target.closest('figure')));
+      if (sv) zoomSvg(sv);
+    });
+
+    // contents: jump to a printed page of the textbook, or to a section
+    function pageRange(pg) { var m = String(pg || '').match(/(\d+)(?:\s*[-–]\s*(\d+))?/); return m ? [+m[1], +(m[2] || m[1])] : null; }
+    function findPage(n) {
+      var best = -1, bestD = 1e9;
+      if (!n) return -1;
+      flat.forEach(function (f, i) {
+        var r = pageRange(f.c.pg); if (!r) return;
+        var d = n < r[0] ? r[0] - n : n > r[1] ? n - r[1] : 0;
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return bestD <= 2 ? best : -1;
+    }
+    $('.b-toc').onclick = function () {
+      var start = 0, si = flat[cur].si;
+      var html = '<h3>' + esc(t('contents')) + '</h3>' +
+        '<div class="goto"><input type="number" inputmode="numeric" placeholder="' + esc(t('gotoPage')) + '"><button class="btn primary">' + esc(t('go')) + '</button></div><div class="toc">' +
+        book.sections.map(function (s, k) {
+          var r = pageRange(s.cards[0] && s.cards[0].pg);
+          var h = '<a href="#" data-i="' + start + '"' + (k === si ? ' class="cur"' : '') + '>' + esc(s.title) + (r ? '<span class="p">' + r[0] + '</span>' : '') + '</a>';
+          start += s.cards.length; return h;
+        }).join('') + '</div>';
+      var sh = openSheet(html);
+      var c = $('.cur', sh); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'center' });
+      sh.addEventListener('click', function (e) {
+        var a = e.target.closest('a[data-i]'); if (!a) return;
+        e.preventDefault(); closeSheet(); go(+a.getAttribute('data-i'), false);
+      });
+      var inp = $('input', sh);
+      function jump() { var i = findPage(parseInt(inp.value, 10)); if (i < 0) { toast(t('notFound')); return; } closeSheet(); go(i, false); }
+      $('.goto button', sh).onclick = jump;
+      inp.onkeydown = function (e) { if (e.key === 'Enter') jump(); };
+    };
+    var bq = $('.b-q'); if (bq) bq.onclick = function () { qualitySheet(entry); };
+    $('.b-set').onclick = function () { settingsSheet(function () { go(cur, false); }); };
+
+    function onKey(e) {
+      if ($('.zoom')) return;
+      if ($('.sheet')) { if (e.key === 'Escape') closeSheet(); return; }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1, true); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1, true); }
+    }
+    document.addEventListener('keydown', onKey);
+    var rt; function onResize() { clearTimeout(rt); rt = setTimeout(function () { var i = cur; cur = -1; go(i, false); }, 150); }
+    window.addEventListener('resize', onResize);
+    cleanup = function () { document.removeEventListener('keydown', onKey); window.removeEventListener('resize', onResize); closeSheet(); };
+
+    var pos = lsGet(posKey, null);
+    go(pos && pos.c < flat.length ? pos.c : 0, false);
   }
 
   // ---------------------------------------------------------------- boot
