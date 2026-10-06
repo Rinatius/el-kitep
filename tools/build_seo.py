@@ -24,7 +24,7 @@ T = {
            'catalog_sub': 'Кыргызстандын окуу китептери телефондо окууга ыңгайлуу. Жүктөп алгандан кийин интернетсиз иштейт. Акысыз, каттоосуз.',
            'other': 'Русский язык обучения: учебники', 'all': 'Бардык китептер', 'contents': 'Мазмуну', 'start': 'Китептин башталышы',
            'online': 'онлайн окуу', 'desc': '{t}, {g}: окуу китеби онлайн. Телефондо окууга ыңгайлуу, жүктөп алгандан кийин интернетсиз иштейт. {a}',
-           'exact': 'Так текст (санариптик нускадан)', 'proofread': 'Скан, ЖИ текшерген', 'ocr': 'Скан, текшерилген эмес',
+           'cards': 'Карточкалар, сүрөттөрдү ЖИ кайра тарткан', 'exact': 'Так текст (санариптик нускадан)', 'proofread': 'Скан, ЖИ текшерген', 'ocr': 'Скан, текшерилген эмес',
            'free': 'Акысыз, каттоосуз.', 'more': 'Китепти толугу менен окуу'},
     'ru': {'app': 'Школьные учебники', 'school': {'ky': 'Обучение на кыргызском языке', 'ru': 'Обучение на русском языке'}, 'grade': '{} класс', 'part': 'часть {}', 'other_school': 'обучение на кыргызском языке', 'read': 'Читать',
            'catalog': 'Школьные учебники Кыргызстана онлайн: для школ с русским языком обучения',
@@ -32,7 +32,7 @@ T = {
            'catalog_sub': 'Учебники Кыргызстана, удобные для телефона. Работают без интернета после скачивания. Бесплатно и без регистрации.',
            'other': 'Кыргыз тилинде окутуу: окуу китептери', 'all': 'Все учебники', 'contents': 'Содержание', 'start': 'Начало книги',
            'online': 'читать онлайн', 'desc': '{t}, {g}: учебник онлайн. Удобно читать на телефоне, после скачивания работает без интернета. {a}',
-           'exact': 'Точный текст (из цифровой версии)', 'proofread': 'Скан, вычитан ИИ', 'ocr': 'Скан, без вычитки',
+           'cards': 'Карточки, рисунки перерисованы ИИ', 'exact': 'Точный текст (из цифровой версии)', 'proofread': 'Скан, вычитан ИИ', 'ocr': 'Скан, без вычитки',
            'free': 'Бесплатно и без регистрации.', 'more': 'Читать книгу целиком'},
 }
 CSS = """body{font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0 auto;max-width:720px;padding:16px;color:#1b1b1b;background:#fff}
@@ -48,7 +48,7 @@ def e(s):
 
 
 def text(h):
-    h = re.sub(r'<span class="pg"[^>]*>.*?</span>', ' ', h or '')
+    h = re.sub(r'<span class="pg"[^>]*>.*?</span>|<figure.*?</figure>|<svg.*?</svg>', ' ', h or '', flags=re.S)
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
 
 
@@ -88,7 +88,7 @@ def full_name(b):
     """Title, grade, part, and the school when the book is not in its school's language (Кыргыз тили for Russian-medium schools)."""
     t = T[b['_lang']]
     g = t['grade'].format(b.get('grade')) if b.get('grade') else ''
-    return b['title'] + (', ' + g if g else '') + (', ' + t['part'].format(part(b)) if part(b) else '') + \
+    return b['title'] + (', ' + g if g else '') + (', ' + t['part'].format(part(b)) if part(b) and not re.search(r'част|бөлүк', b['title'], re.I) else '') + \
         (f' ({t["other_school"]})' if b.get('school') != b['_lang'] else '')
 
 
@@ -158,7 +158,14 @@ def main(dist):
     books = json.load(open(os.path.join(ROOT, 'books', 'index.json')))
     full = {}
     for b in books:
-        full[b['id']] = json.load(open(os.path.join(ROOT, 'books', b['id'], 'book.json')))
+        if b.get('format') == 'cards':   # card book: sections and cards read like chapters and paragraphs
+            c = json.load(open(os.path.join(ROOT, 'books', b['id'], 'cards.json')))
+            c['chapters'] = [{'title': s.get('title'), 'blocks': [{'t': 'p', 'h': k.get('b', '')} for k in s.get('cards', []) if k.get('t') != 'cover']}
+                             for s in c.get('sections', [])]
+            c['images'] = []
+            full[b['id']] = c
+        else:
+            full[b['id']] = json.load(open(os.path.join(ROOT, 'books', b['id'], 'book.json')))
         b['_lang'] = full[b['id']].get('lang') if full[b['id']].get('lang') in T else b.get('school') if b.get('school') in T else 'ru'
     names = {b['id']: full_name(b) for b in books}
     seen = {}

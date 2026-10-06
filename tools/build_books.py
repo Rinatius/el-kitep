@@ -3,6 +3,11 @@
 
 Usage: python3 build_books.py /mnt/project-files/pilot-book/kyrgyz-adabiyaty-7 [more book folders...]
 
+A folder with cards.json instead of book.json is a card book (maths and science as cards, see app.js startCards):
+only cards.json is copied (drawings are inside it), the index entry gets "format": "cards" and "quality": "cards",
+and there is no single-file copy. Besides "sections", cards.json carries the same fields as book.json:
+id, title, subtitle, author, year, grade, school ("ru"/"ky" or the school name), lang ("ru"/"ky"), source {site, page}.
+
 For each book folder (output of convert_pdf.py) this:
   * copies book.json and img/ to site/books/<id>/,
   * writes a standalone <id>.html (app + book + pictures in one file, to share via messengers),
@@ -72,19 +77,24 @@ def main(dirs):
         with open(index_path, encoding="utf-8") as f:
             index = json.load(f)
     for src in dirs:
-        with open(os.path.join(src, "book.json"), encoding="utf-8") as f:
+        cards = not os.path.exists(os.path.join(src, "book.json")) and os.path.exists(os.path.join(src, "cards.json"))
+        with open(os.path.join(src, "cards.json" if cards else "book.json"), encoding="utf-8") as f:
             book = json.load(f)
         bid = book["id"]
         dst = os.path.join(BOOKS, bid)
         if os.path.exists(dst):
             shutil.rmtree(dst)
         os.makedirs(dst)
-        shutil.copy(os.path.join(src, "book.json"), dst)
-        shutil.copytree(os.path.join(src, "img"), os.path.join(dst, "img"))
-        single = f"{bid}.html"
         old = next((e for e in index if e["id"] == bid), {})
-        with open(os.path.join(dst, single), "w", encoding="utf-8") as f:
-            f.write(standalone(book, src, old))
+        if cards:
+            shutil.copy(os.path.join(src, "cards.json"), dst)
+            single = None
+        else:
+            shutil.copy(os.path.join(src, "book.json"), dst)
+            shutil.copytree(os.path.join(src, "img"), os.path.join(dst, "img"))
+            single = f"{bid}.html"
+            with open(os.path.join(dst, single), "w", encoding="utf-8") as f:
+                f.write(standalone(book, src, old))
         h = hashlib.sha1()
         size = 0
         for root, _, files in os.walk(dst):
@@ -101,13 +111,18 @@ def main(dirs):
         entry = {"id": bid, "v": h.hexdigest()[:10], "title": book["title"], "subtitle": book.get("subtitle"), "school": school,
                  "author": book.get("author"), "year": book.get("year"), "grade": book.get("grade"),
                  "langName": book.get("langName"), "size": size, "standalone": single}
+        if cards:
+            del entry["standalone"]
+            entry["format"] = "cards"
+            old.setdefault("quality", "cards")
+            old.pop("standalone", None)
         src = book.get("source")  # where we found the book: the library's "source" button links there
         if isinstance(src, dict) and src.get("page"):
             entry["src"] = src["page"]
         # keep fields set by hand in index.json: subject, quality ("exact", "proofread" or "ocr"), gaps
         entry = {**old, **entry}
         index = [e for e in index if e["id"] != bid] + [entry]
-        print(f"{bid}: {size / 1048576:.2f} MB online, single file {os.path.getsize(os.path.join(dst, single)) / 1048576:.2f} MB")
+        print(f"{bid}: {size / 1048576:.2f} MB online" + (f", single file {os.path.getsize(os.path.join(dst, single)) / 1048576:.2f} MB" if single else ", card book"))
     # library order: grade, then school, then subject
     def grade_key(e):
         m = re.match(r"\d+", str(e.get("grade") or ""))

@@ -67,7 +67,7 @@ self.addEventListener('fetch', function (e) {
     e.respondWith(networkFirst(scope, true));
   } else if (SHELL.map(abs).indexOf(path) >= 0 || DATA.map(abs).indexOf(path) >= 0) {
     e.respondWith(networkFirst(path, true));
-  } else if (/\/books\/[^/]+\/book\.json$/.test(url.pathname)) {
+  } else if (/\/books\/[^/]+\/(book|cards)\.json$/.test(url.pathname)) {
     e.respondWith(networkFirst(path, false)); // offline: the downloaded copy
   } else {
     // pictures and other book files: the downloaded copy if there is one, otherwise the network
