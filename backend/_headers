@@ -1,10 +1,11 @@
 # Headers on the static assets (the app and book texts); tools/build_cloudflare.sh copies this file into dist/.
 # Answers the Worker code writes itself (/api, pictures) get theirs in src/worker.js.
 # The policy allows only the app's own files, pictures from img.elkitep.com, and inline style attributes
-# (the reader sets widths that way); no scripts but app.js and sw.js can ever run.
+# (the reader sets widths that way) and Cloudflare Web Analytics (the beacon Cloudflare injects into pages, which sends
+# to cloudflareinsights.com); no other scripts can ever run.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://img.elkitep.com data: blob:; connect-src 'self' https://img.elkitep.com; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://img.elkitep.com data: blob:; connect-src 'self' https://img.elkitep.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
