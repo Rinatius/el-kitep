@@ -1006,6 +1006,21 @@
   "src": "https://kitep.edu.kg/book/135/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-6-bekboev",
+  "v": "868ab2a9de",
+  "title": "Математика",
+  "subtitle": "6-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Бекбоев, А. Абдиев, А. Айылчиев, Д. Андашев",
+  "year": 2012,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 1069376,
+  "format": "cards",
+  "src": "https://bilim.akipress.org/lib/book:207/"
+ },
+ {
   "id": "kg-muzyka-6",
   "v": "5f6c984330",
   "title": "Музыка",
