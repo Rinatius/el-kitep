@@ -156,8 +156,11 @@
   function cacheName(b) { return 'book-' + b.id + '-' + b.v; }
 
   // The library is organised by school (language of instruction), then grade, then subject.
-  // Choosing the school also sets the interface language.
-  var SCHOOLS = [['ky', 'Кыргыз мектеби'], ['ru', 'Русская школа']];
+  // Choosing the school also sets the interface language. Each school is named the way the ministry does: by its
+  // language of instruction (switch button: the language, with "language of instruction" in small type under it;
+  // full name for headings), each in its own language.
+  var SCHOOLS = [['ky', 'Кыргыз тили', 'окутуу тили', 'Кыргыз тилинде окутуу'], ['ru', 'Русский язык', 'язык обучения', 'Обучение на русском языке']];
+  function schoolName(code) { return SCHOOLS.filter(function (s) { return s[0] === code; })[0][3]; }
 
   // Subjects in the order the ministry lists them. A book's subject comes from its "subject"
   // field when index.json has one, otherwise from its title; a title that matches nothing
@@ -201,7 +204,7 @@
     var school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
     app.innerHTML = '<div class="lib"><div class="lib-head"><button class="icon burger" aria-label="' + esc(t('menu')) + '">' + ICONS.menu + '</button><h1>' + esc(title) + '</h1>' + link + '</div>' +
       (main ? '<p class="sub">' + esc(t('appSub')) + '</p><div class="school">' + SCHOOLS.map(function (o) {
-        return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>';
+        return '<button data-s="' + o[0] + '"' + (o[0] === school ? ' class="on"' : '') + '><b>' + esc(o[1]) + '</b><small>' + esc(o[2]) + '</small></button>';
       }).join('') + '</div>' : '') +
       '<div id="books"><div class="loading">' + esc(t('loading')) + '</div></div></div>';
     $('.burger', app).onclick = openMenu;
@@ -337,7 +340,7 @@
       SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; })).forEach(function (sc) {
         var rows = list.filter(function (m) { return m.school === sc[0]; });
         if (!rows.length) return;
-        html += '<h2 class="grade-t">' + esc(sc[1]) + '</h2>';
+        html += '<h2 class="grade-t">' + esc(sc[3]) + '</h2>';
         var lastG = null;
         rows.forEach(function (m) {
           if (m.grade !== lastG) { html += '<h3 class="subj">' + esc(m.grade + ' ' + t('grade')) + '</h3>'; lastG = m.grade; }
@@ -466,7 +469,7 @@
     var mb = (b.size / 1048576).toFixed(1);
     var meta = [[b.author, b.year].filter(Boolean).join(', ')];
     if (gradesOf(b).length > 1) meta.push(b.grade + ' ' + t('grade'));
-    if (myView && b.school) meta.push(b.school === 'ky' ? 'Кыргыз мектеби' : 'Русская школа');
+    if (myView && b.school) meta.push(schoolName(b.school));
     meta.push(mb + ' ' + t('mb'));
     el.innerHTML = '<div class="bk-h"><div class="bk-t">' + esc(b.title) + '</div>' +
       '<button class="icon star" aria-label="' + esc(t('my')) + '">' + LIB_ICONS.star + '</button></div>' +
