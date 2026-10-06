@@ -8,6 +8,7 @@ name: Deploy to Cloudflare (elkitep.com)
 #   D1_DATABASE_ID         id of the D1 database "el-kitep"
 #   R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY   R2 API token, Object Read & Write, scoped to the bucket el-kitep-books
 #   EL_KITEP_ADMIN_KEY     password for /api/admin
+#   EL_KITEP_STATS_KEY     optional read-only password: reading counters and error reports only (for Claude sessions)
 
 on:
   push:
@@ -32,6 +33,7 @@ jobs:
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       EL_KITEP_ADMIN_KEY: ${{ secrets.EL_KITEP_ADMIN_KEY }}
+      EL_KITEP_STATS_KEY: ${{ secrets.EL_KITEP_STATS_KEY }}
     steps:
       - id: ready
         run: |
@@ -60,3 +62,4 @@ jobs:
           cd backend && npm ci --no-audit --no-fund
           npx wrangler deploy
           if [ -n "$EL_KITEP_ADMIN_KEY" ]; then printf '%s' "$EL_KITEP_ADMIN_KEY" | npx wrangler secret put ADMIN_KEY; fi
+          if [ -n "$EL_KITEP_STATS_KEY" ]; then printf '%s' "$EL_KITEP_STATS_KEY" | npx wrangler secret put STATS_KEY; fi
