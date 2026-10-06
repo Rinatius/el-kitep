@@ -357,3 +357,16 @@ a { color: var(--accent); }
 .cr-ans { display: none; margin-top: .6em; padding: .5em .8em; border-radius: 12px; background: var(--panel); border-left: 4px solid var(--try); }
 .cr-ans.on { display: block; }
 .q-cards i { background: #8b5cf6; }
+
+/* ---------- Placeholders for books of the Ministry's list not on the site yet (app.js stubRow) ---------- */
+.bk.stub { border: 1.5px dashed var(--line); border-radius: 12px; padding: 4px 12px 12px; margin: 8px 0; background: transparent; }
+.bk.stub:last-child { border-bottom: 1.5px dashed var(--line); }
+.bk.stub .bk-t { color: var(--muted); font-weight: 600; }
+.bk.stub .bk-h { align-items: center; }
+.stub-tag { flex: 0 0 auto; margin-top: 8px; font: 600 11px/1 Roboto, Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 4px 8px; }
+.stub-st { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--fg); margin: 0 0 8px; }
+.stub-st i { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; }
+.stub-st.sf-full i { background: #8fb8f2; } .stub-st.sf-part i { background: #e8b04a; } .stub-st.sf-none i { background: #d9615a; }
+.bk.stub .row .btn { min-height: 36px; padding: 0 12px; font-size: 13px; }
+.bk.stub .btn svg { width: 16px; height: 16px; margin-right: 6px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
