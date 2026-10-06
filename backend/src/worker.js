@@ -18,6 +18,9 @@ const LIMITS = { reports: 60, uploads: 10 }; // per reader (hashed IP) per hour
 // For all readers together per day, so nobody can fill the database (D1 Free: 100,000 rows written a day) or run
 // up R2 operations with many addresses. Past these the form says it can't take more for now.
 const DAILY = { reports: 2000, uploads: 100, files: 500 };
+// Reading counts (POST /hits): at most this many counted events a day for the whole site (D1 writes are shared with
+// reports and uploads), per request, and per book and event in one request.
+const HITS_DAY = 20000, HITS_REQ = 50, HITS_EACH = 10, HIT_EVENTS = ['app', 'open', 'dl'];
 // On every answer the Worker itself writes (static assets get theirs from ../_headers).
 const SECURE = { 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Frame-Options': 'DENY' };
 const TYPES = { webp: 'image/webp', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
@@ -145,6 +148,34 @@ async function route(req, env, url, path) {
     return json({ id: res.meta.last_row_id });
   }
 
+  // ---- reading counts: [{b: book id ("" for "the app was opened"), e: "app"|"open"|"dl", f: 1 if this phone's
+  // first (book: ever; app: today), d: "YYYY-MM-DD" when it happened}]. Only daily totals per book are kept:
+  // no address, no device id, nothing that tells readers apart. Opens made offline arrive later with their day.
+  if (m === 'POST' && path === '/hits') {
+    const r = await body(req);
+    if (!Array.isArray(r) || r.length > HITS_REQ) throw new Fail(400, 'bad hits');
+    const ids = await bookIds(env, url), today = now().slice(0, 10), oldest = new Date(Date.now() - 30 * 86400e3).toISOString().slice(0, 10);
+    const sum = new Map();
+    for (const h of r) {
+      const e = h && h.e, b = e === 'app' ? '' : str(h && h.b, 80);
+      if (!HIT_EVENTS.includes(e) || (e !== 'app' && !ids.has(b))) continue; // only books that exist: no junk rows
+      const d = /^\d{4}-\d\d-\d\d$/.test(h.d) && h.d >= oldest && h.d <= today ? h.d : today;
+      const k = d + '|' + b + '|' + e, c = sum.get(k) || { d, b, e, n: 0, f: 0 };
+      if (c.n >= HITS_EACH) continue;
+      c.n++; if (h.f === 1) c.f++;
+      sum.set(k, c);
+    }
+    if (!sum.size) return json({ ok: true });
+    const n = [...sum.values()].reduce((a, c) => a + c.n, 0);
+    const day = await env.DB.prepare('SELECT n FROM hitdays WHERE day = ?').bind(today).first();
+    if (day && day.n >= HITS_DAY) return json({ ok: true }); // past the daily cap: accepted but not counted (no writes)
+    await env.DB.batch([env.DB.prepare('INSERT INTO hitdays (day, n) VALUES (?, ?) ON CONFLICT (day) DO UPDATE SET n = n + excluded.n').bind(today, n)]
+      .concat([...sum.values()].map(c => env.DB.prepare(
+      'INSERT INTO hits (day, book, ev, n, firsts) VALUES (?,?,?,?,?) ON CONFLICT (day, book, ev) DO UPDATE SET n = n + excluded.n, firsts = firsts + excluded.firsts'
+    ).bind(c.d, c.b, c.e, c.n, c.f))));
+    return json({ ok: true });
+  }
+
   // ---- a reader sends a book: {book, contact, comment, lang}, then each file in pieces
   if (m === 'POST' && path === '/uploads') {
     const r = await body(req), ip = await who(req, env);
@@ -209,6 +240,11 @@ async function route(req, env, url, path) {
       await env.DB.prepare('UPDATE reports SET status = ?, note = ? WHERE id = ?').bind(r.status, str(r.note, 1000), +p[1]).run();
       return json({ ok: true });
     }
+    if (m === 'GET' && path === '/admin/hits') { // ?days=30: daily totals, newest first
+      const days = Math.min(Math.max(parseInt(url.searchParams.get('days'), 10) || 30, 1), 400);
+      const since = new Date(Date.now() - days * 86400e3).toISOString().slice(0, 10);
+      return json((await env.DB.prepare('SELECT day, book, ev, n, firsts FROM hits WHERE day > ? ORDER BY day DESC, n DESC LIMIT 20000').bind(since).all()).results);
+    }
     if (m === 'GET' && path === '/admin/uploads') {
       const ups = (await env.DB.prepare('SELECT * FROM uploads ORDER BY created DESC LIMIT 500').all()).results;
       const files = (await env.DB.prepare('SELECT id, upload_id, name, size, type, done FROM files').all()).results;
@@ -223,6 +259,17 @@ async function route(req, env, url, path) {
     }
   }
   throw new Fail(404, 'not found');
+}
+
+// The ids of the books on the site (books/index.json from the static assets), kept for a few minutes.
+let books = null;
+async function bookIds(env, url) {
+  if (!books || Date.now() - books.at > 300e3) {
+    const r = await env.ASSETS.fetch(new Request(new URL('/books/index.json', url)));
+    if (!r.ok) throw new Fail(503, 'book list unavailable');
+    books = { at: Date.now(), ids: new Set((await r.json()).map(b => b.id)) };
+  }
+  return books.ids;
 }
 
 async function getUpload(env, id) {
@@ -273,7 +320,20 @@ CREATE TABLE IF NOT EXISTS files (
   r2key TEXT NOT NULL, r2upload TEXT,
   done INTEGER NOT NULL DEFAULT 0
 );
-CREATE INDEX IF NOT EXISTS files_created ON files (created);`;
+CREATE INDEX IF NOT EXISTS files_created ON files (created);
+
+CREATE TABLE IF NOT EXISTS hits (
+  day TEXT NOT NULL,
+  book TEXT NOT NULL,
+  ev TEXT NOT NULL,
+  n INTEGER NOT NULL DEFAULT 0,
+  firsts INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, book, ev)
+);
+CREATE TABLE IF NOT EXISTS hitdays (
+  day TEXT PRIMARY KEY,
+  n INTEGER NOT NULL DEFAULT 0
+);`;
 
 const ADMIN_HTML = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Отчёты об ошибках</title><style>
@@ -281,17 +341,28 @@ body{font:15px/1.45 system-ui,sans-serif;margin:0 auto;max-width:900px;padding:1
 h1{font-size:20px}nav button,.st button,form button{font:inherit;padding:8px 12px;border-radius:8px;border:1px solid #ccc;background:#f6f6f6;margin:0 6px 6px 0}
 nav button.on{background:#1f6feb;color:#fff;border-color:#1f6feb}.it{border-bottom:1px solid #e3e3e3;padding:10px 0}
 .m{color:#6b6b6b;font-size:13px}q{display:block;background:#f6f6f6;border-left:3px solid #1f6feb;padding:6px 10px;margin:6px 0;quotes:none}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:4px 6px;border-bottom:1px solid #e3e3e3;text-align:right}td:first-child,th:first-child{text-align:left}
 .ctx{font-size:13px;color:#444}.fix{color:#0a7a2f}input{font:inherit;padding:8px;border-radius:8px;border:1px solid #ccc}a{color:#1f6feb}
 </style></head><body><h1>Мектеп китептери: отчёты</h1>
 <form id="login"><input id="key" type="password" placeholder="Ключ администратора" autocomplete="current-password"> <button>Войти</button></form>
-<nav hidden><button data-v="new" class="on">Новые ошибки</button><button data-v="fixed">Исправленные</button><button data-v="rejected">Отклонённые</button><button data-v="uploads">Присланные книги</button></nav>
+<nav hidden><button data-v="new" class="on">Новые ошибки</button><button data-v="fixed">Исправленные</button><button data-v="rejected">Отклонённые</button><button data-v="uploads">Присланные книги</button><button data-v="hits">Чтение</button></nav>
 <div id="out"></div>
 <script>
 var SITE='/', key=localStorage.getItem('key')||'', view='new';
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function get(p,o){o=o||{};o.headers={Authorization:'Bearer '+key};return fetch(p,o).then(function(r){if(r.status===401){document.getElementById('login').hidden=false;throw new Error('key')}return r.json()})}
 function mb(n){return (n/1048576).toFixed(1)+' МБ'}
+function hits(out){return Promise.all([get('/api/admin/hits?days=30'),fetch('/books/index.json').then(function(r){return r.json()},function(){return[]})]).then(function(r){
+ var title={};r[1].forEach(function(b){title[b.id]=b.title+(b.grade?', '+b.grade+' кл.':'')+(b.school==='ky'?' (кырг.)':b.school==='ru'?' (рус.)':'')});
+ var days={},bk={};r[0].forEach(function(h){if(h.ev==='app'){var d=days[h.day]=days[h.day]||{n:0,f:0};d.n+=h.n;d.f+=h.firsts;return}
+  var b=bk[h.book]=bk[h.book]||{open:0,readers:0,dl:0};if(h.ev==='open'){b.open+=h.n;b.readers+=h.firsts}else b.dl+=h.n});
+ var dl=Object.keys(days).sort().reverse(),bl=Object.keys(bk).sort(function(a,b){return bk[b].open-bk[a].open});
+ out.innerHTML='<p class="m">За 30 дней, числа приблизительные (их присылают сами телефоны). Считаются только итоги за день, без данных о читателях. «Телефонов» — сколько разных телефонов открыли сайт в этот день; «новых читателей» — сколько телефонов открыли книгу впервые.</p>'+
+  '<h3>По дням</h3><table><tr><th>День</th><th>Телефонов</th><th>Открытий сайта</th></tr>'+dl.map(function(d){return '<tr><td>'+esc(d)+'</td><td>'+days[d].f+'</td><td>'+days[d].n+'</td></tr>'}).join('')+'</table>'+
+  '<h3>Книги</h3><table><tr><th>Книга</th><th>Открытий</th><th>Новых читателей</th><th>Скачиваний</th></tr>'+bl.map(function(id){var b=bk[id];return '<tr><td>'+esc(title[id]||id)+'</td><td>'+b.open+'</td><td>'+b.readers+'</td><td>'+b.dl+'</td></tr>'}).join('')+'</table>'+
+  (dl.length||bl.length?'':'<p>Пока ничего нет.</p>')})}
 function show(){var out=document.getElementById('out');out.textContent='…';
+ if(view==='hits')return hits(out);
  if(view==='uploads')return get('/api/admin/uploads').then(function(l){out.innerHTML=l.length?l.map(function(u){return '<div class="it"><b>'+esc(u.book)+'</b><div class="m">'+esc(u.created.slice(0,16).replace('T',' '))+(u.contact?' · '+esc(u.contact):'')+'</div>'+(u.comment?'<div>'+esc(u.comment)+'</div>':'')+u.files.map(function(f){return '<div>'+(f.done?'<a href="#" data-f="'+esc(f.id)+'" data-n="'+esc(f.name)+'">'+esc(f.name)+'</a>':esc(f.name)+' (не докачан)')+' · '+mb(f.size)+'</div>'}).join('')+'</div>'}).join(''):'Пока ничего нет.'});
  get('/api/admin/reports?status='+view).then(function(l){out.innerHTML=l.length?l.map(function(r){return '<div class="it" data-id="'+r.id+'"><div class="m">'+esc(r.created.slice(0,16).replace('T',' '))+' · <a href="'+SITE+'#/read/'+esc(r.book)+'" target="_blank">'+esc(r.book)+'</a>'+(r.page!=null?' · стр. '+r.page:'')+' · глава '+r.ch+', блок '+r.b+'</div><q>'+esc(r.quote)+'</q>'+(r.fix?'<div class="fix">Как правильно: '+esc(r.fix)+'</div>':'')+'<div class="ctx">'+esc(r.context)+'</div><div class="st">'+(view!=='fixed'?'<button data-s="fixed">Исправлено</button>':'')+(view!=='rejected'?'<button data-s="rejected">Не ошибка</button>':'')+(view!=='new'?'<button data-s="new">Вернуть в новые</button>':'')+'</div></div>'}).join(''):'Пока ничего нет.'})}
 document.getElementById('out').onclick=function(e){var a=e.target.closest('a[data-f]');
