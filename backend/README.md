@@ -16,6 +16,10 @@ The server, under `/api`:
 
 Readers need no account. Each reader may send 60 reports and 10 uploads an hour (counted by a salted hash of the
 IP address; addresses themselves are not stored).
+All uploaded files together may take up to 5 GB (`MAX_TOTAL` in `src/worker.js`, counted from the `files` table,
+unfinished files included); after that the form tells readers it can't take more for now. R2 is free up to 10 GB, so
+readers can't run up a bill. To make room, raise `MAX_TOTAL` or delete handled files from the bucket and their rows
+from `files`.
 
 ## Deploy
 `.github/workflows/cloudflare.yml` deploys on every merge into the live branch, once its repository secrets are

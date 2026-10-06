@@ -53,6 +53,7 @@
       upBook: 'Какой учебник', upOther: 'Другой учебник', upFiles: 'Файлы (PDF или фото страниц)', upContact: 'Как с вами связаться (необязательно)',
       upComment: 'Комментарий (необязательно)', upSend: 'Отправить', upSending: 'Отправляю…', upDone: 'Спасибо! Файлы получены, мы их посмотрим.',
       upNoFiles: 'Выберите файлы', upTooBig: 'Файл слишком большой (больше 500 МБ): ',
+      upFull: 'Сейчас мы не можем принять новые файлы: место для присланных учебников закончилось. Пожалуйста, попробуйте позже.',
       report: 'Сообщить об ошибке', reportTitle: 'Ошибка в тексте', reportFix: 'Как правильно (если знаете)',
       reportSend: 'Отправить', reportThanks: 'Спасибо! Мы проверим и исправим.',
       reportQueued: 'Нет интернета. Отправим, когда появится связь.', reportHint: 'Выделите слово или фразу в книге, чтобы сообщить об ошибке.'
@@ -92,6 +93,7 @@
       upBook: 'Кайсы китеп', upOther: 'Башка китеп', upFiles: 'Файлдар (PDF же беттердин сүрөттөрү)', upContact: 'Сиз менен кантип байланышабыз (милдеттүү эмес)',
       upComment: 'Комментарий (милдеттүү эмес)', upSend: 'Жөнөтүү', upSending: 'Жөнөтүлүүдө…', upDone: 'Рахмат! Файлдар алынды, биз аларды карап чыгабыз.',
       upNoFiles: 'Файлдарды тандаңыз', upTooBig: 'Файл өтө чоң (500 МБдан ашык): ',
+      upFull: 'Азыр жаңы файлдарды кабыл ала албайбыз: жөнөтүлгөн китептер үчүн орун толуп калды. Кийинчерээк кайра аракет кылыңыз.',
       report: 'Ката жөнүндө билдирүү', reportTitle: 'Тексттеги ката', reportFix: 'Туурасы кандай (билсеңиз)',
       reportSend: 'Жөнөтүү', reportThanks: 'Рахмат! Биз текшерип, оңдойбуз.',
       reportQueued: 'Интернет жок. Байланыш пайда болгондо жөнөтөбүз.', reportHint: 'Ката жөнүндө билдирүү үчүн китептеги сөздү же сүйлөмдү белгилеңиз.'
@@ -418,7 +420,9 @@
           }, Promise.resolve());
         })
         .then(function () { f.innerHTML = '<p class="done">' + esc(t('upDone')) + '</p>'; })
-        .catch(function () { btn.disabled = false; btn.textContent = t('upSend'); prog.hidden = true; toast(navigator.onLine === false ? t('offline') : t('err')); });
+        .catch(function (e) {
+          if (e && e.message === '507') { f.innerHTML = '<p class="done">' + esc(t('upFull')) + '</p>'; return; } // storage full (MAX_TOTAL in the Worker)
+          btn.disabled = false; btn.textContent = t('upSend'); prog.hidden = true; toast(navigator.onLine === false ? t('offline') : t('err')); });
     };
   }
 
