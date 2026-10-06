@@ -359,6 +359,7 @@ a { color: var(--accent); }
 .q-cards i { background: #8b5cf6; }
 
 /* ---------- Placeholders for books of the Ministry's list not on the site yet (app.js stubRow) ---------- */
+.subj.stub-h { margin-top: 26px; }
 .bk.stub { border: 1.5px dashed var(--line); border-radius: 12px; padding: 4px 12px 12px; margin: 8px 0; background: transparent; }
 .bk.stub:last-child { border-bottom: 1.5px dashed var(--line); }
 .bk.stub .bk-t { color: var(--muted); font-weight: 600; }
