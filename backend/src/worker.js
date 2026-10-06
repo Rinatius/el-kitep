@@ -9,7 +9,10 @@
  * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md. */
 
 const SITES = ['https://elkitep.com', 'https://www.elkitep.com', 'https://rinatius.github.io', 'http://localhost:8080', 'http://localhost:8787'];
-const MAX_FILE = 500 * 1048576, MAX_FILES = 40;
+const MAX_FILE = 500 * 1048576, MAX_FILES = 40, PIECE = 8 * 1048576; // PIECE: CHUNK in site/app.js
+// All uploaded files together, finished or not: past this the form says it can't take more for now. R2 is free up
+// to 10 GB (then billed), so readers can't run up a bill. Counted from the files table (declared sizes).
+const MAX_TOTAL = 5 * 1024 ** 3;
 const LIMITS = { reports: 60, uploads: 10 }; // per reader (hashed IP) per hour
 const TYPES = { webp: 'image/webp', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
 
@@ -70,6 +73,10 @@ async function who(req, env) {
   const h = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip + '|' + (env.ADMIN_KEY || '')));
   return [...new Uint8Array(h)].slice(0, 8).map(b => b.toString(16).padStart(2, '0')).join('');
 }
+async function room(env, add) {
+  const r = await env.DB.prepare('SELECT COALESCE(SUM(size), 0) AS n FROM files').first();
+  if (r.n >= MAX_TOTAL || r.n + add > MAX_TOTAL) throw new Fail(507, 'no room for uploads now');
+}
 async function limit(env, table, ip) {
   const hourAgo = new Date(Date.now() - 3600e3).toISOString();
   const r = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE ip = ? AND created > ?`).bind(ip, hourAgo).first();
@@ -108,6 +115,7 @@ async function route(req, env, url, path) {
   // ---- a reader sends a book: {book, contact, comment, lang}, then each file in pieces
   if (m === 'POST' && path === '/uploads') {
     const r = await body(req), ip = await who(req, env);
+    await room(env, 0);
     await limit(env, 'uploads', ip);
     const id = newId();
     await env.DB.prepare('INSERT INTO uploads (id, created, book, contact, comment, lang, ip) VALUES (?,?,?,?,?,?,?)')
@@ -120,6 +128,7 @@ async function route(req, env, url, path) {
     if (size <= 0 || size > MAX_FILE) throw new Fail(413, 'file too big');
     const count = await env.DB.prepare('SELECT COUNT(*) AS n FROM files WHERE upload_id = ?').bind(up.id).first();
     if (count.n >= MAX_FILES) throw new Fail(413, 'too many files');
+    await room(env, size);
     const fid = newId(), name = str(r.name, 200).replace(/[^\p{L}\p{N} ._()-]/gu, '_') || 'file';
     const key = `uploads/${up.created.slice(0, 10)}-${up.id}/${fid}-${name}`, type = str(r.type, 100) || 'application/octet-stream';
     const mp = await env.FILES.createMultipartUpload(key, { httpMetadata: { contentType: type } });
@@ -129,8 +138,12 @@ async function route(req, env, url, path) {
   }
   if (m === 'PUT' && (p = path.match(/^\/uploads\/(\w+)\/files\/(\w+)\/(\d+)$/))) { // one piece (body = bytes)
     const f = await getFile(env, p[1], p[2]), n = +p[3];
-    if (f.done || n < 1 || n > 10000) throw new Fail(400, 'bad part');
-    const part = await env.FILES.resumeMultipartUpload(f.r2key, f.r2upload).uploadPart(n, await req.arrayBuffer());
+    // no more pieces, and no bigger ones, than the declared size needs, so the total above holds
+    if (f.done || n < 1 || n > Math.ceil(f.size / PIECE)) throw new Fail(400, 'bad part');
+    if (+req.headers.get('Content-Length') > PIECE) throw new Fail(413, 'piece too big');
+    const bytes = await req.arrayBuffer();
+    if (bytes.byteLength > PIECE) throw new Fail(413, 'piece too big');
+    const part = await env.FILES.resumeMultipartUpload(f.r2key, f.r2upload).uploadPart(n, bytes);
     return json({ etag: part.etag });
   }
   if (m === 'POST' && (p = path.match(/^\/uploads\/(\w+)\/files\/(\w+)\/done$/))) { // {parts: [{n, etag}]}
