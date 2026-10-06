@@ -991,6 +991,21 @@
   "src": "https://kitep.edu.kg/book/127/read"
  },
  {
+  "quality": "cards",
+  "id": "ru-english-6",
+  "v": "ae9905a47c",
+  "title": "Английский язык",
+  "subtitle": "6 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "О. Р. Балута, Ч. А. Абдышева, Г. Д. Назарбекова, А. А. Жолчиева",
+  "year": 2018,
+  "grade": "6",
+  "langName": "Русский",
+  "size": 1570224,
+  "format": "cards",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-angliyskiy-yazyk-6-klass-rsh"
+ },
+ {
   "id": "ru-biologiya-6",
   "v": "c438d1701c",
   "title": "Биология",
