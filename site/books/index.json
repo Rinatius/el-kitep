@@ -456,6 +456,21 @@
   "src": "https://kitep.edu.kg/book/137/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-informatika-5-6",
+  "v": "51a9bb2b99",
+  "title": "Информатика",
+  "subtitle": "5–6-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. А. Беляев, И. Н. Цыбуля, Н. Н. Осипова, У. Э. Мамбетакунов, Л. А. Самыкбаева",
+  "year": 2018,
+  "grade": "5–6",
+  "langName": "Кыргызча",
+  "size": 1388180,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=937"
+ },
+ {
   "id": "kg-kyrgyz-adabiyaty-5",
   "v": "1296e9b89b",
   "title": "Кыргыз адабияты",
