@@ -735,6 +735,13 @@
     bg.onclick = close; $('.x', sh).onclick = close;
   }
 
+  // A book picture for saving. cache: 'reload' skips the phone's own web cache: a picture already shown in the reader
+  // sits there without the CORS header (img.elkitep.com sends it only when asked and without "Vary: Origin"), and
+  // reading it from there fails, so books that had been opened could not be downloaded. One retry for bad connections.
+  function getPic(u, tries) {
+    return fetch(u, { mode: 'cors', cache: 'reload' }).then(function (r) { if (!r.ok) throw new Error(u); return r; })
+      .catch(function (e) { if (tries > 0) return getPic(u, tries - 1); throw e; });
+  }
   function bookFile(b) { return b && b.format === 'cards' ? 'cards.json' : 'book.json'; }
   function downloadBook(b, onProgress) {
     var base = 'books/' + b.id + '/';
@@ -757,7 +764,7 @@
         // a picture already saved with an older version of this book is reused, not downloaded again
         return caches.match(u, { ignoreVary: true }).then(function (hit) {
           if (hit) return cache.put(u, hit);
-          return fetch(u, { mode: 'cors' }).then(function (r) { if (!r.ok) throw new Error(u); return cache.put(u, r); });
+          return getPic(u, 1).then(function (r) { return cache.put(u, r); });
         }).then(function () { done++; onProgress(done / urls.length); return worker(); });
       }
       if (!urls.length) onProgress(1);
