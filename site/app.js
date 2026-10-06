@@ -43,6 +43,17 @@
       qOcrInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR), ошибки исправлены только автоматически. Книгу никто не вычитывал, поэтому в словах встречаются ошибки.',
       qGaps: 'Часть текста не удалось восстановить из скана на страницах: ',
       menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
+      stats: 'Статистика', statsSub: 'Сколько учебников из списка Министерства просвещения на 2026–2027 учебный год уже есть на сайте.',
+      stTotal: 'учебников в списке', stAll: 'Всего', stOn: 'На сайте', stWork: 'Найдены, в работе', stPart: 'Найдены не полностью',
+      stPartNote: 'только часть или образец, за плату или после входа, или только на другом языке', stNone: 'Не найдены',
+      stLib: 'Из списка Министерства на сайте {n} из {m} учебников', stGrades: 'По классам',
+      stNote1: 'Учебник считается на сайте, если у нас есть это издание или другое издание тех же авторов. Части учебника (1-я и 2-я часть) — один учебник.',
+      stNote2: '«Найдены»: полная книга есть где-то в интернете (проверено в октябре 2026). Их мы постепенно переводим в удобный для телефона вид.',
+      stBooks: 'Всего книг на сайте: {n}. Части считаются отдельно; {k} из них нет в списке Министерства.', stList: 'Список Министерства',
+      src: 'Источник', leaveTitle: 'Вы покидаете сайт',
+      leaveText: 'Откроется {site}: там мы нашли этот учебник. Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
+      leaveListText: 'Откроется сайт Министерства просвещения ({site}). Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
+      leaveOk: 'Открыть', cancel: 'Отмена',
       newsSub: 'Новые книги и изменения на сайте.', booksInEntry: 'Книги', open: 'Открыть',
       missingSub: 'Эти учебники для 7–11 классов есть в списке Министерства образования на 2026–2027 учебный год, но целиком в интернете мы их не нашли.',
       mNotfound: 'Не найден в интернете', mSample: 'Есть только отрывок', mClosed: 'Нет в открытом доступе',
@@ -83,6 +94,17 @@
       qOcrInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR), каталар автоматтык түрдө гана оңдолду. Китепти эч ким окуп текшерген эмес, ошондуктан сөздөрдө каталар кездешет.',
       qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
       menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
+      stats: 'Статистика', statsSub: 'Агартуу министрлигинин 2026–2027-окуу жылына бекитилген тизмесиндеги окуу китептеринин канчасы сайтта бар.',
+      stTotal: 'китеп тизмеде', stAll: 'Бардыгы', stOn: 'Сайтта', stWork: 'Табылды, иштелүүдө', stPart: 'Толук эмес табылды',
+      stPartNote: 'бир бөлүгү же үлгүсү гана, акы төлөп же каттоодон кийин гана, же башка тилде гана', stNone: 'Табылган жок',
+      stLib: 'Министрликтин тизмесиндеги {m} окуу китебинин {n} сайтта бар', stGrades: 'Класстар боюнча',
+      stNote1: 'Ушул басылышы же ошол эле авторлордун башка басылышы бизде болсо, китеп сайтта бар деп эсептелет. Китептин бөлүктөрү (1- жана 2-бөлүк) бир китеп болуп эсептелет.',
+      stNote2: '«Табылды»: толук китеп интернетте бир жерде бар (2026-жылдын октябрында текшерилген). Аларды акырындык менен телефонго ыңгайлуу кылып жатабыз.',
+      stBooks: 'Сайттагы бардык китептер: {n}. Бөлүктөрү өзүнчө эсептелет; алардын {k} министрликтин тизмесинде жок.', stList: 'Министрликтин тизмеси',
+      src: 'Булак', leaveTitle: 'Сиз сайттан чыгып жатасыз',
+      leaveText: '{site} ачылат: бул окуу китебин ошол жерден таптык. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
+      leaveListText: 'Агартуу министрлигинин сайты ({site}) ачылат. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
+      leaveOk: 'Ачуу', cancel: 'Жокко чыгаруу',
       newsSub: 'Жаңы китептер жана сайттагы өзгөрүүлөр.', booksInEntry: 'Китептер', open: 'Ачуу',
       missingSub: '7–11-класстар үчүн бул окуу китептери Билим берүү министрлигинин 2026–2027-окуу жылына тизмесинде бар, бирок биз аларды интернеттен толугу менен таба алган жокпуз.',
       mNotfound: 'Интернеттен табылган жок', mSample: 'Үзүндүсү гана бар', mClosed: 'Ачык жеткиликтүү эмес',
@@ -149,6 +171,7 @@
     else if (location.hash === '#/my') showMyBooks();
     else if (location.hash === '#/news') showNews();
     else if (location.hash === '#/missing') showMissing();
+    else if (location.hash === '#/stats') showStats();
     else showLibrary();
   }
 
@@ -223,12 +246,30 @@
       $('#books').innerHTML = '<div class="loading">' + esc(t('err')) + '</div>'; throw e;
     });
   }
+  // The Ministry's list of approved textbooks, with our books on it: site/ministry.json (see tools/ministry_map.py).
+  // Rows: {s: school, g: grade, subj, t: title, a: authors, y: year, f: full|part|none (found online), ids: our books}.
+  var MIN = null;
+  function loadMinistry() {
+    return MIN ? Promise.resolve(MIN) : fetchJSON('ministry.json').then(function (l) { MIN = l; return l; }, function () { return null; });
+  }
+  function onSiteFn(list) { // listed book -> is one of our books on the site?
+    var have = {}; list.forEach(function (b) { have[b.id] = true; });
+    return function (m) { return m.ids.some(function (id) { return have[id]; }); };
+  }
 
   function showLibrary() {
     libHash = '#/';
     var school = libShell(t('appTitle'), '<a class="btn my-link" href="#/my">' + esc('★ ' + t('my')) + '</a>', true);
-    loadList().then(function (list) {
-      list = list.filter(function (b) { return !b.school || b.school === school; });
+    Promise.all([loadList(), loadMinistry()]).then(function (r) {
+      var list = r[0].filter(function (b) { return !b.school || b.school === school; });
+      // the Ministry's list for this school: "on the site / listed", for the school and for each grade
+      var listed = (r[1] || []).filter(function (m) { return m.s === school; }), onSite = onSiteFn(r[0]);
+      function ofList(rows) { return rows.filter(onSite).length + ' / ' + rows.length; }
+      if (listed.length) {
+        var line = document.createElement('a'); line.className = 'lib-count'; line.href = '#/stats';
+        line.textContent = t('stLib').replace('{n}', listed.filter(onSite).length).replace('{m}', listed.length) + ' ›';
+        $('#books').parentNode.insertBefore(line, $('#books'));
+      }
       var grades = [];
       list.forEach(function (b) { gradesOf(b).forEach(function (g) { if (grades.indexOf(g) < 0) grades.push(g); }); });
       grades.sort(function (a, b) { return a - b; });
@@ -238,7 +279,7 @@
       grades.forEach(function (g) {
         var books = list.filter(function (b) { return gradesOf(b).indexOf(g) >= 0; });
         var sec = document.createElement('section'); sec.className = 'grade';
-        sec.innerHTML = '<button class="grade-h"><span>' + esc(g + ' ' + t('grade')) + '</span><span class="n">' + books.length + '</span></button><div class="grade-b"></div>';
+        sec.innerHTML = '<button class="grade-h"><span>' + esc(g + ' ' + t('grade')) + '</span><span class="n">' + (listed.length ? ofList(listed.filter(function (m) { return m.g === g; })) : books.length) + '</span></button><div class="grade-b"></div>';
         var head = $('.grade-h', sec), body = $('.grade-b', sec);
         function setOpen(on) {
           sec.classList.toggle('open', on);
@@ -283,7 +324,7 @@
     var bg = document.createElement('div'); bg.className = 'sheet-bg';
     var nav = document.createElement('nav'); nav.className = 'drawer';
     var cur = location.hash || '#/';
-    var items = [['#/', t('allBooks')], ['#/my', '★ ' + t('my')], ['#/missing', t('missing')], ['#/news', t('news')]];
+    var items = [['#/', t('allBooks')], ['#/my', '★ ' + t('my')], ['#/missing', t('missing')], ['#/stats', t('stats')], ['#/news', t('news')]];
     nav.innerHTML = '<div class="drawer-h"><span>' + esc(t('appTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></div>' +
       items.map(function (it) { return '<a href="' + it[0] + '"' + (it[0] === cur ? ' class="cur"' : '') + '>' + esc(it[1]) + '</a>'; }).join('') +
       (API ? '<p class="note">' + esc(t('reportHint')) + '</p>' : '');
@@ -324,6 +365,66 @@
       });
       $('#books').innerHTML = html;
     }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
+  }
+
+  // Statistics: how many books of the Ministry's list are on the site, found elsewhere, or not found (ministry.json).
+  var ST = [['on', 'stOn'], ['work', 'stWork'], ['part', 'stPart'], ['none', 'stNone']];
+  function showStats() {
+    libHash = '#/stats';
+    libShell(t('stats'), '', false);
+    Promise.all([loadMinistry(), LIST ? LIST : loadList().catch(function () { return []; })]).then(function (r) {
+      if (!r[0]) throw new Error('ministry.json');
+      var rows = r[0], books = r[1], onSite = onSiteFn(books);
+      function kind(m) { return onSite(m) ? 'on' : m.f === 'full' ? 'work' : m.f; }
+      function count(rs) { var c = { on: 0, work: 0, part: 0, none: 0 }; rs.forEach(function (m) { c[kind(m)]++; }); return c; }
+      function bar(c, n) {
+        return '<div class="st-bar">' + ST.map(function (k) { return c[k[0]] ? '<i class="st-' + k[0] + '" style="width:' + (c[k[0]] / n * 100) + '%"></i>' : ''; }).join('') + '</div>';
+      }
+      var c = count(rows), n = rows.length, school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
+      var placed = {}; rows.forEach(function (m) { m.ids.forEach(function (id) { placed[id] = true; }); });
+      var html = '<p class="sub">' + esc(t('statsSub')) + '</p>' +
+        '<div class="st-total"><b>' + n + '</b> ' + esc(t('stTotal')) + '</div>' + bar(c, n) +
+        '<ul class="st-legend">' + ST.map(function (k) {
+          return '<li><i class="st-' + k[0] + '"></i><b>' + c[k[0]] + '</b> ' + esc(t(k[1])) + ' <span class="st-pc">' + Math.round(c[k[0]] / n * 100) + '%</span>' +
+            (k[0] === 'part' ? '<div class="note">' + esc(t('stPartNote')) + '</div>' : '') + '</li>';
+        }).join('') + '</ul>';
+      SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; })).forEach(function (sc) {
+        var rs = rows.filter(function (m) { return m.s === sc[0]; }), cs = count(rs);
+        html += '<h2 class="grade-t">' + esc(sc[3]) + '</h2><div class="st-row st-sum"><span>' + esc(t('stAll')) + '</span>' + bar(cs, rs.length) +
+          '<span class="st-n">' + cs.on + ' / ' + rs.length + '</span></div>';
+        var gs = []; rs.forEach(function (m) { if (gs.indexOf(m.g) < 0) gs.push(m.g); }); gs.sort(function (a, b) { return a - b; });
+        gs.forEach(function (g) {
+          var rg = rs.filter(function (m) { return m.g === g; }), cg = count(rg);
+          html += '<div class="st-row"><span>' + esc(g + ' ' + t('grade')) + '</span>' + bar(cg, rg.length) + '<span class="st-n">' + cg.on + ' / ' + rg.length + '</span></div>';
+        });
+      });
+      html += '<p class="note">' + esc(t('stNote1')) + '</p><p class="note">' + esc(t('stNote2')) + '</p>' +
+        '<p class="note">' + esc(t('stBooks').replace('{n}', books.length).replace('{k}', books.filter(function (b) { return !placed[b.id]; }).length)) + '</p>' +
+        '<p><a class="btn" href="#/missing">' + esc(t('missing')) + ' ›</a> <button class="btn st-src">' + esc(t('stList')) + ' ↗</button></p>';
+      $('#books').innerHTML = html;
+      $('.st-src').onclick = function () { leaveSheet('https://edu.gov.kg/posts/5164/', t('leaveListText')); };
+    }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
+  }
+
+  // Before a link that leaves the site (where a book came from): say so, and open it in a new tab only on "Open".
+  function leaveSheet(url, text) {
+    var site = url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+    var old = $('.sheet'); if (old) old.remove(); old = $('.sheet-bg'); if (old) old.remove();
+    var bg = document.createElement('div'); bg.className = 'sheet-bg';
+    var sh = document.createElement('div'); sh.className = 'sheet';
+    sh.innerHTML = '<h3><span>' + esc(t('leaveTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></h3>' +
+      '<p>' + esc((text || t('leaveText')).replace('{site}', site)) + '</p>' +
+      '<div class="leave-b"><button class="btn l-no">' + esc(t('cancel')) + '</button><a class="btn primary l-ok" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(t('leaveOk')) + '</a></div>';
+    document.body.appendChild(bg); document.body.appendChild(sh);
+    function close() { bg.remove(); sh.remove(); }
+    bg.onclick = close; $('.x', sh).onclick = close; $('.l-no', sh).onclick = close; $('.l-ok', sh).onclick = function () { setTimeout(close, 0); };
+  }
+  function sourceSheet(b) { // index.json "src"; older entries without it: from the book itself
+    if (b.src) return leaveSheet(b.src);
+    fetchJSON('books/' + b.id + '/book.json').then(function (book) {
+      var p = book.source && book.source.page;
+      if (p) leaveSheet(p); else toast(t('err'));
+    }, function () { toast(navigator.onLine === false ? t('offline') : t('err')); });
   }
 
   // Approved textbooks we could not find online: site/missing.json. Each entry: {"school": "ru"|"ky", "grade", "title",
@@ -458,6 +559,7 @@
     star: '<svg viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>',
     dl: '<svg viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>',
     done: '<svg viewBox="0 0 24 24"><path d="M5 20h14M7.5 11.5l3 3 6-6.5"/></svg>',
+    ext: '<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></svg>',
     share: IS_IOS
       ? '<svg viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M8.5 10H6.5a1.5 1.5 0 0 0-1.5 1.5v8A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-8a1.5 1.5 0 0 0-1.5-1.5h-2"/></svg>'
       : '<svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"/></svg>'
@@ -476,7 +578,8 @@
       (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
       '<div class="bk-m">' + esc(meta.filter(Boolean).join(' · ')) + '</div>' +
       '<div class="row"><a class="btn primary" href="#/read/' + esc(b.id) + '">' + esc(hasPos ? t('cont') : t('read')) + '</a>' +
-      '<button class="icon dl"></button><button class="icon share" aria-label="' + esc(t('share')) + '">' + LIB_ICONS.share + '</button>' + qBadge(b) + '</div>' +
+      '<button class="icon dl"></button><button class="icon share" aria-label="' + esc(t('share')) + '">' + LIB_ICONS.share + '</button>' +
+      '<button class="icon srcb" aria-label="' + esc(t('src')) + '">' + LIB_ICONS.ext + '</button>' + qBadge(b) + '</div>' +
       '<div class="progress" hidden><i></i></div>';
     var btn = $('.dl', el), prog = $('.progress', el), bar = $('.progress i', el), star = $('.star', el);
 
@@ -498,6 +601,7 @@
     setStar();
 
     $('.share', el).onclick = function () { shareSheet(b); };
+    $('.srcb', el).onclick = function () { sourceSheet(b); };
     var qb = $('.q', el); if (qb) qb.onclick = function () { qualitySheet(b); };
 
     function setState(done) {

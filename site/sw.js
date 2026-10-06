@@ -5,7 +5,7 @@
  * downloaded book come from that book's cache (filled by the "Download" button, see downloadBook in app.js). */
 var APP = 'app';
 var SHELL = ['./', 'index.html', 'app.js', 'style.css', 'manifest.webmanifest', 'icons/icon.svg'];
-var DATA = ['books/index.json', 'changelog.json', 'missing.json']; // lists the app loads: fetched like app files
+var DATA = ['books/index.json', 'changelog.json', 'missing.json', 'ministry.json']; // lists the app loads: fetched like app files
 var SLOW_MS = 4000; // after this, answer from the saved copy and let the network update it in the background
 
 function abs(u) { return new URL(u, self.registration.scope).href; }

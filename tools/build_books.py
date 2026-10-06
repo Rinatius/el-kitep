@@ -101,6 +101,9 @@ def main(dirs):
         entry = {"id": bid, "v": h.hexdigest()[:10], "title": book["title"], "subtitle": book.get("subtitle"), "school": school,
                  "author": book.get("author"), "year": book.get("year"), "grade": book.get("grade"),
                  "langName": book.get("langName"), "size": size, "standalone": single}
+        src = book.get("source")  # where we found the book: the library's "source" button links there
+        if isinstance(src, dict) and src.get("page"):
+            entry["src"] = src["page"]
         # keep fields set by hand in index.json: subject, quality ("exact", "proofread" or "ocr"), gaps
         entry = {**old, **entry}
         index = [e for e in index if e["id"] != bid] + [entry]
@@ -112,6 +115,10 @@ def main(dirs):
     index.sort(key=lambda e: (grade_key(e), e.get("school") or "", e.get("title") or ""))
     with open(index_path, "w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=1)
+    # link the new books to the Ministry's list (site/ministry.json: statistics page and counts)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import ministry_map
+    ministry_map.main()
 
 
 if __name__ == "__main__":
