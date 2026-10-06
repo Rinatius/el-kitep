@@ -24,9 +24,11 @@ a { color: var(--accent); }
 .lib-head { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
 .lib-head h1 { flex: 1; margin: 0; }
 .school { display: flex; margin: 0 0 16px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.school button { flex: 1; min-height: 44px; padding: 0 10px; font-size: 15px; background: var(--panel); }
+.school button { flex: 1; min-height: 52px; padding: 6px 10px; font-size: 15px; background: var(--panel); display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+.school button b { font-weight: 600; }
+.school button small { font-size: 12px; opacity: .75; }
 .school button + button { border-left: 1px solid var(--line); }
-.school button.on { background: var(--accent); color: var(--accent-fg); font-weight: 600; }
+.school button.on { background: var(--accent); color: var(--accent-fg); }
 .my-link { flex: 0 0 auto; font-weight: 600; min-height: 40px; padding: 0 12px; font-size: 14px; }
 .grade { margin-bottom: 10px; }
 .grade-h { display: flex; width: 100%; align-items: center; justify-content: space-between; min-height: 52px; padding: 0 16px;
