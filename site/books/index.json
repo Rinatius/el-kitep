@@ -992,6 +992,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-take-off-6",
+  "v": "3ef46c919c",
+  "title": "Take Off with English",
+  "subtitle": "6 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "6",
+  "langName": "Русский",
+  "size": 1340174,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/22/read"
+ },
+ {
+  "quality": "cards",
   "id": "ru-english-6",
   "v": "ae9905a47c",
   "title": "Английский язык",
