@@ -230,13 +230,15 @@ async function route(req, env, url, path) {
     // the key travels only in this header, never in the address (addresses end up in logs and browser history)
     const key = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '');
     // STATS_KEY is a second, read-only key for Claude sessions and routines: it reads the daily counters and the
-    // error reports, nothing else (no uploads, which can hold contacts, and no changes)
+    // error reports, nothing else (no uploads, which can hold contacts, no ip hashes, and no changes)
     const ok = (await keyOk(key, env.ADMIN_KEY)) || (m === 'GET' && STATS_PATHS.includes(path) && (await keyOk(key, env.STATS_KEY)));
     if (!ok) throw new Fail(401, 'wrong key');
     if (m === 'GET' && path === '/admin/reports') { // ?status=new|fixed|rejected|all
       const st = url.searchParams.get('status') || 'new';
-      const q = st === 'all' ? env.DB.prepare('SELECT * FROM reports ORDER BY id DESC LIMIT 2000')
-        : env.DB.prepare('SELECT * FROM reports WHERE status = ? ORDER BY id DESC LIMIT 2000').bind(st);
+      // every column except ip (the salted hash is only for the hourly limit and is never handed out)
+      const cols = 'id, created, book, v, ch, b, page, quote, context, fix, lang, status, note';
+      const q = st === 'all' ? env.DB.prepare(`SELECT ${cols} FROM reports ORDER BY id DESC LIMIT 2000`)
+        : env.DB.prepare(`SELECT ${cols} FROM reports WHERE status = ? ORDER BY id DESC LIMIT 2000`).bind(st);
       return json((await q.all()).results);
     }
     if (m === 'POST' && (p = path.match(/^\/admin\/reports\/(\d+)$/))) { // {status, note}
