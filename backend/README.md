@@ -14,7 +14,8 @@ The server, under `/api`:
 - `POST /hits`: reading counts from the app (the site was opened, a book was opened or downloaded), batched, sent
   later when offline. Only daily totals per book are stored (table `hits`), nothing about the reader; a phone's first
   open of a book (and first visit of the day) is flagged by the app itself, so totals of phones need no id. Unknown
-  book ids are dropped; at most 50,000 events a day are counted. The admin page shows them under "Чтение".
+  book ids are dropped; at most 20,000 events a day are counted (D1 writes are shared with reports and uploads), and
+  at most 10 per book and event in one request. The counts are approximate: phones report them themselves. The admin page shows them under "Чтение".
 - `GET /admin` (so elkitep.com/api/admin): a page to read reports (mark them fixed or not an error) and download uploaded files.
 - `GET /admin/reports?status=new` with `Authorization: Bearer <ADMIN_KEY>`: the reports as JSON, for fixing books.
 

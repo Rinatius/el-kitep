@@ -18,8 +18,9 @@ const LIMITS = { reports: 60, uploads: 10 }; // per reader (hashed IP) per hour
 // For all readers together per day, so nobody can fill the database (D1 Free: 100,000 rows written a day) or run
 // up R2 operations with many addresses. Past these the form says it can't take more for now.
 const DAILY = { reports: 2000, uploads: 100, files: 500 };
-// Reading counts (POST /hits): at most this many counted events a day for the whole site, and per request.
-const HITS_DAY = 50000, HITS_REQ = 50, HIT_EVENTS = ['app', 'open', 'dl'];
+// Reading counts (POST /hits): at most this many counted events a day for the whole site (D1 writes are shared with
+// reports and uploads), per request, and per book and event in one request.
+const HITS_DAY = 20000, HITS_REQ = 50, HITS_EACH = 10, HIT_EVENTS = ['app', 'open', 'dl'];
 // On every answer the Worker itself writes (static assets get theirs from ../_headers).
 const SECURE = { 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Frame-Options': 'DENY' };
 const TYPES = { webp: 'image/webp', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
@@ -160,17 +161,18 @@ async function route(req, env, url, path) {
       if (!HIT_EVENTS.includes(e) || (e !== 'app' && !ids.has(b))) continue; // only books that exist: no junk rows
       const d = /^\d{4}-\d\d-\d\d$/.test(h.d) && h.d >= oldest && h.d <= today ? h.d : today;
       const k = d + '|' + b + '|' + e, c = sum.get(k) || { d, b, e, n: 0, f: 0 };
+      if (c.n >= HITS_EACH) continue;
       c.n++; if (h.f === 1) c.f++;
       sum.set(k, c);
     }
     if (!sum.size) return json({ ok: true });
     const n = [...sum.values()].reduce((a, c) => a + c.n, 0);
-    const day = await env.DB.prepare('INSERT INTO hitdays (day, n) VALUES (?, ?) ON CONFLICT (day) DO UPDATE SET n = n + excluded.n RETURNING n')
-      .bind(today, n).first();
-    if (day.n > HITS_DAY) return json({ ok: true }); // past the daily cap: accepted but not counted
-    await env.DB.batch([...sum.values()].map(c => env.DB.prepare(
+    const day = await env.DB.prepare('SELECT n FROM hitdays WHERE day = ?').bind(today).first();
+    if (day && day.n >= HITS_DAY) return json({ ok: true }); // past the daily cap: accepted but not counted (no writes)
+    await env.DB.batch([env.DB.prepare('INSERT INTO hitdays (day, n) VALUES (?, ?) ON CONFLICT (day) DO UPDATE SET n = n + excluded.n').bind(today, n)]
+      .concat([...sum.values()].map(c => env.DB.prepare(
       'INSERT INTO hits (day, book, ev, n, firsts) VALUES (?,?,?,?,?) ON CONFLICT (day, book, ev) DO UPDATE SET n = n + excluded.n, firsts = firsts + excluded.firsts'
-    ).bind(c.d, c.b, c.e, c.n, c.f)));
+    ).bind(c.d, c.b, c.e, c.n, c.f))));
     return json({ ok: true });
   }
 
@@ -355,7 +357,7 @@ function hits(out){return Promise.all([get('/api/admin/hits?days=30'),fetch('/bo
  var days={},bk={};r[0].forEach(function(h){if(h.ev==='app'){var d=days[h.day]=days[h.day]||{n:0,f:0};d.n+=h.n;d.f+=h.firsts;return}
   var b=bk[h.book]=bk[h.book]||{open:0,readers:0,dl:0};if(h.ev==='open'){b.open+=h.n;b.readers+=h.firsts}else b.dl+=h.n});
  var dl=Object.keys(days).sort().reverse(),bl=Object.keys(bk).sort(function(a,b){return bk[b].open-bk[a].open});
- out.innerHTML='<p class="m">За 30 дней. Считаются только итоги за день, без данных о читателях. «Телефонов» — сколько разных телефонов открыли сайт в этот день; «новых читателей» — сколько телефонов открыли книгу впервые.</p>'+
+ out.innerHTML='<p class="m">За 30 дней, числа приблизительные (их присылают сами телефоны). Считаются только итоги за день, без данных о читателях. «Телефонов» — сколько разных телефонов открыли сайт в этот день; «новых читателей» — сколько телефонов открыли книгу впервые.</p>'+
   '<h3>По дням</h3><table><tr><th>День</th><th>Телефонов</th><th>Открытий сайта</th></tr>'+dl.map(function(d){return '<tr><td>'+esc(d)+'</td><td>'+days[d].f+'</td><td>'+days[d].n+'</td></tr>'}).join('')+'</table>'+
   '<h3>Книги</h3><table><tr><th>Книга</th><th>Открытий</th><th>Новых читателей</th><th>Скачиваний</th></tr>'+bl.map(function(id){var b=bk[id];return '<tr><td>'+esc(title[id]||id)+'</td><td>'+b.open+'</td><td>'+b.readers+'</td><td>'+b.dl+'</td></tr>'}).join('')+'</table>'+
   (dl.length||bl.length?'':'<p>Пока ничего нет.</p>')})}
