@@ -6,6 +6,7 @@ set -e
 cd "$(dirname "$0")/.."
 rm -rf dist && mkdir dist
 tar -C site --exclude='./books/*/img' -cf - . | tar -C dist -xf -
+cp backend/_headers dist/_headers   # security headers for the static assets (Cloudflare reads it, never serves it)
 if [ -n "$1" ]; then
   sed -i -E "s/(app\.js|style\.css)\"/\1?v=$1\"/" dist/index.html
 fi

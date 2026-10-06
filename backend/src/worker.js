@@ -6,7 +6,8 @@
  *   own address img.elkitep.com (no Worker request, so they don't count against the daily limit); the route below
  *   serves them for the workers.dev address and local testing;
  * - /api/...: text-error reports and books that readers upload, in a D1 database (SQLite) and the R2 bucket FILES.
- * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md. */
+ * Readers need no account. The admin page (/api/admin) and the admin API need the ADMIN_KEY secret. See README.md.
+ * Security notes: /mnt/project-files/security/CHECKLIST.md in the project (abuse limits, headers, what the dashboard must have). */
 
 const SITES = ['https://elkitep.com', 'https://www.elkitep.com', 'https://rinatius.github.io', 'http://localhost:8080', 'http://localhost:8787'];
 const MAX_FILE = 500 * 1048576, MAX_FILES = 40, PIECE = 8 * 1048576; // PIECE: CHUNK in site/app.js
@@ -14,6 +15,11 @@ const MAX_FILE = 500 * 1048576, MAX_FILES = 40, PIECE = 8 * 1048576; // PIECE: C
 // to 10 GB (then billed), so readers can't run up a bill. Counted from the files table (declared sizes).
 const MAX_TOTAL = 5 * 1024 ** 3;
 const LIMITS = { reports: 60, uploads: 10 }; // per reader (hashed IP) per hour
+// For all readers together per day, so nobody can fill the database (D1 Free: 100,000 rows written a day) or run
+// up R2 operations with many addresses. Past these the form says it can't take more for now.
+const DAILY = { reports: 2000, uploads: 100, files: 500 };
+// On every answer the Worker itself writes (static assets get theirs from ../_headers).
+const SECURE = { 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Frame-Options': 'DENY' };
 const TYPES = { webp: 'image/webp', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
 
 export default {
@@ -34,12 +40,13 @@ export default {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     try {
       const res = await route(req, env, url, path);
-      for (const [k, v] of Object.entries(cors)) res.headers.set(k, v);
+      for (const [k, v] of Object.entries({ ...SECURE, ...cors })) res.headers.set(k, v);
+      if (!res.headers.has('Cache-Control')) res.headers.set('Cache-Control', 'no-store');
       return res;
     } catch (e) {
       const status = e instanceof Fail ? e.status : 500;
       if (status === 500) console.error(e.stack || e);
-      return json({ error: status === 500 ? 'server error' : e.message }, status, cors);
+      return json({ error: status === 500 ? 'server error' : e.message }, status, { ...SECURE, ...cors, 'Cache-Control': 'no-store' });
     }
   }
 };
@@ -49,7 +56,8 @@ async function picture(req, env, key) {
   if (req.method !== 'GET' && req.method !== 'HEAD') return new Response(null, { status: 405 });
   const obj = await env.BOOKS.get(key, { onlyIf: req.headers });
   if (!obj) return new Response('Not found', { status: 404 });
-  const h = new Headers({ 'ETag': obj.httpEtag, 'Cache-Control': 'public, max-age=3600',
+  const h = new Headers({ 'ETag': obj.httpEtag, 'Cache-Control': 'public, max-age=3600', 'X-Content-Type-Options': 'nosniff',
+    'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; sandbox", // an SVG opened on its own can't run scripts
     'Content-Type': TYPES[key.split('.').pop().toLowerCase()] || 'application/octet-stream' });
   if (!('body' in obj) || !obj.body) return new Response(null, { status: 304, headers: h });
   return new Response(req.method === 'HEAD' ? null : obj.body, { headers: h });
@@ -77,10 +85,35 @@ async function room(env, add) {
   const r = await env.DB.prepare('SELECT COALESCE(SUM(size), 0) AS n FROM files').first();
   if (r.n >= MAX_TOTAL || r.n + add > MAX_TOTAL) throw new Fail(507, 'no room for uploads now');
 }
+// The hourly limit for one reader, then the daily limit for everyone (table is one of our own names, never input).
 async function limit(env, table, ip) {
-  const hourAgo = new Date(Date.now() - 3600e3).toISOString();
-  const r = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE ip = ? AND created > ?`).bind(ip, hourAgo).first();
-  if (r.n >= LIMITS[table]) throw new Fail(429, 'too many requests, try again later');
+  const since = ms => new Date(Date.now() - ms).toISOString();
+  if (ip) {
+    const r = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE ip = ? AND created > ?`).bind(ip, since(3600e3)).first();
+    if (r.n >= LIMITS[table]) throw new Fail(429, 'too many requests, try again later');
+  }
+  const d = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE created > ?`).bind(since(86400e3)).first();
+  if (d.n >= DAILY[table]) {
+    if (table === 'reports') throw new Fail(429, 'too many requests, try again later');
+    throw new Fail(507, 'no room for uploads now');
+  }
+}
+// The admin key, compared in constant time (both sides hashed, so the lengths match).
+async function keyOk(given, want) {
+  if (!given || !want) return false;
+  const enc = new TextEncoder();
+  const [a, b] = await Promise.all([crypto.subtle.digest('SHA-256', enc.encode(given)), crypto.subtle.digest('SHA-256', enc.encode(want))]);
+  return crypto.subtle.timingSafeEqual(a, b);
+}
+// Content-Security-Policy for the admin page: only its own inline script and style may run.
+let adminCsp = null;
+async function adminHeaders() {
+  if (!adminCsp) {
+    const hash = async s => "'sha256-" + btoa(String.fromCharCode(...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s))))) + "'";
+    const script = await hash(ADMIN_HTML.match(/<script>([\s\S]*?)<\/script>/)[1]), style = await hash(ADMIN_HTML.match(/<style>([\s\S]*?)<\/style>/)[1]);
+    adminCsp = `default-src 'none'; script-src ${script}; style-src ${style}; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'`;
+  }
+  return { 'Content-Type': 'text/html; charset=utf-8', 'Content-Security-Policy': adminCsp };
 }
 
 // The tables are created by the Worker itself on its first request, so deploying needs no database rights
@@ -128,6 +161,7 @@ async function route(req, env, url, path) {
     if (size <= 0 || size > MAX_FILE) throw new Fail(413, 'file too big');
     const count = await env.DB.prepare('SELECT COUNT(*) AS n FROM files WHERE upload_id = ?').bind(up.id).first();
     if (count.n >= MAX_FILES) throw new Fail(413, 'too many files');
+    await limit(env, 'files', null);
     await room(env, size);
     const fid = newId(), name = str(r.name, 200).replace(/[^\p{L}\p{N} ._()-]/gu, '_') || 'file';
     const key = `uploads/${up.created.slice(0, 10)}-${up.id}/${fid}-${name}`, type = str(r.type, 100) || 'application/octet-stream';
@@ -138,11 +172,13 @@ async function route(req, env, url, path) {
   }
   if (m === 'PUT' && (p = path.match(/^\/uploads\/(\w+)\/files\/(\w+)\/(\d+)$/))) { // one piece (body = bytes)
     const f = await getFile(env, p[1], p[2]), n = +p[3];
-    // no more pieces, and no bigger ones, than the declared size needs, so the total above holds
+    // no more pieces, and no bigger ones, than the declared size needs, so the total above holds:
+    // piece n may hold at most what is left of the declared size after the pieces before it
     if (f.done || n < 1 || n > Math.ceil(f.size / PIECE)) throw new Fail(400, 'bad part');
-    if (+req.headers.get('Content-Length') > PIECE) throw new Fail(413, 'piece too big');
+    const max = Math.min(PIECE, f.size - (n - 1) * PIECE);
+    if (+req.headers.get('Content-Length') > max) throw new Fail(413, 'piece too big');
     const bytes = await req.arrayBuffer();
-    if (bytes.byteLength > PIECE) throw new Fail(413, 'piece too big');
+    if (bytes.byteLength > max) throw new Fail(413, 'piece too big');
     const part = await env.FILES.resumeMultipartUpload(f.r2key, f.r2upload).uploadPart(n, bytes);
     return json({ etag: part.etag });
   }
@@ -156,10 +192,11 @@ async function route(req, env, url, path) {
   }
 
   // ---- admin: the page, and the data it (or a Claude session) reads with the key
-  if (m === 'GET' && path === '/admin') return new Response(ADMIN_HTML, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+  if (m === 'GET' && path === '/admin') return new Response(ADMIN_HTML, { headers: await adminHeaders() });
   if (path.startsWith('/admin/')) {
-    const key = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '') || url.searchParams.get('key');
-    if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) throw new Fail(401, 'wrong key');
+    // the key travels only in this header, never in the address (addresses end up in logs and browser history)
+    const key = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '');
+    if (!(await keyOk(key, env.ADMIN_KEY))) throw new Fail(401, 'wrong key');
     if (m === 'GET' && path === '/admin/reports') { // ?status=new|fixed|rejected|all
       const st = url.searchParams.get('status') || 'new';
       const q = st === 'all' ? env.DB.prepare('SELECT * FROM reports ORDER BY id DESC LIMIT 2000')
@@ -217,6 +254,7 @@ const SCHEMA = `CREATE TABLE IF NOT EXISTS reports (
 );
 CREATE INDEX IF NOT EXISTS reports_status ON reports (status, id);
 CREATE INDEX IF NOT EXISTS reports_ip ON reports (ip, created);
+CREATE INDEX IF NOT EXISTS reports_created ON reports (created);
 
 CREATE TABLE IF NOT EXISTS uploads (
   id TEXT PRIMARY KEY,
@@ -225,6 +263,7 @@ CREATE TABLE IF NOT EXISTS uploads (
   ip TEXT
 );
 CREATE INDEX IF NOT EXISTS uploads_ip ON uploads (ip, created);
+CREATE INDEX IF NOT EXISTS uploads_created ON uploads (created);
 
 CREATE TABLE IF NOT EXISTS files (
   id TEXT PRIMARY KEY,
@@ -233,7 +272,8 @@ CREATE TABLE IF NOT EXISTS files (
   name TEXT, size INTEGER, type TEXT,
   r2key TEXT NOT NULL, r2upload TEXT,
   done INTEGER NOT NULL DEFAULT 0
-);`;
+);
+CREATE INDEX IF NOT EXISTS files_created ON files (created);`;
 
 const ADMIN_HTML = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Отчёты об ошибках</title><style>
@@ -252,9 +292,14 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return
 function get(p,o){o=o||{};o.headers={Authorization:'Bearer '+key};return fetch(p,o).then(function(r){if(r.status===401){document.getElementById('login').hidden=false;throw new Error('key')}return r.json()})}
 function mb(n){return (n/1048576).toFixed(1)+' МБ'}
 function show(){var out=document.getElementById('out');out.textContent='…';
- if(view==='uploads')return get('/api/admin/uploads').then(function(l){out.innerHTML=l.length?l.map(function(u){return '<div class="it"><b>'+esc(u.book)+'</b><div class="m">'+esc(u.created.slice(0,16).replace('T',' '))+(u.contact?' · '+esc(u.contact):'')+'</div>'+(u.comment?'<div>'+esc(u.comment)+'</div>':'')+u.files.map(function(f){return '<div>'+(f.done?'<a href="/api/admin/files/'+f.id+'?key='+encodeURIComponent(key)+'">'+esc(f.name)+'</a>':esc(f.name)+' (не докачан)')+' · '+mb(f.size)+'</div>'}).join('')+'</div>'}).join(''):'Пока ничего нет.'});
+ if(view==='uploads')return get('/api/admin/uploads').then(function(l){out.innerHTML=l.length?l.map(function(u){return '<div class="it"><b>'+esc(u.book)+'</b><div class="m">'+esc(u.created.slice(0,16).replace('T',' '))+(u.contact?' · '+esc(u.contact):'')+'</div>'+(u.comment?'<div>'+esc(u.comment)+'</div>':'')+u.files.map(function(f){return '<div>'+(f.done?'<a href="#" data-f="'+esc(f.id)+'" data-n="'+esc(f.name)+'">'+esc(f.name)+'</a>':esc(f.name)+' (не докачан)')+' · '+mb(f.size)+'</div>'}).join('')+'</div>'}).join(''):'Пока ничего нет.'});
  get('/api/admin/reports?status='+view).then(function(l){out.innerHTML=l.length?l.map(function(r){return '<div class="it" data-id="'+r.id+'"><div class="m">'+esc(r.created.slice(0,16).replace('T',' '))+' · <a href="'+SITE+'#/read/'+esc(r.book)+'" target="_blank">'+esc(r.book)+'</a>'+(r.page!=null?' · стр. '+r.page:'')+' · глава '+r.ch+', блок '+r.b+'</div><q>'+esc(r.quote)+'</q>'+(r.fix?'<div class="fix">Как правильно: '+esc(r.fix)+'</div>':'')+'<div class="ctx">'+esc(r.context)+'</div><div class="st">'+(view!=='fixed'?'<button data-s="fixed">Исправлено</button>':'')+(view!=='rejected'?'<button data-s="rejected">Не ошибка</button>':'')+(view!=='new'?'<button data-s="new">Вернуть в новые</button>':'')+'</div></div>'}).join(''):'Пока ничего нет.'})}
-document.getElementById('out').onclick=function(e){var b=e.target.closest('button[data-s]');if(!b)return;var it=b.closest('.it');
+document.getElementById('out').onclick=function(e){var a=e.target.closest('a[data-f]');
+ if(a){e.preventDefault();a.textContent=a.getAttribute('data-n')+' …';
+  fetch('/api/admin/files/'+a.getAttribute('data-f'),{headers:{Authorization:'Bearer '+key}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.blob()}).then(function(b){
+   var u=URL.createObjectURL(b),l=document.createElement('a');l.href=u;l.download=a.getAttribute('data-n');document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},60000);a.textContent=a.getAttribute('data-n')},
+   function(){a.textContent=a.getAttribute('data-n')+' (не удалось скачать)'});return}
+ var b=e.target.closest('button[data-s]');if(!b)return;var it=b.closest('.it');
  get('/api/admin/reports/'+it.getAttribute('data-id'),{method:'POST',body:JSON.stringify({status:b.getAttribute('data-s')})}).then(function(){it.remove()})};
 document.querySelector('nav').onclick=function(e){var b=e.target.closest('button');if(!b)return;view=b.getAttribute('data-v');
  [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)});show()};

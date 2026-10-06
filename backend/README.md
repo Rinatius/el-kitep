@@ -15,11 +15,17 @@ The server, under `/api`:
 - `GET /admin/reports?status=new` with `Authorization: Bearer <ADMIN_KEY>`: the reports as JSON, for fixing books.
 
 Readers need no account. Each reader may send 60 reports and 10 uploads an hour (counted by a salted hash of the
-IP address; addresses themselves are not stored).
+IP address; addresses themselves are not stored), and all readers together 2,000 reports, 100 uploads and 500 files
+a day (`DAILY` in `src/worker.js`), so nobody can fill the database or run up R2 operations from many addresses.
 All uploaded files together may take up to 5 GB (`MAX_TOTAL` in `src/worker.js`, counted from the `files` table,
-unfinished files included); after that the form tells readers it can't take more for now. R2 is free up to 10 GB, so
-readers can't run up a bill. To make room, raise `MAX_TOTAL` or delete handled files from the bucket and their rows
-from `files`.
+unfinished files included, and each piece may hold no more than the declared size leaves for it); after that the
+form tells readers it can't take more for now. R2 is free up to 10 GB, so readers can't run up a bill. To make room,
+raise `MAX_TOTAL` or delete handled files from the bucket and their rows from `files`.
+The admin key travels only in the `Authorization` header (never in the address, which would end up in logs); the
+admin page downloads files with that header too. Answers carry security headers (`SECURE` in `src/worker.js`, a
+hashed Content-Security-Policy on the admin page); the static assets get theirs from `_headers`, which the build
+copies into `dist/`. Workers Logs are on (`[observability]` in `wrangler.toml`): free, kept 3 days, read by the
+project's daily security review. The security checklist lives in the project files, `security/CHECKLIST.md`.
 
 ## Deploy
 `.github/workflows/cloudflare.yml` deploys on every merge into the live branch, once its repository secrets are
@@ -39,6 +45,14 @@ Everything that needs account-wide rights is done once by hand in the dashboard:
 
        [{"AllowedOrigins": ["https://elkitep.com", "https://www.elkitep.com"],
          "AllowedMethods": ["GET", "HEAD"], "AllowedHeaders": ["*"], "MaxAgeSeconds": 86400}]
+
+8. R2 > `el-kitep-uploads` > Settings > Object lifecycle rules: abort incomplete multipart uploads after 1 day
+   (the default is 7), so pieces of abandoned uploads don't sit in the bucket.
+9. Security > WAF > Rate limiting rules (one rule is free): requests to elkitep.com with a path starting `/api/`
+   or containing `/img/`, more than 50 in 10 seconds from one address, block for 10 seconds. Keeps one abuser
+   from using up the Worker's 100,000 free requests a day.
+10. Once elkitep.com works: Worker > Settings > Domains & Routes > disable `workers.dev` (and set
+    `workers_dev = false` in `wrangler.toml`), so the site has one address and the rules above cover all of it.
 
 The Worker creates its tables on the first request (the same statements as `schema.sql`), so the deploy needs
 no database rights. The "report an error" button and the upload form turn on by themselves on elkitep.com

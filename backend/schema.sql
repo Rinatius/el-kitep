@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS reports (
 );
 CREATE INDEX IF NOT EXISTS reports_status ON reports (status, id);
 CREATE INDEX IF NOT EXISTS reports_ip ON reports (ip, created);
+CREATE INDEX IF NOT EXISTS reports_created ON reports (created); -- the daily limit for everyone
 
 CREATE TABLE IF NOT EXISTS uploads (
   id TEXT PRIMARY KEY,
@@ -25,6 +26,7 @@ CREATE TABLE IF NOT EXISTS uploads (
   ip TEXT
 );
 CREATE INDEX IF NOT EXISTS uploads_ip ON uploads (ip, created);
+CREATE INDEX IF NOT EXISTS uploads_created ON uploads (created);
 
 CREATE TABLE IF NOT EXISTS files (
   id TEXT PRIMARY KEY,
@@ -34,3 +36,4 @@ CREATE TABLE IF NOT EXISTS files (
   r2key TEXT NOT NULL, r2upload TEXT, -- object key in the bucket and its multipart upload id
   done INTEGER NOT NULL DEFAULT 0
 );
+CREATE INDEX IF NOT EXISTS files_created ON files (created);

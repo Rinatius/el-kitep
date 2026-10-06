@@ -20,3 +20,11 @@ bucket_name = "el-kitep-uploads"
 [[r2_buckets]]
 binding = "BOOKS"       # book pictures, synced from site/books/<id>/img/ as "<id>/img/<file>"
 bucket_name = "el-kitep-books"
+
+# Workers Logs (free: 200,000 events a day, kept 3 days): the daily security review reads them.
+[observability]
+enabled = true
+
+  [observability.logs]
+  invocation_logs = true
+  head_sampling_rate = 1
