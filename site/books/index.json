@@ -75,6 +75,21 @@
   "src": "https://kitep.edu.kg/book/178/read"
  },
  {
+  "id": "kg-muzyka-2",
+  "v": "8ab7dcd5b9",
+  "title": "Музыка",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "М. Касей, К. Шамбетова, А. Шакирова, Ж. Дүйшеналиев",
+  "year": 2012,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 3772704,
+  "standalone": "kg-muzyka-2.html",
+  "src": "https://bilim.akipress.org/lib/book:4/",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-tabigyy-ilimder-2",
   "v": "1308c2984f",
@@ -150,6 +165,21 @@
   "format": "cards",
   "src": "https://kitep.edu.kg/book/237/read",
   "gaps": "42, 43"
+ },
+ {
+  "id": "ru-muzyka-2",
+  "v": "4eae690776",
+  "title": "Музыка",
+  "subtitle": "2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "М. Касей, К. Шамбетова, А. Шакирова",
+  "year": 2012,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 2791024,
+  "standalone": "ru-muzyka-2.html",
+  "src": "https://kitep.edu.kg/book/58/read",
+  "quality": "proofread"
  },
  {
   "id": "kg-adabiy-okuu-3",
