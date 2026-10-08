@@ -181,6 +181,21 @@
   "quality": "proofread"
  },
  {
+  "id": "kg-kyrgyz-tili-2",
+  "v": "bc5ecf64bd",
+  "title": "Кыргыз тили",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. Рысбаев",
+  "year": 2000,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 2196423,
+  "standalone": "kg-kyrgyz-tili-2.html",
+  "src": "https://stem.edu.gov.kg/api/books/466",
+  "quality": "proofread"
+ },
+ {
   "id": "kg-korkom-onor-2",
   "v": "6f7ad1d6a0",
   "title": "Көркөм өнөр",
