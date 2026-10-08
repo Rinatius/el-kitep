@@ -2776,6 +2776,21 @@
   "src": "https://kitep.edu.kg/book/215/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-algebra-11",
+  "v": "684ccd8365",
+  "title": "Алгебра жана анализдин башталышы",
+  "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "М. Иманалиев, А. Асанов, К. Жусупов, С. Искандаров",
+  "year": "2009",
+  "grade": "11",
+  "langName": "Кыргызча",
+  "size": 2036265,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/229/read"
+ },
+ {
   "id": "kg-geografiya-11",
   "v": "9eb131f2f2",
   "title": "Геоэкологиянын негиздери",
