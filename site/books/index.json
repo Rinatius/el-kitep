@@ -91,6 +91,21 @@
   "src": "https://kitep.edu.kg/book/36/read"
  },
  {
+  "id": "ru-bukvar-1",
+  "v": "361ff558f1",
+  "title": "Букварь",
+  "subtitle": "1 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. Ветшанова, О. Бирюшева, С. Аршинова",
+  "year": 2018,
+  "grade": "1",
+  "langName": "Русский",
+  "size": 3154118,
+  "standalone": "ru-bukvar-1.html",
+  "src": "https://kitep.edu.kg/book/186/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-estestvennye-nauki-1",
   "v": "18f6dc2696",
