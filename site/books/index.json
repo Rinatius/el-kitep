@@ -2821,6 +2821,21 @@
   "src": "https://kitep.edu.kg/book/229/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-astronomiya-11",
+  "v": "5c8a907990",
+  "title": "Астрономия",
+  "subtitle": "Орто мектептин 11-класстары үчүн окуу китеби",
+  "school": "ky",
+  "author": "Ө. Шаршекеев",
+  "year": 2012,
+  "grade": 11,
+  "langName": "Кыргызча",
+  "size": 935300,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=69"
+ },
+ {
   "id": "kg-geografiya-11",
   "v": "9eb131f2f2",
   "title": "Геоэкологиянын негиздери",
