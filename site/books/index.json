@@ -3081,6 +3081,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-english-9",
+  "v": "cad43ee0d1",
+  "title": "English. Англис тили",
+  "subtitle": "9-класс. Кыргыз жана орус тилдеринде окутулган орто мектептер үчүн",
+  "school": "ky",
+  "author": "А. З. Юсупова, Н. Ш. Мараш-Оглы, А. Ф. Шакирова",
+  "year": 2012,
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 839262,
+  "format": "cards",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-angliyskiy-yazyk-9-klass-ksh"
+ },
+ {
+  "quality": "cards",
   "id": "kg-take-off-9",
   "v": "a86b0cfa25",
   "title": "Take Off with English",
@@ -3276,6 +3291,21 @@
   "size": 1229671,
   "format": "cards",
   "src": "https://mektep.o.kg/books/19/?grade=9"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-9",
+  "v": "8d473f252f",
+  "title": "English. Английский язык",
+  "subtitle": "9 класс. Для школ с кыргызским и русским языками обучения",
+  "school": "ru",
+  "author": "А. З. Юсупова, Н. Ш. Мараш-Оглы, А. Ф. Шакирова",
+  "year": 2012,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 839250,
+  "format": "cards",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-angliyskiy-yazyk-9-klass-ksh"
  },
  {
   "quality": "cards",
