@@ -2323,6 +2323,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-fizika-7",
+  "v": "bc2eed1d1d",
+  "title": "Физика",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Э. Мамбетакунов",
+  "year": 2009,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 1090049,
+  "format": "cards",
+  "src": "https://mektep.o.kg/books/17/?grade=7"
+ },
+ {
+  "quality": "cards",
   "id": "ru-take-off-7",
   "v": "7540f9a0b8",
   "title": "Take Off with English",
