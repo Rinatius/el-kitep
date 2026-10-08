@@ -272,6 +272,36 @@
   "quality": "proofread"
  },
  {
+  "id": "ru-kyrgyz-tili-2-1",
+  "v": "5ee420aff2",
+  "title": "Кыргызский язык и чтение",
+  "subtitle": "2 класс, 1-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Ч. Ж. Кенчиева, З. С. Сарылбекова",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 3085863,
+  "standalone": "ru-kyrgyz-tili-2-1.html",
+  "src": "https://kitep.edu.kg/book/180/read",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-kyrgyz-tili-2-2",
+  "v": "17fb6e0947",
+  "title": "Кыргызский язык и чтение",
+  "subtitle": "2 класс, 2-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Ч. Ж. Кенчиева, З. С. Сарылбекова",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 3125824,
+  "standalone": "ru-kyrgyz-tili-2-2.html",
+  "src": "https://kitep.edu.kg/book/56/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-2",
   "v": "53392457d9",
