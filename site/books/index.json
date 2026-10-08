@@ -46,6 +46,21 @@
   "src": "https://kitep.edu.kg/book/235/read"
  },
  {
+  "id": "kg-meken-taanuu-1",
+  "v": "34d588e620",
+  "title": "Мекен таануу",
+  "subtitle": "1-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "З. Ж. Мамбетова, Т. В. Архипова",
+  "year": 2016,
+  "grade": "1",
+  "langName": "Кыргызча",
+  "size": 3954523,
+  "standalone": "kg-meken-taanuu-1.html",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-rodinovedenie-1-klass-ksh",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-tabigyy-ilimder-1",
   "v": "4a5868cb29",
@@ -119,6 +134,21 @@
   "size": 2059974,
   "format": "cards",
   "src": "https://bilim.akipress.org/lib/book:94/"
+ },
+ {
+  "id": "ru-rodinovedenie-1",
+  "v": "3285680b69",
+  "title": "Родиноведение",
+  "subtitle": "1 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "З. Ж. Мамбетова, Т. В. Архипова",
+  "year": 2016,
+  "grade": "1",
+  "langName": "Русский",
+  "size": 3983049,
+  "standalone": "ru-rodinovedenie-1.html",
+  "src": "https://bilim.akipress.org/lib/book:104/",
+  "quality": "proofread"
  },
  {
   "id": "kg-adabiy-okuu-2",
