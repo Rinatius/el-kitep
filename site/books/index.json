@@ -31,6 +31,21 @@
   "src": "https://new.bizdin.kg/kniga/uchebnik-literaturnoe-chtenie-3-klass-ksh"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-3",
+  "v": "2431dc53e0",
+  "title": "Англис тили",
+  "subtitle": "3-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Г. Фатнева, Н. Э. Цуканова, Г. Д. Назарбекова",
+  "year": 2019,
+  "grade": "3",
+  "langName": "Кыргызча",
+  "size": 2475743,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/73/read"
+ },
+ {
   "id": "kg-kyrgyz-tili-3",
   "v": "19f0db9843",
   "title": "Кыргыз тили",
@@ -194,6 +209,21 @@
   "size": 257391,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/483/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-3",
+  "v": "b56258a108",
+  "title": "Английский язык",
+  "subtitle": "3 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. Г. Фатнева, Н. Э. Цуканова, Г. Д. Назарбекова",
+  "year": 2019,
+  "grade": "3",
+  "langName": "Русский",
+  "size": 2483672,
+  "format": "cards",
+  "src": "https://mektep.o.kg/books/6/?grade=3"
  },
  {
   "quality": "cards",
