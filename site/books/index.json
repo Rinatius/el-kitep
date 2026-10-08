@@ -2977,6 +2977,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-fizika-9-mambetakunov",
+  "v": "53c4d9dcc0",
+  "title": "Физика",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Э. Мамбетакунов, Т. Карашев, М. Токтогулов",
+  "year": "2010",
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 1229671,
+  "format": "cards",
+  "src": "https://mektep.o.kg/books/19/?grade=9"
+ },
+ {
+  "quality": "cards",
   "id": "ru-take-off-9",
   "v": "540838c039",
   "title": "Take Off with English",
