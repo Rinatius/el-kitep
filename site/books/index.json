@@ -60,6 +60,21 @@
   "src": "https://kitep.edu.kg/book/434/read"
  },
  {
+  "id": "kg-adabiy-okuu-2",
+  "v": "35ddf5e775",
+  "title": "Адабий окуу",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Б. А. Абдухамидова, С. К. Рысбаев, К. Ибраимова",
+  "year": 2016,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 9298044,
+  "standalone": "kg-adabiy-okuu-2.html",
+  "src": "https://kitep.edu.kg/book/335/read",
+  "quality": "proofread"
+ },
+ {
   "id": "kg-korkom-onor-2",
   "v": "6f7ad1d6a0",
   "title": "Көркөм өнөр",
