@@ -8,11 +8,13 @@ site/ministry.json has one row per book on the Ministry's list for 2026-27 (edu.
   f     what we found online (research/availability, 2026-10-01): "full" = the whole book somewhere,
         "part" = only a sample or part, behind a login or payment, or only in the other language; "none" = nowhere
   ids   ids of our books (site/books/index.json) that are this book, in the listed or another edition by the same authors
+  no    optional: ids that are NOT this book although the matching below would add them (e.g. a co-author of
+        another book on the same subject); set by hand, never removed by this script
 The statistics page (#/stats) and the "N of M" counts on the library page come from it.
 
 Run after adding books:  python3 tools/ministry_map.py
 It adds every book whose authors and title match a row of its school and grade (any year), keeps ids added by hand
-that still exist, and prints the books it could not place (books not on the list, or names that differ: add those
+that still exist, skips ids listed in the row's "no", and prints the books it could not place (books not on the list, or names that differ: add those
 by hand to the right row's "ids" if they are the same book).
 """
 import json, os, re
@@ -53,7 +55,7 @@ def main():
     books = json.load(open(os.path.join(ROOT, 'books', 'index.json')))
     have = {b['id'] for b in books}
     for r in rows:
-        r['ids'] = sorted({i for i in r['ids'] if i in have} | {b['id'] for b in books if same(r, b)})
+        r['ids'] = sorted(({i for i in r['ids'] if i in have} | {b['id'] for b in books if same(r, b)}) - set(r.get('no', [])))
     with open(os.path.join(ROOT, 'ministry.json'), 'w') as f:
         f.write('[\n' + ',\n'.join(json.dumps(r, ensure_ascii=False) for r in rows) + '\n]\n')
     used = {i for r in rows for i in r['ids']}
