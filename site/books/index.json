@@ -497,6 +497,21 @@
   "src": "https://bizdin.kg/uchebnik/kyrgyz-tili-4-klass-2014-zh-kyrgyzskii-iazyk-4-klass-2014-g-na-kyrgyzskom/"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-4-bekboev",
+  "v": "b9e4050ad1",
+  "title": "Математика",
+  "subtitle": "4-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Б. Бекбоев, Н. И. Ибраева",
+  "year": 2009,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 770603,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/63/read"
+ },
+ {
   "id": "kg-meken-taanuu-4",
   "v": "4822e8ef9c",
   "title": "Мекен таануу",

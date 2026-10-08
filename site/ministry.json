@@ -47,7 +47,7 @@
 {"s": "ky", "g": 4, "subj": "Чет тил", "t": "Take Off with English", "a": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон", "y": "2025", "f": "full", "ids": ["kg-take-off-4"], "u": "https://kitep.edu.kg/book/175/read"},
 {"s": "ky", "g": 4, "subj": "Чет тил", "t": "Англис тили", "a": "Цуканова Н., Фатнева А., Жолчиева А.", "y": "2018", "f": "full", "ids": ["kg-english-4"], "u": "https://kitep.edu.kg/book/69/read"},
 {"s": "ky", "g": 4, "subj": "Математика", "t": "Математика", "a": "Axel Tan, Niel Patrick Condino, Dr Amanda O'Shea and Joyce Ng", "y": "2026", "f": "none", "ids": []},
-{"s": "ky", "g": 4, "subj": "Математика", "t": "Математика", "a": "Бекбоев И.", "y": "2009", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/63/read"},
+{"s": "ky", "g": 4, "subj": "Математика", "t": "Математика", "a": "Бекбоев И.", "y": "2009", "f": "full", "ids": ["kg-matematika-4-bekboev"], "u": "https://kitep.edu.kg/book/63/read"},
 {"s": "ky", "g": 4, "subj": "Математика", "t": "Математика (1, 2-бөлүк) Адаптацияланган басылышы", "a": "Моро М., Волкова С., Степанова С.", "y": "2020-2022", "f": "part", "ids": []},
 {"s": "ky", "g": 4, "subj": "Мен жана дүйнө", "t": "Мекен таануу", "a": "Бухова Е., Солошенко О., Шаповалова Е.", "y": "2015", "f": "full", "ids": ["kg-meken-taanuu-4"], "u": "https://kitep.edu.kg/book/88/read"},
 {"s": "ky", "g": 4, "subj": "Мен жана дүйнө", "t": "Мекен таануу", "a": "Мамбетова З.", "y": "2021", "f": "full", "ids": ["kg-meken-taanuu-4-mambetova"], "u": "https://mektep.o.kg/books/14/?grade=4"},
