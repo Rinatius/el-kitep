@@ -497,6 +497,21 @@
   "src": "https://bizdin.kg/uchebnik/kyrgyz-tili-4-klass-2014-zh-kyrgyzskii-iazyk-4-klass-2014-g-na-kyrgyzskom/"
  },
  {
+  "id": "kg-korkom-onor-4",
+  "v": "09f5da13c8",
+  "title": "Көркөм өнөр",
+  "subtitle": "4-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Д. А. Акматов, А. А. Багдасарян",
+  "year": 2015,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 4973739,
+  "standalone": "kg-korkom-onor-4.html",
+  "src": "https://kitep.edu.kg/book/61/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-matematika-4-bekboev",
   "v": "b9e4050ad1",
