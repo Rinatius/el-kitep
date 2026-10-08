@@ -2126,19 +2126,19 @@
   "src": "https://kitep.edu.kg/book/193/read"
  },
  {
-  "id": "ru-matematika-7-1-v3",
-  "v": "9c32ad61f0",
+  "quality": "cards",
+  "id": "ru-matematika-7",
+  "v": "5bd44181dd",
   "title": "Математика",
-  "subtitle": "7 класс. Часть 1 (главы 1–5). Вариант 3: страницы, набранные заново",
-  "author": "",
-  "year": 2025,
-  "grade": 7,
-  "langName": "Русский",
-  "size": 5114086,
-  "standalone": "ru-matematika-7-1-v3.html",
+  "subtitle": "7 класс. Для школ с русским языком обучения",
   "school": "ru",
-  "quality": "exact",
-  "src": "https://kitep.edu.kg/book/444/read"
+  "author": "То Тин Лам",
+  "year": 2025,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 4700164,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/151/read"
  },
  {
   "quality": "cards",
