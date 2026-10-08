@@ -426,6 +426,21 @@
   "src": "https://kitep.edu.kg/book/244/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-5",
+  "v": "072c33ce92",
+  "title": "Take Off with English",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 2024734,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/9/read"
+ },
+ {
   "id": "kg-adam-jana-koom-5",
   "v": "dc560cfd80",
   "title": "Адам жана коом",
@@ -548,6 +563,21 @@
   "src": "https://mektep.o.kg"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-5",
+  "v": "954cdead82",
+  "title": "Математика",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Райхан Судирман, Жасмин Чунг, Аясса Чуа Лихонг, Джойс Нг",
+  "year": 2025,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 3001880,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/50/read"
+ },
+ {
   "id": "kg-muzyka-5",
   "v": "22c5fc0fe6",
   "title": "Музыка",
@@ -642,6 +672,21 @@
   "src": "https://kitep.edu.kg/book/128/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-tabigyy-ilimder-5",
+  "v": "d4b316eb2f",
+  "title": "Табигый илимдер",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Александр Грей",
+  "year": 2026,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 952124,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/558/read"
+ },
+ {
   "id": "kg-tehnologiya-5",
   "v": "43b0f1b528",
   "title": "Технология",
@@ -655,6 +700,36 @@
   "standalone": "kg-tehnologiya-5.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/516/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-take-off-5",
+  "v": "137e3796c8",
+  "title": "Take Off with English",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 2024722,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/10/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-estestvennye-nauki-5",
+  "v": "7ac6e89685",
+  "title": "Естественные науки",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Александр Грей",
+  "year": 2026,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 905931,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/559/read"
  },
  {
   "id": "ru-izo-5",
@@ -762,6 +837,21 @@
   "standalone": "ru-kyrgyz-tili-5.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/90/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-5",
+  "v": "81263a2c3e",
+  "title": "Математика",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Райхан Судирман, Жасмин Чунг, Аясса Чуа Лихон, Джойс Нг",
+  "year": 2025,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 2985023,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/51/read"
  },
  {
   "id": "ru-muzyka-5",
