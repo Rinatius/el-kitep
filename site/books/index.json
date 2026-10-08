@@ -2201,6 +2201,21 @@
   "src": "https://kitep.edu.kg/book/348/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-8",
+  "v": "b64afcf6a0",
+  "title": "Англис тили",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. З. Юсупова, Н. Ш. Мараш-Оглы, А. Ф. Шакирова",
+  "year": "2012",
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 419120,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=31"
+ },
+ {
   "id": "kg-dinder-taryhy-8",
   "v": "1a08eed2b8",
   "title": "Диндердин өнүгүү тарыхы",
@@ -2352,6 +2367,21 @@
   "size": 1478304,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/18/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-8",
+  "v": "d7b6810254",
+  "title": "Английский язык",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. З. Юсупова, Н. Ш. Мараш-Оглы, А. Ф. Шакирова",
+  "year": "2012",
+  "grade": "8",
+  "langName": "Русский",
+  "size": 419115,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=31"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
