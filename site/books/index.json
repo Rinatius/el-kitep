@@ -271,6 +271,21 @@
   "src": "https://kitep.edu.kg/book/480/read"
  },
  {
+  "id": "ru-izo-3",
+  "v": "1bcfae414d",
+  "title": "Изобразительно-художественное творчество",
+  "subtitle": "3 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Д. А. Акматов, А. А. Багдасарян",
+  "year": 2015,
+  "grade": "3",
+  "langName": "Русский",
+  "size": 5178703,
+  "standalone": "ru-izo-3.html",
+  "src": "https://kitep.edu.kg/book/241/read",
+  "quality": "proofread"
+ },
+ {
   "id": "ru-kniga-dlya-chteniya-3",
   "v": "03d7011e64",
   "title": "Книга для чтения",
