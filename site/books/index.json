@@ -2778,6 +2778,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-chiyuu-8-9",
+  "v": "f509c681fa",
+  "title": "Чийүү (Черчение)",
+  "subtitle": "8–9-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Д. Ботвинников, В. Н. Виноградов, И. С. Вышнепольский",
+  "year": "2011",
+  "grade": "8–9",
+  "langName": "Кыргызча",
+  "size": 4074268,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/97/read"
+ },
+ {
+  "quality": "cards",
   "id": "ru-take-off-8",
   "v": "f92b18cc08",
   "title": "Take Off with English",
