@@ -355,7 +355,7 @@
 {"s": "ru", "g": 10, "subj": "Кыргызский язык", "t": "Кыргыз тили", "a": "Оморова А., Самсалиева М. и др.", "y": "2019", "f": "full", "ids": ["ru-kyrgyz-tili-10-11"]},
 {"s": "ru", "g": 10, "subj": "Кыргызский язык", "t": "Кыргыз тили", "a": "Абылаева Н., Ибраимов С., Сарылбекова З.", "y": "2012", "f": "full", "ids": ["ru-kyrgyz-tili-10"], "u": "https://mektep.o.kg/books/9/?grade=10"},
 {"s": "ru", "g": 10, "subj": "Кыргызская литература", "t": "Кыргыз адабияты", "a": "Жээнтаева К., Исаева В.", "y": "2013", "f": "full", "ids": ["ru-kyrgyz-adabiyaty-10"], "u": "https://new.bizdin.kg/kniga/uchebnik-kyrgyzskaya-literatura-10-klass-rsh"},
-{"s": "ru", "g": 10, "subj": "Иностранный язык", "t": "Английский язык", "a": "Фатнева А., Цуканова Н.", "y": "2024", "f": "part", "ids": [], "u": "https://arcus.kg/modules/mod_flipbook_98/tmpl/book.html"},
+{"s": "ru", "g": 10, "subj": "Иностранный язык", "t": "Английский язык", "a": "Фатнева А., Цуканова Н.", "y": "2024", "f": "part", "ids": ["ru-english-10"], "u": "https://arcus.kg/modules/mod_flipbook_98/tmpl/book.html"},
 {"s": "ru", "g": 10, "subj": "Иностранный язык", "t": "Английский язык", "a": "Юсупова А. и др.", "y": "2012", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/157/read"},
 {"s": "ru", "g": 10, "subj": "История", "t": "История Кыргызстана", "a": "Осмонов О. и др.", "y": "2012", "f": "full", "ids": ["ru-istoriya-kyrgyzstana-10"], "u": "https://kitep.edu.kg/book/158/read"},
 {"s": "ru", "g": 10, "subj": "Человек и общество", "t": "Гражданственность и участие в управлении (1-я часть)", "a": "Пилон Дж.", "y": "2004", "f": "full", "ids": ["ru-grazhdanstvennost-10"]},
