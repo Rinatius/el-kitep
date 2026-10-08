@@ -15,6 +15,21 @@
   "quality": "proofread"
  },
  {
+  "id": "kg-alippege-dayardyk-1",
+  "v": "00a14d45ea",
+  "title": "Алиппеге даярдык",
+  "subtitle": "1-класс. Алты жаштан окуган 1-класстын окуучуларынын боёо жана кол көндүрүү жумушчу дептери",
+  "school": "ky",
+  "author": "С. Рысбаев, А. Бекбоева",
+  "year": 2025,
+  "grade": "1",
+  "langName": "Кыргызча",
+  "size": 2296950,
+  "standalone": "kg-alippege-dayardyk-1.html",
+  "src": "https://kitep.edu.kg/book/248/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-matematika-1",
   "v": "38dbbc8242",
@@ -73,6 +88,21 @@
   "size": 3954523,
   "standalone": "kg-meken-taanuu-1.html",
   "src": "https://new.bizdin.kg/kniga/uchebnik-rodinovedenie-1-klass-ksh",
+  "quality": "proofread"
+ },
+ {
+  "id": "kg-nariste-alippe-1",
+  "v": "9841ef3ca4",
+  "title": "Наристе алиппе",
+  "subtitle": "1-класс. 6 жаштан окуган 1-класстын окуучулары үчүн окуу китеби",
+  "school": "ky",
+  "author": "С. К. Рысбаев",
+  "year": 2025,
+  "grade": "1",
+  "langName": "Кыргызча",
+  "size": 6822129,
+  "standalone": "kg-nariste-alippe-1.html",
+  "src": "https://kitep.edu.kg/book/247/read",
   "quality": "proofread"
  },
  {
