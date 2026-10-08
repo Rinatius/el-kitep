@@ -105,6 +105,21 @@
   "src": "https://kitep.edu.kg/book/178/read"
  },
  {
+  "id": "kg-meken-taanuu-2",
+  "v": "fccd2b5572",
+  "title": "Мекен таануу",
+  "subtitle": "Жаратылыш жана биз. 2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "З. Ж. Мамбетова",
+  "year": 2015,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 2021080,
+  "standalone": "kg-meken-taanuu-2.html",
+  "src": "https://mektep.o.kg/books/12/?grade=2",
+  "quality": "proofread"
+ },
+ {
   "id": "kg-muzyka-2",
   "v": "8ab7dcd5b9",
   "title": "Музыка",
@@ -209,6 +224,21 @@
   "size": 2791024,
   "standalone": "ru-muzyka-2.html",
   "src": "https://kitep.edu.kg/book/58/read",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-rodinovedenie-2",
+  "v": "447583a9d3",
+  "title": "Родиноведение",
+  "subtitle": "Природа и мы. 2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "З. Д. Мамбетова",
+  "year": 2003,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 2080321,
+  "standalone": "ru-rodinovedenie-2.html",
+  "src": "https://mektep.o.kg/books/1/?grade=2",
   "quality": "proofread"
  },
  {
