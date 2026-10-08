@@ -2598,6 +2598,21 @@
   "src": "https://mektep.o.kg/books/7/?grade=8"
  },
  {
+  "quality": "cards",
+  "id": "ru-himiya-8",
+  "v": "3944da6b8b",
+  "title": "Химия",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Б. Рыспаева, С. Молдогазиева, Т. Байдинов",
+  "year": "2023",
+  "grade": "8",
+  "langName": "Русский",
+  "size": 1699539,
+  "format": "cards",
+  "src": "https://stem.edu.gov.kg/api/books/20"
+ },
+ {
   "id": "ru-chelovek-obshchestvo-8",
   "v": "dfcbbca6cd",
   "title": "Человек и общество",
