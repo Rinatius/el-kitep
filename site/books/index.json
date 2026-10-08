@@ -603,6 +603,21 @@
   "src": "https://kitep.edu.kg/book/64/read"
  },
  {
+  "id": "ru-izo-4",
+  "v": "6f91c29b14",
+  "title": "Изобразительно-художественное творчество",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Д. А. Акматов, А. А. Багдасарян",
+  "year": 2015,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 5436244,
+  "standalone": "ru-izo-4.html",
+  "src": "https://kitep.edu.kg/book/62/read",
+  "quality": "proofread"
+ },
+ {
   "id": "ru-kniga-dlya-chteniya-4",
   "v": "8437c3705d",
   "title": "Книга для чтения",
