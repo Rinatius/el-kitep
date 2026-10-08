@@ -467,6 +467,21 @@
   "src": "https://new.bizdin.kg/kniga/uchebnik-literaturnoe-chtenie-4-klass-ksh"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-4",
+  "v": "16925f8b09",
+  "title": "Англис тили",
+  "subtitle": "4-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Н. Э. Цуканова, А. Г. Фатнева, А. А. Жолчиева",
+  "year": 2018,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 2353910,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/69/read"
+ },
+ {
   "id": "kg-kyrgyz-tili-4",
   "v": "a289547ce6",
   "title": "Кыргыз тили",
@@ -556,6 +571,21 @@
   "size": 1895801,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/2/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-4",
+  "v": "b7013e4bd1",
+  "title": "Английский язык",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Н. Э. Цуканова, А. Г. Фатнева, А. А. Жолчиева",
+  "year": 2018,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 2356741,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/64/read"
  },
  {
   "id": "ru-kniga-dlya-chteniya-4",
