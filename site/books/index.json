@@ -422,6 +422,21 @@
   "src": "https://bilim.akipress.org/lib/book:29/"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-4",
+  "v": "03a84cc751",
+  "title": "Take Off with English",
+  "subtitle": "4-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "4",
+  "langName": "Кыргызча",
+  "size": 1895816,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/175/read"
+ },
+ {
   "id": "kg-adabiy-okuu-4",
   "v": "000ec5a1b8",
   "title": "Адабий окуу",
@@ -526,6 +541,21 @@
   "standalone": "kg-russkiy-yazyk-4.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/65/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-take-off-4",
+  "v": "8d8bb84357",
+  "title": "Take Off with English",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 1895801,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/2/read"
  },
  {
   "id": "ru-kniga-dlya-chteniya-4",
