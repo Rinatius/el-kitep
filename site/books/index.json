@@ -2640,6 +2640,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-fizika-10",
+  "v": "f5901e57de",
+  "title": "Физика",
+  "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "М. Койчуманов, О. Сулайманова",
+  "year": "2008",
+  "grade": "10",
+  "langName": "Кыргызча",
+  "size": 1513319,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/165/read"
+ },
+ {
+  "quality": "cards",
   "id": "ru-english-10",
   "v": "1305bf1f42",
   "title": "Английский язык",
