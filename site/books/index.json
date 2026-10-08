@@ -2311,6 +2311,21 @@
   "src": "https://kitep.edu.kg/book/140/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-9",
+  "v": "a86b0cfa25",
+  "title": "Take Off with English",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 1044303,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/25/read"
+ },
+ {
   "id": "kg-adam-jana-koom-9",
   "v": "e6141a908d",
   "title": "Адам жана коом",
@@ -2447,6 +2462,21 @@
   "standalone": "kg-sonku-taryh-9.html",
   "quality": "proofread",
   "src": "https://kitep.edu.kg/book/213/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-take-off-9",
+  "v": "540838c039",
+  "title": "Take Off with English",
+  "subtitle": "9 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 1044290,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/24/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
