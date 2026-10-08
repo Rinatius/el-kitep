@@ -181,6 +181,21 @@
   "gaps": "5"
  },
  {
+  "id": "ru-kniga-dlya-chteniya-2",
+  "v": "f23186aa70",
+  "title": "Книга для чтения",
+  "subtitle": "2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Е. Е. Озмитель, И. В. Власова",
+  "year": 2017,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 7262759,
+  "standalone": "ru-kniga-dlya-chteniya-2.html",
+  "src": "https://kitep.edu.kg/book/181/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-2",
   "v": "53392457d9",
