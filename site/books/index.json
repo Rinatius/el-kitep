@@ -483,6 +483,22 @@
   "quality": "proofread"
  },
  {
+  "id": "ru-russkiy-yazyk-2",
+  "v": "e12e4a032a",
+  "title": "Русский язык",
+  "subtitle": "2 класс. Для школ с русским языком обучения. Нет страниц 49–64 (уроки 37–49): их нет ни в одной копии учебника в интернете",
+  "school": "ru",
+  "author": "О. В. Даувальдер, В. Н. Качигулова",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 1625318,
+  "standalone": "ru-russkiy-yazyk-2.html",
+  "src": "https://bilim.akipress.org/lib/book:83/",
+  "quality": "proofread",
+  "gaps": "49–64"
+ },
+ {
   "id": "kg-adabiy-okuu-3",
   "v": "0d6dae610b",
   "title": "Адабий окуу",
