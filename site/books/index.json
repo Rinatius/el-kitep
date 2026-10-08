@@ -2122,6 +2122,21 @@
   "src": "https://okuma.kg/read/web/books/БИОЛОГИЯ жаныбарлар 7 класс (okuma.kg)_Химия, Биология62.pdf"
  },
  {
+  "quality": "cards",
+  "id": "kg-geometriya-7-9",
+  "v": "3d0854dc41",
+  "title": "Геометрия",
+  "subtitle": "7–9-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Бекбоев, А. Бөрүбаев, А. Айылчиев",
+  "year": 2015,
+  "grade": "7–9",
+  "langName": "Кыргызча",
+  "size": 1675919,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/102/read"
+ },
+ {
   "id": "kg-informatika-7-9",
   "v": "779786d71b",
   "title": "Информатика",
