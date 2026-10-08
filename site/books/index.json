@@ -121,6 +121,21 @@
   "src": "https://kitep.edu.kg/book/37/read"
  },
  {
+  "id": "ru-kyrgyz-tili-1",
+  "v": "292637bd58",
+  "title": "Кыргыз тили",
+  "subtitle": "1-класс. Орус тилинде окутулган мектептер үчүн",
+  "school": "ru",
+  "author": "К. Эсеналиева, Р. Буйлякеева, А. Алыпсатарова, Б. Топоева-Ставинская, З. Момункулова",
+  "year": 2016,
+  "grade": "1",
+  "langName": "Кыргызча",
+  "size": 3296510,
+  "standalone": "ru-kyrgyz-tili-1.html",
+  "src": "https://bilim.akipress.org/lib/book:73/",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-1",
   "v": "b3b923c90d",
