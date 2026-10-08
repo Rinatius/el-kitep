@@ -2919,6 +2919,21 @@
   "src": "https://kitep.edu.kg/book/228/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-fizika-11",
+  "v": "a9754ce936",
+  "title": "Физика",
+  "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ө. Шаршекеев",
+  "year": "2011",
+  "grade": "11",
+  "langName": "Кыргызча",
+  "size": 1124869,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/226/read"
+ },
+ {
   "id": "ru-istoriya-kyrgyzstana-11",
   "v": "27c35c1540",
   "title": "История Кыргызстана",
