@@ -456,6 +456,21 @@
   "src": "https://kitep.edu.kg/book/134/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-5",
+  "v": "c76c0b247c",
+  "title": "Англис тили",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ч. А. Абдышева, О. Р. Балута, А. Г. Фатнева, Н. Э. Цуканова",
+  "year": 2017,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 2128970,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/136/read"
+ },
+ {
   "id": "kg-informatika-5",
   "v": "ff1704dd4d",
   "title": "Информатика",
@@ -715,6 +730,21 @@
   "size": 2024722,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/10/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-5",
+  "v": "2616cf1840",
+  "title": "Английский язык",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Ч. А. Абдышева, О. Р. Балута, А. Г. Фатнева, Н. Э. Цуканова",
+  "year": 2017,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 2131230,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/114/read"
  },
  {
   "quality": "cards",
