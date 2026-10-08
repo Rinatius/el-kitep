@@ -2551,6 +2551,21 @@
   "src": "https://bilim.akipress.org/lib/book:154/"
  },
  {
+  "quality": "cards",
+  "id": "kg-algebra-9",
+  "v": "229b7bbba6",
+  "title": "Алгебра",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "М. Иманалиев, А. Асанов, К. Жусупов, С. Искандаров",
+  "year": "2012",
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 1782701,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=42"
+ },
+ {
   "id": "kg-biologiya-9",
   "v": "5d7408e5c5",
   "title": "Биология. Тиричиликтин жалпы мыйзам ченемдүүлүктөрү",
