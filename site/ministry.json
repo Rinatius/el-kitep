@@ -116,7 +116,7 @@
 {"s": "ky", "g": 7, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Цыбуля И., Самыкбаева Л., Беляев А. ж.б.", "y": "2020", "f": "full", "ids": ["kg-informatika-7-9"], "u": "https://okuma.kg/books.php?id=947"},
 {"s": "ky", "g": 7, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Орускулов Т., Касымалиев М.", "y": "2015", "f": "full", "ids": ["kg-informatika-bazalyk-7-9"], "u": "https://new.bizdin.kg/kniga/uchebnik-informatika-7-9-klass-ksh"},
 {"s": "ky", "g": 7, "subj": "Информатика", "t": "Информатика 7 – 9-кл. (практикум маселелери)", "a": "Касымалиев М., Орускулов Т.", "y": "2015", "f": "full", "ids": ["kg-informatika-bazalyk-7-9"], "u": "https://bilim.akipress.org/lib/book:155/"},
-{"s": "ky", "g": 7, "subj": "Табигый илимдер", "t": "Табигый илимдер", "a": "Robert Moody", "y": "2025", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/429/read"},
+{"s": "ky", "g": 7, "subj": "Табигый илимдер", "t": "Табигый илимдер", "a": "Robert Moody", "y": "2025", "f": "full", "ids": ["kg-tabigyy-ilimder-7"], "u": "https://kitep.edu.kg/book/429/read"},
 {"s": "ky", "g": 7, "subj": "Физика", "t": "Физика", "a": "Мамбетакунов Э., Мурзаибраимова Б.", "y": "2021", "f": "full", "ids": [], "u": "https://mektep.o.kg/books/17/?grade=7"},
 {"s": "ky", "g": 7, "subj": "Биология (Жаныбарлар)", "t": "Биология", "a": "Токтосунов А., Бейшебаев К., Мамытова Б., Кыдыралиева Д.", "y": "2015", "f": "full", "ids": ["kg-biologiya-7"], "u": "https://okuma.kg/books.php?id=215"},
 {"s": "ky", "g": 8, "subj": "Кыргыз тили", "t": "Кыргыз тили", "a": "Иманов А., Кайбылдаев А., Сапарбаев А., Усубалиев Б.", "y": "2016", "f": "full", "ids": ["kg-kyrgyz-tili-8", "kg-kyrgyz-tili-8-9"], "u": "https://kitep.edu.kg/book/105/read"},

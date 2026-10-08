@@ -2021,6 +2021,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-tabigyy-ilimder-7",
+  "v": "8e5bdea75e",
+  "title": "Табигый илимдер",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Роберт Муди",
+  "year": 2025,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 2782426,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/429/read"
+ },
+ {
+  "quality": "cards",
   "id": "ru-take-off-7",
   "v": "7540f9a0b8",
   "title": "Take Off with English",
