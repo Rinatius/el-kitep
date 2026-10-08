@@ -2111,6 +2111,21 @@
   "src": "https://kitep.edu.kg/book/192/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-8",
+  "v": "577568b567",
+  "title": "Take Off with English",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1478317,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/17/read"
+ },
+ {
   "id": "kg-adam-jana-koom-8",
   "v": "545756991b",
   "title": "Адам жана коом",
@@ -2262,6 +2277,21 @@
   "size": 1227939,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/141/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-take-off-8",
+  "v": "f92b18cc08",
+  "title": "Take Off with English",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон",
+  "year": 2025,
+  "grade": "8",
+  "langName": "Русский",
+  "size": 1478304,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/18/read"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-8",
