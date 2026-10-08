@@ -2797,6 +2797,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-fizika-9-toktogulov",
+  "v": "8f006e5ca0",
+  "title": "Физика",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. Т. Токтогулов",
+  "year": "2012",
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 834801,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=57"
+ },
+ {
+  "quality": "cards",
   "id": "ru-take-off-9",
   "v": "540838c039",
   "title": "Take Off with English",
