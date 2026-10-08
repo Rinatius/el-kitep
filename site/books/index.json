@@ -1,5 +1,20 @@
 [
  {
+  "id": "kg-alippe-1-kubatalieva",
+  "v": "cfe262b46f",
+  "title": "Алиппе",
+  "subtitle": "1-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Б. Кубаталиева, А. Абыканова, М. Асаналиева",
+  "year": 2016,
+  "grade": "1",
+  "langName": "Кыргызча",
+  "size": 4868819,
+  "standalone": "kg-alippe-1-kubatalieva.html",
+  "src": "https://kitep.edu.kg/book/188/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-matematika-1",
   "v": "38dbbc8242",
