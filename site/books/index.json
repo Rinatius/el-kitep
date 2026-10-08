@@ -241,6 +241,36 @@
   "quality": "proofread"
  },
  {
+  "id": "kg-russkiy-yazyk-i-chtenie-2-1",
+  "v": "3c9e77db61",
+  "title": "Русский язык и чтение",
+  "subtitle": "2-класс, 1-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Д. К. Омурбаева",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 3360003,
+  "standalone": "kg-russkiy-yazyk-i-chtenie-2-1.html",
+  "src": "https://mektep.o.kg/",
+  "quality": "proofread"
+ },
+ {
+  "id": "kg-russkiy-yazyk-i-chtenie-2-2",
+  "v": "c9e6654591",
+  "title": "Русский язык и чтение",
+  "subtitle": "2-класс, 2-бөлүк. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Д. К. Омурбаева",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 2436124,
+  "standalone": "kg-russkiy-yazyk-i-chtenie-2-2.html",
+  "src": "https://kitep.edu.kg/book/78/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-tabigyy-ilimder-2",
   "v": "1308c2984f",
