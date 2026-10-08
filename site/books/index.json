@@ -2481,6 +2481,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-algebra-10-salamatov",
+  "v": "070795bc11",
+  "title": "Алгебра жана анализдин башталышы",
+  "subtitle": "Жалпы билим берүүчү орто мектептердин 10-классы үчүн окуу китеби",
+  "school": "ky",
+  "author": "Ж. Саламатов, М. Жураев, Т. Аманкулов",
+  "year": 2009,
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 1259474,
+  "format": "cards",
+  "src": "https://mektep.o.kg"
+ },
+ {
+  "quality": "cards",
   "id": "kg-english-10-11",
   "v": "b401edbc23",
   "title": "Англис тили",
