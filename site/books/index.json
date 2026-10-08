@@ -593,6 +593,21 @@
   "src": "https://kitep.edu.kg/book/50/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-5-bekboev",
+  "v": "2b7c18ddfc",
+  "title": "Математика",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Бекбоев, А. Абдиев, А. Айылчиев, Н. Ибраева, А. Касымов",
+  "year": 2015,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 1233434,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=159"
+ },
+ {
   "id": "kg-muzyka-5",
   "v": "22c5fc0fe6",
   "title": "Музыка",
