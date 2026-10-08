@@ -3308,6 +3308,36 @@
   "src": "https://kitep.edu.kg/book/198/read"
  },
  {
+  "id": "ru-literatura-9-1",
+  "v": "defa49ce32",
+  "title": "Литература",
+  "subtitle": "9 класс. Учебник в двух частях. Часть 1",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин, И. С. Збарский; под ред. В. Я. Коровиной",
+  "year": 2024,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 2678252,
+  "standalone": "ru-literatura-9-1.html",
+  "src": "https://so.11klasov.net/9816-literatura-9-klass-uchebnik-v-2-chastjah-korovina-vja-i-dr.html",
+  "quality": "exact"
+ },
+ {
+  "id": "ru-literatura-9-2",
+  "v": "25c882e66b",
+  "title": "Литература",
+  "subtitle": "9 класс. Учебник в двух частях. Часть 2",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин, И. С. Збарский; под ред. В. Я. Коровиной",
+  "year": 2024,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 3007747,
+  "standalone": "ru-literatura-9-2.html",
+  "src": "https://so.11klasov.net/9816-literatura-9-klass-uchebnik-v-2-chastjah-korovina-vja-i-dr.html",
+  "quality": "exact"
+ },
+ {
   "quality": "cards",
   "id": "kg-algebra-10-salamatov",
   "v": "070795bc11",
