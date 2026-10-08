@@ -106,6 +106,21 @@
   "src": "https://kitep.edu.kg/book/473/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-3-bekboev",
+  "v": "7443117580",
+  "title": "Математика",
+  "subtitle": "3-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Бекбоев, Н. Ибраева",
+  "year": 2015,
+  "grade": "3",
+  "langName": "Кыргызча",
+  "size": 876063,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/238/read"
+ },
+ {
   "id": "kg-meken-taanuu-3",
   "v": "841871a796",
   "title": "Мекен таануу",
