@@ -1788,6 +1788,21 @@
   "src": "https://mektep.o.kg"
  },
  {
+  "quality": "cards",
+  "id": "kg-take-off-7",
+  "v": "9282d79b33",
+  "title": "Take Off with English",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 1509328,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/13/read"
+ },
+ {
   "id": "kg-adam-jana-koom-7",
   "v": "baa7702625",
   "title": "Адам жана коом",
@@ -1958,6 +1973,21 @@
   "quality": "proofread",
   "gaps": "86, 87",
   "src": "https://kitep.edu.kg/book/84/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-take-off-7",
+  "v": "7540f9a0b8",
+  "title": "Take Off with English",
+  "subtitle": "7 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Фрэнсис Трелоар, Стив Томпсон, Джейн Томпсон",
+  "year": 2025,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 1509315,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/14/read"
  },
  {
   "quality": "cards",
