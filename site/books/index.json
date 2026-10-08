@@ -1973,6 +1973,21 @@
   "src": "https://kitep.edu.kg/book/79/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-7",
+  "v": "c61e4bbccc",
+  "title": "Математика",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "То Тин Лам",
+  "year": 2025,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 4712014,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/150/read"
+ },
+ {
   "id": "kg-orto-kylym-taryhy-7",
   "v": "f51d769a18",
   "title": "Орто кылымдар тарыхы",

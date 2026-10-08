@@ -109,7 +109,7 @@
 {"s": "ky", "g": 7, "subj": "Тарых", "t": "Орто кылымдын тарыхы", "a": "Осмонов Ө. ж.б.", "y": "2017", "f": "full", "ids": ["kg-orto-kylym-taryhy-7"], "u": "https://mektep.o.kg/books/17/?grade=7"},
 {"s": "ky", "g": 7, "subj": "Диндердин өнүгүү тарыхы", "t": "Диндердин өнүгүү тарыхы", "a": "Курбанова Н., Бектемирова А., Иманкулов М., Жумабаев М.", "y": "2024", "f": "none", "ids": []},
 {"s": "ky", "g": 7, "subj": "Адам жана коом", "t": "Адам жана коом", "a": "Азимова М., Арунова А., Маслова И.", "y": "2023-2024", "f": "full", "ids": ["kg-adam-jana-koom-7"], "u": "https://kitep.edu.kg/book/347/read"},
-{"s": "ky", "g": 7, "subj": "Математика (алгебра, геометрия)", "t": "Математика", "a": "Raihan Sudirman, Jasmine Chung, Ayassa Chua Lihong and Joyce Ng", "y": "2025", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/150/read"},
+{"s": "ky", "g": 7, "subj": "Математика (алгебра, геометрия)", "t": "Математика", "a": "Raihan Sudirman, Jasmine Chung, Ayassa Chua Lihong and Joyce Ng", "y": "2025", "f": "full", "ids": ["kg-matematika-7"], "u": "https://kitep.edu.kg/book/150/read"},
 {"s": "ky", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Ибраева Н., Касымов А.", "y": "2009", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/92/read"},
 {"s": "ky", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Макарычев Ю., Миндюк Н. ж.б.", "y": "2003", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/94/read"},
 {"s": "ky", "g": 7, "subj": "Геометрия", "t": "Геометрия 7 – 9-кл.", "a": "Бекбоев И., Бөрүбаев А., Айылчиев А.", "y": "2015", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/102/read"},
