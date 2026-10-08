@@ -1,5 +1,35 @@
 [
  {
+  "quality": "cards",
+  "id": "kg-matematika-2",
+  "v": "509606385f",
+  "title": "Математика",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Аксель Тан, Кох Сиу Геок, Вия Кумари Айадурай",
+  "year": 2025,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 3121908,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/357/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-2",
+  "v": "53392457d9",
+  "title": "Математика",
+  "subtitle": "2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Аксель Тан, Кох Сиу Геок, Вия Кумари Айадурай",
+  "year": 2025,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 3108029,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/43/read"
+ },
+ {
   "id": "kg-adabiy-okuu-3",
   "v": "0d6dae610b",
   "title": "Адабий окуу",
