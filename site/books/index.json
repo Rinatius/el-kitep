@@ -2608,6 +2608,21 @@
   "src": "https://kitep.edu.kg/book/164/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-organikalyk-himiya-10",
+  "v": "0db52abe41",
+  "title": "Органикалык химия",
+  "subtitle": "10-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. М. Молдогазиева, Г. И. Иманкулова, Б. М. Кособаева",
+  "year": "2008",
+  "grade": "10",
+  "langName": "Кыргызча",
+  "size": 2403366,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/166/read"
+ },
+ {
   "id": "kg-russkaya-literatura-10",
   "v": "9c4ecd30e7",
   "title": "Русская литература",
