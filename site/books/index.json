@@ -2465,6 +2465,21 @@
   "src": "https://kitep.edu.kg/book/198/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-10-11",
+  "v": "b401edbc23",
+  "title": "Англис тили",
+  "subtitle": "10–11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. З. Юсупова, С. Ш. Калыгулова, Э. Г. Ахмедова, А. А. Акматова",
+  "year": "2012",
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 1188510,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/160/read"
+ },
+ {
   "id": "kg-duyno-taryhy-10",
   "v": "8a385a0b5c",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
@@ -2622,6 +2637,21 @@
   "size": 559455,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/577/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-10-11",
+  "v": "53efcaf5b7",
+  "title": "Английский язык",
+  "subtitle": "10–11 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. З. Юсупова, С. Ш. Калыгулова, Э. Г. Ахмедова, А. А. Акматова",
+  "year": "2012",
+  "grade": "10–11",
+  "langName": "Русский",
+  "size": 1188505,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/157/read"
  },
  {
   "id": "ru-grazhdanstvennost-10",
