@@ -160,7 +160,7 @@
 {"s": "ky", "g": 9, "subj": "Диндердин өнүгүү тарыхы", "t": "Диндердин өнүгүү тарыхы", "a": "Доталиев А., Исаева Г. ж.б.", "y": "2022", "f": "full", "ids": ["kg-dinder-taryhy-9"], "u": "https://kitep.edu.kg/book/204/read"},
 {"s": "ky", "g": 9, "subj": "Адам жана коом", "t": "Адам жана коом", "a": "Эсенканов К.", "y": "2012", "f": "full", "ids": ["kg-adam-jana-koom-9"], "u": "https://okuma.kg/books.php?id=223"},
 {"s": "ky", "g": 9, "subj": "Адам жана коом", "t": "Мамлекет жана укук", "a": "Саалаев Ө.", "y": "2012", "f": "full", "ids": ["kg-mamleket-jana-ukuk-9"], "u": "https://kitep.edu.kg/book/214/read"},
-{"s": "ky", "g": 9, "subj": "Алгебра", "t": "Алгебра", "a": "Иманалиев М., Асанов А., Жусупова К., Искандаров С.", "y": "2012", "f": "full", "ids": [], "u": "https://okuma.kg/books.php?id=42"},
+{"s": "ky", "g": 9, "subj": "Алгебра", "t": "Алгебра", "a": "Иманалиев М., Асанов А., Жусупова К., Искандаров С.", "y": "2012", "f": "full", "ids": ["kg-algebra-9"], "u": "https://okuma.kg/books.php?id=42"},
 {"s": "ky", "g": 9, "subj": "Геометрия", "t": "Геометрия 7 – 9-кл.", "a": "Бекбоев И., Бөрүбаев А., Айылчиев А.", "y": "2015", "f": "full", "ids": [], "u": "https://okuma.kg/books.php?id=214"},
 {"s": "ky", "g": 9, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Цыбуля И., Самыкбаева Л., Беляев А. ж.б.", "y": "2020", "f": "full", "ids": ["kg-informatika-7-9"], "u": "https://kitep.edu.kg/book/210/read"},
 {"s": "ky", "g": 9, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Орускулов Т., Касымалиев М.", "y": "2015", "f": "full", "ids": ["kg-informatika-bazalyk-7-9"], "u": "https://new.bizdin.kg/kniga/uchebnik-informatika-7-9-klass-ksh"},
