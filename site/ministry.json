@@ -270,7 +270,7 @@
 {"s": "ru", "g": 5, "subj": "История", "t": "Краткие рассказы по истории Кыргызстана", "a": "Доталиев А.", "y": "2016", "f": "full", "ids": ["ru-kratkie-rasskazy-5"], "u": "https://kitep.edu.kg/book/112/read"},
 {"s": "ru", "g": 5, "subj": "Я и мир", "t": "Человек и общество", "a": "Осмонов О. и др.", "y": "2018", "f": "full", "ids": ["ru-chelovek-obshchestvo-5"]},
 {"s": "ru", "g": 5, "subj": "Математика", "t": "Математика", "a": "Toh Tin Lam", "y": "2025", "f": "full", "ids": ["ru-matematika-5"], "u": "https://kitep.edu.kg/book/51/read"},
-{"s": "ru", "g": 5, "subj": "Математика", "t": "Математика", "a": "Кыдыралиев С. и др.", "y": "2018", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/107/read"},
+{"s": "ru", "g": 5, "subj": "Математика", "t": "Математика", "a": "Кыдыралиев С. и др.", "y": "2018", "f": "full", "ids": ["ru-matematika-5-kydyraliev"], "u": "https://kitep.edu.kg/book/107/read"},
 {"s": "ru", "g": 5, "subj": "Информатика", "t": "Информатика", "a": "Орускулов Т. и др.", "y": "2018", "f": "full", "ids": ["ru-informatika-5"], "u": "https://kitep.edu.kg/book/93/read"},
 {"s": "ru", "g": 5, "subj": "Информатика", "t": "Информатика 5 – 6 кл.", "a": "Беляев А., Цыбуля И., Осипова Н. и др.", "y": "2018", "f": "full", "ids": ["ru-informatika-5-6"], "u": "https://okuma.kg/books.php?id=936"},
 {"s": "ru", "g": 5, "subj": "Естествознание", "t": "Естественные – Мен жана дүйнө", "a": "Alexander Gray", "y": "2026", "f": "full", "ids": ["ru-estestvennye-nauki-5"], "u": "https://kitep.edu.kg/book/559/read"},
