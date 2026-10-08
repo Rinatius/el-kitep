@@ -2459,6 +2459,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-algebra-8",
+  "v": "3ca96206d9",
+  "title": "Алгебра",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Байзаков, А. Саадабаев, Ж. Ыбыкеева",
+  "year": "2009",
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1213403,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=32"
+ },
+ {
+  "quality": "cards",
   "id": "kg-english-8",
   "v": "b64afcf6a0",
   "title": "Англис тили",
