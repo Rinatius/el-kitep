@@ -1879,6 +1879,21 @@
   "src": "https://kitep.edu.kg/book/347/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-7",
+  "v": "d86f8e7407",
+  "title": "Англис тили",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Юсупова, Н. Мараш-Оглы, А. Шакирова, Ж. Набиев",
+  "year": 2012,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 439756,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/82/read"
+ },
+ {
   "id": "kg-biologiya-7",
   "v": "b85129f350",
   "title": "Биология. Жаныбарлар",
@@ -2078,6 +2093,21 @@
   "size": 1509315,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/14/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-english-7",
+  "v": "5bd679851c",
+  "title": "Английский язык",
+  "subtitle": "7 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. Юсупова, Н. Мараш-Оглы, А. Шакирова, Ж. Набиев",
+  "year": 2012,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 439751,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/86/read"
  },
  {
   "quality": "cards",
