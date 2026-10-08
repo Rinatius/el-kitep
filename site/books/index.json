@@ -1,6 +1,36 @@
 [
  {
   "quality": "cards",
+  "id": "kg-matematika-1",
+  "v": "38dbbc8242",
+  "title": "Математика",
+  "subtitle": "Окуу китеби, 1-класс",
+  "school": "ky",
+  "author": "Christina Soh",
+  "year": 2025,
+  "grade": 1,
+  "langName": "Кыргызча",
+  "size": 2847376,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/435/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-1",
+  "v": "b3b923c90d",
+  "title": "Математика",
+  "subtitle": "Учебник для 1 класса",
+  "school": "ru",
+  "author": "Christina Soh",
+  "year": 2025,
+  "grade": 1,
+  "langName": "Русский",
+  "size": 2834014,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/434/read"
+ },
+ {
+  "quality": "cards",
   "id": "kg-matematika-2",
   "v": "509606385f",
   "title": "Математика",
