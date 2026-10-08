@@ -2480,6 +2480,21 @@
   "src": "https://kitep.edu.kg/book/160/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-geometriya-10-11",
+  "v": "edeebcdd05",
+  "title": "Геометрия",
+  "subtitle": "10–11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Б. Бекбоев, А. А. Бөрүбаев, А. А. Айылчиев",
+  "year": "2017",
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 947133,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/220/read"
+ },
+ {
   "id": "kg-duyno-taryhy-10",
   "v": "8a385a0b5c",
   "title": "Дүйнө тарыхы: урунттуу учурлар",
