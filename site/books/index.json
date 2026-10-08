@@ -664,6 +664,21 @@
   "src": "https://kitep.edu.kg/book/510/read"
  },
  {
+  "id": "ru-muzyka-4",
+  "v": "7878a067ec",
+  "title": "Музыка",
+  "subtitle": "4 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. Шакирова, М. Касей, К. Шамбетова",
+  "year": 2015,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 5736223,
+  "standalone": "ru-muzyka-4.html",
+  "src": "https://kitep.edu.kg/book/67/read",
+  "quality": "proofread"
+ },
+ {
   "id": "ru-rodinovedenie-4",
   "v": "5bc699b989",
   "title": "Родиноведение",
