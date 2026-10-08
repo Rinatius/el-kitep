@@ -2092,6 +2092,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-algebra-7",
+  "v": "f15386aa50",
+  "title": "Алгебра",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Н. Ибраева, А. Касымов",
+  "year": 2009,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 976136,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/92/read"
+ },
+ {
+  "quality": "cards",
   "id": "kg-english-7",
   "v": "d86f8e7407",
   "title": "Англис тили",
