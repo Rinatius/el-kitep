@@ -456,6 +456,21 @@
   "src": "https://kitep.edu.kg/book/134/read"
  },
  {
+  "quality": "cards",
+  "id": "kg-english-5",
+  "v": "c76c0b247c",
+  "title": "Англис тили",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ч. А. Абдышева, О. Р. Балута, А. Г. Фатнева, Н. Э. Цуканова",
+  "year": 2017,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 2128970,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/136/read"
+ },
+ {
   "id": "kg-informatika-5",
   "v": "ff1704dd4d",
   "title": "Информатика",
@@ -718,6 +733,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-english-5",
+  "v": "2616cf1840",
+  "title": "Английский язык",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Ч. А. Абдышева, О. Р. Балута, А. Г. Фатнева, Н. Э. Цуканова",
+  "year": 2017,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 2131230,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/114/read"
+ },
+ {
+  "quality": "cards",
   "id": "ru-estestvennye-nauki-5",
   "v": "7ac6e89685",
   "title": "Естественные науки",
@@ -852,6 +882,21 @@
   "size": 2985023,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/51/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-5-kydyraliev",
+  "v": "f1d78b5770",
+  "title": "Математика",
+  "subtitle": "5 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "С. К. Кыдыралиев, А. Б. Урдалетова, Г. М. Дайырбекова",
+  "year": 2018,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 1288910,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/107/read"
  },
  {
   "id": "ru-muzyka-5",
