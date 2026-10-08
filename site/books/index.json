@@ -46,6 +46,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-matematika-2-bekboev",
+  "v": "000617554a",
+  "title": "Математика",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "И. Б. Бекбоев, Н. И. Ибраева",
+  "year": 2010,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 654546,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/178/read"
+ },
+ {
+  "quality": "cards",
   "id": "kg-tabigyy-ilimder-2",
   "v": "1308c2984f",
   "title": "Табигый илимдер",
@@ -88,6 +103,22 @@
   "size": 3108029,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/43/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-2-bekboev",
+  "v": "7908604b9d",
+  "title": "Математика",
+  "subtitle": "2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "И. Б. Бекбоев, Н. И. Ибраева",
+  "year": 2011,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 639083,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/237/read",
+  "gaps": "42, 43"
  },
  {
   "id": "kg-adabiy-okuu-3",
