@@ -30,6 +30,21 @@
   "src": "https://kitep.edu.kg/book/434/read"
  },
  {
+  "id": "kg-korkom-onor-2",
+  "v": "6f7ad1d6a0",
+  "title": "Көркөм өнөр",
+  "subtitle": "2-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Д. А. Акматов, А. А. Багдасарян",
+  "year": 2012,
+  "grade": "2",
+  "langName": "Кыргызча",
+  "size": 3288359,
+  "standalone": "kg-korkom-onor-2.html",
+  "src": "https://kitep.edu.kg/book/70/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-matematika-2",
   "v": "509606385f",
@@ -88,6 +103,22 @@
   "size": 559749,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/562/read"
+ },
+ {
+  "id": "ru-izo-2",
+  "v": "973817e0c2",
+  "title": "Изобразительно-художественное творчество",
+  "subtitle": "2 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Д. А. Акматов, А. А. Багдасарян",
+  "year": 2013,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 3256997,
+  "standalone": "ru-izo-2.html",
+  "src": "https://kitep.edu.kg/book/59/read",
+  "quality": "proofread",
+  "gaps": "5"
  },
  {
   "quality": "cards",
