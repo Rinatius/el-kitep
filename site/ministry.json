@@ -306,7 +306,7 @@
 {"s": "ru", "g": 7, "subj": "История", "t": "История Кыргызстана", "a": "Чоротегин Т. и др.", "y": "2012", "f": "full", "ids": ["ru-istoriya-kyrgyzstana-7"], "u": "https://kitep.edu.kg/book/194/read"},
 {"s": "ru", "g": 7, "subj": "История развития религий", "t": "История развития религий", "a": "Курбанова Н., Бектемирова А, Иманкулов М., Жумабаев М.", "y": "2024", "f": "none", "ids": []},
 {"s": "ru", "g": 7, "subj": "Человек и общество", "t": "Человек и общество", "a": "Азимова М., Арунова А., Маслова И.", "y": "2024", "f": "full", "ids": ["ru-chelovek-obshchestvo-7"], "u": "https://kitep.edu.kg/book/192/read"},
-{"s": "ru", "g": 7, "subj": "Математика (алгебра, геометрия)", "t": "Математика", "a": "Raihan Sudirman, Jasmine Chung, Ayassa Chua Lihong and Joyce Ng", "y": "2025", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/151/read"},
+{"s": "ru", "g": 7, "subj": "Математика (алгебра, геометрия)", "t": "Математика", "a": "Raihan Sudirman, Jasmine Chung, Ayassa Chua Lihong and Joyce Ng", "y": "2025", "f": "full", "ids": ["ru-matematika-7"], "u": "https://kitep.edu.kg/book/151/read"},
 {"s": "ru", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Макарычев Ю.А., Миндюк Н.Г., Нешков К.И. и др.", "y": "Последнее издание", "f": "full", "ids": [], "u": "https://stem.edu.gov.kg/api/books/63"},
 {"s": "ru", "g": 7, "subj": "Геометрия", "t": "Геометрия 7 – 9-кл.", "a": "Бекбоев И., Борубаев А., Айылчиев А.", "y": "Последнее издание", "f": "part", "ids": [], "u": "https://kitep.edu.kg/book/102/read"},
 {"s": "ru", "g": 7, "subj": "Геометрия", "t": "Геометрия 7 – 9 кл.", "a": "Погорелов А.В.", "y": "Последнее издание", "f": "full", "ids": [], "u": "https://prosv.ru/product/geometriya-7-9-klass-elektronnaya-forma-uchebnika02/"},
