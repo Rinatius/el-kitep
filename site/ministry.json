@@ -67,7 +67,7 @@
 {"s": "ky", "g": 5, "subj": "Мен жана дүйнө", "t": "Адам жана коом", "a": "Осмонов Ө., Керимова Ш. ж.б.", "y": "2018", "f": "full", "ids": ["kg-adam-jana-koom-5"]},
 {"s": "ky", "g": 5, "subj": "Математика", "t": "Математика", "a": "Toh Tin Lam", "y": "2025", "f": "full", "ids": ["kg-matematika-5"], "u": "https://kitep.edu.kg/book/50/read"},
 {"s": "ky", "g": 5, "subj": "Математика", "t": "Математика", "a": "Кыдыралиев С. ж.б.", "y": "2018", "f": "full", "ids": [], "u": "https://kitep.edu.kg/book/135/read"},
-{"s": "ky", "g": 5, "subj": "Математика", "t": "Математика", "a": "Бекбоев И. ж.б.", "y": "2015", "f": "full", "ids": [], "u": "https://okuma.kg/books.php?id=159"},
+{"s": "ky", "g": 5, "subj": "Математика", "t": "Математика", "a": "Бекбоев И. ж.б.", "y": "2015", "f": "full", "ids": ["kg-matematika-5-bekboev"], "u": "https://okuma.kg/books.php?id=159"},
 {"s": "ky", "g": 5, "subj": "Информатика", "t": "Информатика", "a": "Орускулов Т. ж.б.", "y": "2018", "f": "full", "ids": ["kg-informatika-5"], "u": "https://kitep.edu.kg/book/137/read"},
 {"s": "ky", "g": 5, "subj": "Информатика", "t": "Информатика 5 – 6-кл.", "a": "Беляев А., Цыбуля И., Осипова Н. ж.б.", "y": "2018", "f": "full", "ids": ["kg-informatika-5-6"], "u": "https://okuma.kg/books.php?id=937"},
 {"s": "ky", "g": 5, "subj": "Табигый илимдер", "t": "Табигый илимдер – Мен жана дүйнө", "a": "Alexander Gray", "y": "2026", "f": "full", "ids": ["kg-tabigyy-ilimder-5"], "u": "https://kitep.edu.kg/book/558/read"},
