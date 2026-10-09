@@ -1728,6 +1728,36 @@
   "src": "https://kitep.edu.kg/book/90/read"
  },
  {
+  "id": "ru-literatura-5-1",
+  "v": "cfce7b1767",
+  "title": "Литература",
+  "subtitle": "5 класс. Учебник в двух частях. Часть 1",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин",
+  "year": 2024,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 4488804,
+  "standalone": "ru-literatura-5-1.html",
+  "src": "https://so.11klasov.net/429-literatura-5-klass-uchebnik-v-1-2-kniga-i-broshyura-fonohrestomatiya-korovina-vya-i-dr.html",
+  "quality": "exact"
+ },
+ {
+  "id": "ru-literatura-5-2",
+  "v": "7df6993aee",
+  "title": "Литература",
+  "subtitle": "5 класс. Учебник в двух частях. Часть 2",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин",
+  "year": 2024,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 2894478,
+  "standalone": "ru-literatura-5-2.html",
+  "src": "https://so.11klasov.net/429-literatura-5-klass-uchebnik-v-1-2-kniga-i-broshyura-fonohrestomatiya-korovina-vya-i-dr.html",
+  "quality": "exact"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-5",
   "v": "81263a2c3e",
