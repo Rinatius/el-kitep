@@ -2959,6 +2959,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-himiya-8",
+  "v": "41b76649a0",
+  "title": "Химия",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. Исмаилова, Ж. Маматкулова, З. Женалиева, Б. Жакышова",
+  "year": "2009",
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1397412,
+  "format": "cards",
+  "src": "https://new.bizdin.kg/kniga/uchebnik-khimiya-8-klass-ksh"
+ },
+ {
+  "quality": "cards",
   "id": "kg-chiyuu-8-9",
   "v": "f509c681fa",
   "title": "Чийүү (Черчение)",
