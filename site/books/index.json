@@ -574,6 +574,36 @@
   "gaps": "49–64"
  },
  {
+  "id": "ru-russkiy-yazyk-2-klimanova-1",
+  "v": "549741d0c0",
+  "title": "Русский язык",
+  "subtitle": "2 класс, 1-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. Ф. Климанова, Т. В. Бабушкина",
+  "year": 2023,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 2505785,
+  "standalone": "ru-russkiy-yazyk-2-klimanova-1.html",
+  "src": "https://so.11klasov.net/651-russkiy-yazyk-2-klass-uchebnik-v-2-chastyah-klimanova-lf-babushkina-tv.html",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-russkiy-yazyk-2-klimanova-2",
+  "v": "133d182e53",
+  "title": "Русский язык",
+  "subtitle": "2 класс, 2-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. Ф. Климанова, Т. В. Бабушкина",
+  "year": 2023,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 2136993,
+  "standalone": "ru-russkiy-yazyk-2-klimanova-2.html",
+  "src": "https://so.11klasov.net/651-russkiy-yazyk-2-klass-uchebnik-v-2-chastyah-klimanova-lf-babushkina-tv.html",
+  "quality": "proofread"
+ },
+ {
   "id": "kg-adabiy-okuu-3",
   "v": "0d6dae610b",
   "title": "Адабий окуу",
