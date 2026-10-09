@@ -252,7 +252,7 @@
 {"s": "ru", "g": 4, "subj": "Иностранный язык", "t": "Английский язык", "a": "Цуканова Н., Фатнева А., Жолчиева А.", "y": "2018", "f": "full", "ids": ["ru-english-4"], "u": "https://kitep.edu.kg/book/64/read"},
 {"s": "ru", "g": 4, "subj": "Математика", "t": "Математика", "a": "Axel Tan, Niel Patrick Condino, Dr Amanda O'Shea and Joyce Ng", "y": "2026", "f": "none", "ids": []},
 {"s": "ru", "g": 4, "subj": "Математика", "t": "Математика", "a": "Бекбоев И., Ибраева Н.", "y": "2011", "f": "part", "ids": [], "u": "https://kitep.edu.kg/book/63/read"},
-{"s": "ru", "g": 4, "subj": "Математика", "t": "Математика (в 2-х частях) Адаптированное издание", "a": "Моро М. и др", "y": "2020-2021", "f": "rf", "ids": []},
+{"s": "ru", "g": 4, "subj": "Математика", "t": "Математика (в 2-х частях) Адаптированное издание", "a": "Моро М. и др", "y": "2020-2021", "f": "rf", "ids": ["ru-matematika-4-moro-1", "ru-matematika-4-moro-2"]},
 {"s": "ru", "g": 4, "subj": "Я и мир", "t": "Родиноведение", "a": "Бухова Е. и др.", "y": "2015", "f": "full", "ids": ["ru-rodinovedenie-4"], "u": "https://kitep.edu.kg/book/68/read"},
 {"s": "ru", "g": 4, "subj": "Я и мир", "t": "Родиноведение", "a": "Мамбетова З.", "y": "2021", "f": "full", "ids": ["ru-rodinovedenie-4-mambetova"], "u": "https://bizdin.kg/uchebnik/meken-taanuu-aalam-zhana-biz-4-klass-oruscha/okuu/"},
 {"s": "ru", "g": 4, "subj": "Я и мир", "t": "Основы безопасности жизнедеятельности", "a": "Токтобаева Г.", "y": "2019", "f": "none", "ids": []},
