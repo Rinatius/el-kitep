@@ -1298,6 +1298,37 @@
   "src": "https://kitep.edu.kg/book/510/read"
  },
  {
+  "quality": "cards",
+  "id": "ru-matematika-4-moro-2",
+  "v": "1345110547",
+  "title": "Математика",
+  "subtitle": "4 класс, 2 часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "М. И. Моро, М. А. Бантова, Г. В. Бельтюкова, С. И. Волкова, С. В. Степанова",
+  "year": 2023,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 1187376,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/matematika-4-klass-uchebnik-v-2-chastiakh-moro-m-i-bantova-m-a-i-dr-moro-m-i-4-klass-2023/",
+  "gaps": "22"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-4-moro-1",
+  "v": "58e2485ccb",
+  "title": "Математика",
+  "subtitle": "4 класс, 1 часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "М. И. Моро, М. А. Бантова, Г. В. Бельтюкова, С. И. Волкова, С. В. Степанова",
+  "year": 2023,
+  "grade": "4",
+  "langName": "Русский",
+  "size": 1029059,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/matematika-4-klass-uchebnik-v-2-chastiakh-moro-m-i-bantova-m-a-i-dr-moro-m-i-4-klass-2023/"
+ },
+ {
   "id": "ru-muzyka-4",
   "v": "7878a067ec",
   "title": "Музыка",
