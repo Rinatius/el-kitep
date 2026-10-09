@@ -2820,6 +2820,36 @@
   "src": "https://kitep.edu.kg/book/151/read"
  },
  {
+  "id": "ru-russkiy-yazyk-7-1",
+  "v": "bd7b22d88f",
+  "title": "Русский язык",
+  "subtitle": "7 класс. Учебник в двух частях. Часть 1",
+  "school": "ru",
+  "author": "М. Т. Баранов, Т. А. Ладыженская, Л. А. Тростенцова, Н. В. Ладыженская, Л. Т. Григорян, О. М. Александрова, А. Д. Дейкина, И. И. Кулибаба",
+  "year": 2022,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 3856507,
+  "standalone": "ru-russkiy-yazyk-7-1.html",
+  "src": "https://so.11klasov.net/16014-russkij-jazyk-7-klass-v-2-h-chastjah-ladyzhenskaja-ta-baranov-mt-i-dr.html",
+  "quality": "exact"
+ },
+ {
+  "id": "ru-russkiy-yazyk-7-2",
+  "v": "e1722e66e1",
+  "title": "Русский язык",
+  "subtitle": "7 класс. Учебник в двух частях. Часть 2",
+  "school": "ru",
+  "author": "М. Т. Баранов, Т. А. Ладыженская, Л. А. Тростенцова, Н. В. Ладыженская, Л. Т. Григорян, О. М. Александрова, А. Д. Дейкина, И. И. Кулибаба",
+  "year": 2022,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 2284204,
+  "standalone": "ru-russkiy-yazyk-7-2.html",
+  "src": "https://so.11klasov.net/16014-russkij-jazyk-7-klass-v-2-h-chastjah-ladyzhenskaja-ta-baranov-mt-i-dr.html",
+  "quality": "exact"
+ },
+ {
   "quality": "cards",
   "id": "ru-fizika-7",
   "v": "31891c86ab",
