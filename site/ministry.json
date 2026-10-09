@@ -238,7 +238,7 @@
 {"s": "ru", "g": 3, "subj": "Иностранный язык", "t": "Английский язык", "a": "Фатнева А., Цуканова Н., Назарбекова Г.", "y": "2018", "f": "full", "ids": ["ru-english-3"], "u": "https://kitep.edu.kg/book/183/read"},
 {"s": "ru", "g": 3, "subj": "Математика", "t": "Математика", "a": "Phoon Shih Jie, Hartini Abdul Rahman-Lai, Michelle Choo, Amanda O'Shea", "y": "2026", "f": "full", "ids": ["ru-matematika-3-1", "ru-matematika-3-2"], "u": "https://kitep.edu.kg/book/470/read"},
 {"s": "ru", "g": 3, "subj": "Математика", "t": "Математика", "a": "Бекбоев И. и др.", "y": "2011", "f": "part", "ids": [], "u": "https://kitep.edu.kg/book/238/read"},
-{"s": "ru", "g": 3, "subj": "Математика", "t": "Математика (в 2-х частях) Адаптированное издание", "a": "Моро М. и др.", "y": "2020-2021", "f": "rf", "ids": []},
+{"s": "ru", "g": 3, "subj": "Математика", "t": "Математика (в 2-х частях) Адаптированное издание", "a": "Моро М. и др.", "y": "2020-2021", "f": "rf", "ids": ["ru-matematika-3-moro-1", "ru-matematika-3-moro-2"]},
 {"s": "ru", "g": 3, "subj": "Я и мир", "t": "Естественные науки", "a": "Bushra Malik, Natasha Mehta, Shireen Khanalim, Teo Tang Wee", "y": "2026", "f": "full", "ids": ["ru-estestvennye-nauki-3-1", "ru-estestvennye-nauki-3-2"], "u": "https://kitep.edu.kg/book/479/read"},
 {"s": "ru", "g": 3, "subj": "Я и мир", "t": "Родиноведение", "a": "Бухова Е., Солошенко О. и др.", "y": "2015", "f": "full", "ids": ["ru-rodinovedenie-3"], "u": "https://kitep.edu.kg/book/514/read"},
 {"s": "ru", "g": 3, "subj": "Я и мир", "t": "Родиноведение", "a": "Мамбетова З.", "y": "2021", "f": "none", "ids": ["ru-rodinovedenie-3-mambetova"]},

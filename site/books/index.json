@@ -966,6 +966,36 @@
   "src": "https://kitep.edu.kg/book/471/read"
  },
  {
+  "quality": "cards",
+  "id": "ru-matematika-3-moro-1",
+  "v": "f2f86f12b9",
+  "title": "Математика",
+  "subtitle": "3 класс, 1 часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "М. И. Моро, М. А. Бантова, Г. В. Бельтюкова, С. И. Волкова, С. В. Степанова",
+  "year": 2023,
+  "grade": "3",
+  "langName": "Русский",
+  "size": 717924,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/matematika-3-klass-v-2-chastiakh-moro-m-i-i-dr-moro-m-i-3-klass-2023/"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-3-moro-2",
+  "v": "0622fd5a84",
+  "title": "Математика",
+  "subtitle": "3 класс, 2 часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "М. И. Моро, М. А. Бантова, Г. В. Бельтюкова, С. И. Волкова, С. В. Степанова",
+  "year": 2023,
+  "grade": "3",
+  "langName": "Русский",
+  "size": 745879,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/matematika-3-klass-v-2-chastiakh-moro-m-i-i-dr-moro-m-i-3-klass-2023/"
+ },
+ {
   "id": "ru-muzyka-3",
   "v": "fe3df6bc68",
   "title": "Музыка",
