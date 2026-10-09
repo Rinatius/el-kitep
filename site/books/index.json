@@ -2685,6 +2685,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-algebra-7",
+  "v": "ae07e4c584",
+  "title": "Алгебра",
+  "subtitle": "7 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Ю. Н. Макарычев, Н. Г. Миндюк, К. И. Нешков, С. Б. Суворова",
+  "year": "2024",
+  "grade": 7,
+  "langName": "Русский",
+  "size": 1789412,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/algebra-7-klass-uchebnik-makarychev-iu-n-mindiuk-n-g-i-dr-makarychev-iu-n-7-klass-2024/"
+ },
+ {
+  "quality": "cards",
   "id": "ru-english-7",
   "v": "5bd679851c",
   "title": "Английский язык",
