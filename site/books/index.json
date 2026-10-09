@@ -3950,6 +3950,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-algebra-10-11",
+  "v": "3ef4956cf9",
+  "title": "Алгебра и начала математического анализа",
+  "subtitle": "10–11 классы. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. Н. Колмогоров, А. М. Абрамов, Ю. П. Дудницын, Б. М. Ивлев, С. И. Шварцбурд; под ред. А. Н. Колмогорова",
+  "year": 2018,
+  "grade": "10–11",
+  "langName": "Русский",
+  "size": 3903681,
+  "format": "cards",
+  "src": "https://so.11klasov.net/9609-algebra-i-nachala-matematicheskogo-analiza-uchebnik-dlja-10-11-klassov-kolmogorov-an-i-dr.html"
+ },
+ {
+  "quality": "cards",
   "id": "ru-english-10",
   "v": "1305bf1f42",
   "title": "Английский язык",
