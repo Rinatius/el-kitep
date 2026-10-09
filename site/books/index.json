@@ -2730,6 +2730,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-geometriya-7-9-pogorelov",
+  "v": "954cb10349",
+  "title": "Геометрия",
+  "subtitle": "7–9 классы. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. В. Погорелов",
+  "year": "2022",
+  "grade": "7–9",
+  "langName": "Русский",
+  "size": 1663961,
+  "format": "cards",
+  "src": "https://lib.uchebnik.academy/book/geometriia-7-9-klass-uchebnik-pogorelov-a-v-pogorelov-a-v-9-klass-2022/"
+ },
+ {
+  "quality": "cards",
   "id": "ru-estestvennye-nauki-7",
   "v": "0e58282812",
   "title": "Естественные науки",
