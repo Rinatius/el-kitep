@@ -2700,6 +2700,21 @@
  },
  {
   "quality": "cards",
+  "id": "ru-geometriya-7-9",
+  "v": "5ffb1163cd",
+  "title": "Геометрия",
+  "subtitle": "7–9 классы. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. С. Атанасян, В. Ф. Бутузов, С. Б. Кадомцев, Э. Г. Позняк, И. И. Юдина",
+  "year": "2024",
+  "grade": "7–9",
+  "langName": "Русский",
+  "size": 3030676,
+  "format": "cards",
+  "src": "https://so.11klasov.net/20711-matematika-geometrija-7-9-klassy-bazovyj-uroven-uchebnik-atanasjan-ls-butuzov-vf-kadomcev-sb-i-dr.html"
+ },
+ {
+  "quality": "cards",
   "id": "ru-estestvennye-nauki-7",
   "v": "0e58282812",
   "title": "Естественные науки",
