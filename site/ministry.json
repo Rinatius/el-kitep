@@ -2,7 +2,7 @@
 {"s": "ky", "g": 1, "subj": "Кыргыз тили жана окуу", "t": "Наристе. Алиппе", "a": "Рысбаев С., Бекбоева А.", "y": "2025", "f": "full", "ids": ["kg-alippege-dayardyk-1"], "u": "https://kitep.edu.kg/book/248/read", "no": ["kg-nariste-alippe-1"]},
 {"s": "ky", "g": 1, "subj": "Кыргыз тили жана окуу", "t": "Алиппе", "a": "Рысбаев С.", "y": "2023", "f": "full", "ids": ["kg-nariste-alippe-1"], "u": "https://kitep.edu.kg/book/247/read", "no": ["kg-alippege-dayardyk-1"]},
 {"s": "ky", "g": 1, "subj": "Кыргыз тили жана окуу", "t": "Алиппе", "a": "Кубаталиева Б., Абыканова А., Асаналиева М.", "y": "2020-2021", "f": "full", "ids": ["kg-alippe-1-kubatalieva"], "u": "https://kitep.edu.kg/book/188/read"},
-{"s": "ky", "g": 1, "subj": "Русский язык и чтение", "t": "Русский язык и чтение", "a": "Хамраева Е.А., Булатова В.А.", "y": "2025", "f": "full", "ids": [], "u": "https://stem.edu.gov.kg/api/books/676"},
+{"s": "ky", "g": 1, "subj": "Русский язык и чтение", "t": "Русский язык и чтение", "a": "Хамраева Е.А., Булатова В.А.", "y": "2025", "f": "full", "ids": ["kg-russkiy-yazyk-i-chtenie-1"], "u": "https://stem.edu.gov.kg/api/books/676"},
 {"s": "ky", "g": 1, "subj": "Русский язык и чтение", "t": "Русский язык (1, 2 часть)", "a": "Задорожная Н., Мусаева Ч., Таирова Г.", "y": "2024", "f": "part", "ids": [], "u": "https://arcus.kg/modules/mod_flipbook_66/tmpl/"},
 {"s": "ky", "g": 1, "subj": "Математика", "t": "Математика", "a": "Christina Soh", "y": "2025", "f": "full", "ids": ["kg-matematika-1"], "u": "https://kitep.edu.kg/book/435/read"},
 {"s": "ky", "g": 1, "subj": "Математика", "t": "Математика (1, 2-бөлүк) Адаптацияланган басылышы", "a": "Моро М., Волкова С., Степанова С.", "y": "2020-2022", "f": "none", "ids": []},
