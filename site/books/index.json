@@ -2745,6 +2745,36 @@
   "src": "https://kitep.edu.kg/book/193/read"
  },
  {
+  "id": "ru-literatura-7-1",
+  "v": "1cc69fc249",
+  "title": "Литература",
+  "subtitle": "7 класс. Учебник в двух частях. Часть 1",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин",
+  "year": 2024,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 2937063,
+  "standalone": "ru-literatura-7-1.html",
+  "src": "https://so.11klasov.net/9468-literatura-7-klass-uchebnik-v-2-chastjah-korovina-vja.html",
+  "quality": "exact"
+ },
+ {
+  "id": "ru-literatura-7-2",
+  "v": "18773d0315",
+  "title": "Литература",
+  "subtitle": "7 класс. Учебник в двух частях. Часть 2",
+  "school": "ru",
+  "author": "В. Я. Коровина, В. П. Журавлев, В. И. Коровин",
+  "year": 2024,
+  "grade": "7",
+  "langName": "Русский",
+  "size": 3408608,
+  "standalone": "ru-literatura-7-2.html",
+  "src": "https://so.11klasov.net/9468-literatura-7-klass-uchebnik-v-2-chastjah-korovina-vja.html",
+  "quality": "exact"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-7",
   "v": "5bd44181dd",
