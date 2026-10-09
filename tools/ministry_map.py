@@ -6,7 +6,9 @@ site/ministry.json has one row per book on the Ministry's list for 2026-27 (edu.
   g     grade
   subj, t, a, y   subject, title, authors and year as the list gives them
   f     what we found online (research/availability, 2026-10-01): "full" = the whole book somewhere,
-        "part" = only a sample or part, behind a login or payment, or only in the other language; "none" = nowhere
+        "part" = only a sample or part, behind a login or payment, or only in the other language; "none" = nowhere;
+        "rf" = only a Просвещение (Russian Federation) original or copyrighted edition, which we don't publish.
+        Set "f" by hand when book work finds the research wrong ("full" means the site shows "being processed")
   ids   ids of our books (site/books/index.json) that are this book, in the listed or another edition by the same authors
   no    optional: ids that are NOT this book although the matching below would add them (e.g. a co-author of
         another book on the same subject); set by hand, never removed by this script

@@ -45,9 +45,10 @@
       qCards: 'Карточки', qCardsInfo: 'Учебник в виде карточек для телефона: текст учебника сохранён дословно, задания и номера страниц те же, а рисунки, схемы и таблицы перерисованы ИИ. Книгу на соответствие учебнику проверял ИИ, человек её не вычитывал, поэтому отдельные ошибки возможны.',
       menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
       stats: 'Статистика', statsSub: 'Сколько учебников из списка Министерства просвещения на 2026–2027 учебный год уже есть на сайте.',
-      stubTag: 'Пока нет на сайте', stubFull: 'Найден в интернете, готовим для сайта', stubPart: 'В интернете есть только часть книги',
+      stubTag: 'Пока нет на сайте', stubFull: 'Найден в интернете, готовим для сайта', stubPart: 'В интернете нет полной бесплатной копии', stubRf: 'Есть только российское издание, его мы не публикуем',
       stubNone: 'Пока не найден в интернете', stubOrig: 'Оригинал', stubHave: 'Есть эта книга? Пришлите',
-      stTotal: 'учебников в списке', stAll: 'Всего', stOn: 'На сайте', stWork: 'Найдены, в работе', stPart: 'Найдены не полностью',
+      stTotal: 'учебников в списке', stAll: 'Всего', stOn: 'На сайте', stWork: 'Найдены, в работе', stPart: 'Найдены не полностью', stRf: 'Есть только российское издание',
+      stRfNote: 'издательство «Просвещение» (Россия): книга под авторским правом или это не издание для Кыргызстана, поэтому её мы не публикуем',
       stPartNote: 'только часть или образец, за плату или после входа, или только на другом языке', stNone: 'Не найдены',
       stLib: 'Из списка Министерства на сайте {n} из {m} учебников', stGrades: 'По классам',
       stNote1: 'Учебник считается на сайте, если у нас есть это издание или другое издание тех же авторов. Части учебника (1-я и 2-я часть) — один учебник.',
@@ -99,9 +100,10 @@
       qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
       menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
       stats: 'Статистика', statsSub: 'Агартуу министрлигинин 2026–2027-окуу жылына бекитилген тизмесиндеги окуу китептеринин канчасы сайтта бар.',
-      stubTag: 'Азырынча сайтта жок', stubFull: 'Интернеттен табылды, сайтка даярдалууда', stubPart: 'Интернетте китептин бир бөлүгү гана бар',
+      stubTag: 'Азырынча сайтта жок', stubFull: 'Интернеттен табылды, сайтка даярдалууда', stubPart: 'Интернетте толук акысыз нускасы жок', stubRf: 'Орусиянын басылышы гана бар, аны жарыялабайбыз',
       stubNone: 'Азырынча интернеттен табыла элек', stubOrig: 'Түп нускасы', stubHave: 'Бул китеп сизде барбы? Жөнөтүңүз',
-      stTotal: 'китеп тизмеде', stAll: 'Бардыгы', stOn: 'Сайтта', stWork: 'Табылды, иштелүүдө', stPart: 'Толук эмес табылды',
+      stTotal: 'китеп тизмеде', stAll: 'Бардыгы', stOn: 'Сайтта', stWork: 'Табылды, иштелүүдө', stPart: 'Толук эмес табылды', stRf: 'Орусиянын басылышы гана бар',
+      stRfNote: '«Просвещение» басмасы (Орусия): китеп автордук укук менен корголгон же Кыргызстан үчүн чыккан басылышы эмес, ошондуктан аны жарыялабайбыз',
       stPartNote: 'бир бөлүгү же үлгүсү гана, акы төлөп же каттоодон кийин гана, же башка тилде гана', stNone: 'Табылган жок',
       stLib: 'Министрликтин тизмесиндеги {m} окуу китебинин {n} сайтта бар', stGrades: 'Класстар боюнча',
       stNote1: 'Ушул басылышы же ошол эле авторлордун башка басылышы бизде болсо, китеп сайтта бар деп эсептелет. Китептин бөлүктөрү (1- жана 2-бөлүк) бир китеп болуп эсептелет.',
@@ -376,7 +378,7 @@
   }
 
   // Statistics: how many books of the Ministry's list are on the site, found elsewhere, or not found (ministry.json).
-  var ST = [['on', 'stOn'], ['work', 'stWork'], ['part', 'stPart'], ['none', 'stNone']];
+  var ST = [['on', 'stOn'], ['work', 'stWork'], ['rf', 'stRf'], ['part', 'stPart'], ['none', 'stNone']];
   function showStats() {
     libHash = '#/stats';
     libShell(t('stats'), '', false);
@@ -384,7 +386,7 @@
       if (!r[0]) throw new Error('ministry.json');
       var rows = r[0], books = r[1], onSite = onSiteFn(books);
       function kind(m) { return onSite(m) ? 'on' : m.f === 'full' ? 'work' : m.f; }
-      function count(rs) { var c = { on: 0, work: 0, part: 0, none: 0 }; rs.forEach(function (m) { c[kind(m)]++; }); return c; }
+      function count(rs) { var c = { on: 0, work: 0, rf: 0, part: 0, none: 0 }; rs.forEach(function (m) { c[kind(m)]++; }); return c; }
       function bar(c, n) {
         return '<div class="st-bar">' + ST.map(function (k) { return c[k[0]] ? '<i class="st-' + k[0] + '" style="width:' + (c[k[0]] / n * 100) + '%"></i>' : ''; }).join('') + '</div>';
       }
@@ -392,9 +394,9 @@
       var placed = {}; rows.forEach(function (m) { m.ids.forEach(function (id) { placed[id] = true; }); });
       var html = '<p class="sub">' + esc(t('statsSub')) + '</p>' +
         '<div class="st-total"><b>' + n + '</b> ' + esc(t('stTotal')) + '</div>' + bar(c, n) +
-        '<ul class="st-legend">' + ST.map(function (k) {
+        '<ul class="st-legend">' + ST.filter(function (k) { return c[k[0]]; }).map(function (k) {
           return '<li><i class="st-' + k[0] + '"></i><b>' + c[k[0]] + '</b> ' + esc(t(k[1])) + ' <span class="st-pc">' + Math.round(c[k[0]] / n * 100) + '%</span>' +
-            (k[0] === 'part' ? '<div class="note">' + esc(t('stPartNote')) + '</div>' : '') + '</li>';
+            (k[0] === 'part' || k[0] === 'rf' ? '<div class="note">' + esc(t(k[0] === 'rf' ? 'stRfNote' : 'stPartNote')) + '</div>' : '') + '</li>';
         }).join('') + '</ul>';
       SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; })).forEach(function (sc) {
         var rs = rows.filter(function (m) { return m.s === sc[0]; }), cs = count(rs);
@@ -406,7 +408,7 @@
           html += '<div class="st-row"><span>' + esc(g + ' ' + t('grade')) + '</span>' + bar(cg, rg.length) + '<span class="st-n">' + cg.on + ' / ' + rg.length + '</span></div>';
         });
       });
-      html += '<p class="note">' + esc(t('stNote1')) + '</p><p class="note">' + esc(t('stNote2')) + '</p>' +
+      html += '<p class="note">' + esc(t('stNote1')) + '</p>' + (c.work ? '<p class="note">' + esc(t('stNote2')) + '</p>' : '') +
         '<p class="note">' + esc(t('stBooks').replace('{n}', books.length).replace('{k}', books.filter(function (b) { return !placed[b.id]; }).length)) + '</p>' +
         '<p><a class="btn" href="#/missing">' + esc(t('missing')) + ' ›</a> <button class="btn st-src">' + esc(t('stList')) + ' ↗</button></p>';
       $('#books').innerHTML = html;
@@ -586,7 +588,7 @@
   // A book of the Ministry's list that is not on the site yet (site/ministry.json): title, authors, what we know about it
   // ("f": found in full / only in part / not found) and, when it can be read somewhere, a link there ("u") through the
   // leaving-the-site warning. Shown after all the real books of its grade, dashed and greyed, and not counted anywhere.
-  var STUB = { full: 'stubFull', part: 'stubPart', none: 'stubNone' };
+  var STUB = { full: 'stubFull', rf: 'stubRf', part: 'stubPart', none: 'stubNone' };
   function stubRow(m) {
     var el = document.createElement('div'); el.className = 'bk stub';
     el.innerHTML = '<div class="bk-h"><div class="bk-t">' + esc(m.t) + '</div><span class="stub-tag">' + esc(t('stubTag')) + '</span></div>' +
