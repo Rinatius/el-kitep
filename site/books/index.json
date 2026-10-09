@@ -106,6 +106,21 @@
   "quality": "proofread"
  },
  {
+  "id": "kg-russkiy-yazyk-i-chtenie-1",
+  "v": "3fc1ce1a32",
+  "title": "Русский язык и чтение. Устный курс",
+  "subtitle": "1 класс. Для школ с кыргызским языком обучения",
+  "school": "ky",
+  "author": "Е. А. Хамраева, В. А. Булатова",
+  "year": 2025,
+  "grade": "1",
+  "langName": "Русский",
+  "size": 9753738,
+  "standalone": "kg-russkiy-yazyk-i-chtenie-1.html",
+  "src": "https://stem.edu.gov.kg/api/books/676",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "kg-tabigyy-ilimder-1",
   "v": "4a5868cb29",
