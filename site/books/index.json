@@ -2590,6 +2590,21 @@
  },
  {
   "quality": "cards",
+  "id": "kg-algebra-7-makarychev",
+  "v": "ee86739aad",
+  "title": "Алгебра",
+  "subtitle": "7-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ю. Н. Макарычев, Н. Г. Миндюк, К. И. Нешков, С. Б. Суворова; С. А. Теляковскийдин редакциясы астында",
+  "year": 2003,
+  "grade": "7",
+  "langName": "Кыргызча",
+  "size": 1663301,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/94/read"
+ },
+ {
+  "quality": "cards",
   "id": "kg-english-7",
   "v": "d86f8e7407",
   "title": "Англис тили",

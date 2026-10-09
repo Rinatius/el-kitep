@@ -111,7 +111,7 @@
 {"s": "ky", "g": 7, "subj": "Адам жана коом", "t": "Адам жана коом", "a": "Азимова М., Арунова А., Маслова И.", "y": "2023-2024", "f": "full", "ids": ["kg-adam-jana-koom-7"], "u": "https://kitep.edu.kg/book/347/read"},
 {"s": "ky", "g": 7, "subj": "Математика (алгебра, геометрия)", "t": "Математика", "a": "Raihan Sudirman, Jasmine Chung, Ayassa Chua Lihong and Joyce Ng", "y": "2025", "f": "full", "ids": ["kg-matematika-7"], "u": "https://kitep.edu.kg/book/150/read"},
 {"s": "ky", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Ибраева Н., Касымов А.", "y": "2009", "f": "full", "ids": ["kg-algebra-7"], "u": "https://kitep.edu.kg/book/92/read"},
-{"s": "ky", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Макарычев Ю., Миндюк Н. ж.б.", "y": "2003", "f": "rf", "ids": [], "u": "https://kitep.edu.kg/book/94/read"},
+{"s": "ky", "g": 7, "subj": "Алгебра", "t": "Алгебра", "a": "Макарычев Ю., Миндюк Н. ж.б.", "y": "2003", "f": "full", "ids": ["kg-algebra-7-makarychev"], "u": "https://kitep.edu.kg/book/94/read"},
 {"s": "ky", "g": 7, "subj": "Геометрия", "t": "Геометрия 7 – 9-кл.", "a": "Бекбоев И., Бөрүбаев А., Айылчиев А.", "y": "2015", "f": "full", "ids": ["kg-geometriya-7-9"], "u": "https://kitep.edu.kg/book/102/read"},
 {"s": "ky", "g": 7, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Цыбуля И., Самыкбаева Л., Беляев А. ж.б.", "y": "2020", "f": "full", "ids": ["kg-informatika-7-9"], "u": "https://okuma.kg/books.php?id=947"},
 {"s": "ky", "g": 7, "subj": "Информатика", "t": "Информатика 7 – 9-кл.", "a": "Орускулов Т., Касымалиев М.", "y": "2015", "f": "full", "ids": ["kg-informatika-bazalyk-7-9"], "u": "https://new.bizdin.kg/kniga/uchebnik-informatika-7-9-klass-ksh"},
