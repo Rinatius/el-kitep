@@ -467,6 +467,36 @@
   "quality": "proofread"
  },
  {
+  "id": "ru-literaturnoe-chtenie-2-1",
+  "v": "91ce548241",
+  "title": "Литературное чтение",
+  "subtitle": "2 класс, 1-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. Ф. Климанова, Л. А. Виноградская, В. Г. Горецкий",
+  "year": 2023,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 4491586,
+  "standalone": "ru-literaturnoe-chtenie-2-1.html",
+  "src": "https://so.11klasov.net/21050-literaturnoe-chtenie-2-klass-uchebnik-1-2-chast-klimanova-lf-vinogradskaja-la-goreckij-vg.html",
+  "quality": "proofread"
+ },
+ {
+  "id": "ru-literaturnoe-chtenie-2-2",
+  "v": "3906c8a67a",
+  "title": "Литературное чтение",
+  "subtitle": "2 класс, 2-я часть. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Л. Ф. Климанова, Л. А. Виноградская, В. Г. Горецкий",
+  "year": 2023,
+  "grade": "2",
+  "langName": "Русский",
+  "size": 3334892,
+  "standalone": "ru-literaturnoe-chtenie-2-2.html",
+  "src": "https://so.11klasov.net/21050-literaturnoe-chtenie-2-klass-uchebnik-1-2-chast-klimanova-lf-vinogradskaja-la-goreckij-vg.html",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-matematika-2",
   "v": "53392457d9",
