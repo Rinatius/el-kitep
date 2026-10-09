@@ -1833,6 +1833,36 @@
   "src": "https://kitep.edu.kg/book/74/read"
  },
  {
+  "id": "ru-russkiy-yazyk-5-1",
+  "v": "44d1f83875",
+  "title": "Русский язык",
+  "subtitle": "5 класс. Учебник в двух частях. Часть 1",
+  "school": "ru",
+  "author": "Т. А. Ладыженская, М. Т. Баранов, Л. А. Тростенцова, Л. Т. Григорян, И. И. Кулибаба, Н. В. Ладыженская",
+  "year": 2022,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 5145915,
+  "standalone": "ru-russkiy-yazyk-5-1.html",
+  "src": "https://so.11klasov.net/20716-russkij-jazyk-5-klass-chast-1-ladyzhenskaja-ta-baranov-m-t-trostencova-la-i-dr.html",
+  "quality": "exact"
+ },
+ {
+  "id": "ru-russkiy-yazyk-5-2",
+  "v": "1f89c5d232",
+  "title": "Русский язык",
+  "subtitle": "5 класс. Учебник в двух частях. Часть 2",
+  "school": "ru",
+  "author": "Т. А. Ладыженская, М. Т. Баранов, Л. А. Тростенцова, Л. Т. Григорян, И. И. Кулибаба, Н. В. Ладыженская",
+  "year": 2022,
+  "grade": "5",
+  "langName": "Русский",
+  "size": 4564038,
+  "standalone": "ru-russkiy-yazyk-5-2.html",
+  "src": "https://so.11klasov.net/20716-russkij-jazyk-5-klass-chast-1-ladyzhenskaja-ta-baranov-m-t-trostencova-la-i-dr.html",
+  "quality": "exact"
+ },
+ {
   "id": "ru-tekhnologiya-5",
   "v": "8a6b249595",
   "title": "Технология",
