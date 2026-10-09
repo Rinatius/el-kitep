@@ -268,6 +268,7 @@ a { color: var(--accent); }
 .st-bar i, .st-legend i { display: block; }
 .st-on { background: var(--accent); }
 .st-work { background: #8fb8f2; }
+.st-rf { background: #a48fd1; }
 .st-part { background: #e8b04a; }
 .st-none { background: #d9615a; }
 .st-legend { list-style: none; padding: 0; margin: 14px 0 6px; }
@@ -368,6 +369,6 @@ a { color: var(--accent); }
   color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 4px 8px; }
 .stub-st { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--fg); margin: 0 0 8px; }
 .stub-st i { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; }
-.stub-st.sf-full i { background: #8fb8f2; } .stub-st.sf-part i { background: #e8b04a; } .stub-st.sf-none i { background: #d9615a; }
+.stub-st.sf-full i { background: #8fb8f2; } .stub-st.sf-rf i { background: #a48fd1; } .stub-st.sf-part i { background: #e8b04a; } .stub-st.sf-none i { background: #d9615a; }
 .bk.stub .row .btn { min-height: 36px; padding: 0 12px; font-size: 13px; }
 .bk.stub .btn svg { width: 16px; height: 16px; margin-right: 6px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
