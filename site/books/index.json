@@ -4349,5 +4349,20 @@
   "standalone": "kg-kyrgyz-adabiyaty-8-turdugulov.html",
   "src": "https://ibooks.oshsu.kg/book?lg=1&id_parent=32&id1=45",
   "quality": "proofread"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-matematika-5-kydyraliev",
+  "v": "0fd89eef9d",
+  "title": "Математика",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. К. Кыдыралиев, А. Б. Урдалетова, Г. М. Дайырбекова",
+  "year": 2018,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 1326396,
+  "format": "cards",
+  "src": "https://online.fliphtml5.com/utxfp/afpa/"
  }
 ]
