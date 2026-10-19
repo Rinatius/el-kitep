@@ -4428,7 +4428,7 @@
  },
  {
   "id": "ru-biologiya-9",
-  "v": "f41aeb5725",
+  "v": "c2d79a20e8",
   "title": "Биология. Общие закономерности жизни",
   "subtitle": "9 класс. Для школ с русским языком обучения",
   "school": "ru",
@@ -4441,5 +4441,20 @@
   "src": "https://kitep.edu.kg/book/197/read",
   "quality": "proofread",
   "gaps": "80, 81"
+ },
+ {
+  "id": "kg-geografiya-9",
+  "v": "f5d58acb99",
+  "title": "Кыргызстандын экономикалык жана социалдык географиясы",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ө. Бараталиев, Н. Алымкулова",
+  "year": "2012",
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 2349547,
+  "standalone": "kg-geografiya-9.html",
+  "src": "https://kitep.edu.kg/book/203/read",
+  "quality": "proofread"
  }
 ]
