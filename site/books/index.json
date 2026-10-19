@@ -4410,5 +4410,20 @@
   "standalone": "ru-geografiya-8.html",
   "src": "https://kitep.edu.kg/book/138/read",
   "quality": "proofread"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-himiya-11",
+  "v": "62f8349031",
+  "title": "Жалпы химия",
+  "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Т. Т. Кудайбергенов, С. М. Молдогазиева, Г. И. Иманкулова",
+  "year": "2008",
+  "grade": "11",
+  "langName": "Кыргызча",
+  "size": 1564477,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=72"
  }
 ]
