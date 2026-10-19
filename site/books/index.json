@@ -4364,5 +4364,20 @@
   "size": 1326396,
   "format": "cards",
   "src": "https://online.fliphtml5.com/utxfp/afpa/"
+ },
+ {
+  "id": "kg-biologiya-8",
+  "v": "6b5bf44f1a",
+  "title": "Биология. Адам анатомиясы, физиологиясы, гигиенасы",
+  "subtitle": "8–9-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ж. З. Закиров, Ч. С. Давлетова",
+  "year": 2012,
+  "grade": "8–9",
+  "langName": "Кыргызча",
+  "size": 2951792,
+  "standalone": "kg-biologiya-8.html",
+  "src": "https://kitep.edu.kg/book/113/read",
+  "quality": "proofread"
  }
 ]
