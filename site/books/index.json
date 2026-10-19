@@ -4425,5 +4425,21 @@
   "size": 1564477,
   "format": "cards",
   "src": "https://okuma.kg/books.php?id=72"
+ },
+ {
+  "id": "ru-biologiya-9",
+  "v": "f41aeb5725",
+  "title": "Биология. Общие закономерности жизни",
+  "subtitle": "9 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Т. Доолоткелдиева, А. Т. Ахматова, Ч. С. Давлетова, Б. Б. Алымбаева",
+  "year": 2016,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 4658845,
+  "standalone": "ru-biologiya-9.html",
+  "src": "https://kitep.edu.kg/book/197/read",
+  "quality": "proofread",
+  "gaps": "80, 81"
  }
 ]
