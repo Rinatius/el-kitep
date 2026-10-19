@@ -4379,5 +4379,21 @@
   "standalone": "kg-biologiya-8.html",
   "src": "https://kitep.edu.kg/book/113/read",
   "quality": "proofread"
+ },
+ {
+  "id": "kg-geografiya-8",
+  "v": "66782f8210",
+  "title": "География. Кыргыз Республикасынын физикалык географиясы",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. О. Осмонов",
+  "year": 2012,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1775677,
+  "standalone": "kg-geografiya-8.html",
+  "src": "https://kitep.edu.kg/book/111/read",
+  "quality": "proofread",
+  "gaps": "25"
  }
 ]
