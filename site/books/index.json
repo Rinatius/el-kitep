@@ -3152,15 +3152,15 @@
  },
  {
   "id": "kg-dinder-taryhy-8",
-  "v": "1a08eed2b8",
+  "v": "2d1cf19a13",
   "title": "Диндердин өнүгүү тарыхы",
   "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
   "school": "ky",
-  "author": "Н. Курбанова, А. Бектемирова, М. Иманкулов",
+  "author": "А. Бектемирова, Ч. Карасартова, М. Жумабаев, А. Бекбоева, М. Иманкулов",
   "year": 2024,
   "grade": "8",
   "langName": "Кыргызча",
-  "size": 2373026,
+  "size": 2373074,
   "standalone": "kg-dinder-taryhy-8.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/101/read"
@@ -4334,5 +4334,20 @@
   "quality": "proofread",
   "gaps": "184, 187",
   "src": "https://kitep.edu.kg/book/169/read"
+ },
+ {
+  "id": "kg-kyrgyz-adabiyaty-8-turdugulov",
+  "v": "c3864bfe66",
+  "title": "Кыргыз адабияты",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Турдугулов, Б. Оторбаев",
+  "year": 2013,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1187910,
+  "standalone": "kg-kyrgyz-adabiyaty-8-turdugulov.html",
+  "src": "https://ibooks.oshsu.kg/book?lg=1&id_parent=32&id1=45",
+  "quality": "proofread"
  }
 ]
