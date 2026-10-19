@@ -4395,5 +4395,20 @@
   "src": "https://kitep.edu.kg/book/111/read",
   "quality": "proofread",
   "gaps": "25"
+ },
+ {
+  "id": "ru-geografiya-8",
+  "v": "5780ca09f7",
+  "title": "Физическая география Кыргызской Республики",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. О. Осмонов",
+  "year": 2012,
+  "grade": "8",
+  "langName": "Русский",
+  "size": 2103393,
+  "standalone": "ru-geografiya-8.html",
+  "src": "https://kitep.edu.kg/book/138/read",
+  "quality": "proofread"
  }
 ]
