@@ -4456,5 +4456,20 @@
   "standalone": "kg-geografiya-9.html",
   "src": "https://kitep.edu.kg/book/203/read",
   "quality": "proofread"
+ },
+ {
+  "id": "kg-biologiya-10-11",
+  "v": "059df1ff06",
+  "title": "Жалпы биология",
+  "subtitle": "10–11-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Т. Токтосунов, С. С. Рустембеков, А. Ш. Шекеков, Б. Б. Алымбаева",
+  "year": 2008,
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 3326751,
+  "standalone": "kg-biologiya-10-11.html",
+  "src": "https://kitep.edu.kg/book/143/read",
+  "quality": "proofread"
  }
 ]
