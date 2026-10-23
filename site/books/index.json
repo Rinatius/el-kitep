@@ -1325,7 +1325,7 @@
   "standalone": "ru-kyrgyz-tili-4.html",
   "quality": "proofread",
   "gaps": "42, 44, 45, 46, 47, 108",
-  "src": "https://kitep.edu.kg/book/510/read"
+  "src": "https://kitep.edu.kg/book/243/read"
  },
  {
   "quality": "cards",
@@ -1601,6 +1601,21 @@
   "size": 2997762,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/50/read"
+ },
+ {
+  "quality": "cards",
+  "id": "kg-matematika-5-kydyraliev",
+  "v": "0fd89eef9d",
+  "title": "Математика",
+  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "С. К. Кыдыралиев, А. Б. Урдалетова, Г. М. Дайырбекова",
+  "year": 2018,
+  "grade": "5",
+  "langName": "Кыргызча",
+  "size": 1326396,
+  "format": "cards",
+  "src": "https://online.fliphtml5.com/utxfp/afpa/"
  },
  {
   "id": "kg-muzyka-5",
@@ -1966,7 +1981,7 @@
   "size": 4484288,
   "standalone": "ru-russkaya-literatura-5.html",
   "quality": "exact",
-  "src": "https://kitep.edu.kg/book/518/read"
+  "src": "https://kitep.edu.kg/book/87/read"
  },
  {
   "id": "ru-russkiy-yazyk-5",
@@ -3151,6 +3166,37 @@
   "src": "https://okuma.kg/books.php?id=31"
  },
  {
+  "id": "kg-biologiya-8",
+  "v": "6b5bf44f1a",
+  "title": "Биология. Адам анатомиясы, физиологиясы, гигиенасы",
+  "subtitle": "8–9-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ж. З. Закиров, Ч. С. Давлетова",
+  "year": 2012,
+  "grade": "8–9",
+  "langName": "Кыргызча",
+  "size": 2951792,
+  "standalone": "kg-biologiya-8.html",
+  "src": "https://kitep.edu.kg/book/113/read",
+  "quality": "proofread"
+ },
+ {
+  "id": "kg-geografiya-8",
+  "v": "66782f8210",
+  "title": "География. Кыргыз Республикасынын физикалык географиясы",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. О. Осмонов",
+  "year": 2012,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1775677,
+  "standalone": "kg-geografiya-8.html",
+  "src": "https://kitep.edu.kg/book/111/read",
+  "quality": "proofread",
+  "gaps": "25"
+ },
+ {
   "id": "kg-dinder-taryhy-8",
   "v": "2d1cf19a13",
   "title": "Диндердин өнүгүү тарыхы",
@@ -3195,6 +3241,21 @@
   "quality": "proofread",
   "gaps": "62, 168, 178, 186, 196, 224, 302, 330, 346, 349, 356, 370",
   "src": "https://kitep.edu.kg/book/108/read"
+ },
+ {
+  "id": "kg-kyrgyz-adabiyaty-8-turdugulov",
+  "v": "c3864bfe66",
+  "title": "Кыргыз адабияты",
+  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Турдугулов, Б. Оторбаев",
+  "year": 2013,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 1187910,
+  "standalone": "kg-kyrgyz-adabiyaty-8-turdugulov.html",
+  "src": "https://ibooks.oshsu.kg/book?lg=1&id_parent=32&id1=45",
+  "quality": "proofread"
  },
  {
   "id": "kg-kyrgyz-tili-8",
@@ -3426,6 +3487,21 @@
   "src": "https://mektep.o.kg/books/7/?grade=8"
  },
  {
+  "id": "ru-geografiya-8",
+  "v": "5780ca09f7",
+  "title": "Физическая география Кыргызской Республики",
+  "subtitle": "8 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. О. Осмонов",
+  "year": 2012,
+  "grade": "8",
+  "langName": "Русский",
+  "size": 2103393,
+  "standalone": "ru-geografiya-8.html",
+  "src": "https://kitep.edu.kg/book/138/read",
+  "quality": "proofread"
+ },
+ {
   "quality": "cards",
   "id": "ru-himiya-8",
   "v": "3944da6b8b",
@@ -3454,6 +3530,21 @@
   "standalone": "ru-chelovek-obshchestvo-8.html",
   "quality": "exact",
   "src": "https://kitep.edu.kg/book/140/read"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-cherchenie-8-9",
+  "v": "b26f2570e9",
+  "title": "Черчение",
+  "subtitle": "8–9 классы. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "А. Д. Ботвинников, В. Н. Виноградов, И. С. Вышнепольский",
+  "year": "2018",
+  "grade": "8–9",
+  "langName": "Русский",
+  "size": 4628770,
+  "format": "cards",
+  "src": "https://so.11klasov.net/6860-cherchenie-9-klass-a-d-botvinnikov-v-i-vyshnepolskij-v-n-vinogradov.html"
  },
  {
   "quality": "cards",
@@ -3592,6 +3683,21 @@
   "src": "https://okuma.kg/read/web/books/КЫРГЫЗСТАНДЫН ТАРЫХЫ 9 класс XX - XXI кк.(okuma.kg)_Тарых жана коомдук илимдер99.pdf"
  },
  {
+  "id": "kg-geografiya-9",
+  "v": "f5d58acb99",
+  "title": "Кыргызстандын экономикалык жана социалдык географиясы",
+  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Ө. Бараталиев, Н. Алымкулова",
+  "year": "2012",
+  "grade": "9",
+  "langName": "Кыргызча",
+  "size": 2349547,
+  "standalone": "kg-geografiya-9.html",
+  "src": "https://kitep.edu.kg/book/203/read",
+  "quality": "proofread"
+ },
+ {
   "id": "kg-mamleket-jana-ukuk-9",
   "v": "a29afc50de",
   "title": "Мамлекет жана укук",
@@ -3697,6 +3803,22 @@
   "size": 1044290,
   "format": "cards",
   "src": "https://kitep.edu.kg/book/24/read"
+ },
+ {
+  "id": "ru-biologiya-9",
+  "v": "c2d79a20e8",
+  "title": "Биология. Общие закономерности жизни",
+  "subtitle": "9 класс. Для школ с русским языком обучения",
+  "school": "ru",
+  "author": "Т. Доолоткелдиева, А. Т. Ахматова, Ч. С. Давлетова, Б. Б. Алымбаева",
+  "year": 2016,
+  "grade": "9",
+  "langName": "Русский",
+  "size": 4658845,
+  "standalone": "ru-biologiya-9.html",
+  "src": "https://kitep.edu.kg/book/197/read",
+  "quality": "proofread",
+  "gaps": "80, 81"
  },
  {
   "id": "ru-istoriya-kyrgyzstana-9",
@@ -3865,6 +3987,21 @@
   "quality": "proofread",
   "gaps": "59, 171, 253, 273",
   "src": "https://kitep.edu.kg/book/163/read"
+ },
+ {
+  "id": "kg-biologiya-10-11",
+  "v": "059df1ff06",
+  "title": "Жалпы биология",
+  "subtitle": "10–11-класстар. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "А. Т. Токтосунов, С. С. Рустембеков, А. Ш. Шекеков, Б. Б. Алымбаева",
+  "year": 2008,
+  "grade": "10–11",
+  "langName": "Кыргызча",
+  "size": 3326751,
+  "standalone": "kg-biologiya-10-11.html",
+  "src": "https://kitep.edu.kg/book/143/read",
+  "quality": "proofread"
  },
  {
   "id": "kg-jarandyk-10",
@@ -4193,6 +4330,21 @@
   "src": "https://bilim.akipress.org/lib/book:156/"
  },
  {
+  "quality": "cards",
+  "id": "kg-himiya-11",
+  "v": "62f8349031",
+  "title": "Жалпы химия",
+  "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
+  "school": "ky",
+  "author": "Т. Т. Кудайбергенов, С. М. Молдогазиева, Г. И. Иманкулова",
+  "year": "2008",
+  "grade": "11",
+  "langName": "Кыргызча",
+  "size": 1564477,
+  "format": "cards",
+  "src": "https://okuma.kg/books.php?id=72"
+ },
+ {
   "id": "kg-jarandyk-11",
   "subject": "grazhdanstvennost",
   "quality": "proofread",
@@ -4349,142 +4501,5 @@
   "quality": "proofread",
   "gaps": "184, 187",
   "src": "https://kitep.edu.kg/book/169/read"
- },
- {
-  "id": "kg-kyrgyz-adabiyaty-8-turdugulov",
-  "v": "c3864bfe66",
-  "title": "Кыргыз адабияты",
-  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "А. Турдугулов, Б. Оторбаев",
-  "year": 2013,
-  "grade": "8",
-  "langName": "Кыргызча",
-  "size": 1187910,
-  "standalone": "kg-kyrgyz-adabiyaty-8-turdugulov.html",
-  "src": "https://ibooks.oshsu.kg/book?lg=1&id_parent=32&id1=45",
-  "quality": "proofread"
- },
- {
-  "quality": "cards",
-  "id": "kg-matematika-5-kydyraliev",
-  "v": "0fd89eef9d",
-  "title": "Математика",
-  "subtitle": "5-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "С. К. Кыдыралиев, А. Б. Урдалетова, Г. М. Дайырбекова",
-  "year": 2018,
-  "grade": "5",
-  "langName": "Кыргызча",
-  "size": 1326396,
-  "format": "cards",
-  "src": "https://online.fliphtml5.com/utxfp/afpa/"
- },
- {
-  "id": "kg-biologiya-8",
-  "v": "6b5bf44f1a",
-  "title": "Биология. Адам анатомиясы, физиологиясы, гигиенасы",
-  "subtitle": "8–9-класстар. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "Ж. З. Закиров, Ч. С. Давлетова",
-  "year": 2012,
-  "grade": "8–9",
-  "langName": "Кыргызча",
-  "size": 2951792,
-  "standalone": "kg-biologiya-8.html",
-  "src": "https://kitep.edu.kg/book/113/read",
-  "quality": "proofread"
- },
- {
-  "id": "kg-geografiya-8",
-  "v": "66782f8210",
-  "title": "География. Кыргыз Республикасынын физикалык географиясы",
-  "subtitle": "8-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "А. О. Осмонов",
-  "year": 2012,
-  "grade": "8",
-  "langName": "Кыргызча",
-  "size": 1775677,
-  "standalone": "kg-geografiya-8.html",
-  "src": "https://kitep.edu.kg/book/111/read",
-  "quality": "proofread",
-  "gaps": "25"
- },
- {
-  "id": "ru-geografiya-8",
-  "v": "5780ca09f7",
-  "title": "Физическая география Кыргызской Республики",
-  "subtitle": "8 класс. Для школ с русским языком обучения",
-  "school": "ru",
-  "author": "А. О. Осмонов",
-  "year": 2012,
-  "grade": "8",
-  "langName": "Русский",
-  "size": 2103393,
-  "standalone": "ru-geografiya-8.html",
-  "src": "https://kitep.edu.kg/book/138/read",
-  "quality": "proofread"
- },
- {
-  "quality": "cards",
-  "id": "kg-himiya-11",
-  "v": "62f8349031",
-  "title": "Жалпы химия",
-  "subtitle": "11-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "Т. Т. Кудайбергенов, С. М. Молдогазиева, Г. И. Иманкулова",
-  "year": "2008",
-  "grade": "11",
-  "langName": "Кыргызча",
-  "size": 1564477,
-  "format": "cards",
-  "src": "https://okuma.kg/books.php?id=72"
- },
- {
-  "id": "ru-biologiya-9",
-  "v": "c2d79a20e8",
-  "title": "Биология. Общие закономерности жизни",
-  "subtitle": "9 класс. Для школ с русским языком обучения",
-  "school": "ru",
-  "author": "Т. Доолоткелдиева, А. Т. Ахматова, Ч. С. Давлетова, Б. Б. Алымбаева",
-  "year": 2016,
-  "grade": "9",
-  "langName": "Русский",
-  "size": 4658845,
-  "standalone": "ru-biologiya-9.html",
-  "src": "https://kitep.edu.kg/book/197/read",
-  "quality": "proofread",
-  "gaps": "80, 81"
- },
- {
-  "id": "kg-geografiya-9",
-  "v": "f5d58acb99",
-  "title": "Кыргызстандын экономикалык жана социалдык географиясы",
-  "subtitle": "9-класс. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "Ө. Бараталиев, Н. Алымкулова",
-  "year": "2012",
-  "grade": "9",
-  "langName": "Кыргызча",
-  "size": 2349547,
-  "standalone": "kg-geografiya-9.html",
-  "src": "https://kitep.edu.kg/book/203/read",
-  "quality": "proofread"
- },
- {
-  "id": "kg-biologiya-10-11",
-  "v": "059df1ff06",
-  "title": "Жалпы биология",
-  "subtitle": "10–11-класстар. Кыргыз тилинде окутулган мектептер үчүн",
-  "school": "ky",
-  "author": "А. Т. Токтосунов, С. С. Рустембеков, А. Ш. Шекеков, Б. Б. Алымбаева",
-  "year": 2008,
-  "grade": "10–11",
-  "langName": "Кыргызча",
-  "size": 3326751,
-  "standalone": "kg-biologiya-10-11.html",
-  "src": "https://kitep.edu.kg/book/143/read",
-  "quality": "proofread"
  }
 ]
