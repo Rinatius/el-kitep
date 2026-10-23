@@ -3213,6 +3213,21 @@
   "src": "https://kitep.edu.kg/book/105/read"
  },
  {
+  "id": "kg-kyrgyz-tili-8-omuraliev",
+  "v": "f4a83db3d7",
+  "title": "Кыргыз тили",
+  "subtitle": "8-класс. Өзбекстандагы кыргыз мектептери үчүн басылышы (Ташкент, 2019)",
+  "school": "ky",
+  "author": "Б. Өмүралиев, Ш. Уринбаева",
+  "year": 2019,
+  "grade": "8",
+  "langName": "Кыргызча",
+  "size": 570972,
+  "standalone": "kg-kyrgyz-tili-8-omuraliev.html",
+  "src": "https://yadi.sk/i/BriGLp92nNNc5A",
+  "quality": "exact"
+ },
+ {
   "id": "kg-kyrgyz-tili-8-9",
   "v": "a6aa2cbb50",
   "title": "Кыргыз тили. Синтаксис",
