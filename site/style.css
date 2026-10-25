@@ -278,9 +278,12 @@ a { color: var(--accent); }
 .st-pc { color: var(--muted); font-size: 13px; }
 .st-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 14px; }
 .st-row > span:first-child { flex: 0 0 74px; }
-.st-row .st-n { flex: 0 0 58px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.st-row .st-n { flex: 0 0 72px; white-space: nowrap; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
 .st-sum { font-weight: 600; }
 .st-sum .st-n { color: inherit; }
+.st-off-n { border: 0; background: none; padding: 0; color: var(--accent); font-size: 15px; text-align: left; }
+.st-x { padding-top: 8px; }
+.st-why { font-size: 13px; margin: -4px 0 8px; }
 
 /* leaving the site (a book's source) */
 .leave-b { display: flex; gap: 10px; margin: 6px 0 4px; }
