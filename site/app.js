@@ -53,7 +53,11 @@
       stLib: 'Из списка Министерства на сайте {n} из {m} учебников', stGrades: 'По классам',
       stNote1: 'Учебник считается на сайте, если у нас есть это издание или другое издание тех же авторов. Части учебника (1-я и 2-я часть) — один учебник.',
       stNote2: '«Найдены»: полная книга есть где-то в интернете (проверено в октябре 2026). Их мы постепенно переводим в удобный для телефона вид.',
-      stBooks: 'Всего книг на сайте: {n}. Части считаются отдельно; {k} из них нет в списке Министерства.', stList: 'Список Министерства',
+      stBooks: 'Всего книг на сайте: {n} (части считаются отдельно).', stList: 'Список Министерства',
+      stOff: 'Книги вне списка Министерства', stOffN: 'Ещё на сайте вне списка Министерства: {n}',
+      stOffSub: 'Эти учебники тоже есть на сайте, но их нет в списке на 2026–2027 учебный год. В подсчёт «на сайте / в списке» они не входят.',
+      stWhyNone: 'В списке нет учебника по этому предмету', stWhyMiss: 'Учебника из списка пока нет на сайте', stWhyMore: 'В дополнение к учебнику из списка',
+      stPartN: 'Часть {n}',
       src: 'Источник', leaveTitle: 'Вы покидаете сайт',
       leaveText: 'Откроется {site}: там мы нашли этот учебник. Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
       leaveListText: 'Откроется сайт Министерства просвещения ({site}). Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
@@ -108,7 +112,11 @@
       stLib: 'Министрликтин тизмесиндеги {m} окуу китебинин {n} сайтта бар', stGrades: 'Класстар боюнча',
       stNote1: 'Ушул басылышы же ошол эле авторлордун башка басылышы бизде болсо, китеп сайтта бар деп эсептелет. Китептин бөлүктөрү (1- жана 2-бөлүк) бир китеп болуп эсептелет.',
       stNote2: '«Табылды»: толук китеп интернетте бир жерде бар (2026-жылдын октябрында текшерилген). Аларды акырындык менен телефонго ыңгайлуу кылып жатабыз.',
-      stBooks: 'Сайттагы бардык китептер: {n}. Бөлүктөрү өзүнчө эсептелет; алардын {k} министрликтин тизмесинде жок.', stList: 'Министрликтин тизмеси',
+      stBooks: 'Сайттагы бардык китептер: {n} (бөлүктөрү өзүнчө эсептелет).', stList: 'Министрликтин тизмеси',
+      stOff: 'Министрликтин тизмесинен тышкары китептер', stOffN: 'Сайтта дагы министрликтин тизмесинен тышкары: {n}',
+      stOffSub: 'Бул окуу китептери да сайтта бар, бирок 2026–2027-окуу жылынын тизмесинде жок. Алар «сайтта / тизмеде» эсебине кирбейт.',
+      stWhyNone: 'Тизмеде бул предмет боюнча окуу китеби жок', stWhyMiss: 'Тизмедеги окуу китеби азырынча сайтта жок', stWhyMore: 'Тизмедеги окуу китебине кошумча',
+      stPartN: '{n}-бөлүк',
       src: 'Булак', leaveTitle: 'Сиз сайттан чыгып жатасыз',
       leaveText: '{site} ачылат: бул окуу китебин ошол жерден таптык. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
       leaveListText: 'Агартуу министрлигинин сайты ({site}) ачылат. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
@@ -392,13 +400,21 @@
       }
       var c = count(rows), n = rows.length, school = S.school || (S.ui === 'ky' ? 'ky' : 'ru');
       var placed = {}; rows.forEach(function (m) { m.ids.forEach(function (id) { placed[id] = true; }); });
+      // books we host that are not on the list: parts of one book (same school, grade, title, author) are one book
+      var off = [], offKey = {};
+      books.filter(function (b) { return !placed[b.id]; }).forEach(function (b) {
+        var k = [b.school, b.grade, b.title, b.author].join('|');
+        if (!offKey[k]) { offKey[k] = { b: b, parts: [] }; off.push(offKey[k]); }
+        offKey[k].parts.push(b);
+      });
       var html = '<p class="sub">' + esc(t('statsSub')) + '</p>' +
         '<div class="st-total"><b>' + n + '</b> ' + esc(t('stTotal')) + '</div>' + bar(c, n) +
         '<ul class="st-legend">' + ST.filter(function (k) { return c[k[0]]; }).map(function (k) {
           return '<li><i class="st-' + k[0] + '"></i><b>' + c[k[0]] + '</b> ' + esc(t(k[1])) + ' <span class="st-pc">' + Math.round(c[k[0]] / n * 100) + '%</span>' +
             (k[0] === 'part' || k[0] === 'rf' ? '<div class="note">' + esc(t(k[0] === 'rf' ? 'stRfNote' : 'stPartNote')) + '</div>' : '') + '</li>';
-        }).join('') + '</ul>';
-      SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; })).forEach(function (sc) {
+        }).join('') + '</ul>' + (off.length ? '<p><button class="st-off-n">' + esc(t('stOffN').replace('{n}', off.length)) + ' ↓</button></p>' : '');
+      var order = SCHOOLS.filter(function (sc) { return sc[0] === school; }).concat(SCHOOLS.filter(function (sc) { return sc[0] !== school; }));
+      order.forEach(function (sc) {
         var rs = rows.filter(function (m) { return m.s === sc[0]; }), cs = count(rs);
         html += '<h2 class="grade-t">' + esc(sc[3]) + '</h2><div class="st-row st-sum"><span>' + esc(t('stAll')) + '</span>' + bar(cs, rs.length) +
           '<span class="st-n">' + cs.on + ' / ' + rs.length + '</span></div>';
@@ -408,11 +424,31 @@
           html += '<div class="st-row"><span>' + esc(g + ' ' + t('grade')) + '</span>' + bar(cg, rg.length) + '<span class="st-n">' + cg.on + ' / ' + rg.length + '</span></div>';
         });
       });
+      // why each of them is here: the list names no book for its subject and grade, names one we don't have yet, or one we have too
+      if (off.length) html += '<h2 class="grade-t st-off">' + esc(t('stOff')) + '</h2><p class="note">' + esc(t('stOffSub')) + '</p>';
+      order.forEach(function (sc) {
+        var os = off.filter(function (o) { return o.b.school === sc[0]; });
+        if (!os.length) return;
+        os.sort(function (x, y) { return (gradesOf(x.b)[0] || 0) - (gradesOf(y.b)[0] || 0); });
+        html += '<h3 class="subj">' + esc(sc[3]) + ' · ' + os.length + '</h3>';
+        os.forEach(function (o) {
+          var b = o.b, gs = gradesOf(b), sj = subjectOf(b).key;
+          var same = rows.filter(function (m) { return m.s === b.school && gs.indexOf(m.g) >= 0 && subjectOf({ title: m.subj }).key === sj; });
+          var why = !same.length ? 'stWhyNone' : same.some(onSite) ? 'stWhyMore' : 'stWhyMiss';
+          html += '<div class="bk st-x"><div class="bk-t">' + esc(b.title) + '</div>' +
+            '<div class="bk-m">' + esc([b.grade + ' ' + t('grade'), [b.author, b.year].filter(Boolean).join(', ')].join(' · ')) + '</div>' +
+            '<div class="st-why">' + esc(t(why)) + '</div><div class="row">' + o.parts.map(function (p, i) {
+              var pn = o.parts.length > 1 && ((p.subtitle || '').match(/(?:Часть|бөлүк)\D*(\d+)|(\d+)\D*-?бөлүк/i) || []);
+              return '<a class="btn" href="#/read/' + esc(p.id) + '">' + esc(o.parts.length > 1 ? t('stPartN').replace('{n}', pn[1] || pn[2] || i + 1) : t('read')) + '</a>';
+            }).join('') + '</div></div>';
+        });
+      });
       html += '<p class="note">' + esc(t('stNote1')) + '</p>' + (c.work ? '<p class="note">' + esc(t('stNote2')) + '</p>' : '') +
-        '<p class="note">' + esc(t('stBooks').replace('{n}', books.length).replace('{k}', books.filter(function (b) { return !placed[b.id]; }).length)) + '</p>' +
+        '<p class="note">' + esc(t('stBooks').replace('{n}', books.length)) + '</p>' +
         '<p><a class="btn" href="#/missing">' + esc(t('missing')) + ' ›</a> <button class="btn st-src">' + esc(t('stList')) + ' ↗</button></p>';
       $('#books').innerHTML = html;
       $('.st-src').onclick = function () { leaveSheet('https://edu.gov.kg/posts/5164/', t('leaveListText')); };
+      var jump = $('.st-off-n'); if (jump) jump.onclick = function () { var h = $('.st-off'); if (h && h.scrollIntoView) h.scrollIntoView({ block: 'start', behavior: 'smooth' }); };
     }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
   }
 
