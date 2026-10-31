@@ -2241,6 +2241,21 @@
   "src": "https://bilim.akipress.org/lib/book:207/"
  },
  {
+  "quality": "cards",
+  "id": "kg-matematika-6-2",
+  "v": "e61e2debc1",
+  "title": "Математика",
+  "subtitle": "6-класс, 2-бөлүк. Кыргыз тилинде окутулган мектептер үчүн. 1-бөлүгү kitep.edu.kg сайтында азырынча жок",
+  "school": "ky",
+  "author": "По Хуат Сенг, Райхан Судирман",
+  "year": 2026,
+  "grade": "6",
+  "langName": "Кыргызча",
+  "size": 1192642,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/587/read"
+ },
+ {
   "id": "kg-muzyka-6",
   "v": "5f6c984330",
   "title": "Музыка",
@@ -2481,6 +2496,21 @@
   "size": 1457285,
   "format": "cards",
   "src": "https://mektep.o.kg/books/5/?grade=6"
+ },
+ {
+  "quality": "cards",
+  "id": "ru-matematika-6-2",
+  "v": "fdae3561a7",
+  "title": "Математика",
+  "subtitle": "6 класс, 2 часть. Для школ с русским языком обучения. Первой части пока нет на kitep.edu.kg",
+  "school": "ru",
+  "author": "По Хуат Сенг, Райхан Судирман",
+  "year": 2026,
+  "grade": "6",
+  "langName": "Русский",
+  "size": 1183021,
+  "format": "cards",
+  "src": "https://kitep.edu.kg/book/586/read"
  },
  {
   "id": "ru-muzyka-6",
