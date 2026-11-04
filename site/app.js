@@ -43,7 +43,7 @@
       qOcrInfo: 'Страницы учебника отсканированы, текст распознан программой (OCR), ошибки исправлены только автоматически. Книгу никто не вычитывал, поэтому в словах встречаются ошибки.',
       qGaps: 'Часть текста не удалось восстановить из скана на страницах: ',
       qCards: 'Карточки', qCardsInfo: 'Учебник в виде карточек для телефона: текст учебника сохранён дословно, задания и номера страниц те же, а рисунки, схемы и таблицы перерисованы ИИ. Книгу на соответствие учебнику проверял ИИ, человек её не вычитывал, поэтому отдельные ошибки возможны.',
-      menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники',
+      menu: 'Меню', news: 'Что нового', missing: 'Недостающие учебники', principles: 'Наши принципы', principlesUpd: 'Обновлено',
       stats: 'Статистика', statsSub: 'Сколько учебников из списка Министерства просвещения на 2026–2027 учебный год уже есть на сайте.',
       stubTag: 'Пока нет на сайте', stubFull: 'Найден в интернете, готовим для сайта', stubPart: 'В интернете нет полной бесплатной копии', stubRf: 'Есть только российское издание, добавим по очереди',
       stubNone: 'Пока не найден в интернете', stubOrig: 'Оригинал', stubHave: 'Есть эта книга? Пришлите',
@@ -102,7 +102,7 @@
       qOcrInfo: 'Китептин беттери сканерленип, текст программа менен таанылды (OCR), каталар автоматтык түрдө гана оңдолду. Китепти эч ким окуп текшерген эмес, ошондуктан сөздөрдө каталар кездешет.',
       qCards: 'Карточкалар', qCardsInfo: 'Телефон үчүн карточка түрүндөгү окуу китеби: окуу китебинин тексти сөзмө-сөз сакталган, тапшырмалар жана беттердин номерлери ошол эле, ал эми сүрөттөр, схемалар жана таблицалар ЖИ менен кайра тартылган. Китептин окуу китебине дал келишин ЖИ текшерген, адам окуп чыккан эмес, ошондуктан айрым каталар болушу мүмкүн.',
       qGaps: 'Бул беттерде тексттин бир бөлүгүн скандан калыбына келтирүү мүмкүн болгон жок: ',
-      menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер',
+      menu: 'Меню', news: 'Эмне жаңы', missing: 'Жетишпеген китептер', principles: 'Биздин принциптер', principlesUpd: 'Жаңыртылды',
       stats: 'Статистика', statsSub: 'Агартуу министрлигинин 2026–2027-окуу жылына бекитилген тизмесиндеги окуу китептеринин канчасы сайтта бар.',
       stubTag: 'Азырынча сайтта жок', stubFull: 'Интернеттен табылды, сайтка даярдалууда', stubPart: 'Интернетте толук акысыз нускасы жок', stubRf: 'Орусиянын басылышы гана бар, кезеги менен кошобуз',
       stubNone: 'Азырынча интернеттен табыла элек', stubOrig: 'Түп нускасы', stubHave: 'Бул китеп сизде барбы? Жөнөтүңүз',
@@ -188,6 +188,7 @@
     else if (location.hash === '#/news') showNews();
     else if (location.hash === '#/missing') showMissing();
     else if (location.hash === '#/stats') showStats();
+    else if (/^#\/principles(\/\d+)?$/.test(location.hash)) showPrinciples();
     else showLibrary();
   }
 
@@ -342,7 +343,7 @@
     var bg = document.createElement('div'); bg.className = 'sheet-bg';
     var nav = document.createElement('nav'); nav.className = 'drawer';
     var cur = location.hash || '#/';
-    var items = [['#/', t('allBooks')], ['#/my', '★ ' + t('my')], ['#/missing', t('missing')], ['#/stats', t('stats')], ['#/news', t('news')]];
+    var items = [['#/', t('allBooks')], ['#/my', '★ ' + t('my')], ['#/missing', t('missing')], ['#/stats', t('stats')], ['#/principles', t('principles')], ['#/news', t('news')]];
     nav.innerHTML = '<div class="drawer-h"><span>' + esc(t('appTitle')) + '</span><button class="icon x" aria-label="' + esc(t('close')) + '">' + ICONS.close + '</button></div>' +
       items.map(function (it) { return '<a href="' + it[0] + '"' + (it[0] === cur ? ' class="cur"' : '') + '>' + esc(it[1]) + '</a>'; }).join('') +
       (API ? '<p class="note">' + esc(t('reportHint')) + '</p>' : '');
@@ -382,6 +383,25 @@
           (books.length > 4 ? '</details>' : '</div>') : '') + '</div>';
       });
       $('#books').innerHTML = html;
+    }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
+  }
+
+  // "Our principles": when we publish a textbook and when we take one down (site/principles.json, RU and KY).
+  // {"updated": "YYYY-MM-DD", "ru"/"ky": {"wip": work-in-progress note, "intro", "items": [{"h", "p"}]}}.
+  // #/principles/2 opens the page at principle 2 (the changelog links takedowns there).
+  function showPrinciples() {
+    libHash = '#/principles';
+    libShell(t('principles'), '', false);
+    var at = (location.hash.match(/^#\/principles\/(\d+)$/) || [])[1];
+    fetchJSON('principles.json').then(function (d) {
+      var L = d[S.ui] || d.ru;
+      $('#books').innerHTML = '<p class="sub">' + esc(L.wip) + ' ' + esc(t('principlesUpd')) + ': ' + esc(fmtDate(d.updated)) + '.</p>' +
+        '<div class="news"><p>' + esc(L.intro) + '</p></div>' +
+        L.items.map(function (it, i) {
+          return '<div class="news" id="pr-' + (i + 1) + '"><h2 class="news-d">' + (i + 1) + '. ' + esc(it.h) + '</h2><p>' + esc(it.p) + '</p></div>';
+        }).join('');
+      var el = at && document.getElementById('pr-' + at);
+      if (el) el.scrollIntoView();
     }).catch(function () { $('#books').innerHTML = '<div class="loading">' + esc(navigator.onLine === false ? t('offline') : t('err')) + '</div>'; });
   }
 
