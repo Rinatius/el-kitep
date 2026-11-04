@@ -58,6 +58,11 @@
       stOffSub: 'Эти учебники тоже есть на сайте, но их нет в списке на 2026–2027 учебный год. В подсчёт «на сайте / в списке» они не входят.',
       stWhyNone: 'В списке нет учебника по этому предмету', stWhyMiss: 'Учебника из списка пока нет на сайте', stWhyMore: 'В дополнение к учебнику из списка',
       stPartN: 'Часть {n}',
+      offTag: 'Убран с сайта', stOffBook: 'Убраны по нашим принципам',
+      offWhy: 'Этот учебник издан без государственного заказа, а в списке Министерства по этому предмету есть учебник, изданный государством. Поэтому мы не размещаем его текст: так мы не мешаем издателям, которые печатают книги на свои средства.',
+      offBuy: 'Где купить печатный учебник', offEd: 'Издательство продаёт адаптированное для Кыргызстана издание, которое и названо в списке Министерства.',
+      offAlt: 'Бесплатно на сайте: учебник из списка Министерства, изданный государством', offAltNone: 'Учебник из списка Министерства, изданный государством, мы пока не нашли в открытом доступе.',
+      offPrinc: 'Наши принципы', offTel: 'Тел.', offAddr: 'Адрес', offPrice: 'Цена у издательства',
       src: 'Источник', leaveTitle: 'Вы покидаете сайт',
       leaveText: 'Откроется {site}: там мы нашли этот учебник. Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
       leaveListText: 'Откроется сайт Министерства просвещения ({site}). Это другой сайт, и мы не отвечаем за то, что вы там увидите.',
@@ -117,6 +122,11 @@
       stOffSub: 'Бул окуу китептери да сайтта бар, бирок 2026–2027-окуу жылынын тизмесинде жок. Алар «сайтта / тизмеде» эсебине кирбейт.',
       stWhyNone: 'Тизмеде бул предмет боюнча окуу китеби жок', stWhyMiss: 'Тизмедеги окуу китеби азырынча сайтта жок', stWhyMore: 'Тизмедеги окуу китебине кошумча',
       stPartN: '{n}-бөлүк',
+      offTag: 'Сайттан алынды', stOffBook: 'Принциптерибиз боюнча алынды',
+      offWhy: 'Бул окуу китеби мамлекеттик буйрутмасыз басылган, ал эми Министерствонун тизмесинде бул сабак боюнча мамлекет басып чыгарган окуу китеби бар. Ошондуктан анын текстин жайгаштырбайбыз: китептерди өз каражатына басып чыгарган басмаларга тоскоол болбойлу.',
+      offBuy: 'Басма китепти кайдан сатып алса болот', offEd: 'Басма Министерствонун тизмесинде аталган, Кыргызстанга ылайыкташтырылган басылышын сатат.',
+      offAlt: 'Сайтта акысыз: Министерствонун тизмесиндеги мамлекет басып чыгарган окуу китеби', offAltNone: 'Министерствонун тизмесиндеги мамлекет басып чыгарган окуу китебин ачык булактан азырынча таба элекпиз.',
+      offPrinc: 'Биздин принциптер', offTel: 'Тел.', offAddr: 'Дареги', offPrice: 'Басмадагы баасы',
       src: 'Булак', leaveTitle: 'Сиз сайттан чыгып жатасыз',
       leaveText: '{site} ачылат: бул окуу китебин ошол жерден таптык. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
       leaveListText: 'Агартуу министрлигинин сайты ({site}) ачылат. Бул башка сайт, ал жакта эмнени көрөрүңүз үчүн биз жооп бербейбиз.',
@@ -269,9 +279,14 @@
   function loadMinistry() {
     return MIN ? Promise.resolve(MIN) : fetchJSON('ministry.json').then(function (l) { MIN = l; return l; }, function () { return null; });
   }
-  function onSiteFn(list) { // listed book -> is one of our books on the site?
-    var have = {}; list.forEach(function (b) { have[b.id] = true; });
+  function onSiteFn(list) { // listed book -> is one of our books on the site? (books taken off the site don't count)
+    var have = {}; list.forEach(function (b) { if (!b.off) have[b.id] = true; });
     return function (m) { return m.ids.some(function (id) { return have[id]; }); };
+  }
+
+  function offFn(list) { // listed book -> did we take our copy off the site (index.json "off")?
+    var off = {}; list.forEach(function (b) { if (b.off) off[b.id] = true; });
+    return function (m) { return m.ids.some(function (id) { return off[id]; }); };
   }
 
   function showLibrary() {
@@ -280,7 +295,7 @@
     Promise.all([loadList(), loadMinistry()]).then(function (r) {
       var list = r[0].filter(function (b) { return !b.school || b.school === school; });
       // the Ministry's list for this school: "on the site / listed", for the school and for each grade
-      var listed = (r[1] || []).filter(function (m) { return m.s === school; }), onSite = onSiteFn(r[0]);
+      var listed = (r[1] || []).filter(function (m) { return m.s === school; }), onSite = onSiteFn(r[0]), isOff = offFn(r[0]);
       function ofList(rows) { return rows.filter(onSite).length + ' / ' + rows.length; }
       if (listed.length) {
         var line = document.createElement('a'); line.className = 'lib-count'; line.href = '#/stats';
@@ -303,7 +318,7 @@
           sec.classList.toggle('open', on);
           body.innerHTML = '';
           // placeholders: books of the Ministry's list for this grade that are not on the site yet (not counted anywhere)
-          if (on) bySubject(books, body, false, listed.filter(function (m) { return m.g === g && !onSite(m); }));
+          if (on) bySubject(books, body, false, listed.filter(function (m) { return m.g === g && !onSite(m) && !isOff(m); }));
         }
         head.onclick = function () {
           var on = !sec.classList.contains('open');
@@ -406,15 +421,15 @@
   }
 
   // Statistics: how many books of the Ministry's list are on the site, found elsewhere, or not found (ministry.json).
-  var ST = [['on', 'stOn'], ['work', 'stWork'], ['rf', 'stRf'], ['part', 'stPart'], ['none', 'stNone']];
+  var ST = [['on', 'stOn'], ['work', 'stWork'], ['rf', 'stRf'], ['part', 'stPart'], ['off', 'stOffBook'], ['none', 'stNone']];
   function showStats() {
     libHash = '#/stats';
     libShell(t('stats'), '', false);
     Promise.all([loadMinistry(), LIST ? LIST : loadList().catch(function () { return []; })]).then(function (r) {
       if (!r[0]) throw new Error('ministry.json');
-      var rows = r[0], books = r[1], onSite = onSiteFn(books);
-      function kind(m) { return onSite(m) ? 'on' : m.f === 'full' ? 'work' : m.f; }
-      function count(rs) { var c = { on: 0, work: 0, rf: 0, part: 0, none: 0 }; rs.forEach(function (m) { c[kind(m)]++; }); return c; }
+      var rows = r[0], books = r[1], onSite = onSiteFn(books), isOff = offFn(books);
+      function kind(m) { return onSite(m) ? 'on' : isOff(m) ? 'off' : m.f === 'full' ? 'work' : m.f; }
+      function count(rs) { var c = { on: 0, work: 0, rf: 0, part: 0, off: 0, none: 0 }; rs.forEach(function (m) { c[kind(m)]++; }); return c; }
       function bar(c, n) {
         return '<div class="st-bar">' + ST.map(function (k) { return c[k[0]] ? '<i class="st-' + k[0] + '" style="width:' + (c[k[0]] / n * 100) + '%"></i>' : ''; }).join('') + '</div>';
       }
@@ -422,7 +437,7 @@
       var placed = {}; rows.forEach(function (m) { m.ids.forEach(function (id) { placed[id] = true; }); });
       // books we host that are not on the list: parts of one book (same school, grade, title, author) are one book
       var off = [], offKey = {};
-      books.filter(function (b) { return !placed[b.id]; }).forEach(function (b) {
+      books.filter(function (b) { return !placed[b.id] && !b.off; }).forEach(function (b) {
         var k = [b.school, b.grade, b.title, b.author].join('|');
         if (!offKey[k]) { offKey[k] = { b: b, parts: [] }; off.push(offKey[k]); }
         offKey[k].parts.push(b);
@@ -464,7 +479,7 @@
         });
       });
       html += '<p class="note">' + esc(t('stNote1')) + '</p>' + (c.work ? '<p class="note">' + esc(t('stNote2')) + '</p>' : '') +
-        '<p class="note">' + esc(t('stBooks').replace('{n}', books.length)) + '</p>' +
+        '<p class="note">' + esc(t('stBooks').replace('{n}', books.filter(function (b) { return !b.off; }).length)) + '</p>' +
         '<p><a class="btn" href="#/missing">' + esc(t('missing')) + ' ›</a> <button class="btn st-src">' + esc(t('stList')) + ' ↗</button></p>';
       $('#books').innerHTML = html;
       $('.st-src').onclick = function () { leaveSheet('https://edu.gov.kg/posts/5164/', t('leaveListText')); };
@@ -675,7 +690,44 @@
       : '<svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"/></svg>'
   };
 
+  // A book we took off the site (index.json "off"): the card stays, without the text. It says why, where the printed
+  // book can be bought ("buy": seller's public contacts), and links the state-printed book of the Ministry's list that
+  // replaces it ("alt": our book ids). The book's files are kept in the repository (withdrawn/), not on the site.
+  // off: {"date", "alt": [ids], "edition": true when the seller sells another (adapted) edition,
+  //       "buy": {"name", "addr", "tel": [..], "price", "web", "links": [[label, url], ..]}}
+  function offHTML(b, full) {
+    var o = b.off || {}, by = o.buy || {}, alts = (o.alt || []).map(function (id) { return (LIST || []).filter(function (x) { return x.id === id; })[0]; }).filter(Boolean);
+    function ext(label, url) { return '<button class="btn o-ext" data-u="' + esc(url) + '">' + LIB_ICONS.ext + esc(label) + '</button>'; }
+    return '<p class="off-why">' + esc(t('offWhy')) + '</p>' +
+      (by.name ? '<div class="off-buy"><div class="off-h">' + esc(t('offBuy')) + '</div><div><b>' + esc(by.name) + '</b></div>' +
+        (by.addr ? '<div>' + esc(t('offAddr')) + ': ' + esc(by.addr) + '</div>' : '') +
+        (by.tel && by.tel.length ? '<div>' + esc(t('offTel')) + ' ' + by.tel.map(function (n) { return '<a href="tel:' + esc(n.replace(/\s/g, '')) + '">' + esc(n) + '</a>'; }).join(', ') + '</div>' : '') +
+        (by.price ? '<div>' + esc(t('offPrice')) + ': ' + esc(by.price) + '</div>' : '') +
+        (o.edition ? '<div class="note">' + esc(t('offEd')) + '</div>' : '') +
+        '<div class="row">' + (by.web ? ext(by.web.replace(/^https?:\/\/(www\.)?/, '').split('/')[0], by.web) : '') +
+          (by.links || []).map(function (l) { return ext(l[0], l[1]); }).join('') + '</div></div>' : '') +
+      '<div class="off-alt"><div class="off-h">' + esc(alts.length ? t('offAlt') : t('offAltNone')) + '</div>' +
+        (alts.length ? '<div class="row">' + alts.map(function (a) {
+          return '<a class="btn primary" href="#/read/' + esc(a.id) + '">' + esc(a.title + (a.subtitle ? ' · ' + a.subtitle.split('.')[0] : '') + ' (' + [a.author.split(',')[0], a.year].filter(Boolean).join(', ') + ')') + '</a>';
+        }).join('') + '</div>' : '') + '</div>' +
+      '<div class="row">' + (b.src ? '<button class="btn o-src">' + LIB_ICONS.ext + esc(t('src')) + '</button>' : '') +
+        '<a class="btn" href="#/principles/2">' + esc(t('offPrinc')) + '</a></div>';
+  }
+  function wireOff(el, b) {
+    Array.prototype.forEach.call(el.querySelectorAll('.o-ext'), function (x) { x.onclick = function () { leaveSheet(x.getAttribute('data-u')); }; });
+    var s = $('.o-src', el); if (s) s.onclick = function () { sourceSheet(b); };
+  }
+  function offRow(b) {
+    var el = document.createElement('div'); el.className = 'bk off';
+    el.innerHTML = '<div class="bk-h"><div class="bk-t">' + esc(b.title) + '</div><span class="stub-tag">' + esc(t('offTag')) + '</span></div>' +
+      (b.subtitle ? '<div class="bk-s">' + esc(b.subtitle) + '</div>' : '') +
+      '<div class="bk-m">' + esc([b.author, b.year].filter(Boolean).join(', ')) + '</div>' + offHTML(b);
+    wireOff(el, b);
+    return el;
+  }
+
   function bookRow(b, myView) {
+    if (b.off) return offRow(b);
     var el = document.createElement('div'); el.className = 'bk';
     var hasPos = !!lsGet('pos:' + b.id, null);
     var mb = (b.size / 1048576).toFixed(1);
@@ -958,6 +1010,12 @@
     });
     entry.then(function (e) {
       if (EMB) return startReader(EMB, '', EMB);
+      if (e && e.off) {
+        document.title = e.title;
+        app.innerHTML = '<div class="lib off-page"><p><a class="btn" href="' + libHash + '">‹ ' + esc(t('back')) + '</a></p></div>';
+        $('.off-page', app).appendChild(offRow(e));
+        return;
+      }
       // a card book (format "cards") is cards.json; without the list (offline, not saved): try both
       var get = function (f) { return fetchJSON('books/' + id + '/' + f); };
       var p = e ? get(bookFile(e)).then(function (bk) { return [bk, e.format === 'cards']; })
