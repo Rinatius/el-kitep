@@ -271,6 +271,7 @@ a { color: var(--accent); }
 .st-rf { background: #a48fd1; }
 .st-part { background: #e8b04a; }
 .st-none { background: #d9615a; }
+.st-off { background: #9aa0a6; }
 .st-legend { list-style: none; padding: 0; margin: 14px 0 6px; }
 .st-legend li { position: relative; padding: 5px 0 5px 24px; font-size: 15px; }
 .st-legend li i { position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border-radius: 4px; }
@@ -375,3 +376,16 @@ a { color: var(--accent); }
 .stub-st.sf-full i { background: #8fb8f2; } .stub-st.sf-rf i { background: #a48fd1; } .stub-st.sf-part i { background: #e8b04a; } .stub-st.sf-none i { background: #d9615a; }
 .bk.stub .row .btn { min-height: 36px; padding: 0 12px; font-size: 13px; }
 .bk.stub .btn svg { width: 16px; height: 16px; margin-right: 6px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Books taken off the site under our principles (app.js offRow): card without the text ---------- */
+.bk.off { border: 1.5px solid var(--line); border-radius: 12px; padding: 4px 12px 12px; margin: 8px 0; }
+.bk.off .bk-h { align-items: center; }
+.bk.off .bk-t { font-weight: 600; }
+.off-why { font-size: 14px; margin: 8px 0; }
+.off-buy, .off-alt { font-size: 14px; background: var(--panel); border-radius: 10px; padding: 8px 10px; margin: 8px 0; display: grid; gap: 2px; }
+.off-h { font-weight: 600; font-size: 13px; color: var(--muted); margin-bottom: 2px; }
+.off-buy a { color: var(--accent); }
+.bk.off .row { flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.bk.off .row .btn { min-height: 36px; padding: 0 12px; font-size: 13px; height: auto; white-space: normal; text-align: left; }
+.bk.off .btn svg { width: 16px; height: 16px; margin-right: 6px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+.off-page { padding-top: 12px; }

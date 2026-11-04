@@ -155,7 +155,8 @@ def catalog(ui, books):
 
 
 def main(dist):
-    books = json.load(open(os.path.join(ROOT, 'books', 'index.json')))
+    # books taken off the site (index.json "off") get no page: their text is not on the site any more
+    books = [b for b in json.load(open(os.path.join(ROOT, 'books', 'index.json'))) if not b.get('off')]
     full = {}
     for b in books:
         if b.get('format') == 'cards':   # card book: sections and cards read like chapters and paragraphs
