@@ -22,7 +22,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/configure-pages@v5
       # a new address for the app files on every deploy, so no browser cache can keep an old copy
       - run: sed -i -E "s/(app\.js|style\.css)\"/\1?v=${GITHUB_SHA::10}\"/" site/index.html
